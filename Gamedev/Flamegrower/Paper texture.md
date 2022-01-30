@@ -1,5 +1,3 @@
-# Graphics
-## Paper texture overlay
 This can probably be done the exact same way I do it in Krita, by drawing the texture over top with soft light blending and low opacity.
 
 Krita soft light blend function:

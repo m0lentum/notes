@@ -1,4 +1,8 @@
 {
   "baseFontSize": 16,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "font",
+    "jetbrains-mono"
+  ]
 }
