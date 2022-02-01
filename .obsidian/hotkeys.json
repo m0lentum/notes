@@ -48,5 +48,13 @@
       ],
       "key": "ArrowRight"
     }
+  ],
+  "editor:toggle-source": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "L"
+    }
   ]
 }
