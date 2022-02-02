@@ -28,3 +28,8 @@ I'm going through all the types of
 [[Matrices#Descriptors|special matrices]] like diagonal,
 triangular, orthogonal etc., writing down their definitions and
 thinking about their effects as linear transformations.
+
+## 2022-02-02 (3h)
+
+Continuing what I did yesterday, adding more words to my [[Glossary]]
+and revising the basics.

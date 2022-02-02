@@ -17,26 +17,52 @@ a_{21} & a_{22} & a_{23} \\
 \end{bmatrix}
 $$
 
+## Operations & properties
+
+### Multiplication
+
+$$
+C = AB \iff c_{ij} = a_{i*} \cdot b_{*j}
+$$
+
+### Inverse
+
+$$
+AA^{-1} = A^{-1}A = I
+$$
+
+### Transpose
+
+$$
+B = A^T \iff b_{ij} = a_{ji}$
+$$
+
+### Determinant
+
+$$
+\det(A) = \sum_{j=1}^n (-1)^{j+1} a_{1j}\det(A_{1j})
+$$
+
+### Trace
+
+$$
+\text{tr}(A) = \sum_{i=1}^n a_{ii}
+$$
+
+### Spectral radius
+
+$$
+\rho(A) = \max_{\lambda \in \sigma(A)} \lvert \lambda \rvert
+$$
+
 ## Descriptors
 
 Matrices of certain shapes have special names and properties.
 Most of these apply to _square_ matrices (i.e. size $n \times n$)
 
-### Identity
-$$
-I_{3x3} = \begin{bmatrix}
-1 & & \\
-& 1 & \\
-& & 1 \\
-\end{bmatrix}
-$$
-- $I = \{\delta_{ij}\}_{i,j = 1, \dots, n}$
-	- $\delta_{ij}$ is the _Kronecker delta_
-- _Multiplicative_ identity, i.e. $IA = AI = A$ for any matrix $A$
-- $I^{-1} = I$
-- As a transformation, does not move anything
+### By structure
 
-### Diagonal
+#### Diagonal
 
 $$
 D = \begin{bmatrix}
@@ -60,7 +86,21 @@ D^{-1} = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-### Tri-/Pentadiagonal
+#### Block diagonal
+
+$$
+A = \begin{bmatrix}
+A_{11} & & \\
+& A_{22} & \\
+& & A_{33} \\
+\end{bmatrix}
+= \text{diag}(A_{11}, A_{22}, A_{33})
+$$
+
+- as a system of equations, each block represents
+  a system independent of all the other blocks
+
+#### Tri-/Pentadiagonal
 
 $$
 A = \begin{bmatrix}
@@ -77,7 +117,7 @@ $$
 - Often seen in linear systems arising from
   finite difference discretization of [[Partial differential equations|PDEs]]
 
-### Upper/lower bidiagonal
+#### Upper/lower bidiagonal
 
 $$
 A = \begin{bmatrix}
@@ -89,7 +129,7 @@ A = \begin{bmatrix}
 $$
 - $a_{ij} = 0$ if $j \neq i$ and ($j \neq i + 1$ (upper) or $j \neq i - 1$ (lower))
 
-### Upper/lower triangular
+#### Upper/lower triangular
 
 $$
 U = \begin{bmatrix}
@@ -102,6 +142,30 @@ $$
 - All zeroes below/above the main diagonal
 	- $a_{ij} = 0$ if $j > i$ (upper) or $j < i$ (lower)
 * Often named $L$ for lower and $U$ for upper
+
+### By effect
+
+#### Identity
+$$
+I_{3x3} = \begin{bmatrix}
+1 & & \\
+& 1 & \\
+& & 1 \\
+\end{bmatrix}
+$$
+- $I = \{\delta_{ij}\}_{i,j = 1, \dots, n}$
+	- $\delta_{ij}$ is the _Kronecker delta_
+- _Multiplicative_ identity, i.e. $IA = AI = A$ for any matrix $A$
+- $I^{-1} = I$
+- As a transformation, does not move anything
+
+#### Orthogonal / orthonormal
+
+- $Q^TQ = QQ^T = I$
+	- alternatively, $Q^T = Q^{-1}$
+- columns and rows are orthogonal unit vectors
+- represents an [[Isometry|isometry]] transformation
+- determinant is always -1 or 1
 
 ## Sources
 
