@@ -19,17 +19,31 @@ before.
 ## 2022-02-01 (4h)
 
 Setting up note-taking with Obsidian and writing down a lot of basic
-information about [[Matrices|matrices]], using the first chapter of the linear systems book
-as primary source. I'm only just getting started with this note collection
-so I'm writing a lot about things I already knew before, but having this
-information written down is going to come in handy in years to come.
+information about [[Matrices|matrices]], using the first chapter of the linear
+systems book as primary source. I'm only just getting started with this note
+collection so I'm writing a lot about things I already knew before, but having
+this information written down is going to come in handy in years to come.
 
-I'm going through all the types of
-[[Matrices#Descriptors|special matrices]] like diagonal,
-triangular, orthogonal etc., writing down their definitions and
+I'm going through all the types of [[Matrices#Descriptors|special matrices]]
+like diagonal, triangular, orthogonal etc., writing down their definitions and
 thinking about their effects as linear transformations.
 
 ## 2022-02-02 (3h)
 
 Continuing what I did yesterday, adding more words to my [[Glossary]]
 and revising the basics.
+
+## 2022-02-03 (3h)
+
+Read the rest of chapter 1 of the linear systems book. A lot of interesting
+theorems, but unclear at this point how useful they will be on this course. I
+would need to brush up on my eigenvalue knowledge and learn complex numbers to
+fully understand all of this, but that doesn't seem worth doing right now.
+
+## 2022-02-05 (2h)
+
+Skimmed through chapter 2 of the linear systems book (even though it's not part
+of the course) because I'm interested in PDEs. Very similar content to the PDE
+solvers course here at JYU. Also skimmed through the graph representations and
+permutations part of chapter 3. Graph theory is very interesting, but for now
+I'm skipping the details to try and get an overview of all the materials quickly.
