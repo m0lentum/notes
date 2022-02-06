@@ -31,6 +31,6 @@ kanban-plugin: basic
 
 %% kanban:settings
 ```
-{"kanban-plugin":"basic"}
+{"kanban-plugin":"basic","new-note-folder":"Gamedev/Starframe/Cards"}
 ```
 %%

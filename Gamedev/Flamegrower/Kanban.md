@@ -37,6 +37,6 @@ kanban-plugin: basic
 
 %% kanban:settings
 ```
-{"kanban-plugin":"basic","show-checkboxes":false,"prepend-archive-date":true,"metadata-keys":[],"hide-tags-in-title":true}
+{"kanban-plugin":"basic","show-checkboxes":false,"prepend-archive-date":true,"metadata-keys":[],"hide-tags-in-title":true,"new-note-folder":"Gamedev/Flamegrower/Cards"}
 ```
 %%
