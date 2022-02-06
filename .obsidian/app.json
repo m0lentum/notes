@@ -15,5 +15,6 @@
   "readableLineLength": true,
   "lineWrap": false,
   "autoPairMarkdown": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "autoPairBrackets": false
 }

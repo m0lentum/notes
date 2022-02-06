@@ -3,6 +3,10 @@
   "theme": "obsidian",
   "enabledCssSnippets": [
     "font",
-    "jetbrains-mono"
+    "jetbrains-mono",
+    "popover",
+    "big-popover",
+    "lighter-links",
+    "green-links"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "kanban-plugin": false,
+  "search": false,
+  "editor": false,
+  "git-view": false,
+  "file-explorer": false,
+  "graph": false
+}

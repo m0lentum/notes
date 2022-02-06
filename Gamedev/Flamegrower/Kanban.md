@@ -6,16 +6,27 @@ kanban-plugin: basic
 
 ## Mechanics
 
-- [ ] Aim mode
-- [ ] Dashing?
+- [ ] [[Fire flowers]]
+- [ ] [[Aim mode]]
+- [ ] [[Windmills]]
+- [ ] [[Dashing]]
 
 
 ## Graphics
 
-- [ ] Textured outlines
+- [ ] [[Textured outlines]]
 - [ ] [[Paper texture]]
-- [ ] Skinned mesh animations
-- [ ] Normal maps & lighting
+- [ ] [[Skinned mesh animations]]
+- [ ] [[Normal maps & lighting]]
+- [ ] [[Parallax backgrounds]]
+
+
+## Area ideas
+
+- [ ] Bridge town
+- [ ] Mine / underground town
+- [ ] Floating islands
+- [ ] Windmill farm (valley, mountain peak?)
 
 
 ## Archive
@@ -26,6 +37,6 @@ kanban-plugin: basic
 
 %% kanban:settings
 ```
-{"kanban-plugin":"basic","show-checkboxes":true,"prepend-archive-date":true}
+{"kanban-plugin":"basic","show-checkboxes":false,"prepend-archive-date":true,"metadata-keys":[],"hide-tags-in-title":true}
 ```
 %%

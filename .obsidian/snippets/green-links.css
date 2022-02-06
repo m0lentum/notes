@@ -1,0 +1,19 @@
+a,
+.cm-hmd-internal-link,
+.cm-link {
+  color: #bada55 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+}
+
+a:hover,
+.cm-hmd-internal-link:hover,
+.cm-link:hover {
+  color: #9aaa45 !important;
+  text-decoration: underline !important;
+}
+
+.cm-hmd-internal-link > .cm-underline,
+.cm-link > .cm-underline {
+  text-decoration: none !important;
+}
