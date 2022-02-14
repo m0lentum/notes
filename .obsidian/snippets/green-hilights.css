@@ -17,3 +17,8 @@ a:hover,
 .cm-link > .cm-underline {
   text-decoration: none !important;
 }
+
+.cm-inline-code,
+.markdown-preview-view code {
+  color: #bada55 !important;
+}

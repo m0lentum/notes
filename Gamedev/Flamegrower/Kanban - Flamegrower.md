@@ -6,19 +6,21 @@ kanban-plugin: basic
 
 ## Mechanics
 
-- [ ] [[Fire flowers]]
+- [ ] [[Fire flowers]] #prototyped
 - [ ] [[Aim mode]]
 - [ ] [[Windmills]]
 - [ ] [[Dashing]]
+- [ ] [[Walljumps]]
 
 
 ## Graphics
 
+- [ ] [[glTF mesh import]]
 - [ ] [[Textured outlines]]
 - [ ] [[Paper texture]]
-- [ ] [[Skinned mesh animations]]
 - [ ] [[Normal maps & lighting]]
 - [ ] [[Parallax backgrounds]]
+- [ ] Antialiasing
 
 
 ## Area ideas

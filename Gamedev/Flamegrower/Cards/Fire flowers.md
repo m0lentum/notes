@@ -13,3 +13,8 @@ Visually, having a charge available could be communicated with
 player character's hair being on fire, the "battery" in the torso
 area lighting up, or both (or something else entirely
 if I change the character design).
+
+Prototyped. Todos:
+- [ ] visually communicate flower being spent
+	- eventually: closing animation + turn off fire particles
+- [ ] visually communicate player having flower

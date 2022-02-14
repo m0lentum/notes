@@ -5,7 +5,7 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "path:Math",
@@ -18,21 +18,28 @@
       "query": "path:Diaries",
       "color": {
         "a": 1,
-        "rgb": 5427424
+        "rgb": 5415904
       }
     },
     {
-      "query": "path:Gamedev/Starframe",
-      "color": {
-        "a": 1,
-        "rgb": 11657298
-      }
-    },
-    {
-      "query": "path:Gamedev/Flamegrower",
+      "query": "path:Gamedev",
       "color": {
         "a": 1,
         "rgb": 15111951
+      }
+    },
+    {
+      "query": "path:Tools",
+      "color": {
+        "a": 1,
+        "rgb": 12210912
+      }
+    },
+    {
+      "query": "path:\"Computer graphics\"",
+      "color": {
+        "a": 1,
+        "rgb": 2479258
       }
     }
   ],

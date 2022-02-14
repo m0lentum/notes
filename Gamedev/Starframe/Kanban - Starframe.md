@@ -10,7 +10,8 @@ kanban-plugin: basic
 - [ ] Convex polygon colliders
 - [ ] Compound colliders
 - [ ] Abstraction for supporting points/edges in collision detection
-- [ ] Block solver for two-point contacts
+- [ ] [[Block solver for two-point contacts]]
+- [ ] [[Anisotropic friction]] #bug
 
 
 ## Graphics
@@ -18,6 +19,7 @@ kanban-plugin: basic
 - [ ] Camera
 - [ ] [[Colors]]
 - [ ] GUI
+- [ ] Cached batching of static meshes
 
 
 ## Entitygraph
@@ -25,6 +27,7 @@ kanban-plugin: basic
 - [ ] Stripped down Debug impl for NodeRefs
 - [ ] [[Try using a min heap instead of deque for vacant slots]]
 - [ ] [[Pooling]]
+- [ ] Benchmark
 
 
 
