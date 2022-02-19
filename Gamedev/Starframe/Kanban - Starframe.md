@@ -9,9 +9,10 @@ kanban-plugin: basic
 - [ ] [[Collision detection broad phase]] #wip
 - [ ] Convex polygon colliders
 - [ ] Compound colliders
-- [ ] Abstraction for supporting points/edges in collision detection
+- [ ] [[Generic collision detection for polygon-circle Minkowski sums]] #wip
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
+- [ ] Point queries should work even if body is sleeping
 
 
 ## Graphics
