@@ -13,3 +13,8 @@ Steps I have in mind:
 6. If the edges did intersect (will happen when neither shape
    has a circle component or in rare cases otherwise),
    get the endpoint of the incident edge plus r * axis
+
+
+This works! Couple of todos:
+- [ ] moments of inertia
+- [ ] spherecasts (need work on spatial index traversal)

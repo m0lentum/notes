@@ -7,12 +7,11 @@ kanban-plugin: basic
 ## Physics
 
 - [ ] [[Collision detection broad phase]] #wip
-- [ ] Convex polygon colliders
-- [ ] Compound colliders
 - [ ] [[Generic collision detection for polygon-circle Minkowski sums]] #wip
+- [ ] Compound colliders
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
-- [ ] Point queries should work even if body is sleeping
+- [ ] Point queries don't work on the first body spawned if it's sleeping #bug
 
 
 ## Graphics
@@ -35,6 +34,6 @@ kanban-plugin: basic
 
 %% kanban:settings
 ```
-{"kanban-plugin":"basic","new-note-folder":"Gamedev/Starframe/Cards"}
+{"kanban-plugin":"basic","new-note-folder":"Gamedev/Starframe/Cards","show-checkboxes":true,"lane-width":350}
 ```
 %%
