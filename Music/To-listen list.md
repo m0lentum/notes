@@ -43,9 +43,11 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-11 Amorphis
 - [x] 02-11 Shield of Wings
 - [x] 02-25 [[Reviews#Allegaeon — DAMNUM|Allegaeon]]
-- [ ] 03-11 Threads of Fate
-- [ ] 03-18 Moonlight Haze
-- [ ] 03-18 SheWolf
-- [ ] 04-08 Dynazty
-- [ ] 04-08 Atlantis Chronicles
+- [x] 03-11 Threads of Fate
+- [x] 03-18 Moonlight Haze
+- [x] 03-18 SheWolf
+- [x] 04-08 Atlantis Chronicles
+- [ ] 04-15 Semblant
+- [ ] 04-27 Unlucky Morpheus
 - [ ] 06-03 Buried Realm
+- [ ] 08-26 Dynazty

@@ -47,3 +47,19 @@ of the course) because I'm interested in PDEs. Very similar content to the PDE
 solvers course here at JYU. Also skimmed through the graph representations and
 permutations part of chapter 3. Graph theory is very interesting, but for now
 I'm skipping the details to try and get an overview of all the materials quickly.
+
+## 2022-04-13 (1h)
+
+I've been away for a while, for many reasons. I now really appreciate having
+this diary, as it made it easy to check back on what I had learned at the
+start of the year.
+
+Finished chapter 3 of the linear systems book, particularly the part about
+data structures for memory-efficient sparse matrix representations.
+I recall the coordinate form from earlier courses, but the others were new.
+Some interesting similarities to general compression methods, such as using
+pointers to addresses of matrix rows, which feels a lot like run-length
+encoding.
+
+I don't quite understand the orderings related to direct solution methods,
+but I'll come back to this later if I feel it's important.
