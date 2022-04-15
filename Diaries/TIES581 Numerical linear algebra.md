@@ -63,3 +63,9 @@ encoding.
 
 I don't quite understand the orderings related to direct solution methods,
 but I'll come back to this later if I feel it's important.
+
+## 2022-04-14 (1h)
+
+Skimmed through chapter 4 of the linear systems book for a quick refresher on
+iterative methods. Jacobi, Gauss-Seidel, Successive Over-Relaxation.
+Also started ch. 5 and got the basic gist of what a projection method is.

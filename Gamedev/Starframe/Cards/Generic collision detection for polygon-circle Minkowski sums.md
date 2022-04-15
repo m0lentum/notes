@@ -17,8 +17,9 @@ Steps I have in mind:
 
 This works! Couple of todos:
 
-- [ ] moments of inertia
-- [ ] spherecasts (need work on spatial index traversal)
+- [x] moments of inertia
+- [ ] spherecasts (need work on spatial index traversal,
+      shape query itself is almost trivial)
 
 Deriving polar second moment of area around origin,
 using Green's formula to compute it as a line integral
@@ -108,7 +109,7 @@ $$
 &+ \frac{1}{12}r^3(x_k(\sin(3\alpha_{k+1}) - \sin(3\alpha_k)) + y_k(\cos(3\alpha_{k+1}) - \cos(3\alpha_k))) \\
 &+ \frac{1}{2}r^2(x_k^2 + y_k^2)(\alpha_{k+1} - \alpha_k) \\
 &+ \frac{1}{4}r^2(x_k^2(\sin(2\alpha_{k+1}) - \sin(2\alpha_k)) - y_k^2(\sin(\alpha_{k+1}) - \sin(\alpha_k))) \\
-&+ \frac{1}{3}r(x_k^3(\sin(\alpha_{k+1} - \sin(\alpha_k))) - y_k^3(\cos(\alpha_{k+1}) - \cos(\alpha_k)))
+&+ \frac{1}{3}r(x_k^3(\sin(\alpha_{k+1}) - \sin(\alpha_k))) - y_k^3(\cos(\alpha_{k+1}) - \cos(\alpha_k)))
 \Big)
 \end{align*}
 $$
@@ -135,7 +136,8 @@ $$
 $$
 
 If $dx_k = 0$ or $dy_k = 0$, the term where $t$ is multiplied by it turns into
-just $y_k^3$ or $x_k^3$ and the integral for that edge is that times $l_k$.
+just $-\frac{1}{3}y_k^3 dx_k$ or $\frac{1}{3}x_k^3 dy_k$ (dx or dy is either 1 or -1)
+and the integral for that edge is that times $l_k$.
 
 Remember that $x_k, y_k$ here aren't the same as $x_k, y_k$ on the circle caps,
 these are now on the outer edge.
