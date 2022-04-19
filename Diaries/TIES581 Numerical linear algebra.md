@@ -69,3 +69,16 @@ but I'll come back to this later if I feel it's important.
 Skimmed through chapter 4 of the linear systems book for a quick refresher on
 iterative methods. Jacobi, Gauss-Seidel, Successive Over-Relaxation.
 Also started ch. 5 and got the basic gist of what a projection method is.
+
+## 2022-04-19 (2h)
+
+Reading chapter 5 in more detail since I'm pretty sure this will be relevant
+when getting into Krylov subspaces, which are the most important topic
+on the course as far as I understand. Some of the error analysis is a little
+over my head, but I understand the basic idea of considering how projectors
+act on the residual.
+
+Cool insight that helped me understand a proof: if a matrix is unitarily
+similar to a diagonal matrix, $A = Q^TDQ$, then the elements of $D$ are the
+eigenvalues of $A$. (Recalling from chapter 1 that similarity means
+eigenvalues are preserved in the transformation.)

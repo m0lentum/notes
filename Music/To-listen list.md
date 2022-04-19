@@ -47,7 +47,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 03-18 Moonlight Haze
 - [x] 03-18 SheWolf
 - [x] 04-08 Atlantis Chronicles
-- [ ] 04-15 Semblant
+- [x] 04-15 Semblant
 - [ ] 04-27 Unlucky Morpheus
 - [ ] 06-03 Buried Realm
 - [ ] 08-26 Dynazty

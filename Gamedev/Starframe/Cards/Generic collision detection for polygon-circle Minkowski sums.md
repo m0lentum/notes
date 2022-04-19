@@ -20,6 +20,7 @@ This works! Couple of todos:
 - [x] moments of inertia
 - [ ] spherecasts (need work on spatial index traversal,
       shape query itself is almost trivial)
+      (turned this into another kanban item)
 
 Deriving polar second moment of area around origin,
 using Green's formula to compute it as a line integral
@@ -152,3 +153,45 @@ $$
 
 It's a bit hard to verify this since this doesn't use direction at all
 and mine does, but at least the degree of the polynomial checks out.
+
+Just to have it in one place, the full formula:
+
+$$
+\begin{align*}
+I_z = \sum_{k=1}^n &\Big(
+\frac{3}{4}r^3(x_k(\sin(\alpha_{k+1}) - \sin(\alpha_k)) - y_k(\cos(\alpha_{k+1}) - \cos(\alpha_k))) \\
+&+ \frac{1}{12}r^3(x_k(\sin(3\alpha_{k+1}) - \sin(3\alpha_k)) + y_k(\cos(3\alpha_{k+1}) - \cos(3\alpha_k))) \\
+&+ \frac{1}{2}r^2(x_k^2 + y_k^2)(\alpha_{k+1} - \alpha_k) \\
+&+ \frac{1}{4}r^2(x_k^2(\sin(2\alpha_{k+1}) - \sin(2\alpha_k)) - y_k^2(\sin(\alpha_{k+1}) - \sin(\alpha_k))) \\
+&+ \frac{1}{3}r(x_k^3(\sin(\alpha_{k+1}) - \sin(\alpha_k))) - y_k^3(\cos(\alpha_{k+1}) - \cos(\alpha_k))) \\
+&+ E_k
+\Big) \\
+\end{align*}
+$$
+
+where
+
+$$
+E_k = \begin{cases}
+-\frac{1}{3}\tilde{y}_k^3dx_kl_k, \quad \text{if }dy_k = 0 \\
+\frac{1}{3}\tilde{x}_k^3dy_kl_k, \quad \text{if } dx_k = 0 \\
+\frac{1}{12}\Big(\frac{dx_k}{dy_k}(\tilde{y}_k^4 - (\tilde{y}_k + l_kdy_k)^4)
++ \frac{dy_k}{dx_k}((\tilde{x}_k + l_kdx_k)^4 - \tilde{x}_k^4)\Big)
+, \quad \text{otherwise}
+\end{cases}
+$$
+
+$\alpha_k$ is the angle between the x-axis and the normal
+$\mathbf{\hat{n}}_k$ of the edge $k$,
+$(x_k, y_k)$ is the inner polygon point at index $k$,
+$(\tilde{x}_k, \tilde{y}_k)$ is the start of the outer edge $\mathbf{x}_k + r\mathbf{\hat{n}}_k$,
+$r$ is the radius of the circle component,
+and $(dx_k, dy_k)$ is the unit-length direction vector of the edge $k$.
+
+Compare to the hexagon's formula,
+
+$$
+I_z = \frac{5\sqrt{3}}{8}a^4
+$$
+
+:P

@@ -6,8 +6,9 @@ kanban-plugin: basic
 
 ## Physics
 
+- [x] [[Generic collision detection for polygon-circle Minkowski sums]]
 - [ ] [[Collision detection broad phase]] #wip
-- [ ] [[Generic collision detection for polygon-circle Minkowski sums]] #wip
+- [ ] Spherecasts
 - [ ] Compound colliders
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
