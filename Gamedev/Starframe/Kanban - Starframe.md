@@ -7,9 +7,9 @@ kanban-plugin: basic
 ## Physics
 
 - [x] [[Generic collision detection for polygon-circle Minkowski sums]]
+- [x] Compound colliders
 - [ ] [[Collision detection broad phase]] #wip
 - [ ] Spherecasts
-- [ ] Compound colliders
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
 - [ ] Point queries don't work on the first body spawned if it's sleeping #bug
@@ -29,6 +29,11 @@ kanban-plugin: basic
 - [ ] [[Try using a min heap instead of deque for vacant slots]]
 - [ ] [[Pooling]]
 - [ ] Benchmark
+
+
+## Misc
+
+- [ ] Tiled integration for sandbox
 
 
 

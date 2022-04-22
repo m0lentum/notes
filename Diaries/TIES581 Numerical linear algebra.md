@@ -73,12 +73,19 @@ Also started ch. 5 and got the basic gist of what a projection method is.
 ## 2022-04-19 (2h)
 
 Reading chapter 5 in more detail since I'm pretty sure this will be relevant
-when getting into Krylov subspaces, which are the most important topic
-on the course as far as I understand. Some of the error analysis is a little
-over my head, but I understand the basic idea of considering how projectors
-act on the residual.
+when getting into Krylov subspaces, which I believe are the most important
+topic on the course. Some of the error analysis is a little over my head,
+but I understand the basic idea of considering how projectors act on the residual.
 
 Cool insight that helped me understand a proof: if a matrix is unitarily
-similar to a diagonal matrix, $A = Q^TDQ$, then the elements of $D$ are the
+similar to a diagonal matrix, $A = Q^TDQ$, then the diagonal elements of $D$ are the
 eigenvalues of $A$. (Recalling from chapter 1 that similarity means
 eigenvalues are preserved in the transformation.)
+
+## 2022-04-20 (1h)
+
+Finished chapter 5. While I don't remember the theory of projectors
+(maybe I should re-read chapter 1 later) well enough to understand why e.g.
+$P_i = AV_i((AV_i)^TAV_i)^{-1}(AV_i)^T$ is an orthogonal projector (this is just given as a fact),
+the comparison to the Jacobi method which I already understand was very helpful.
+I feel like I have a decent grasp of what projection methods do.

@@ -50,4 +50,5 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 04-15 Semblant
 - [ ] 04-27 Unlucky Morpheus
 - [ ] 06-03 Buried Realm
+- [ ] 06-10 Kardashev
 - [ ] 08-26 Dynazty
