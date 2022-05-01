@@ -89,3 +89,9 @@ Finished chapter 5. While I don't remember the theory of projectors
 $P_i = AV_i((AV_i)^TAV_i)^{-1}(AV_i)^T$ is an orthogonal projector (this is just given as a fact),
 the comparison to the Jacobi method which I already understand was very helpful.
 I feel like I have a decent grasp of what projection methods do.
+
+## 2022-05-01 (2h)
+
+Looking into Krylov subspaces (chapter 6). I understand what a Krylov
+subspace is, but haven't yet quite grokked what the Arnoldi method
+does with the orthonormal basis it generates. Too tired to figure it out now.

@@ -48,7 +48,10 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 03-18 SheWolf
 - [x] 04-08 Atlantis Chronicles
 - [x] 04-15 Semblant
-- [ ] 04-27 Unlucky Morpheus
+- [x] 04-27 Unlucky Morpheus
+- [x] 04-29 Gladenfold
 - [ ] 06-03 Buried Realm
 - [ ] 06-10 Kardashev
+- [ ] 06-10 Wind Rose
 - [ ] 08-26 Dynazty
+- [ ] 09-09 Fallujah

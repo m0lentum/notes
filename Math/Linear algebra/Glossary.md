@@ -69,6 +69,7 @@
 | [[Matrices#Tri- Pentadiagonal\|Tri-/Pentadiagonal]] | Nonzero only on main and immediate side diagonals on both sides | Tri-/pentadiagonaali- |
 | [[Matrices#Upper lower bidiagonal\|Upper/lower bidiagonal]] | Nonzero only on main and one side diagonal | Ylä-/alabidiagonaali- |
 | [[Matrices#Upper lower triangular\|Upper/lower triangular]] | Nonzero only on main diagonal and above/below it | Ylä-/alakolmio- |
+| [[Matrices#Upper lower Hessenberg\|Upper/lower Hessenberg]] | Zero only above/below first secondary diagonal | Hessenbergin ylä-/alamuoto |
 | [[Matrices#Orthogonal orthonormal\|Orthogonal / orthonormal]] | Column vectors are orthogonal and unit length | Ortogonaali- |
 | Unitary | Orthogonal, but for complex matrices | |
 | Normal | Eigenvectors form an orthonormal basis | Normaali |

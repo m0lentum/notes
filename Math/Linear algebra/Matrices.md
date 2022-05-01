@@ -140,8 +140,21 @@ U = \begin{bmatrix}
 \end{bmatrix}
 $$
 - All zeroes below/above the main diagonal
-	- $a_{ij} = 0$ if $j > i$ (upper) or $j < i$ (lower)
+	- $a_{ij} = 0$ if $j < i$ (upper) or $j > i$ (lower)
 * Often named $L$ for lower and $U$ for upper
+
+#### Upper/lower Hessenberg
+
+$$
+U = \begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 1 & 2 & 3 \\
+& 2 & 1 & 2 \\
+& & 2 & 1 \\
+\end{bmatrix}
+$$
+- All zeroes below/above the first subdiagonal
+	- $a_{ij} = 0$ if $j < i-1$ (upper) or $j > i+1$ (lower)
 
 ### By effect
 
