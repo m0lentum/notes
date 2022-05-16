@@ -95,3 +95,22 @@ I feel like I have a decent grasp of what projection methods do.
 Looking into Krylov subspaces (chapter 6). I understand what a Krylov
 subspace is, but haven't yet quite grokked what the Arnoldi method
 does with the orthonormal basis it generates. Too tired to figure it out now.
+
+## 2022-05-12 (1.5h)
+
+Reading some more about Krylov subspaces, trying to get some intuition.
+I now understand the connection to polynomials ([[Systems of equations#Krylov subspace methods|notes]])
+which feels like it will be important to analyzing the performance of these methods.
+
+For the project work, I should probably implement and compare the different variants
+of the Arnoldi method using different orthonormalization techniques.
+I don't quite understand the Householder method, will have to look back into
+chapter 1 to figure that one out.
+
+## 2022-05-16 (2h)
+
+Made it to the Full Orthogonalization Method and read through it many times
+to try and figure out how it works intuitively/geometrically.
+Also wrote down a bunch of notes (link under previous diary entry)
+trying to explain to myself what each matrix involved represents.
+Still a bit hazy on some details, but I figured out a lot today.
