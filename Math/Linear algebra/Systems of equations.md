@@ -18,7 +18,7 @@ with $n$ unknowns and $m$ equations.
 ## Solution methods
 
 TODO: write about:
-- Gauss-Jordan substitution (is that what it's even called? :P )
+- Gaussian elimination
 - LU & Cholesky decomposition
 - Jacobi, Gauss-Seidel & SOR
 - Revise the numerical methods course's material for more

@@ -114,3 +114,30 @@ to try and figure out how it works intuitively/geometrically.
 Also wrote down a bunch of notes (link under previous diary entry)
 trying to explain to myself what each matrix involved represents.
 Still a bit hazy on some details, but I figured out a lot today.
+
+## 2022-05-17 (1h)
+
+Read about the different variants of FOM (restarted, incomplete) and
+the Generalized Minimum Residual method (GMRES). Bit of a tired day
+and I didn't get all the details, but I understand the basic gist
+and the advantages and drawbacks of each variant.
+
+## 2022-05-18 (1h)
+
+Skimming ahead to see how many methods the book covers
+and thinking about what to do for project work.
+I'll probably do a Jupyter notebook, since that lets me
+put a bunch of implementations and analyses in one place.
+
+## 2022-05-19 (3h)
+
+Took a quick detour into [IHaskell](https://github.com/IHaskell/IHaskell)
+to see if I could use it as a Jupyter Notebook variant with a more pleasant
+language. Decided I should use Python for easier comparison with NumPy
+and easier evaluation by the teacher, and set up a notebook.
+Spent a bunch more time fiddling with a Vim integration for sane editing.
+
+## 2022-05-23 (1.5h)
+
+Sketching the beginnings of the project, starting with a basic implementation
+of FOM. Revising basics of NumPy.
