@@ -1,3 +1,7 @@
+2022 edit: This is all obsolete now since I've swapped to an AABB tree!
+Turned out HGrid (at least the way I did it) was really overengineered
+and not even that efficient.
+
 Research possible alternatives and implement one. Remember to expand bounding
 volumes to account for movement during XPBD substeps. XPBD uses AABB trees, but
 I feel like a hierarchical grid might be the best thing for 2D. Originally I

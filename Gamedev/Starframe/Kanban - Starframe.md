@@ -9,8 +9,8 @@ kanban-plugin: basic
 - [x] [[Generic collision detection for polygon-circle Minkowski sums]]
 - [x] Compound colliders
 - [x] Point queries don't work on the first body spawned if it's sleeping #bug
-- [ ] [[Collision detection broad phase]] #wip
-- [ ] Spherecasts
+- [x] Spherecasts
+- [x] [[Collision detection broad phase]] #wip
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
 - [ ] Physics::query_point_body is extremely ugly, refactor it somehow

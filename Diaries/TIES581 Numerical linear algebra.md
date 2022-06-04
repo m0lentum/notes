@@ -141,3 +141,15 @@ Spent a bunch more time fiddling with a Vim integration for sane editing.
 
 Sketching the beginnings of the project, starting with a basic implementation
 of FOM. Revising basics of NumPy.
+
+## 2022-05-29 (5h)
+
+Looked for matrices to test with, found [Matrix Market](https://math.nist.gov/MatrixMarket/).
+Got FOM more or less working. Got annoyed with NumPy a bunch along the way.
+
+## 2022-06-04 (3h)
+
+Mostly a Python programming exercise today - wrote a little test runner
+and pretty-printer for analyzing results. Also implemented restarting
+for FOM and found that it doesn't currently work correctly.
+Next session will be debugging that.
