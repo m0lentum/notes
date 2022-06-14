@@ -153,3 +153,36 @@ Mostly a Python programming exercise today - wrote a little test runner
 and pretty-printer for analyzing results. Also implemented restarting
 for FOM and found that it doesn't currently work correctly.
 Next session will be debugging that.
+
+## 2022-06-06 (2h)
+
+Debugging FOM, got it working. The main problem was accidentally taking a row
+of a vector where I should have taken a column at the end of the loop.
+Also came across a couple of degenerate cases, one where the Krylov subspace
+is larger than the original matrix and one where the algorithm diverges to
+infinity, and added handling for those. Now it runs all my test cases without
+crashing, and is able to solve all but one of them successfully.
+
+## 2022-06-07 (1h)
+
+Reading up on DIOM. I'm having trouble understanding why the LU factorization
+of the Hessenberg matrix behaves the way it does. Too tired to figure it out tonight.
+
+## 2022-06-12 (1.5h)
+
+Back to figuring out DIOM, with some digressions into Wikipedia matrix articles
+along the way. I was confused by the formula for the vector $z_m$, but
+eventually realized it's simply the solution of  $L_mz_m = \beta e_1$
+using forward substitution. I now think I understand every part except how to
+produce the LU factorization of $H_m$ (line 5 of algorithm 6.8 in Saad 2003).
+
+## 2022-06-13 (3h)
+
+Wrote a bit about FOM and started implementing DIOM.
+Nothing much to report this time.
+
+## 2022-06-14 (3h)
+
+Sketched all of DIOM except the part where the LU factorization is updated.
+I don't know how to do that yet; will need to do some research next time.
+Found out Python has a built-in `deque` construct which is nice for this.
