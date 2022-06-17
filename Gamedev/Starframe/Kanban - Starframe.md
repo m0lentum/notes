@@ -35,6 +35,7 @@ kanban-plugin: basic
 ## Misc
 
 - [ ] Tiled integration for sandbox
+- [ ] [[Game loop lag resilience]]
 
 
 

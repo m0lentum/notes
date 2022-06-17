@@ -186,3 +186,16 @@ Nothing much to report this time.
 Sketched all of DIOM except the part where the LU factorization is updated.
 I don't know how to do that yet; will need to do some research next time.
 Found out Python has a built-in `deque` construct which is nice for this.
+
+## 2022-06-15 (2.5h)
+
+Derived the LU factorization part of DIOM with the help of Wikipedia.
+Not entirely working yet, I'm dividing by zero somewhere.
+More debugging next time.
+
+## 2022-06-17 (3h)
+
+Debugging DIOM. Found some issues with the first iteration being wrong
+and some indices being a bit off. Most importantly, realized I had overlooked
+some elements in the LU factorization. Didn't quite get it working yet,
+too tired to keep staring at all these indices right now.
