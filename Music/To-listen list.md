@@ -54,6 +54,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 06-10 Kardashev
 - [x] 06-10 Wind Rose
 - [ ] 07-06 Revocation
+- [ ] 08-12 The Halo Effect
 - [ ] 08-19 Soilwork
 - [ ] 08-26 Dynazty
 - [ ] 09-03 Andy Gillion

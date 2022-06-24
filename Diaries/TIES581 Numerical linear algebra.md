@@ -199,3 +199,35 @@ Debugging DIOM. Found some issues with the first iteration being wrong
 and some indices being a bit off. Most importantly, realized I had overlooked
 some elements in the LU factorization. Didn't quite get it working yet,
 too tired to keep staring at all these indices right now.
+
+## 2022-06-18 (4h)
+
+Fixed several more issues with DIOM and verified some other parts were
+working correctly, but still having problems. It seems to always converge,
+but not to the right solution. I cannot figure out why.
+
+## 2022-06-21 (4h)
+
+Managed to fix DIOM, problem was with my LU factorization where I computed
+L using the diagonal of H where I should have used the diagonal of U.
+Finally I get to move on from this, next I think I will implement GMRES
+and then check out preconditioning.
+
+## 2022-06-22 (5h)
+
+Managed to implement GMRES in a naive way using numpy's least squares
+method, then proceeded to work on the plane rotation method for
+transforming the Hessenberg system into upper triangular form.
+Had a hard time focusing so didn't finish it yet.
+
+## 2022-06-23 (3h)
+
+Implemented the plane rotation method for solving the least-squares problem
+in GMRES, but didn't get it to work correctly yet.
+
+## 2022-06-24 (5h)
+
+Took a few hours, but finally figured out my mistake in GMRES. I was multiplying
+the right-hand side with the rotations wrong. Also unified FOM to use the same
+rotation method and sketched what I'll do for the rest of the project
+(preconditioning and tests).
