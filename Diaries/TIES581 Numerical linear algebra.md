@@ -231,3 +231,22 @@ Took a few hours, but finally figured out my mistake in GMRES. I was multiplying
 the right-hand side with the rotations wrong. Also unified FOM to use the same
 rotation method and sketched what I'll do for the rest of the project
 (preconditioning and tests).
+
+## 2022-06-26 (2h)
+
+Reading the chapter on preconditioning. I get the basic math but haven't gotten
+to the point where the preconditioning matrix / method is selected yet,
+so I don't have the full picture yet.
+
+## 2022-07-03 (3h)
+
+Read the preconditioning chapters in small chunks over the past several days.
+The ILU factorization section was longer and more complex than I expected
+so I skimmed it a bit, but I get the basic idea. Will have to read in more detail
+during implementation, though I'm not sure how much depth I'll have time for.
+
+## 2022-07-06 (4h)
+
+Stared at the preconditioning chapters some more and revised why the SOR/Gauss-Seidel
+preconditioner looks the way it does in matrix form. Added an API for preconditioning
+and refactored FOM/GMRES into the right-preconditioned variant of it.
