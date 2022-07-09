@@ -250,3 +250,23 @@ during implementation, though I'm not sure how much depth I'll have time for.
 Stared at the preconditioning chapters some more and revised why the SOR/Gauss-Seidel
 preconditioner looks the way it does in matrix form. Added an API for preconditioning
 and refactored FOM/GMRES into the right-preconditioned variant of it.
+
+## 2022-06-07 (6h)
+
+Implemented Symmetric Gauss-Seidel preconditioning and refactored the test runner
+for easier comparison of results. The SGS preconditioner runs very slowly and
+I took a lot of time to try and optimize it, but in the end the problem seems to
+be that Python is just slow. I would need to implement it in C to make execution
+times comparable, but I don't have time for that so I'll just focus on its
+effect on iteration count.
+
+## 2022-06-08 (2h)
+
+Implemented ILU(0) preconditioning. This went surprisingly smoothly!
+I think it's time to write up some analysis and a bit more documentation
+and yeet this one over to the teacher.
+
+## 2022-06-09 (4h)
+
+Added a reference Scipy impl of GMRES to the test suite, wrote up some analysis,
+cleaned the whole thing up, and sent it to the teacher. We're done here 😎🎉
