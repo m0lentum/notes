@@ -8,9 +8,10 @@ kanban-plugin: basic
 
 - [ ] [[Fire flowers]] #prototyped
 - [ ] [[Aim mode]]
-- [ ] [[Windmills]]
+- [ ] [[Windmills]], elevators, other mechanical/motorized things
 - [ ] [[Dashing]]
 - [ ] [[Walljumps]]
+- [ ] Remove all placed vines without burning
 
 
 ## Graphics

@@ -6,3 +6,5 @@ frame time averaging (or something like that), and if it would be useful here.
 For testing this you could add buttons that do some amount of thread::sleep,
 e.g. set amount per frame, random amount per frame,
 set really big amount in one shot.
+
+The `pacy` crate from cwfitzgerald might also be useful here once it's done.

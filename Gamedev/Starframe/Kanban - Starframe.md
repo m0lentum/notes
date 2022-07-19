@@ -11,6 +11,7 @@ kanban-plugin: basic
 - [x] Point queries don't work on the first body spawned if it's sleeping #bug
 - [x] Spherecasts
 - [x] [[Collision detection broad phase]] #wip
+- [x] [[Time speed control]]
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
 - [ ] Physics::query_point_body is extremely ugly, refactor it somehow
@@ -36,6 +37,8 @@ kanban-plugin: basic
 
 - [ ] Tiled integration for sandbox
 - [ ] [[Game loop lag resilience]]
+- [ ] Gamepad support
+- [ ] [[Tweening]]
 
 
 
