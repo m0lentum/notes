@@ -39,6 +39,7 @@ kanban-plugin: basic
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]
+- [ ] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
 
 
 

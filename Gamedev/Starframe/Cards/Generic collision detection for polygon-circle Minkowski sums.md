@@ -18,7 +18,7 @@ Steps I have in mind:
 This works! Couple of todos:
 
 - [x] moments of inertia
-- [ ] spherecasts (need work on spatial index traversal,
+- [x] spherecasts (need work on spatial index traversal,
       shape query itself is almost trivial)
       (turned this into another kanban item)
 
