@@ -18,3 +18,7 @@ Prototyped. Todos:
 - [ ] visually communicate flower being spent
 	- eventually: closing animation + turn off fire particles
 - [ ] visually communicate player having flower
+
+NOTE: probably not going to do this, at least not early on in the game.
+Instead, putting flamevines in the world that perpetually burn,
+reducing the number of actions and states of the player.

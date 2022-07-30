@@ -6,12 +6,12 @@ kanban-plugin: basic
 
 ## Mechanics
 
-- [ ] [[Fire flowers]] #prototyped
-- [ ] [[Aim mode]]
+- [ ] [[Fire flowers]] #prototyped #obsolete
+- [ ] [[Aim mode]] #prototyped (missing graphics)
 - [ ] [[Windmills]], elevators, other mechanical/motorized things
 - [ ] [[Dashing]]
 - [ ] [[Walljumps]]
-- [ ] Remove all placed vines without burning
+- [ ] Remove all placed vines without burning?
 
 
 ## Graphics
