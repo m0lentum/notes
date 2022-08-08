@@ -35,23 +35,20 @@ are sent after them to use their fire to exterminate the weeds.
 
 ## Areas
 
-Would be cute to name all areas after metal songs / albums / bands.
-Some ideas:
-
 Garden of Fire: Research facility where flamevines were developed.
 
-(name?): Town on top of a big bridge. Built as quick emergency shelter
+Foothold: Town on top of a big bridge. Built as quick emergency shelter
 from the floods, before which people lived on the ground below.
 Gameplay could involve going up and down the bridge pillars,
 swinging around below the bridge, etc. Perhaps there are some trains
 
-(name?): Town dug into a mountain, with buildings both on the floor
+Summit: Town dug into a mountain, with buildings both on the floor
 and hanging from the ceiling. Built there for protection from heat in the past,
 and extended to the ceiling during the floods. One side of the bridge town
 ends at this mountain, and a tunnel goes from there to the mine town.
 
-(name?): Floating islands, perhaps used for farming, energy production
-with wind/solar, just living, or all of the above.
+Suncatcher: Floating islands, perhaps used for energy production
+with wind/solar, farming, just living, or all of the above.
 Developed during the floods when ground space was sparse.
 Maybe the gardening androids were developed to move around floating farms
 quickly with their vines.
@@ -73,3 +70,27 @@ and life on the surface is possible again.
 Some people have returned to live on the ground,
 while others choose to remain up on the bridges
 and floating islands where they grew up.
+
+## Nameing
+
+Would be cute to name all areas after metal songs / albums / bands.
+Some song names that could work:
+- Wilderun: Garden of Fire, Suncatcher
+- Countless Skies: Summit, Zephyr, Tempest
+- Eluveitie: The Raven Hill, Black Water Dawn
+- Be'lakor: Foothold, Hidden Window, Locus
+- Dynazty: Paradise of the Architect, Apex, Ascension
+- Mechina: anything from the early albums could work lol
+- Kardashev: anything from Peripety :P
+- Rivers of Nihil: Hollow, A Home
+- Aeternam: Sun Shield, Celestial Plains
+- Bloodred Hourglass: Waves of Black, White Feather
+- Dreamtale: Firebird
+- Amaranthe: Skyline
+
+Maybe other stuff in the game could be named after songs too.
+Weeds could be The Grey (Dynazty), flamevines could be flamewalls (Camellia).
+The flood could be called The Deluge (Sojourner). Gardening androids
+could be biomechs or formshifters (Allegaeon).
+
+(yes I'm putting way too much effort into this lol)

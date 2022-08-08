@@ -22,14 +22,7 @@ kanban-plugin: basic
 - [ ] [[Normal maps & lighting]]
 - [ ] [[Parallax backgrounds]]
 - [ ] Antialiasing
-
-
-## Area ideas
-
-- [ ] Bridge town
-- [ ] Mine / underground town
-- [ ] Floating islands
-- [ ] Windmill farm (valley, mountain peak?)
+- [ ] Better meshes for capsule chains and vines
 
 
 ## Archive

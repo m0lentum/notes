@@ -15,11 +15,12 @@ kanban-plugin: basic
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
 - [ ] Physics::query_point_body is extremely ugly, refactor it somehow
+- [ ] Explore SIMD for collision detection
 
 
 ## Graphics
 
-- [ ] Camera
+- [ ] [[Camera]]
 - [ ] [[Colors]]
 - [ ] GUI
 - [ ] Cached batching of static meshes
@@ -35,11 +36,11 @@ kanban-plugin: basic
 
 ## Misc
 
+- [x] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
 - [ ] Tiled integration for sandbox
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]
-- [ ] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
 
 
 
