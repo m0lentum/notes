@@ -7,6 +7,12 @@ threaten to consume the world.
 
 ### Look inspirations and ideas
 
+Idea for the entire style: triangle meshes with vertex colors only,
+"low-poly" look but for 2D. Could be animated with skinning
+which would be fun.
+
+#### Main character
+
 Florans from Starbound and Wargroove
 ![Nuru from Wargroove](https://wargroovewiki.com/mediawiki/images/c/c2/Nuru_Portrait.png)
 ![Sedge from Wargroove](https://wargroovewiki.com/mediawiki/images/e/ef/Sedge_Portrait.png)
@@ -18,6 +24,18 @@ as if their whole body is/was made of that vine
 
 Some physics-based animation for leaves on the character
 could look pretty sick
+
+Concept of my own:
+![[char_concept.jpg]]
+
+#### Backgrounds
+
+Look to The King's Bird for inspiration.
+The opening scene has a particularly nice outdoor view:
+![The King's Bird opening scene|1000](https://cdn.akamai.steamstatic.com/steam/apps/812550/ss_dc7c79f96bfbb8635bf85602c1ab812557dbd876.jpg)
+
+[Steam page for more](https://store.steampowered.com/app/812550/The_Kings_Bird/).
+Also play the game and study the parallax effects
 
 ## Gameplay contrivances
 
@@ -35,25 +53,30 @@ are sent after them to use their fire to exterminate the weeds.
 
 ## Areas
 
-Garden of Fire: Research facility where flamevines were developed.
+Research facility where flamevines were developed.
+Possible name: Garden of Fire
 
-Foothold: Town on top of a big bridge. Built as quick emergency shelter
+Town on top of a big bridge. Built as quick emergency shelter
 from the floods, before which people lived on the ground below.
 Gameplay could involve going up and down the bridge pillars,
 swinging around below the bridge, etc. Perhaps there are some trains
+Possible name: Foothold
 
-Summit: Town dug into a mountain, with buildings both on the floor
+Town dug into a mountain, with buildings both on the floor
 and hanging from the ceiling. Built there for protection from heat in the past,
 and extended to the ceiling during the floods. One side of the bridge town
 ends at this mountain, and a tunnel goes from there to the mine town.
+Possible name: Summit
 
-Suncatcher: Floating islands, perhaps used for energy production
+Floating islands, perhaps used for energy production
 with wind/solar, farming, just living, or all of the above.
 Developed during the floods when ground space was sparse.
 Maybe the gardening androids were developed to move around floating farms
 quickly with their vines.
+Possible name: Suncatcher(s)
 
-(name?): Newly built village on the ground.
+Newly built village on the ground. Maybe some treehouses or other fun
+tall structures. Windmills?
 
 ## History
 
@@ -74,19 +97,22 @@ and floating islands where they grew up.
 ## Nameing
 
 Would be cute to name all areas after metal songs / albums / bands.
-Some song names that could work:
+Some bands with song names that could work:
 - Wilderun: Garden of Fire, Suncatcher
 - Countless Skies: Summit, Zephyr, Tempest
 - Eluveitie: The Raven Hill, Black Water Dawn
 - Be'lakor: Foothold, Hidden Window, Locus
 - Dynazty: Paradise of the Architect, Apex, Ascension
-- Mechina: anything from the early albums could work lol
-- Kardashev: anything from Peripety :P
+- Mechina: anything from the early albums could work lol,
+  lots of funky scifi words
+- Kardashev: Cellar of Ghosts, anything from Peripety :P
 - Rivers of Nihil: Hollow, A Home
 - Aeternam: Sun Shield, Celestial Plains
 - Bloodred Hourglass: Waves of Black, White Feather
 - Dreamtale: Firebird
 - Amaranthe: Skyline
+- Sunless Rise
+- Wintersun: The Forest That Weeps
 
 Maybe other stuff in the game could be named after songs too.
 Weeds could be The Grey (Dynazty), flamevines could be flamewalls (Camellia).
