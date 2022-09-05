@@ -23,7 +23,7 @@ kanban-plugin: basic
 - [ ] [[Camera]]
 - [ ] [[Colors]]
 - [ ] GUI
-- [ ] Cached batching of static meshes
+- [ ] Immediate mode debug drawing of arbitrary shapes
 
 
 ## Entitygraph

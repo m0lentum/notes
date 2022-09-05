@@ -11,7 +11,6 @@ kanban-plugin: basic
 - [ ] [[Windmills]], elevators, other mechanical/motorized things
 - [ ] [[Dashing]]
 - [ ] [[Walljumps]]
-- [ ] Remove all placed vines without burning?
 
 
 ## Graphics
@@ -23,6 +22,17 @@ kanban-plugin: basic
 - [ ] [[Parallax backgrounds]]
 - [ ] Antialiasing
 - [ ] Better meshes for capsule chains and vines
+
+
+## Other features
+
+- [ ] Save files
+
+
+## Details / misc
+
+- [ ] Remove all placed vines without burning?
+- [ ] Damping when stretching the vine to prevent bouncing
 
 
 ## Archive

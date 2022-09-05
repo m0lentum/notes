@@ -2,6 +2,8 @@ Interchange format for textured, animated 3D meshes.
 
 <https://github.com/KhronosGroup/glTF>
 
+[Tutorial](https://github.com/KhronosGroup/glTF-Tutorials/tree/master/gltfTutorial)
+
 Supported in Rust by the [`gltf`](https://docs.rs/gltf) crate,
 and available as a feature in [`assets_manager`](https://docs.rs/assets_manager).
 
