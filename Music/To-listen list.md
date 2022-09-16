@@ -58,8 +58,8 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 08-19 Soilwork
 - [x] 08-26 Dynazty
 - [x] 09-02 Aeternam
-- [ ] 09-03 Andy Gillion
-- [ ] 09-09 Fallujah
+- [x] 09-03 Andy Gillion
+- [x] 09-09 Fallujah
 - [ ] 09-16 Wolfheart
 - [ ] 09-23 Stratovarius
 - [ ] 10-14 Lorna Shore

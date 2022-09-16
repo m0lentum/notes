@@ -8,7 +8,7 @@ Also in this repo are some todos and ideas for my hobby projects
 using Obsidian's Kanban board extension, as well as some learning diaries
 for university courses.
 
-If you happen to stumble upon this repo, feel free to dig around -
+Feel free to dig around if you feel like it -
 there's no compromising personal information or workplace secrets here.
 Most of the Obsidian-flavored Markdown should be readable on GitHub,
 but internal links and embedded LaTeX won't work. For the best experience,
