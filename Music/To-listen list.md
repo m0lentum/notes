@@ -60,6 +60,6 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-02 Aeternam
 - [x] 09-03 Andy Gillion
 - [x] 09-09 Fallujah
-- [ ] 09-16 Wolfheart
+- [x] 09-16 Wolfheart
 - [ ] 09-23 Stratovarius
 - [ ] 10-14 Lorna Shore
