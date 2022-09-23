@@ -16,6 +16,7 @@ that scales and rotates depending on the real and imaginary parts.
 The corresponding linear transformation matrix for $z = a + bi$ 
 is the one that transforms $(1,0)$ to $z$ and $(0,1)$ to the left normal of $z$
 (i.e. $-b + ai$),
+
 $$
 zw =
 \begin{bmatrix}
@@ -28,9 +29,11 @@ $$
 
 Very frequently seen in physics involving waves,
 Euler's formula is
+
 $$
 e^{i\theta} = \cos(\theta) + i\sin(\theta)
 $$
+
 meaning $\theta$ represents an angle walking around the unit circle.
 Alternative notation: $e^{i\theta} = \exp(i\theta)$
 
@@ -45,11 +48,14 @@ Thus, if $z$ is ever unit-length, we stay on the unit circle forever.
 The crucial point here is that it doesn't make sense in this context
 to think about exponentiation as repeated multiplication.
 Instead, we consider the Taylor series expansion of $e^x$:
+
 $$
 e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}
 $$
+
 This is just a polynomial so all sorts of things can be fed into it,
 including irrational and complex numbers. Then we have
+
 $$
 \begin{align}
 e^{i\theta} &= \sum_{n=0}^{\infty} \frac{i^n\theta^n}{n!} \\
@@ -57,6 +63,7 @@ e^{i\theta} &= \sum_{n=0}^{\infty} \frac{i^n\theta^n}{n!} \\
 + \frac{\theta^4}{24} + \frac{i\theta^5}{120} + \dots \\
 \end{align}
 $$
+
 where every other element is purely real and every other is purely imaginary.
 If you take only the real elements you get the Taylor series for
 $\cos(\theta)$, and the imaginary elements give $\sin(\theta)$. Thus we have Euler's formula.

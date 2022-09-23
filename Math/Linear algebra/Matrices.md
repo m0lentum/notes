@@ -10,6 +10,7 @@ Typically matrices are named with capital letters
 (sometimes bold to differentiate from scalar values).
 Matrix _size_ and element coordinates are given
 row first, so an $m \times n$ matrix has $m$ rows and $n$ columns.
+
 $$
 A = \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
@@ -159,6 +160,7 @@ $$
 ### By effect
 
 #### Identity
+
 $$
 I_{3x3} = \begin{bmatrix}
 1 & & \\

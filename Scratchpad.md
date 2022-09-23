@@ -1,12 +1,23 @@
 Notes I felt like quickly writing down without figuring out a structured place for them.
 Hopefully I've moved most things to more appropriate places and this file is close to empty.
 
+## Random words I haven't categorized yet
+
+An involution is a function that is its own inverse, $f(f(x)) = x$
+
+Lagrangian $\mathcal{L}(x, \lambda) = f(x) + \lambda g(x)$ is a formulation of an optimization problem
+$\min f(x) \text{ s.t. } g(x) = 0$ that allows finding the solution of the constrained system
+by finding points where $\nabla \mathcal{L}(x, \lambda) = 0$.
+
+
 ## Master's thesis initial note dump
 
 Wave equation / Helmholtz equation, time-dependent form:
+
 $$
 \frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2u
 $$
+
 where $u$ is displacement / acoustic pressure,
 $c$ is a nonnegative constant that affects the propagation speed of the wave
 I think c is squared to communicate nonnegativity
@@ -36,9 +47,11 @@ Positive definite means $\langle x, x \rangle > 0$ for all $||x|| \neq 0$
 and (conjugate) symmetry means $\langle x, y \rangle$ = $\overline{\langle y, x \rangle}$.
 
 
-Questions I don't understand yet:
-- what does "adjoint" mean (in "adjoint state method")
-
-
-Other random words:
-- involution: function that is its own inverse, $f(f(x)) = x$
+The adjoint of a matrix is its conjugate transpose (just transpose if it's real).
+Adjoint state method involves solving an optimization problem minimizing
+some cost/energy function $f(x, p)$ where $x$ is the state (e.g. acoustic pressure
+in our wave equation) and $p$ is some set of parameters, subject to a constraint
+$g(x, p) = 0$ where $g$ is a PDE. Because $x$ depends on $p$, computing $\frac{\partial f}{\partial p}$
+with finite differences involves solving the PDE for every sample point.
+The adjoint state method solves the problem in a way that doesn't involve $\frac{\partial f}{\partial p}$.
+(TODO: how?)

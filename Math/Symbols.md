@@ -31,6 +31,7 @@ Other symbols:
 - nabla $\nabla$, means gradient
 - partial $\partial$, means partial derivative, often pronounced "doe" or "die"
 	- can also mean the boundary of a region, such as in Stokes' theorem
+
 	  $$
 	  \iint_{\Sigma} (\nabla \times \mathbf{F}) \cdot d^2\mathbf{\Sigma}
 	  = \int_{\partial\Sigma} \mathbf{F} \cdot d\mathbf\Gamma
