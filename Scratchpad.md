@@ -3,9 +3,9 @@ Hopefully I've moved most things to more appropriate places and this file is clo
 
 ## Random words I haven't categorized yet
 
-An involution is a function that is its own inverse, $f(f(x)) = x$
+Involution: a function that is its own inverse, $f(f(x)) = x$
 
-Lagrangian $\mathcal{L}(x, \lambda) = f(x) + \lambda g(x)$ is a formulation of an optimization problem
+Lagrangian $\mathcal{L}(x, \lambda) = f(x) + \lambda g(x)$: formulation of an optimization problem
 $\min f(x) \text{ s.t. } g(x) = 0$ that allows finding the solution of the constrained system
 by finding points where $\nabla \mathcal{L}(x, \lambda) = 0$.
 
@@ -35,6 +35,31 @@ In this case we want to enforce time-periodicity, i.e.
 $u$ and $\frac{\partial{u}}{\partial{t}}$ are equal at time 0 and after a period T at all points in space.
 
 
+The adjoint of a matrix is its conjugate transpose (just transpose if it's real).
+Adjoint state method involves solving an optimization problem minimizing
+some cost/energy function $f(x, p)$ where $x$ is the state (e.g. acoustic pressure
+in our wave equation) and $p$ is some set of parameters, subject to a constraint
+$g(x, p) = 0$ where $g$ is a PDE. Because $x$ depends on $p$, computing $\frac{\partial f}{\partial p}$
+with finite differences involves solving the PDE for every sample point.
+The adjoint state equation gives the gradient $\frac{\partial f}{\partial p}$
+with only two PDE solves, one for the "forward" state equation
+and one for the "backward" adjoint equation.
+
+TODO: why does this work? Here's [a stackexchange question](https://math.stackexchange.com/questions/3853504/understanding-the-adjoint-state-method-existence-and-uniqueness-of-the-adjoin)
+that explains the idea well and links to a more detailed tutorial,
+and I can follow the math but I still don't really get it intuitively
+
+
+The adjoint state solution gives the gradient, which we still need to use
+to solve the optimization problem at hand. For every iteration of optimization,
+we need to solve the forward and backward equations again.
+
+
+TODO: revise what weak formulations are
+
+
+Conjugate gradient optimization -related words:
+
 Conjugate: two vectors $x$ and $y$ are $A$-conjugate w.r.t a positive definite
 square matrix $A$ when $y^TAx = 0$. As with orthogonal vectors (which could also
 be described as $I$-conjugate), this relationship is invariant w.r.t. scaling.
@@ -46,12 +71,3 @@ are required for the definition of an inner product.
 Positive definite means $\langle x, x \rangle > 0$ for all $||x|| \neq 0$
 and (conjugate) symmetry means $\langle x, y \rangle$ = $\overline{\langle y, x \rangle}$.
 
-
-The adjoint of a matrix is its conjugate transpose (just transpose if it's real).
-Adjoint state method involves solving an optimization problem minimizing
-some cost/energy function $f(x, p)$ where $x$ is the state (e.g. acoustic pressure
-in our wave equation) and $p$ is some set of parameters, subject to a constraint
-$g(x, p) = 0$ where $g$ is a PDE. Because $x$ depends on $p$, computing $\frac{\partial f}{\partial p}$
-with finite differences involves solving the PDE for every sample point.
-The adjoint state method solves the problem in a way that doesn't involve $\frac{\partial f}{\partial p}$.
-(TODO: how?)

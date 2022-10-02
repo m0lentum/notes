@@ -43,7 +43,7 @@
 | [[Matrices#Multiplication\|Multiplication]] | $AB$ | Composed transformation $B \rightarrow A$ | Kertolasku |
 | [[Matrices#Inverse\|Inverse]] | $A^{-1}$ | Transformation that reverts $A$ | Käänteismatriisi |
 | [[Matrices#Transpose\|Transpose]] | $A^T$ | Turns columns to rows | Transpoosi |
-| Conjugate transpose | $A^H$, $A^*$ | Transpose + take the complex conjugate | |
+| [[Matrices#Conjugate transpose adjoint|Conjugate transpose / adjoint]] | $A^H$, $A^*$ | Transpose + take the complex conjugate | |
 | [[Matrices#Determinant\|Determinant]] | $\det(A)$ | How much the transformation scales volumes | Determinantti |
 | [[Matrices#Trace\|Trace]] | $\text{tr}(A)$ | Sum of main diagonal entries | |
 | [[Matrices#Spectral radius\|Spectral radius]] | $\rho(A)$ | Largest eigenvalue | |

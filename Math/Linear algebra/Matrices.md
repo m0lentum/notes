@@ -26,17 +26,52 @@ $$
 C = AB \iff c_{ij} = a_{i*} \cdot b_{*j}
 $$
 
+Each element of the result is the dot product of its row in $A$
+and its column in $B$. This produces a linear transformation
+equivalent to applying $B$ and then $A$.
+
 ### Inverse
 
 $$
 AA^{-1} = A^{-1}A = I
 $$
 
+Linear transformation that brings vectors transformed by $A$
+back to their original locations.
+
 ### Transpose
 
 $$
-B = A^T \iff b_{ij} = a_{ji}$
+B = A^T \iff b_{ij} = a_{ji}
 $$
+
+$$
+\begin{bmatrix}
+1 & 2 \\ 1 & 2
+\end{bmatrix}^T
+=
+\begin{bmatrix}
+1 & 1 \\ 2 & 2
+\end{bmatrix}
+$$
+
+Mirrors the matrix around its diagonal, turning columns to rows
+and vice versa.
+
+Intuition for the effect (from [stack exchange](https://math.stackexchange.com/questions/598258/geometric-interpretation-of-detat-deta/636198#636198)):
+A linear map can be decomposed (by singular value decomposition)
+into an isometry (rotation or reflection), scaling, and another rotation:
+$A = U \Lambda V^T$ where $U$ and $V$ are orthogonal matrices (not necessarily square)
+and $\Lambda$ is a square diagonal matrix. The transpose of this is
+$A^T = V \Lambda^T U^T = (V^T)^{-1} \Lambda U^{-1}$.
+Meaning transpose reverses the rotations but keeps the scaling.
+
+### Conjugate transpose / adjoint
+
+Like transpose, but also takes the complex conjugate of each element.
+For real numbers the complex conjugate is equal to the original number,
+so this is equal to the transpose. Thus, the transpose of a real matrix
+is sometimes called its adjoint.
 
 ### Determinant
 
