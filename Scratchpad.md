@@ -35,6 +35,8 @@ In this case we want to enforce time-periodicity, i.e.
 $u$ and $\frac{\partial{u}}{\partial{t}}$ are equal at time 0 and after a period T at all points in space.
 
 
+### Adjoint state method
+
 The adjoint of a matrix is its conjugate transpose (just transpose if it's real).
 Adjoint state method involves solving an optimization problem minimizing
 some cost/energy function $f(x, p)$ where $x$ is the state (e.g. acoustic pressure
@@ -70,7 +72,7 @@ and it will be true that $\mathcal{L}(e, \lambda) = J(e)$.
 Then, differentiating using the product rule for the $\lambda^Ts$ term,
 
 $$
-\begin{align*}
+\begin{aligned}
 \frac{dJ}{de} &= \frac{d\mathcal{L}}{de} \\
 &= \frac{\partial J}{\partial u} \frac{\partial u}{\partial e}
 + \frac{d\lambda^T}{de}s(e, u(e))
@@ -80,7 +82,7 @@ $$
 \text{\quad because $s = 0$}\\
 &= (\frac{\partial J}{\partial u} + \lambda^T \frac{\partial s}{\partial u})\frac{\partial u}{\partial e}
 + \lambda^T \frac{\partial s}{\partial e} \\
-\end{align*}
+\end{aligned}
 $$
 
 This holds regardless of the choice of $\lambda$, so we get to pick it such that the
@@ -106,10 +108,51 @@ to solve the optimization problem at hand. For every iteration of optimization,
 we need to solve the forward and backward equations again.
 
 
-TODO: revise what weak formulations are
+### Weak formulations
+
+[intro paper](https://warwick.ac.uk/fac/sci/hetsys/studentinformation/induction/mathsinduction/pde/pde.pdf)
+
+This is necessary because the "strong" form of the PDE as defined above
+requires that the solution $u$ is twice differentiable.
+Such solutions may not exist in practice, so we come up with a related
+but not strictly equivalent formulation that admits more solutions.
+
+Equality of two vectors can be investigated indirectly by comparing
+their inner products with other vectors. In finite dimensions,
+
+$$
+u = v \in \mathbb{R}^d \iff \forall \varphi \in \mathbb{R}^d
+, u \cdot \varphi = v \cdot \varphi \in \mathbb{R}
+$$
+
+where $\varphi$ is called a _test vector_ (or test function, if the vectors are functions).
+
+In infinite dimensions this implication only holds from left to right,
+and we're looking for $u$ in infinite-dimensional function space.
+This is why the solution based on this is weak - satisfying the
+inner product equality with all test vectors does not imply actual equality.
+
+To derive the weak form, we first multiply the equation
+by an arbitrary test function, then integrate over the solution domain.
+Because we just did a multiplication, we can always do integration by parts here
+(I think?), giving a formula with an integral over the domain and another
+integral over its boundary. Here we can insert boundary conditions to the formula,
+which particularly simplifies a lot in the case of the Dirichlet condition $u = 0$.
+
+The integral makes the second-order derivative of $u$ disappear.
+The problem is now a first order equation that needs to hold for
+every test function, and can thus be formulated as a system of equations
+with a row for every test function.
+
+See the derivation done for a Laplace equation in the intro paper linked earlier.
+TODO: write down the derivation for the actual wave equation we're dealing with
+
+TODO: Sobolev spaces, work through the definition of weak derivative.
+What's a closure of a space?
 
 
-Conjugate gradient optimization -related words:
+### Conjugate gradient optimization
+related words:
 
 Conjugate: two vectors $x$ and $y$ are $A$-conjugate w.r.t a positive definite
 square matrix $A$ when $y^TAx = 0$. As with orthogonal vectors (which could also
@@ -122,3 +165,30 @@ are required for the definition of an inner product.
 Positive definite means $\langle x, x \rangle > 0$ for all $||x|| \neq 0$
 and (conjugate) symmetry means $\langle x, y \rangle$ = $\overline{\langle y, x \rangle}$.
 
+
+
+### Differential forms
+
+[intro paper](https://doi.org/10.1016/j.jcp.2013.08.007)
+
+A differential form is, intuitively, whatever comes after the integral sign
+in an integral. Depending on the dimension of the thing being integrated over,
+they are called 1-forms, 2-forms etc. 1-forms correspond to line integrals
+(e.g. $v^1 = \mathbf{v} \cdot d\mathbf{l}$), 2-forms to surface integrals (e.g. $w^2 = \mathbf{w} \cdot d\mathbf{A}$) etc.
+There are also 0-forms which are equivalent to simple scalar functions.
+
+"Discrete forms" as used in DEC computations are these forms integrated over
+an element of a mesh, i.e. a scalar quantity like $a^3 = \int_{\Omega_i} adV$
+on a volume element $\Omega_i$. Because of this connection with integrals,
+the solution of a system of discrete forms is exactly the solution to
+the corresponding continuous PDE (TODO: check the cited source and understand why).
+
+In 3D, 0-forms and 3-forms are natural choices for representing directionless
+(i.e. scalar) quantities on points and volumes respectively,
+and 1- and 2-forms similarly best represent values with
+direction (i.e. vectors). This is because a lines and surfaces
+(which 1- and 2-forms are integrated over) have a well-defined notion
+of a direction, but points and volumes don't.
+In 2D, there are no forms of higher dimension than 2, and 2-forms represent
+area integrals (as they do in 3D, but without a meaningful direction
+since they're all in the same plane).

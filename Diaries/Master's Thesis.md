@@ -24,4 +24,18 @@ in the [[Scratchpad]] note for now), but still a little hazy.
 
 Working through the derivation for the adjoint state equation
 by writing it down step by step, helped a bit to understand where it comes
-from but still struggling to visualize it. Done with this topic for now I think.
+from but still struggling to visualize it.
+Should move on from this topic for now I think.
+
+## 2022-10-08 (2h)
+
+Reading about weak formulations of PDEs. I have a basic understanding
+of what they are now, but didn't get far enough to actually derive
+it for our wave equation yet.
+
+## 2022-10-10 (2.5h)
+
+Looked at test problems (problems with known solutions for testing
+implementations) a bit, then digressed into reading more about
+differential forms. This intro paper on them is very good,
+will finish reading it tomorrow and get back to what I was doing.
