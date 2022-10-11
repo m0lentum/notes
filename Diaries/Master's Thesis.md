@@ -2,7 +2,7 @@ Started writing this diary a bit late; initially didn't mean to at all
 but I felt like I was forgetting things and struggling to stay focused
 and thought this might help.
 
-## Summary of what I've done so far (20h)
+## Summary of September 2020 (20h)
 
 Read Räbinä's PhD thesis on solving the Maxwell equations.
 Got a vague intuitive idea of meshes, dual meshes, Hodge operators,
@@ -39,3 +39,10 @@ Looked at test problems (problems with known solutions for testing
 implementations) a bit, then digressed into reading more about
 differential forms. This intro paper on them is very good,
 will finish reading it tomorrow and get back to what I was doing.
+
+## 2022-10-11 (2h)
+
+Finished reading the intro paper on differential forms. Learned a lot
+about what they are, why they can be used to generate an exact discretization,
+what exactly the exterior derivative and Hodge star do, etc.
+Will have to return to this another day to finish writing down notes.

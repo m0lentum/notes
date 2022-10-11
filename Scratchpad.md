@@ -169,26 +169,4 @@ and (conjugate) symmetry means $\langle x, y \rangle$ = $\overline{\langle y, x 
 
 ### Differential forms
 
-[intro paper](https://doi.org/10.1016/j.jcp.2013.08.007)
-
-A differential form is, intuitively, whatever comes after the integral sign
-in an integral. Depending on the dimension of the thing being integrated over,
-they are called 1-forms, 2-forms etc. 1-forms correspond to line integrals
-(e.g. $v^1 = \mathbf{v} \cdot d\mathbf{l}$), 2-forms to surface integrals (e.g. $w^2 = \mathbf{w} \cdot d\mathbf{A}$) etc.
-There are also 0-forms which are equivalent to simple scalar functions.
-
-"Discrete forms" as used in DEC computations are these forms integrated over
-an element of a mesh, i.e. a scalar quantity like $a^3 = \int_{\Omega_i} adV$
-on a volume element $\Omega_i$. Because of this connection with integrals,
-the solution of a system of discrete forms is exactly the solution to
-the corresponding continuous PDE (TODO: check the cited source and understand why).
-
-In 3D, 0-forms and 3-forms are natural choices for representing directionless
-(i.e. scalar) quantities on points and volumes respectively,
-and 1- and 2-forms similarly best represent values with
-direction (i.e. vectors). This is because a lines and surfaces
-(which 1- and 2-forms are integrated over) have a well-defined notion
-of a direction, but points and volumes don't.
-In 2D, there are no forms of higher dimension than 2, and 2-forms represent
-area integrals (as they do in 3D, but without a meaningful direction
-since they're all in the same plane).
+Moved to [[Differential forms]]

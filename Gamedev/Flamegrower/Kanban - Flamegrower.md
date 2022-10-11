@@ -33,6 +33,7 @@ kanban-plugin: basic
 
 - [ ] Remove all placed vines without burning?
 - [ ] Damping when stretching the vine to prevent bouncing
+- [ ] Add .gitkeep for assets directories (or `mkdir -p` to export scripts)
 
 
 ## Archive
