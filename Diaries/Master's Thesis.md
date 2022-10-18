@@ -46,3 +46,19 @@ Finished reading the intro paper on differential forms. Learned a lot
 about what they are, why they can be used to generate an exact discretization,
 what exactly the exterior derivative and Hodge star do, etc.
 Will have to return to this another day to finish writing down notes.
+
+## 2022-10-12 (2h)
+
+Got Räbinä's code examples compiling and running on my machine
+and spent some time going over documents to talk about at tomorrow's meeting.
+
+## 2022-10-14 (3h)
+
+Started looking into the code example from Jonni and putting together a
+vim C++ setup, but quickly got sidetracked into trying out Papis
+for bibliography management. Concluded it wasn't as good as Zotero.
+
+## 2022-10-18 (2.5h)
+
+Continuing to look over the example code, more or less understand it now.
+I'll try to write some code of my own next time.

@@ -24,6 +24,7 @@ kanban-plugin: basic
 - [ ] [[Colors]]
 - [ ] GUI
 - [ ] Immediate mode debug drawing of arbitrary shapes
+- [ ] Replace ad-hoc gpu types with [encase](https://docs.rs/encase)
 
 
 ## Entitygraph

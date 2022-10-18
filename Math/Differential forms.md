@@ -53,7 +53,7 @@ of a vector field and you get a scalar, which is what the exterior derivative
 does to a 2-form.
 
 On discrete forms, the exterior derivative maps the set of boundary
-$n-1$-cells of a $n$-cell to the value of the $n$-cell, which can be derived
+$(n-1)$-cells of a $n$-cell to the value of the $n$-cell, which can be derived
 using the divergence theorem / Stokes' theorem. Intuitively, summing over
 1-forms on a closed edge loop is like "rotating" around the enclosed surface,
 which makes it measure curl, and summing over faces of a volume element is
