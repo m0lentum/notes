@@ -62,3 +62,14 @@ for bibliography management. Concluded it wasn't as good as Zotero.
 
 Continuing to look over the example code, more or less understand it now.
 I'll try to write some code of my own next time.
+
+## 2022-10-20 (2h)
+
+Started writing an answer to Jonni's exercise, not quite sure how
+the Hodge star works w.r.t. vector calculus differential operators
+but getting the hang of using the GFD library.
+
+## 2022-10-21 (2h)
+
+Reorganized my work into a different repo outside of gfd
+and finished Jonni's exercise.

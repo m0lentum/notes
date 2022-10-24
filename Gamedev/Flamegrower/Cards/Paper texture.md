@@ -20,3 +20,5 @@ inline T cfSoftLightSvg(T src, T dst) {
   return scale<T>(fdst - (1.0 - 2.0 * fsrc) * fdst * (1.0 - fdst));
 }
 ```
+
+[tweet explaining soft light](https://twitter.com/DanHollick/status/1583080246802194437)

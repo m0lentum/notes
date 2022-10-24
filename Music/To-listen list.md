@@ -61,7 +61,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-03 Andy Gillion
 - [x] 09-09 Fallujah
 - [x] 09-16 Wolfheart
-- [ ] 09-23 Stratovarius
+- [x] 09-23 Stratovarius
 - [ ] 10-07 Heavy Metal Perse
-- [ ] 10-14 Lorna Shore
+- [x] 10-14 Lorna Shore
 - [ ] 10-21 A Wake in Providence
