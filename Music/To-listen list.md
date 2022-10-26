@@ -64,4 +64,4 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-23 Stratovarius
 - [ ] 10-07 Heavy Metal Perse
 - [x] 10-14 Lorna Shore
-- [ ] 10-21 A Wake in Providence
+- [x] 10-21 A Wake in Providence
