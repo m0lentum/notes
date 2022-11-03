@@ -83,28 +83,28 @@ Essential questions (Hevner et al. 2004):
 
 Steps (Peffers et al. 2007):
 1. problem identification and motivation
-  - what's the problem we're solving and why is it a problem?
-  - what's the current state of the art?
-  - similar to requirements construction in engineering
+	- what's the problem we're solving and why is it a problem?
+	- what's the current state of the art?
+	- similar to requirements construction in engineering
 2. definition of the objectives for a solution
-  - in what ways do we intend to improve on the current state of the art?
-  - quantitative (efficiency improvement) or qualitative
-    (solution to problems not solved before, improvement of user experience)
-	improvement? (or both?)
+	- in what ways do we intend to improve on the current state of the art?
+	- quantitative (efficiency improvement) or qualitative
+	  (solution to problems not solved before, improvement of user experience)
+	  improvement? (or both?)
 3. design and development
-  - actually make the thing
-  - this part takes engineering skill and creativity, and varies a lot
-    depending on the nature of the artifact
+	- actually make the thing
+	- this part takes engineering skill and creativity, and varies a lot
+	  depending on the nature of the artifact
 4. demonstration
-  - practically use the artifact to solve the intended problem
+	- practically use the artifact to solve the intended problem
 5. evaluation
-  - measure or otherwise assess how well the solution worked
-  - also varies a lot based on the artifact, could be e.g. precise
-    metrics like execution time or indirect results like
-    survey results, simulations
+	- measure or otherwise assess how well the solution worked
+	- also varies a lot based on the artifact, could be e.g. precise
+	  metrics like execution time or indirect results like
+	  survey results, simulations
 6. communication
-  - publish results and promote them to other practicioners of the field
-  - journals, conferences etc. as well as less formal avenues as appropriate
+	- publish results and promote them to other practicioners of the field
+	- journals, conferences etc. as well as less formal avenues as appropriate
 
 These steps need not be sequential. Principles of agile development
 can be applied, and any of the first four steps may be the starting point.
@@ -116,22 +116,22 @@ prior art, and a rigorous way of evaluating success.
 
 Types of artifacts (Hevner et al. 2004):
 - constructs
-  - language frameworks and concepts for communicating problems and solutions
-  - e.g. numbers and symbols in math, terminology of OOP/FP
-    such as objects, inheritance, pure functions, side effects
+	- language frameworks and concepts for communicating problems and solutions
+	- e.g. numbers and symbols in math, terminology of OOP/FP
+	  such as objects, inheritance, pure functions, side effects
 - models
-  - problems and solutions represented using constructs,
-    without actually implementing them
-  - e.g. agile/scrum as organisational models,
-    mathematical models of physical phenomena
+	- problems and solutions represented using constructs,
+	  without actually implementing them
+	- e.g. agile/scrum as organisational models,
+	  mathematical models of physical phenomena
 - methods
-  - problem solving processes
-  - range from mathematical algorithms to collections of best practices
-  - e.g. the practice of agile/scrum, numerical methods
-    to solve mathematical models of physical phenomenta
+	- problem solving processes
+	- range from mathematical algorithms to collections of best practices
+	- e.g. the practice of agile/scrum, numerical methods
+	  to solve mathematical models of physical phenomenta
 - instantiations
-  - actual products, software or otherwise
-  - the previous notes on Peffers et al. (2007) focus on these
+	- actual products, software or otherwise
+	- the previous notes on Peffers et al. (2007) focus on these
 
 For a master's thesis, the scope of the artifact has to be quite limited
 due to limited time and the expectation of working alone. This may
