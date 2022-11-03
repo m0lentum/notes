@@ -53,7 +53,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 06-03 Buried Realm
 - [x] 06-10 Kardashev
 - [x] 06-10 Wind Rose
-- [ ] 07-06 Revocation
+- [x] 07-06 Revocation
 - [x] 08-12 The Halo Effect
 - [x] 08-19 Soilwork
 - [x] 08-26 Dynazty
