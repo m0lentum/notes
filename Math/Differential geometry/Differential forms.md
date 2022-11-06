@@ -22,7 +22,9 @@ In 2D, there are no forms of higher dimension than 2, and 2-forms represent
 area integrals (as they do in 3D, but without a meaningful direction
 since they're all in the same plane).
 
-## Wedge product
+## Operators
+
+### Wedge product
 
 Multiplication between differential forms is done using the exterior product
 a.k.a. wedge product, $\wedge$. It behaves similarly to the same operator from
@@ -39,7 +41,7 @@ In 2D, 0-forms still behave like scalars, but the only other option
 is a product between two 1-forms, which behaves like a curl or a
 "perp-dot" product (dot product with one argument rotated 90°).
 
-## Exterior derivative
+### Exterior derivative
 
 Much like the wedge product behaves like scalar cross and dot products,
 the exterior derivative behaves like the multidimensional differentiation
@@ -64,6 +66,51 @@ and the derivative of 1-forms can be interpreted as either a curl or
 a divergence of a rotated field (similar to how the exterior product
 is a "2D cross" or "perp-dot" product).
 
+### Hodge star
 
-TODO: go over the rest of the intro paper (at least Hodge star).
-For now, skimming over it to get back to thesis stuff
+[wikipedia page](https://en.wikipedia.org/wiki/Hodge_star_operator)
+
+In $n$-dimensional space, the Hodge star $\star$ is an isomorphism
+associating $k$-forms with $(n-k)$-forms (see [[Differential forms]]).
+Intuitively, it associates scalars with volume-forms
+and vectors with bivectors (in 3D) or vectors with orthogonal
+vectors (in 2D).
+
+You can think of bivectors in 3D as defining a plane
+and the corresponding Hodge dual vector as the normal to that plane.
+It is equivalent to the correspondence between a cross product
+vector and the corresponding wedge product bivector,
+
+$$
+\star (u \wedge v) = u \times v
+$$
+
+and vice versa.
+
+The Hodge star preserves magnitude when applied twice
+but may change orientation depending on dimension of the space
+and forms in question:
+
+$$
+\star\star\eta = (-1)^{k(n-k)}\eta
+$$
+
+In 2D Euclidean space (n = 2):
+- $\star 1 = dx \wedge dy$
+- $\star dx = dy$
+- $\star dy = -dx$
+- $\star (dx \wedge dy) = 1$
+In 2D applying the star twice changes sign for 1-forms.
+
+In 3D Euclidean space (n = 3):
+- $\star 1 = dx \wedge dy \wedge dz$
+- $\star dx = dy \wedge dz$
+- $\star dy = dz \wedge dx$
+- $\star dz = dx \wedge dy$
+- $\star (dx \wedge dy) = dz$
+- $\star (dy \wedge dz) = dx$
+- $\star(dz \wedge dx) = dy$
+- $\star (dx \wedge dy \wedge dz) = 1$
+In 3D applying the star twice never changes sign.
+
+TODO: proxy vectors and musical isomorphisms

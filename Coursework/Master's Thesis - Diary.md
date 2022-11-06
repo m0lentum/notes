@@ -73,3 +73,14 @@ but getting the hang of using the GFD library.
 
 Reorganized my work into a different repo outside of gfd
 and finished Jonni's exercise.
+
+## 2022-11-05 (3h)
+
+Had to take some time away to focus on the research methods course.
+Getting back to this now, looking at numerical integration a bit
+and starting to work on the wave problem for the actual thesis.
+
+## 2022-11-06 (5h)
+
+Working on a differential form formulation of the Helmholtz equation,
+got it done to a point where I think I can try coding something next time.
