@@ -113,4 +113,4 @@ In 3D Euclidean space (n = 3):
 - $\star (dx \wedge dy \wedge dz) = 1$
 In 3D applying the star twice never changes sign.
 
-TODO: proxy vectors and musical isomorphisms
+TODO: proxy vectors and musical isomorphisms, codifferential

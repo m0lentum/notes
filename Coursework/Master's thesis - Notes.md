@@ -41,13 +41,15 @@ The vector-valued $\mathbf{w}$ can be represented with a 1-form $w = \mathbf{w}^
 and the scalar-valued $v$ can be represented with a 0-form $v$.
 The gradient of a scalar field is the exterior derivative of a 0-form $d_0$.
 The divergence of a 1-form in 2D is the exterior derivative of its
-perpendicular form, obtained with a Hodge star, thus $\nabla \cdot = d_1 \star$.
+clockwise perpendicular form, obtained with a Hodge star and a negation
+(negation because Hodge star rotates counterclockwise),
+thus $\nabla \cdot = - d_1 \star$.
 This is divergence expressed as a 2-form. To make the dimension of
 forms match in the first equation, we need to add some more Hodge stars.
 The first equation ends up as
 
 $$
-\star \partial_t v - c^2 d_1 (\star w) = \star f
+\star \partial_t v + c^2 d_1 (\star w) = \star f
 $$
 
 and the second equation
@@ -60,12 +62,60 @@ Applying one more Hodge star to each equation yields
 
 $$
 \begin{cases}
-\partial_t v - \star c^2 d_1 (\star w) = f \\
+\partial_t v + c^2 \delta_1 w = f \\
 \star \partial_t w - \star d_0v = 0 \\
 \end{cases}
 $$
 
-(TODO: why is this form nicer?)
+where $\delta_1$ is the codifferential $\delta_1 = \star d_1 \star$ that takes 1-forms to 0-forms.
+
+(TODO: why is this form operated with the extra star nicer?)
+
+## Discretization
+
+### Space
+
+The domain $\Omega$ is approximated with a polygon mesh $K$ and its dual $K'$.
+Discretized differential forms are continuous forms integrated over
+mesh elements called _cochains_ (the sets of mesh elements themselves
+are called _chains_). Each mesh consists of a 0-chain (vertices),
+1-chain (edges) and 2-chain (faces). Cochains can be represented
+as column vectors containing the values for each element of the chain.
+
+0-cochains on $K$ have the same number of elements as 2-cochains on $K'$,
+as do 1-cochains on $K$ and 1-cochains on $K'$, as well as 2-cochains on $K$
+and 0-cochains on $K'$. These pairs are related by the discrete Hodge star,
+which is a square matrix. We denote by $\star_k$ the discrete Hodge star
+that takes $k$-forms on the primary mesh to $(n-k)$-forms on the dual mesh,
+and by $\star_k^{-1}$ the inverse operator.
+
+The discrete exterior derivative is computed by summing the boundary
+$k$-cochain elements of a $(k+1)$-cochain. This is represented by a
+multiplication with the _incidence matrix_ $d_k$ which encodes
+the boundary $k$-cells of each $(k+1)$-cell and their orientation.
+The same relationships on the dual mesh are represented by
+the transpose $d_k^T$.
+(TODO: work through the math,
+does the transpose automatically have the correct orientations?)
+
+Our unknowns in the continuous equations are the 1-form $w$ and 0-form $v$. 
+We can approximate these with a 1-cochain $W$ and 0-cochain $V$.
+Spatial discretization is done simply by replacing all the unknowns
+and spatial operators with discrete equivalents:
+
+$$
+\begin{cases}
+\partial_t v + c^2 \star_0^{-1} d_1^T \star_1 W = F \\
+\star \partial_t w - \star_1 d_0V = 0 \\
+\end{cases}
+$$
+
+TODO: time discretization next.
+What's the deal with the star of the time derivative?
+How time derivative interact with forms?
+
+TODO: some of this is general info
+that should go in [[Discrete exterior calculus]]
 
 ## Adjoint state method
 

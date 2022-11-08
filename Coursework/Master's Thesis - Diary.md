@@ -82,5 +82,9 @@ and starting to work on the wave problem for the actual thesis.
 
 ## 2022-11-06 (5h)
 
-Working on a differential form formulation of the Helmholtz equation,
-got it done to a point where I think I can try coding something next time.
+Working on a differential form formulation of the Helmholtz equation.
+
+## 2022-11-08 (4h)
+
+Working through discretization of the equations,
+got the spatial part done.
