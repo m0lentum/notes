@@ -88,3 +88,8 @@ Working on a differential form formulation of the Helmholtz equation.
 
 Working through discretization of the equations,
 got the spatial part done.
+
+## 2022-11-09 (1.5h)
+
+Time discretization done. Some more detail to go
+but I should be able to get coding again in a bit.

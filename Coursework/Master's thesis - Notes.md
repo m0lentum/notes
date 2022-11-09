@@ -105,17 +105,65 @@ and spatial operators with discrete equivalents:
 
 $$
 \begin{cases}
-\partial_t v + c^2 \star_0^{-1} d_1^T \star_1 W = F \\
-\star \partial_t w - \star_1 d_0V = 0 \\
+\partial_t V + c^2 \star_0^{-1} d_1^T \star_1 W = F \\
+\star \partial_t W - \star_1 d_0V = 0 \\
 \end{cases}
 $$
 
-TODO: time discretization next.
-What's the deal with the star of the time derivative?
-How time derivative interact with forms?
+(not sure what happens when time derivative and star combine.
+What is the time derivative of a differential form in the first place?
+I think I don't need to know how the continuous case works for time
+discretization so skipping this consideration for now)
 
 TODO: some of this is general info
 that should go in [[Discrete exterior calculus]]
+
+### Time
+
+Using a staggered finite difference time step with values of $V$ computed
+at integer times and values of $W$ offset by half a timestep,
+we use the approximations
+
+$$
+\begin{aligned}
+\partial_t V &= \frac{V^{n+1} - V^n}{\Delta t} \\
+\partial_t W &= \frac{W^{n+\frac{3}{2}} - W^{n+\frac{1}{2}}}{\Delta t} \\
+\end{aligned}
+$$
+
+where the superscript denotes the index of the time step.
+
+(TODO: does it matter which value is at half offset?
+probably not since the only time that changes anything
+is at the first and last time step?)
+
+This gives the equations
+
+$$
+\begin{aligned}
+\frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_0^{-1} d_1^T \star_1 W^n &= F \\
+\star \frac{W^{n+\frac{3}{2}} - W^{n+\frac{1}{2}}}{\Delta t}
+	- \star_1 d_0V^{n+\frac{1}{2}} &= 0 \\
+\end{aligned}
+$$
+
+Multiplying by $\Delta t$ and moving terms around gives the time stepping formulas
+
+$$
+\begin{aligned}
+V^{n+1} &= V^n + \Delta t c^2 \star_0^{-1} d_1^T \star_1 W^n - \Delta t F \\
+\star_1 W^{n+\frac{3}{2}}
+	&= \star_1 W^{\frac{1}{2}} + \Delta t \star_1 d_0V^{n+\frac{1}{2}} \\
+\end{aligned}
+$$
+
+(TODO: everything in the second equation has a $\star_1$ on it,
+does that mean we can just remove it by operating with its inverse?
+I think so since it's linear)
+
+TODO: how do we get $V^{n+\frac{1}{2}}$ and $W^n$ again, since those are
+offset from the times where these fields are computed?
+Once I know that I should be able to code something with this
 
 ## Adjoint state method
 
