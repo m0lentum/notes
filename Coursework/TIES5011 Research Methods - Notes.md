@@ -154,3 +154,97 @@ Sources:
   A design science research methodology for information systems research.
   Journal of management information systems, 24(3), 45-77.
   [link](https://www.tandfonline.com/doi/pdf/10.2753/MIS0742-1222240302?casa_token=tCCWvIYR2kQAAAAA:bcia-j5KrTlDtlybwXGESz3a16UQKa5LldkzRl0g5pfZIsWgTc8k-vIEoyzsnqMykjA33CvyHj18CA)
+  
+## Week 3: Simulation
+
+A simulation, in general, is a computer program whose behavior
+approximates that of some dynamic system.
+Simulations can be used to make predictions on how the systems
+they approximate will evolve in the future or respond to changes
+in parameters. In other words it can answer "what if" questions,
+whereas other research methods have more limited predictive power.
+
+Three main types of simulation (Dooley 2002):
+- Discrete event simulation
+	- System consists of state elements (often resources and consumers)
+	  which interact in a discrete manner, only changing at a finite number
+	  of time instances
+	- May be "stochastic", meaning random distributions are involved for
+	  some parts of state, e.g. time intervals.
+	  This requires in-depth statistical analysis
+	- "Bottom-up" method, i.e. interaction is described locally and
+	  larger patterns emerge from simulation
+	- Topic of the course TIES481 Simulation at JYU
+- System dynamics
+	- System consists of continuous variables whose interactions
+	  are described by differential equations
+	- Solution done with numerical methods (or in rare cases
+	  possible analytically)
+	- Most commonly used in physics (since the vast majority of physics
+	  models are differential equations), but can also model e.g.
+	  biological and economic systems (populations, markets)
+	- "Top-down" approach, i.e. interaction is described globally
+	  and there is no "emergent" behavior, many properties of solutions
+	  are known in advance
+	- This is the stuff I do, topic of courses like TIES594 PDE Solvers
+- Agent-based simulation
+	- System consists of agents encapsulating variables and behaviors
+	  interacting with each other and external resources
+	  to maximize some measure of utility (or minimize some measure of cost)
+	- Similar to discrete event simulation if employed in a discrete
+	  setting (and also touched upon on the course TIES481 Simulation),
+	  sometimes even interchangeable
+	- Unlike DES, can also operate in continuous state space,
+	  and agents can encode behavior that changes both
+	  per individual and over time (learning)
+	- Also a "bottom-up" method
+
+Purposes of simulation (Dooley 2002):
+- Prediction
+	- The most common purpose, simulation used to test changes to systems
+	  that are expensive, dangerous, or impossible to test experimentally
+	- Model validity is extremely important
+- Theory discovery
+	- Simulation can explore a large variety of systems that don't need to
+	  exist in the real world, potentially leading to surprising results
+	  that suggest new theories or topics of experimental research
+- Performance
+	- Prediction combined with optimization to find parameters that
+	  give the best results by some metric
+- Training
+	- Interactive simulations used to train people to operate in situations
+	  that are dangerous or difficult to arrange in the real world
+- Education
+	- Instead of training a practical skill, using simulations to illustrate
+	  and gain insight into how complex systems work
+- Entertainment
+	- Simulation is common in video games not just as an educational
+	  component but also a fun one
+- Proof
+	- "Prove existence of a possible solution"?
+	  This doesn't sound like what mathematicians call a proof.
+	  I don't quite get what this one's about
+
+Stages of a simulation study (Dooley 2002):
+- Conceptual design
+	- Deciding the simulation method, elements and parameters
+	  of the system, etc.
+- Development of the simulation program
+	- Writing the code. General software development practices apply
+- Validation
+	- Measuring how well the simulation predicts the real system
+	  (more on this after I read the other paper)
+- Experimental design
+	- Coming up with experiments to run using the simulation
+	  that produce statistically valid results on the effects of parameters,
+	  similar to designing real-world experiments
+- Implementation
+	- Running the experiments and gathering results
+- Analysis and interpretation
+	- Assessment of statistical properties of results
+	  and making conclusions based on this
+
+Sources:
+- Dooley, K. (2002), “Simulation research methods,”
+  Companion to Organizations, Joel Baum (ed.),
+  London: Blackwell, p. 829-848.
