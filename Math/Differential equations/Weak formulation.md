@@ -33,7 +33,6 @@ every test function, and can thus be formulated as a system of equations
 with a row for every test function.
 
 See the derivation done for a Laplace equation in the intro paper linked earlier.
-TODO: write down the derivation for the actual wave equation we're dealing with
 
 TODO: Sobolev spaces, work through the definition of weak derivative.
 What's a closure of a space?

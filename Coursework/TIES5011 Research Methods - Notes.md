@@ -157,6 +157,8 @@ Sources:
   
 ## Week 3: Simulation
 
+### Simulation process (Dooley 2002)
+
 A simulation, in general, is a computer program whose behavior
 approximates that of some dynamic system.
 Simulations can be used to make predictions on how the systems
@@ -164,7 +166,7 @@ they approximate will evolve in the future or respond to changes
 in parameters. In other words it can answer "what if" questions,
 whereas other research methods have more limited predictive power.
 
-Three main types of simulation (Dooley 2002):
+Three main types of simulation:
 - Discrete event simulation
 	- System consists of state elements (often resources and consumers)
 	  which interact in a discrete manner, only changing at a finite number
@@ -199,7 +201,7 @@ Three main types of simulation (Dooley 2002):
 	  per individual and over time (learning)
 	- Also a "bottom-up" method
 
-Purposes of simulation (Dooley 2002):
+Purposes of simulation:
 - Prediction
 	- The most common purpose, simulation used to test changes to systems
 	  that are expensive, dangerous, or impossible to test experimentally
@@ -225,7 +227,7 @@ Purposes of simulation (Dooley 2002):
 	  This doesn't sound like what mathematicians call a proof.
 	  I don't quite get what this one's about
 
-Stages of a simulation study (Dooley 2002):
+Stages of a simulation study:
 - Conceptual design
 	- Deciding the simulation method, elements and parameters
 	  of the system, etc.
@@ -244,7 +246,60 @@ Stages of a simulation study (Dooley 2002):
 	- Assessment of statistical properties of results
 	  and making conclusions based on this
 
-Sources:
+### Validation (Martis 2006)
+
+To validate a model is to confirm that it predicts the behavior
+of the real system it simulates to a desired degree of accuracy.
+Without validation there can't be confidence about the applicability
+of simulation results to real situations.
+
+In general, there's no way to *prove* that a model is valid
+and no single way to test validity. Instead, multiple tests should
+be performed, each increasing confidence in the model's validity.
+Criteria for validity depend on the purposes of the model;
+validity means it is useful for its designated purposes.
+A valid model will still most likely break down in most situations
+it isn't meant for.
+
+The process of validation involves quantifying error, uncertainty
+and their causes where possible, followed by comparison with
+real data. In the case of stochastic simulations this requires
+statistical analysis; with deterministic models it's more simple
+since there's no uncertainty.
+
+Failure in validation can originate from multiple places:
+the model itself, the simulation implementation, 
+the data fed to it, the real data compared against, etc.
+This is one of the reasons why many tests are required
+for satisfactory validation.
+
+Martis (2006) lists a wide variety
+of questions one can ask during the verification process, e.g.
+about relating the structure and parameters of the model
+to real-life structures and quantities or examining simulation
+behavior with small or extreme variations in parameter values.
+These are categorized as tests of _suitability_ (whether the model
+is internally coherent and describes the right things),
+_consistency_ (whether the model applies under all desired conditions)
+and _utility/effectiveness_ (whether the model can be used by the
+desired audience and for the desired purposes).
+
+### Application to a master's thesis
+
+Questions of model building and robust verification likely require
+too much expertise to be feasible at a master level.
+On the other hand, implementing simulations based on existing models
+is much simpler, typically only a moderate amount of work,
+and can apply to a variety of topics which may make good thesis subjects.
+A simulation study can combine IT with many other fields such as physics,
+sociology, or economics, which makes it an attractive choice for students
+interested in multidisciplinary study.
+
+### Sources
+
 - Dooley, K. (2002), “Simulation research methods,”
   Companion to Organizations, Joel Baum (ed.),
   London: Blackwell, p. 829-848.
+- Martis, M. (2006). "Validation of Simulation Based Models:
+  A Theoretical Outlook". The Electronic Journal of Business
+  Research Methods Volume 4 Issue 1, pp. 39-46

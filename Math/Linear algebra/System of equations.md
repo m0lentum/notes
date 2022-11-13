@@ -4,7 +4,7 @@ $$
 \mathbf{Ax} = \mathbf{b}
 $$
 
-where $\mathbf{A}$ is a $m \times n$ [[Matrices|matrix]], $\mathbf{x}$ is a vector of dimension $n$
+where $\mathbf{A}$ is a $m \times n$ [[Matrix|matrix]], $\mathbf{x}$ is a vector of dimension $n$
 and $\mathbf{b}$ is a vector of dimension $m$.
 This is equivalent to a set of equations
 
@@ -74,7 +74,7 @@ using different orthonormalization methods
 
 The Arnoldi method produces an orthonormal basis $V_m$ with $m$ (dimension
 of the Krylov subspace) vectors that have $n$ (dimension of $A$) elements,
-and a $(m+1) \times m$ [[Matrices#Upper lower Hessenberg|Hessenberg]] matrix $H_m$ for which
+and a $(m+1) \times m$ [[Matrix#Upper lower Hessenberg|Hessenberg]] matrix $H_m$ for which
 
 $$
 V_m^TAV_m = H_m.

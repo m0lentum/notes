@@ -1,5 +1,3 @@
-# Matrices
-
 A matrix is, in general, just a 2D array of something.
 Usually its elements are numbers (real or complex)
 or expressions that evaluate to numbers.

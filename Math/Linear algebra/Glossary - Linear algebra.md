@@ -1,5 +1,3 @@
-# Glossary
-
 ## Vector operations
 
 | name | notation | intuition | Finnish |
@@ -40,13 +38,13 @@
 
 | name | notation | intuition | Finnish |
 | - | - | - | - |
-| [[Matrices#Multiplication\|Multiplication]] | $AB$ | Composed transformation $B \rightarrow A$ | Kertolasku |
-| [[Matrices#Inverse\|Inverse]] | $A^{-1}$ | Transformation that reverts $A$ | Käänteismatriisi |
-| [[Matrices#Transpose\|Transpose]] | $A^T$ | Turns columns to rows | Transpoosi |
+| [[Matrix#Multiplication\|Multiplication]] | $AB$ | Composed transformation $B \rightarrow A$ | Kertolasku |
+| [[Matrix#Inverse\|Inverse]] | $A^{-1}$ | Transformation that reverts $A$ | Käänteismatriisi |
+| [[Matrix#Transpose\|Transpose]] | $A^T$ | Turns columns to rows | Transpoosi |
 | [[Matrices#Conjugate transpose adjoint|Conjugate transpose / adjoint]] | $A^H$, $A^*$ | Transpose + take the complex conjugate | |
-| [[Matrices#Determinant\|Determinant]] | $\det(A)$ | How much the transformation scales volumes | Determinantti |
-| [[Matrices#Trace\|Trace]] | $\text{tr}(A)$ | Sum of main diagonal entries | |
-| [[Matrices#Spectral radius\|Spectral radius]] | $\rho(A)$ | Largest eigenvalue | |
+| [[Matrix#Determinant\|Determinant]] | $\det(A)$ | How much the transformation scales volumes | Determinantti |
+| [[Matrix#Trace\|Trace]] | $\text{tr}(A)$ | Sum of main diagonal entries | |
+| [[Matrix#Spectral radius\|Spectral radius]] | $\rho(A)$ | Largest eigenvalue | |
 | Range | $\text{Ran}(A)$ | Space of vectors reachable by multiplying with $A$; span of column vectors | |
 | Rank | $\text{rank}(A)$ | Dimension of range; number of linearly independent column vectors | Aste |
 | Kernel / Null space | $\text{Ker}(A)$, $\text{Null}(A)$ | Space of vectors mapped to zero by $A$ | |
@@ -63,14 +61,14 @@
 | Singular | Does not have an inverse, determinant is 0 | |
 | Symmetric | Mirror symmetry wrt main diagonal; $A = A^T$ | Symmetrinen |
 | Hermitian | Complex matrix that behaves like a symmetric real matrix; $A = A^H$ | |
-| [[Matrices#Identity\|Identity]] | Multiplication doesn't change anything | Identiteetti- |
-| [[Matrices#Diagonal\|Diagonal]] | Nonzero only on main diagonal | Diagonaali- |
-| [[Matrices#Block diagonal\|Block diagonal]] | Diagonal, but entries are matrices | Lohkodiagonaali- |
-| [[Matrices#Tri- Pentadiagonal\|Tri-/Pentadiagonal]] | Nonzero only on main and immediate side diagonals on both sides | Tri-/pentadiagonaali- |
-| [[Matrices#Upper lower bidiagonal\|Upper/lower bidiagonal]] | Nonzero only on main and one side diagonal | Ylä-/alabidiagonaali- |
-| [[Matrices#Upper lower triangular\|Upper/lower triangular]] | Nonzero only on main diagonal and above/below it | Ylä-/alakolmio- |
-| [[Matrices#Upper lower Hessenberg\|Upper/lower Hessenberg]] | Zero only above/below first secondary diagonal | Hessenbergin ylä-/alamuoto |
-| [[Matrices#Orthogonal orthonormal\|Orthogonal / orthonormal]] | Column vectors are orthogonal and unit length | Ortogonaali- |
+| [[Matrix#Identity\|Identity]] | Multiplication doesn't change anything | Identiteetti- |
+| [[Matrix#Diagonal\|Diagonal]] | Nonzero only on main diagonal | Diagonaali- |
+| [[Matrix#Block diagonal\|Block diagonal]] | Diagonal, but entries are matrices | Lohkodiagonaali- |
+| [[Matrix#Tri- Pentadiagonal\|Tri-/Pentadiagonal]] | Nonzero only on main and immediate side diagonals on both sides | Tri-/pentadiagonaali- |
+| [[Matrix#Upper lower bidiagonal\|Upper/lower bidiagonal]] | Nonzero only on main and one side diagonal | Ylä-/alabidiagonaali- |
+| [[Matrix#Upper lower triangular\|Upper/lower triangular]] | Nonzero only on main diagonal and above/below it | Ylä-/alakolmio- |
+| [[Matrix#Upper lower Hessenberg\|Upper/lower Hessenberg]] | Zero only above/below first secondary diagonal | Hessenbergin ylä-/alamuoto |
+| [[Matrix#Orthogonal orthonormal\|Orthogonal / orthonormal]] | Column vectors are orthogonal and unit length | Ortogonaali- |
 | Unitary | Orthogonal, but for complex matrices | |
 | Normal | Eigenvectors form an orthonormal basis | Normaali |
 | Positive/negative definite | Any transformed vector is turned less than (pos.) / more than (neg.) 90° | Positiivi/negatiividefiniitti |

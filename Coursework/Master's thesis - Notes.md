@@ -171,7 +171,7 @@ Moved to [[Adjoint state method]]
 
 ## Weak formulations
 
-Moved to [[Weak formulations]], not actually relevant to the thesis
+Moved to [[Weak formulation]], not actually relevant to the thesis
 since these are not used with DEC
 
 ## Conjugate gradient optimization
@@ -194,4 +194,4 @@ Maybe also a separate algebra page to define these words
 
 ## Differential forms
 
-Moved to [[Differential forms]]
+Moved to [[Differential form]]

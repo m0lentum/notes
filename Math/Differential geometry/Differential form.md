@@ -71,7 +71,7 @@ is a "2D cross" or "perp-dot" product).
 [wikipedia page](https://en.wikipedia.org/wiki/Hodge_star_operator)
 
 In $n$-dimensional space, the Hodge star $\star$ is an isomorphism
-associating $k$-forms with $(n-k)$-forms (see [[Differential forms]]).
+associating $k$-forms with $(n-k)$-forms (see [[Differential form]]).
 Intuitively, it associates scalars with volume-forms
 and vectors with bivectors (in 3D) or vectors with orthogonal
 vectors (in 2D).

@@ -19,18 +19,18 @@ before.
 ## 2022-02-01 (4h)
 
 Setting up note-taking with Obsidian and writing down a lot of basic
-information about [[Matrices|matrices]], using the first chapter of the linear
+information about [[Matrix|matrices]], using the first chapter of the linear
 systems book as primary source. I'm only just getting started with this note
 collection so I'm writing a lot about things I already knew before, but having
 this information written down is going to come in handy in years to come.
 
-I'm going through all the types of [[Matrices#Descriptors|special matrices]]
+I'm going through all the types of [[Matrix#Descriptors|special matrices]]
 like diagonal, triangular, orthogonal etc., writing down their definitions and
 thinking about their effects as linear transformations.
 
 ## 2022-02-02 (3h)
 
-Continuing what I did yesterday, adding more words to my [[Glossary]]
+Continuing what I did yesterday, adding more words to my [[Glossary - Linear algebra]]
 and revising the basics.
 
 ## 2022-02-03 (3h)
@@ -99,7 +99,7 @@ does with the orthonormal basis it generates. Too tired to figure it out now.
 ## 2022-05-12 (1.5h)
 
 Reading some more about Krylov subspaces, trying to get some intuition.
-I now understand the connection to polynomials ([[Systems of equations#Krylov subspace methods|notes]])
+I now understand the connection to polynomials ([[System of equations#Krylov subspace methods|notes]])
 which feels like it will be important to analyzing the performance of these methods.
 
 For the project work, I should probably implement and compare the different variants
