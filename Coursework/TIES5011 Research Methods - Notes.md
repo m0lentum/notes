@@ -303,3 +303,83 @@ interested in multidisciplinary study.
 - Martis, M. (2006). "Validation of Simulation Based Models:
   A Theoretical Outlook". The Electronic Journal of Business
   Research Methods Volume 4 Issue 1, pp. 39-46
+
+## Week 4: Theoretical-conceptual research
+
+Theoretical-conceptual research concerns itself with
+the development of theories, models and frameworks. The purpose
+of these things is to explain how some phenomenon works in a way
+that is consistent with results of previous research and can be used
+to predict future results. Theories can be derived from empirical
+research or by logical deduction from a set of axioms.
+
+Theories are built out of concepts and constructs. Concepts exist
+on the language level to put the theory to words, while constructs are
+the objects/variables/whatever whose interactions the theory describes.
+Järvinen (???) presents the structure of a theory according to Weber,
+which consists of constructs, laws of their interaction, and a permitted
+region of state and event space. Here state space describes the possible
+states constructs can be in, and event space describes transitions between
+different states.
+
+There is not a single agreed upon definition of what constitutes a theory,
+but theories can be categorized based on purposes:
+- analysis and description
+	- answers "what is" by categorizing and describing, e.g. taxonomies
+- understanding
+	- answers "how" and "why" but does not predict the future
+- prediction
+	- answers "what will happen", but may not necessarily explain how or why
+- explanation and prediction
+	- all of the above included in one. "traditional" theory
+- planning and action
+	- answers "how to act to achieve the best results",
+	  similar to prediction but requires more information
+
+Järvinen (???) describes a few example theories, one on the
+correspondence between states of reality and states of information systems
+informing users about reality, one on the common control flow
+found in structural programming, and one on assessing how successful
+information systems are. A common feature of these is that they
+are taking several examples and producing one abstract description
+that encapsulates important parts of all examples (importance being
+defined subjectively based on the needs of the researchers).
+
+The way theories provide unified abstractions over real phenomena
+reminds me of abstraction in programming. We define a language/interface
+to express ideas in the problem domain, and the simpler the interface
+the less it can be generalized to different circumstances. How much
+to simplify depends on the needs of the user.
+
+Järvinen (???) doesn't provide much of a discussion of what's important
+in theoretical studies. I think it's crucial to decide strictly the field the
+theory should apply to and gather comprehensive reference literature.
+A strong understanding of all that literature is necessary to come up
+with a theory that encapsulates it all in a generalizable way.
+For deductive theory development knowing the field is less crucial
+but still important, otherwise you run the risk of proving something
+already known.
+
+Koskela et al. (2013) present a "conceptual analysis" of group management
+systems in peer-to-peer networking. The study is structured much like a
+literature review, with the purpose being to classify and compare
+methods found in literature. This fits in the "analysis and description"
+category defined earlier. They first define terminology for components of P2P
+systems, different methods of implementing those components, and
+desirable properties of systems like performance, security, scalability, etc.
+They then proceed to analyze how different methods affect these properties
+in different systems described in the literature.
+
+For a master's thesis, this is definitely the most challenging method
+discussed so far. While it resembles a literature review, developing
+theory requires thorough examination of sources and deep expertise
+in the field generally. I think this is feasible in a master's thesis
+only if the student already has significant experience in the field,
+which probably requires a highly specific topic.
+
+Sources:
+- Järvinen, ?. (???). Teoreettis-käsitteellinen tutkimus.
+- Koskela, T., Kassinen, O., Harjula, E., & Ylianttila, M. (2013).
+  P2P group management systems: A conceptual analysis.
+  ACM Computing Surveys (CSUR), 45(2), 20.
+  [link](https://dl.acm.org/doi/pdf/10.1145/2431211.2431219?casa_token=s8zWUD3icD0AAAAA:lA3XusN6eYyDJuJT4u5gw-2rOnuHX8eFmyA7pei792cUgQZeFW0EN_SHFGZB9JMbsKvcnVgjqUC6xA)
