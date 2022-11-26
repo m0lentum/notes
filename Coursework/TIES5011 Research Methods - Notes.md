@@ -383,3 +383,116 @@ Sources:
   P2P group management systems: A conceptual analysis.
   ACM Computing Surveys (CSUR), 45(2), 20.
   [link](https://dl.acm.org/doi/pdf/10.1145/2431211.2431219?casa_token=s8zWUD3icD0AAAAA:lA3XusN6eYyDJuJT4u5gw-2rOnuHX8eFmyA7pei792cUgQZeFW0EN_SHFGZB9JMbsKvcnVgjqUC6xA)
+
+## Week 5: Diverse other methods
+
+Many topics this week; mine is "controlled experiment". Specifically,
+Ko et al. (2015) talk about experiments involving humans using software
+and looking for quantitative results.
+The following is all paraphrased from the aforementioned article.
+
+Experimental studies are historically rare in software engineering
+due to their difficulty to perform correctly and risk of
+inconclusive results. The first difficulty is coming up with a
+research question that can be answered by a quantitative experiment.
+These should be related to some measurable quality such as speed
+(do users get things done faster with this tool than another)
+or some other measure of efficiency or usefulness.
+
+These questions can be answered using other methods like case studies,
+but a controlled experiment has the advantage of the best _variable
+isolation_ — it's the strongest kind of study for determining effects
+of changes in a single variable. In these cases that variable is
+usually a software system. This is accomplished using a _control group_,
+which receives all the same conditions as the _experimental group_,
+except that the variable being studied is set to some baseline alternative.
+
+It may be difficult to design conditions in a way that only
+changes the intended variable between the control and the experiment.
+Both groups' conditions need some degree of realism,
+which presents a tradeoff since more realism likely means more divergence
+between the control and experimental conditions and thus worse variable
+isolation.
+
+Parts of a study that need to be designed in advance:
+1. Recruitment
+	- Finding people willing to participate
+	- Strategies may vary depending on demographic, e.g. students
+	  are easier to reach than professional developers
+	- Number of people to recruit can be decided using a _power analysis_
+	  assessing things like expected effect size and variation
+2. Selection
+	- Picking people representative of the intended population, e.g.
+	  if measuring a tool for web developers, picking people with experience
+	  in web technologies
+3. Consent
+	- Written **informed** consent from participants is required
+	  for ethical reasons
+4. Procedure
+	- Designing the actions participants will take, along with instructions
+	  they will receive
+5. Demographic measurements
+	- Gathering relevant data about the participants, e.g. experience
+	- Parts of this may happen during recruitment if it's part of
+	  the selection criteria
+6. Group assignment
+	- Placement of participants in groups (control & experiment)
+	- Often done randomly for even distribution of demographic variables
+	- With low sample sizes random assignment may not perform well, in these
+	  cases there are alternatives such as _within-subjects_ experiments
+	  where every participant does both a control task and an experiment task
+7. Training
+	- Teaching participants tools and terminology they need in their tasks
+	- Should aim to give every participant the same skills that they
+	  would already have if they were using the software in real life,
+	  increasing the robustness of the control
+	- training for software that takes a long time to learn is difficult and
+	  expensive -> experiments are better suited for software that is easy to learn
+8. Tasks
+	- Design of tasks is where the tradeoff between realism and control
+	  happens — more moving parts and options in a task leads to
+	  more realism and less control
+	- Tasks can be "found" in practical scenarios or designed from scratch;
+	  found tasks are, again, more realistic but less controllable
+9. Outcome measurements
+	- After tasks are done, measuring things like degree of success,
+	  time to complete, etc. depending on research questions
+	- Measuring success requires defining a goal state and a way of
+	  determining when it has been reached, along with communicating these
+	  to participants in an unambiguous way so as not to introduce
+	  extraneous variation from misunderstanding of the goals
+	- Participant self-assessment can provide information that's harder to
+	  quantify objectively such as "usefulness", but this requires asking
+	  good questions to be valid. Already validated models and standard
+	  questionnaires can help with this
+10. Debrief and compensate
+	- Technically optional, but good ethical practice. Tell participants
+	  how they did, what the correct solutions to tasks were,
+	  how the results will be studied etc.
+	  and give them whatever compensation was agreed upon
+
+Ways to increase confidence in an experiment's ability to measure the
+intended variable:
+- increase the effect of the variable
+	- the more difference between the experimental software and the
+	  baseline used for control, the easier it is to observe that difference
+- increase the number of participants
+	- the more people, the smaller differences will be statistically significant
+- decrease extraneous variation
+	- variation is considered extraneous if it comes from factors that
+	  aren't "natural" variation that exists in the real world
+	  like participants' ability to learn quickly; i.e. factors arising
+	  from the artificial nature of the experiment
+
+Pilot studies with smaller groups of participants can be used to
+eliminate problems in the experiment construction before carrying out the
+study with the full group, but this is not common practice in software
+engineering yet. For instance this could find usability problems in the
+experiment software that would otherwise make it difficult to assess
+the usefulness of that software's functionality.
+
+Sources:
+- Ko, A. J., Latoza, T. D., & Burnett, M. M. (2015).
+  A practical guide to controlled experiments of software engineering tools
+  with human participants. Empirical Software Engineering, 20(1), 110-141.
+  [link](https://link.springer.com/article/10.1007/s10664-013-9279-3)

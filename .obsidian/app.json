@@ -17,5 +17,6 @@
   "lineWrap": false,
   "autoPairMarkdown": false,
   "alwaysUpdateLinks": true,
-  "autoPairBrackets": false
+  "autoPairBrackets": false,
+  "smartIndentList": false
 }
