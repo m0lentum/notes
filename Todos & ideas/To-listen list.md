@@ -65,3 +65,8 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 10-07 Heavy Metal Perse
 - [x] 10-14 Lorna Shore
 - [x] 10-21 A Wake in Providence
+
+## 2023
+
+- [ ] 02-10 Delain
+- [ ] 02-24 Insomnium

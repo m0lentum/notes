@@ -11,5 +11,9 @@ learning diaries for university courses.
 Feel free to dig around if you feel like it —
 there's no compromising personal information or workplace secrets here.
 Most of the Obsidian-flavored Markdown should be readable on GitHub
-(even embedded LaTeX is supported these days!), only Obsidian's
-internal link format doesn't work.
+(even embedded LaTeX is supported these days!), though a few things
+like Obsidian's internal link format don't work.
+You can also clone the repo and open it in Obsidian,
+where everything works out of the box
+with the exception of Kanban boards, which require the Kanban
+extension from the Obsidian community plugin marketplace.

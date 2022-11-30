@@ -496,3 +496,69 @@ Sources:
   A practical guide to controlled experiments of software engineering tools
   with human participants. Empirical Software Engineering, 20(1), 110-141.
   [link](https://link.springer.com/article/10.1007/s10664-013-9279-3)
+
+## Week 6: Ethics
+
+Kraemer, van Overveld & Peterson (2011) discuss the ethics of
+algorithms, specifically situations where ethical value judgements
+are baked into the algorithm itself - they call these
+_essentially value-laden algorithms_.
+
+Many algorithms are purely logical in nature and thus are not embedded
+with ethical values. These are things like sorting algorithms, where there
+is a single objectively correct answer. Kraemer et al. argue that
+there are also algorithms which produce value judgements but are not
+embedded with values themselves, which can be (but is not necessarily)
+the case in systems which produce statements like "if you want x,
+you should do y" (known as "hypothetical imperatives"). Algorithms
+are essentially value-laden only if the design of the algorithm
+itself necessarily varies with the values of its designer (noting
+that this can be the case also when the algorithm makes an effort to be
+impartial but is too complex to be fully understood by a user).
+
+An example of essentially value-laden algorithms is those used in
+medical imaging and diagnosis, where there's a tradeoff between
+the number of false positives and false negatives. Since these algorithms
+can never be fully accurate, there's always a decision to be made on
+whether the algorithm should be very sensitive and favor false positives
+or more lenient and favor false negatives, or something in between.
+This is an ethical decision. A scientist may prefer more false negatives
+because a false positive is more damaging to scientific knowledge
+(possibly leading to wrong assumptions made in future research,
+causing compounding misinformation), whereas a doctor diagnosing a serious
+disease would prefer more false positives because a false negative
+leaving the disease untreated would be catastrophic for the patient.
+
+Kraemer et al. argue that whenever possible, algorithms should expose
+ethical choices as parameters for the user, and when that can't be done,
+ethical assumptions made in the algorithm should be clearly communicated
+to users. Personally I fully agree with the second point, but I think
+the first point isn't universal. I think exposing choices to the user
+is generally a good idea, but designers should also work to prevent or
+discourage choices they consider morally objectionable.
+
+Vakkuri et al. (2020) present a survey of ethical practices in the
+field of artificial intelligence. They focus on three principles:
+_transparency_ (understanding how and why the system works, making
+it predictable, and communicating how and why it was developed),
+_responsibility_ (acting morally, "doing the right thing"), and
+_accountability_ (who is liable to whom, which rules must be followed).
+They also mension _fairness_ (equal treatment of users and distribution
+of benefits) as an additional principle.
+
+The survey found no major difference between ethical practices of
+AI and regular software development companies. I find this troubling
+considering the high volumes of data and relatively high level of
+unpredictability in AI projects. Judging by the recent controversy
+about AI image generators in the art community, respect for copyright
+and privacy has remained low in the AI industry in the two years since
+and there is a dire need for more ethical approaches.
+
+Sources:
+- Kraemer, F., van Overveld, K. & Peterson, M. (2011).
+  Is there an ethics of algorithms? Ethics Inf Technology
+  13:251-260. DOI 10.1007/s10676-010-9233-7
+- Vakkuri, V., Kemell, K., Kultanen, J. and Abrahamsson, P. (2020).
+  The Current State of Industrial Practice in Artificial Intelligence
+  Ethics. IEEE Software, vol. 37, no. 4, pp. 50-57, July-Aug.
+  [link](https://ieeexplore.ieee.org/abstract/document/9055379)
