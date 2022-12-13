@@ -93,3 +93,32 @@ got the spatial part done.
 
 Time discretization done. Some more detail to go
 but I should be able to get coding again in a bit.
+
+## 2022-12-04 (5h)
+
+Some reading about PyDEC, followed by a whole bunch of
+wrestling with Nix trying to install it. It's pretty old
+and I couldn't get a Nix build to work, probably just
+going to use it from a git submodule.
+
+## 2022-12-05 (3h)
+
+Got Joona's PyDEC examples running!
+
+## 2022-12-06 (3h)
+
+Digging around in the example code and PyDEC's sources
+to try and figure out what's going on. Had trouble
+focusing today and didn't get as much done as I hoped.
+
+## 2022-12-12 (3h)
+
+Refactoring Joona's mesh generating code a bit to figure out
+what it does and make it easier to read.
+Starting out a basic test case with leapfrog time discretization
+and Dirichlet boundary conditions.
+
+## 2022-12-13 (1h)
+
+Wrote down the equations being solved in the first test case.
+Bit of a poor focus tonight, didn't get much done.

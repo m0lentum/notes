@@ -70,3 +70,4 @@ Writing down release dates of upcoming albums so I remember to check them out.
 
 - [ ] 02-10 Delain
 - [ ] 02-24 Insomnium
+- [ ] 03-24 Ne Obliviscaris
