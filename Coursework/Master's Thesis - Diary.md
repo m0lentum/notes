@@ -122,3 +122,14 @@ and Dirichlet boundary conditions.
 
 Wrote down the equations being solved in the first test case.
 Bit of a poor focus tonight, didn't get much done.
+
+## 2022-12-21 (4h)
+
+Lots of trouble focusing lately, took a week to get back to
+this at all. Getting started with actually coding the
+leapfrog-Dirichlet test case, finally making some decent progress now.
+
+## 2022-12-22 (2h)
+
+Sketched out time stepping, some todos left to figure out
+but the structure of the code is there now.
