@@ -23,7 +23,7 @@ $u$ and $\frac{\partial{u}}{\partial{t}}$ are equal at time 0 and after a period
 
 ## Differential form representation
 
-Starting with the Helmholtz equation transformed to the
+Starting with the wave equation transformed to the
 first order system
 
 $$
@@ -58,18 +58,16 @@ $$
 \partial_t w - d_0 v = 0.
 $$
 
-Applying one more Hodge star to each equation yields
+Applying one more Hodge star to the first equation yields
 
 $$
 \begin{cases}
 \partial_t v + c^2 \delta_1 w = f \\
-\star \partial_t w - \star d_0v = 0 \\
+\partial_t w - d_0v = 0 \\
 \end{cases}
 $$
 
 where $\delta_1$ is the codifferential $\delta_1 = \star d_1 \star$ that takes 1-forms to 0-forms.
-
-(TODO: why is this form operated with the extra star nicer?)
 
 ## Discretization
 
@@ -106,7 +104,7 @@ and spatial operators with discrete equivalents:
 $$
 \begin{cases}
 \partial_t V + c^2 \star_0^{-1} d_1^T \star_1 W = F \\
-\star \partial_t W - \star_1 d_0V = 0 \\
+\partial_t W - d_0V = 0 \\
 \end{cases}
 $$
 
@@ -141,9 +139,9 @@ This gives the equations
 
 $$
 \begin{aligned}
-\frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_0^{-1} d_1^T \star_1 W^n &= F \\
-\star \frac{W^{n+\frac{3}{2}} - W^{n+\frac{1}{2}}}{\Delta t}
-	- \star_1 d_0V^{n+\frac{1}{2}} &= 0 \\
+\frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_0^{-1} d_1^T \star_1 W^{n+\frac{1}{2}} &= F \\
+\frac{W^{n+\frac{3}{2}} - W^{n+\frac{1}{2}}}{\Delta t}
+	- d_0V^{n+1} &= 0 \\
 \end{aligned}
 $$
 
@@ -151,19 +149,28 @@ Multiplying by $\Delta t$ and moving terms around gives the time stepping formul
 
 $$
 \begin{aligned}
-V^{n+1} &= V^n + \Delta t c^2 \star_0^{-1} d_1^T \star_1 W^n - \Delta t F \\
-\star_1 W^{n+\frac{3}{2}}
-	&= \star_1 W^{\frac{1}{2}} + \Delta t \star_1 d_0V^{n+\frac{1}{2}} \\
+V^{n+1} &= V^n - \Delta t c^2 \star_0^{-1} d_1^T
+	\star_1 W^{n+\frac{1}{2}} - \Delta t F \\
+W^{n+\frac{3}{2}}
+	&= W^{\frac{1}{2}} + \Delta t d_0V^{n+1} \\
 \end{aligned}
 $$
 
-(TODO: everything in the second equation has a $\star_1$ on it,
-does that mean we can just remove it by operating with its inverse?
-I think so since it's linear)
+To get $V^{n+\frac{1}{2}}$ and $W^n$ we can use the linear approximations
 
-TODO: how do we get $V^{n+\frac{1}{2}}$ and $W^n$ again, since those are
-offset from the times where these fields are computed?
-Once I know that I should be able to code something with this
+$$
+\begin{aligned}
+V^{n+\frac{1}{2}} &= \frac{v^n + v^{n+1}}{2} \\
+W^{n} &= \frac{w^{n-\frac{1}{2}} + w^{n+\frac{1}{2}}}{2} \\
+\end{aligned}
+$$
+
+(see chapter 5.4 of Räbinä's thesis).
+This is needed to get a full solution at a single time instance
+at the end of the simulated time window.
+
+TODO: how to set initial conditions, do we use this synchronized
+time instance thing there too, or can we just set them at different times?
 
 ## Adjoint state method
 

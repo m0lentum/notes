@@ -133,3 +133,11 @@ leapfrog-Dirichlet test case, finally making some decent progress now.
 
 Sketched out time stepping, some todos left to figure out
 but the structure of the code is there now.
+
+## 2022-12-27 (6h)
+
+Fixed a few things, spent some time wrestling with matplotlib,
+and got an animated wave that very much looks correct!
+Unsure about the physical interpretations of the variables though,
+will need to ask advisors about that, but happy I seem to have
+gotten my math right.
