@@ -141,3 +141,13 @@ and got an animated wave that very much looks correct!
 Unsure about the physical interpretations of the variables though,
 will need to ask advisors about that, but happy I seem to have
 gotten my math right.
+
+## 2022-12-28 (6h)
+
+Made an abstraction for animated simulations, added a second vibrating
+membrane simulation with different initial conditions, wrote an email.
+
+## 2022-12-30 (5h)
+
+Studying the derivation of the wave equation and its
+velocity potential formulation; wrote [[Wave equation]]

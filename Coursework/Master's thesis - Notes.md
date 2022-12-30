@@ -1,19 +1,8 @@
-Wave equation / Helmholtz equation, time-dependent form:
+Solving the velocity potential formulation of the [[Wave equation]],
 
 $$
 \frac{\partial^2 \phi}{\partial t^2} = c^2 \nabla^2\phi
 $$
-
-where $\phi$ is a velocity potential and $c$ is a nonnegative material constant
-that affects the propagation speed of the wave
-
-I think c is squared to communicate nonnegativity
-and not for any physical reason (?)
-
-Interpretation: displacement accelerates based on curvature.
-The more narrow an individual wave, the quicker it starts moving towards
-the equilibrium state.
-
 
 Exact controllability: Instead of fully specifying initial conditions
 to get a unique solution, allow initial conditions to vary and select them
@@ -169,8 +158,13 @@ $$
 This is needed to get a full solution at a single time instance
 at the end of the simulated time window.
 
-TODO: how to set initial conditions, do we use this synchronized
+TODO: how to correctly set initial conditions, do we use this synchronized
 time instance thing there too, or can we just set them at different times?
+
+TODO: read up on boundary conditions and test problems
+
+TODO: stability (CFL condition), no need for a thorough analysis yet
+but I should at least understand what it's about
 
 ## Adjoint state method
 
