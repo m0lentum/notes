@@ -22,8 +22,7 @@ $$
 \end{cases} \quad \text{in } \Omega \times [0, T]
 $$
 
-where $v = \frac{\partial \phi}{\partial t}$ is acoustic pressure and $\mathbf{w} = \nabla \phi$ is velocity
-(TODO: velocity of what exactly? wave propagation or displacement?).
+where $v = \frac{\partial \phi}{\partial t}$ is acoustic pressure and $\mathbf{w} = \nabla \phi$ is particle velocity
 $\Omega$ is the spatial domain and $T$ is the time period.
 
 The vector-valued $\mathbf{w}$ can be represented with a 1-form $w = \mathbf{w}^{\flat}$
@@ -158,22 +157,17 @@ $$
 This is needed to get a full solution at a single time instance
 at the end of the simulated time window.
 
-TODO: how to correctly set initial conditions, do we use this synchronized
-time instance thing there too, or can we just set them at different times?
-
-TODO: read up on boundary conditions and test problems
+TODO: is setting initial conditions at $V^0$ and $W^{\frac{1}{2}}$ accurate, or 
+should $W$ be set at time 0 and take a half step forward?
+(also TODO: work out the formula for a half step from the above approximations)
 
 TODO: stability (CFL condition), no need for a thorough analysis yet
 but I should at least understand what it's about
 
 ## Adjoint state method
 
-Moved to [[Adjoint state method]]
-
-## Weak formulations
-
-Moved to [[Weak formulation]], not actually relevant to the thesis
-since these are not used with DEC
+See [[Adjoint state method]] for theory.
+TODO: construct the state and adjoint state matrices for the wave equation
 
 ## Conjugate gradient optimization
 related words:
@@ -196,3 +190,89 @@ Maybe also a separate algebra page to define these words
 ## Differential forms
 
 Moved to [[Differential form]]
+
+## Test problems
+
+### Vibrating membrane
+
+Extremely simple case to test basic parts of the implementation.
+
+- Dirichlet boundary condition $\phi = 0$
+	- models a membrane solidly attached to a frame from all sides
+- no source terms, $f = 0$
+- square domain $\Omega = [0, \pi]^2$
+- initial conditions e.g. $\phi_0 = \sin(ax)\sin(by)$ where $a$ and $b$ are any integer
+  (fulfills boundary condition)
+
+### Square with known solution
+
+Simple case to test accuracy of the method. Pick an arbitrary solution,
+substitute it into the equations and solve for source terms and boundary
+conditions.
+TODO: work through this one
+
+### Circular scatterer
+
+Spatial domain is the area between two circles, inner edge $\Gamma_{sca}$
+models a scattering object and the outer edge $\Gamma_{ext}$ has an absorbing
+boundary condition modelling the wave leaving the domain without
+interacting with the edge.
+
+An incoming plane wave $\phi_{inc}$ moves through the domain in some direction
+expressed as the (angular) _wave vector_ $\vec{\kappa}$ (arrow notation instead
+of bold because Obsidian doesn't know bold kappa) whose magnitude
+is the _wavenumber_ $\kappa$. The wavenumber counts the number of radians
+per unit of distance, relating to the wavelength $\lambda$ by $\kappa = \frac{2\pi}{\lambda}$.
+The angular velocity of the wave is then $\omega = c\kappa = \frac{2\pi c}{\lambda}$.
+The equation for the incoming wave is
+
+$$
+\phi_{inc} = -\cos(\omega t - \vec{\kappa} \cdot \mathbf{x})
+$$
+
+which we place at the boundary of the scatterer using the boundary
+condition $\phi = \phi_{inc}$ on $\gamma_{sca} = \Gamma_{sca} \times [0, T]$.
+On the external boundary $\gamma_{ext} = \Gamma_{ext} \times [0,T]$ 
+we use the first order Engquist-Majda boundary condition
+
+$$
+\frac{1}{c}\frac{\partial\phi}{\partial t} + \mathbf{n} \cdot \nabla\phi = 0
+$$
+
+where $\mathbf{n}$ is the outward-facing unit normal of the boundary.
+
+The boundary conditions in terms of acoustic pressure and velocity are thus
+
+$$
+\begin{aligned}
+v &= \frac{\partial}{\partial t}\phi_{inc} & \text{on } \gamma_{sca} \\
+\mathbf{w} &= \nabla\phi_{inc} & \text{on } \gamma_{sca} \\
+v + c\mathbf{w} \cdot \mathbf{n} &= 0 & \text{on } \gamma_{ext} \\
+\end{aligned}
+$$
+
+where
+
+$$
+\begin{aligned}
+\frac{\partial}{\partial t}\phi_{inc} &= -\omega\sin(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
+\nabla \phi_{inc} &= \vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot \mathbf{x})
+\end{aligned}
+$$
+
+Initial conditions for the time-dependent case can be set to e.g.
+
+$$
+\begin{aligned}
+v^0 &= -\omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
+w^0 &= \vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}) \\
+\end{aligned}
+$$
+
+which fulfill the boundary conditions on the scatterer's surface
+but not on the outer edge. For the time-harmonic case (which we'll
+be solving for with the controllability method) we need
+to fulfill all the boundary conditions all the time. For this
+we need the Mur transition, whereby initial conditions and source
+terms are zero, and source terms are intensified over time
+using an easing function.

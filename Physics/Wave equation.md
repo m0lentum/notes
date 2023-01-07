@@ -1,4 +1,4 @@
-[Wikipedia: Wave equation](https://en.wikipedia.org/wiki/Wave_equation)
+[Wikipedia: Wave equation](https://en.wikipedia.org/wiki/Wave_equation)  
 [Wikipedia: Acoustic wave equation](https://en.wikipedia.org/wiki/Acoustic_wave_equation)
 
 $$
@@ -8,9 +8,8 @@ $$
 The unknown function $u$ here can represent many things,
 typically displacement from an equilibrium state, but also
 acoustic pressure (usually denoted $p$) or velocity potential $\phi$.
-The nonnegative constant $c$ is called the wavenumber
-and it's the inverse of the propagation speed of the wave
-(e.g. speed of sound).
+The nonnegative constant $c$ is the propagation speed of the wave
+(the speed of sound when dealing with acoustics).
 
 Interpretation: Consider a vibrating string where $u$ is displacement
 from the rest state. This displacement accelerates based on curvature.

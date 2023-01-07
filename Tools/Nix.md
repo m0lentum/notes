@@ -1,3 +1,9 @@
+## Cool resources
+
+- [A tour of Nix](https://nixcloud.io/tour/?id=1): interactive language tutorial
+- [Nix package versions](https://lazamar.co.uk/nix-versions/): find which revision of nixpkgs
+  has a specific version of a package
+
 ## Random tricks I felt like writing down
 
 ### Manually patching binaries

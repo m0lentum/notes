@@ -151,3 +151,19 @@ membrane simulation with different initial conditions, wrote an email.
 
 Studying the derivation of the wave equation and its
 velocity potential formulation; wrote [[Wave equation]]
+
+## 2022-12-31 (7h)
+
+Working on the theory of test problems, particularly
+trying to understand the circular scatterer problem.
+
+## 2023-01-01 (3h)
+
+Reading a bit of the source for the Engquist-Majda boundary condition
+and thinking more about the circular scatterer problem.
+
+## 2023-01-07 (6h)
+
+Lumping a few days of quick study into one diary entry.
+Studied the Mur transition, finished up my notes on the circular
+scatterer case (for now), implemented a mesh generator for that case.
