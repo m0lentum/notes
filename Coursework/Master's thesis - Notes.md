@@ -276,3 +276,25 @@ to fulfill all the boundary conditions all the time. For this
 we need the Mur transition, whereby initial conditions and source
 terms are zero, and source terms are intensified over time
 using an easing function.
+
+#### Setting values of w
+
+The value of a 1-form is the line integral of the corresponding vector field
+over a mesh edge. In this case, for an element $w$ of $W$, the incoming wave
+can be evaluated as
+
+$$
+\begin{aligned}
+w &= \int_0^1 \vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot (p_1 + q\mathbf{l})) \cdot \mathbf{l} \,dq \\
+&= \int_0^1 (\vec{\kappa} \cdot \mathbf{l}) \sin(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l})q) \,dq \\
+&= \Big[-\cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l})q) \Big]_{q=0}^{q=1} \\
+&= -\cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l}))
+ + \cos(\omega t - (\vec{\kappa} \cdot p_1)) \\
+\end{aligned}
+$$
+
+where $\mathbf{l} = p_2 - p_1$ is the direction vector of the edge,
+$p_1$ and $p_2$ are the endpoints of the edge, and $q \in [0, 1]$ is the parameter in the parametric
+expression of the line segment forming the edge $p_1 + q\mathbf{l}$.
+
+For the initial conditions use the same formula but set the $\omega t$ term to zero.

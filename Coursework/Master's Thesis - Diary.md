@@ -162,8 +162,24 @@ trying to understand the circular scatterer problem.
 Reading a bit of the source for the Engquist-Majda boundary condition
 and thinking more about the circular scatterer problem.
 
-## 2023-01-07 (6h)
+## 2023-01-06 (6h)
 
-Lumping a few days of quick study into one diary entry.
 Studied the Mur transition, finished up my notes on the circular
 scatterer case (for now), implemented a mesh generator for that case.
+
+## 2023-01-07 (4h)
+
+Begun implementing the circular scatterer case. Setting initial
+values for the vector-valued velocity variable is a little tricky
+(requires integration), going to take some time.
+
+## 2023-01-08 (2h)
+
+Sketched a full implementation of the circular scatterer
+implementation with TODOs where integration for velocity values
+and the absorbing boundary conditions would go.
+
+## 2023-01-09 (3h)
+
+Worked out the line integral to compute values of $W$ from the
+incoming wave and implemented the boundary condition on the inner edge.
