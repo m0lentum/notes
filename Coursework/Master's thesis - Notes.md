@@ -204,13 +204,6 @@ Extremely simple case to test basic parts of the implementation.
 - initial conditions e.g. $\phi_0 = \sin(ax)\sin(by)$ where $a$ and $b$ are any integer
   (fulfills boundary condition)
 
-### Square with known solution
-
-Simple case to test accuracy of the method. Pick an arbitrary solution,
-substitute it into the equations and solve for source terms and boundary
-conditions.
-TODO: work through this one
-
 ### Circular scatterer
 
 Spatial domain is the area between two circles, inner edge $\Gamma_{sca}$
@@ -255,8 +248,8 @@ where
 
 $$
 \begin{aligned}
-\frac{\partial}{\partial t}\phi_{inc} &= -\omega\sin(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
-\nabla \phi_{inc} &= \vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot \mathbf{x})
+\frac{\partial}{\partial t}\phi_{inc} &= \omega\sin(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
+\nabla \phi_{inc} &= -\vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot \mathbf{x})
 \end{aligned}
 $$
 
@@ -264,8 +257,8 @@ Initial conditions for the time-dependent case can be set to e.g.
 
 $$
 \begin{aligned}
-v^0 &= -\omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
-w^0 &= \vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}) \\
+v^0 &= \omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
+w^0 &= -\vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}) \\
 \end{aligned}
 $$
 
@@ -293,8 +286,48 @@ w &= \int_0^1 \vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot (p_1 + q\mathbf{l}
 \end{aligned}
 $$
 
+TODO: what's the correct sign on this? I think it should be the opposite
+but this looks correct in simulations
+
 where $\mathbf{l} = p_2 - p_1$ is the direction vector of the edge,
 $p_1$ and $p_2$ are the endpoints of the edge, and $q \in [0, 1]$ is the parameter in the parametric
 expression of the line segment forming the edge $p_1 + q\mathbf{l}$.
 
 For the initial conditions use the same formula but set the $\omega t$ term to zero.
+
+### Square with known solution
+
+Simple case to test accuracy of the method. Pick an arbitrary solution,
+substitute it into the equations and solve for boundary conditions
+and possible source terms.
+
+Picking as the analytic solution the plane wave (as in the circular scatterer case)
+
+$$
+\phi = -\cos(\omega t - \vec{\kappa} \cdot \mathbf{x})
+$$
+
+for which
+
+$$
+\begin{aligned}
+\frac{\partial \phi}{\partial t} &= \omega \sin(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
+\frac{\partial^2 \phi}{\partial t^2} &= \omega^2 \cos(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
+\nabla \phi &= -\vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
+\nabla \cdot \nabla \phi &= (-\vec{\kappa} \cdot -\vec{\kappa}) \cos(\omega t - \vec{\kappa} \cdot \mathbf{x}) \\
+	&= \kappa^2 \cos(\omega t - \vec{\kappa} \cdot \mathbf{x})
+\end{aligned}
+$$
+Substituting these into the state equation gives
+
+$$
+\frac{\partial^2 \phi}{\partial t^2} - c^2\nabla^2\phi
+= \omega^2 \cos(\omega t - \vec{\kappa} \cdot \mathbf{x})
+- c^2\kappa^2 \cos(\omega t - \vec{\kappa} \cdot \mathbf{x})
+$$
+
+which equals zero assuming $\omega = c\kappa$.
+
+We set initial conditions to $v = \frac{\partial \phi}{\partial t}|_{t=0}$ and $w = \nabla \phi |_{t=0}$ and boundary conditions
+in $\gamma_{ext} \times [0, T]$ to $v = \frac{\partial \phi}{\partial t}$ and $w = \nabla \phi$, solve the state equation using DEC,
+and examine the error in the interior of the computation mesh.
