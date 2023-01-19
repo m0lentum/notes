@@ -183,3 +183,31 @@ and the absorbing boundary conditions would go.
 
 Worked out the line integral to compute values of $W$ from the
 incoming wave and implemented the boundary condition on the inner edge.
+
+## 2023-01-13 (2h)
+
+Looking into the absorbing boundary condition, having trouble
+understanding how the dot product works in the DEC.
+
+## 2023-01-14 (3h)
+
+Spent some time getting confused by the dot product in the
+absorbing boundary condition, wrote an email about it,
+and then read some papers for a while.
+
+## 2023-01-15 (4h)
+
+Browsing some differential geometry textbooks.
+
+## 2023-01-16 (2h)
+
+Reading a bit more and thinking about the accuracy test case with known solution.
+
+## 2023-01-17 (4h)
+
+Implemented the simulation part of the accuracy test with known solution,
+now just need to do the measuring part.
+
+## 2023-01-19 (3h)
+
+Added mesh refinement and error measurement to the accuracy test.

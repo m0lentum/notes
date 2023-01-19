@@ -295,6 +295,13 @@ expression of the line segment forming the edge $p_1 + q\mathbf{l}$.
 
 For the initial conditions use the same formula but set the $\omega t$ term to zero.
 
+#### DEC representation of the boundary condition
+
+The absorbing boundary condition has the dot product $\mathbf{w} \cdot \mathbf{n}$
+which isn't obvious how to represent in DEC.
+I think if we compute $\mathbf{w}$ on the dual mesh we get this "automatically"?
+TODO: Need to chat about this with advisors.
+
 ### Square with known solution
 
 Simple case to test accuracy of the method. Pick an arbitrary solution,
