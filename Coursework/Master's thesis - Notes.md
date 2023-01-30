@@ -46,16 +46,16 @@ $$
 \partial_t w - d_0 v = 0.
 $$
 
-Applying one more Hodge star to the first equation yields
+Instead of velocity, we solve for the _flux_ $q = \star w$
+because this allows us to easily represent flux-based boundary conditions.
+Substituting $q$ into the equations and applying one more Hodge star to both yields
 
 $$
 \begin{cases}
-\partial_t v + c^2 \delta_1 w = f \\
-\partial_t w - d_0v = 0 \\
+\partial_t v + c^2 \star d_1 q = f \\
+\partial_t q - \star d_0 v = 0 \\
 \end{cases}
 $$
-
-where $\delta_1$ is the codifferential $\delta_1 = \star d_1 \star$ that takes 1-forms to 0-forms.
 
 ## Discretization
 
@@ -81,18 +81,16 @@ multiplication with the _incidence matrix_ $d_k$ which encodes
 the boundary $k$-cells of each $(k+1)$-cell and their orientation.
 The same relationships on the dual mesh are represented by
 the transpose $d_k^T$.
-(TODO: work through the math,
-does the transpose automatically have the correct orientations?)
 
-Our unknowns in the continuous equations are the 1-form $w$ and 0-form $v$. 
-We can approximate these with a 1-cochain $W$ and 0-cochain $V$.
+Our unknowns in the continuous equations are the 1-form $q$ and 0-form $v$. 
+We can approximate these with a primal 1-cochain $Q$ and dual 0-cochain $V$.
 Spatial discretization is done simply by replacing all the unknowns
 and spatial operators with discrete equivalents:
 
 $$
 \begin{cases}
-\partial_t V + c^2 \star_0^{-1} d_1^T \star_1 W = F \\
-\partial_t W - d_0V = 0 \\
+\partial_t V + c^2 \star_2 d_1 Q = F \\
+\partial_t Q - \star_1^{-1} d_1^T V = 0 \\
 \end{cases}
 $$
 
@@ -113,7 +111,7 @@ we use the approximations
 $$
 \begin{aligned}
 \partial_t V &= \frac{V^{n+1} - V^n}{\Delta t} \\
-\partial_t W &= \frac{W^{n+\frac{3}{2}} - W^{n+\frac{1}{2}}}{\Delta t} \\
+\partial_t Q &= \frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\Delta t} \\
 \end{aligned}
 $$
 
@@ -127,9 +125,9 @@ This gives the equations
 
 $$
 \begin{aligned}
-\frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_0^{-1} d_1^T \star_1 W^{n+\frac{1}{2}} &= F \\
-\frac{W^{n+\frac{3}{2}} - W^{n+\frac{1}{2}}}{\Delta t}
-	- d_0V^{n+1} &= 0 \\
+\frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_2 d_1 Q^{n+\frac{1}{2}} &= F \\
+\frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\Delta t}
+	- \star_1^{-1} d_1^T V^{n+1} &= 0 \\
 \end{aligned}
 $$
 
@@ -137,10 +135,10 @@ Multiplying by $\Delta t$ and moving terms around gives the time stepping formul
 
 $$
 \begin{aligned}
-V^{n+1} &= V^n - \Delta t c^2 \star_0^{-1} d_1^T
-	\star_1 W^{n+\frac{1}{2}} - \Delta t F \\
-W^{n+\frac{3}{2}}
-	&= W^{\frac{1}{2}} + \Delta t d_0V^{n+1} \\
+V^{n+1} &= V^n - \Delta t c^2 \star_2 d_1
+	Q^{n+\frac{1}{2}} - \Delta t F \\
+Q^{n+\frac{3}{2}}
+	&= Q^{\frac{1}{2}} + \Delta t \star_1^{-1} d_0^T V^{n+1} \\
 \end{aligned}
 $$
 
@@ -148,8 +146,8 @@ To get $V^{n+\frac{1}{2}}$ and $W^n$ we can use the linear approximations
 
 $$
 \begin{aligned}
-V^{n+\frac{1}{2}} &= \frac{v^n + v^{n+1}}{2} \\
-W^{n} &= \frac{w^{n-\frac{1}{2}} + w^{n+\frac{1}{2}}}{2} \\
+V^{n+\frac{1}{2}} &= \frac{V^n + V^{n+1}}{2} \\
+Q^{n} &= \frac{Q^{n-\frac{1}{2}} + Q^{n+\frac{1}{2}}}{2} \\
 \end{aligned}
 $$
 
@@ -157,7 +155,7 @@ $$
 This is needed to get a full solution at a single time instance
 at the end of the simulated time window.
 
-TODO: is setting initial conditions at $V^0$ and $W^{\frac{1}{2}}$ accurate, or 
+TODO: is setting initial conditions at $V^0$ and $Q^{\frac{1}{2}}$ accurate, or 
 should $W$ be set at time 0 and take a half step forward?
 (also TODO: work out the formula for a half step from the above approximations)
 
@@ -233,14 +231,16 @@ $$
 $$
 
 where $\mathbf{n}$ is the outward-facing unit normal of the boundary.
+The dot product with the boundary normal is equivalent to the flux,
+thus the expression reduces to just $\mathbf{q}$.
 
 The boundary conditions in terms of acoustic pressure and velocity are thus
 
 $$
 \begin{aligned}
 v &= \frac{\partial}{\partial t}\phi_{inc} & \text{on } \gamma_{sca} \\
-\mathbf{w} &= \nabla\phi_{inc} & \text{on } \gamma_{sca} \\
-v + c\mathbf{w} \cdot \mathbf{n} &= 0 & \text{on } \gamma_{ext} \\
+\mathbf{q} &= \star(\nabla\phi_{inc})^{\flat} & \text{on } \gamma_{sca} \\
+v + c\mathbf{q} &= 0 & \text{on } \gamma_{ext} \\
 \end{aligned}
 $$
 
@@ -258,7 +258,7 @@ Initial conditions for the time-dependent case can be set to e.g.
 $$
 \begin{aligned}
 v^0 &= \omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
-w^0 &= -\vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}) \\
+w^0 &= \star(-\vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}))^{\flat} \\
 \end{aligned}
 $$
 
@@ -270,28 +270,38 @@ we need the Mur transition, whereby initial conditions and source
 terms are zero, and source terms are intensified over time
 using an easing function.
 
-#### Setting values of w
+#### Setting values of q
 
-The value of a 1-form is the line integral of the corresponding vector field
-over a mesh edge. In this case, for an element $w$ of $W$, the incoming wave
-can be evaluated as
+The value of a discrete 1-form is its integral
+over a mesh edge. In this case, for an element $q$ of $Q$, the flux of the
+incoming wave can be evaluated by integrating the velocity in the direction
+of the normal,
 
 $$
 \begin{aligned}
-w &= \int_0^1 \vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot (p_1 + q\mathbf{l})) \cdot \mathbf{l} \,dq \\
-&= \int_0^1 (\vec{\kappa} \cdot \mathbf{l}) \sin(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l})q) \,dq \\
-&= \Big[-\cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l})q) \Big]_{q=0}^{q=1} \\
-&= -\cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l}))
- + \cos(\omega t - (\vec{\kappa} \cdot p_1)) \\
+q &= \int_0^l \vec{\kappa} \sin(\omega t 
+	- \vec{\kappa} \cdot (p_1 + u\mathbf{\hat{l}}))
+	 \cdot \hat{\mathbf{n}} \,du \\
+&= \int_0^l (\vec{\kappa} \cdot \mathbf{\hat{n}})
+	\sin(\omega t - (\vec{\kappa} \cdot p_1)
+	 - (\vec{\kappa} \cdot \mathbf{\hat{l}})u) \,du \\
+&\text{if $\vec{\kappa} \cdot \mathbf{\hat{l}} \neq 0$:} \\
+&= \frac{\vec{\kappa} \cdot \mathbf{\hat{n}}}{\vec{\kappa} \cdot \mathbf{\hat{l}}}
+	\Big[\cos(\omega t - (\vec{\kappa} \cdot p_1)
+	- (\vec{\kappa} \cdot \mathbf{\hat{l}})u) \Big]_{u=0}^{u=l} \\
+&= \frac{\vec{\kappa} \cdot \mathbf{\hat{n}}}{\vec{\kappa} \cdot \mathbf{\hat{l}}}
+	\Big(\cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l}))
+	- \cos(\omega t - (\vec{\kappa} \cdot p_1))\Big) \\
+&\text{otherwise:} \\
+&= l(\vec{\kappa} \cdot \mathbf{\hat{n}})
+	\sin(\omega t - (\vec{\kappa} \cdot p_1))
 \end{aligned}
 $$
 
-TODO: what's the correct sign on this? I think it should be the opposite
-but this looks correct in simulations
-
 where $\mathbf{l} = p_2 - p_1$ is the direction vector of the edge,
-$p_1$ and $p_2$ are the endpoints of the edge, and $q \in [0, 1]$ is the parameter in the parametric
-expression of the line segment forming the edge $p_1 + q\mathbf{l}$.
+$l = ||\mathbf{l}||$, $\mathbf{\hat{l}} = l^{-1} \mathbf{l}$,
+$p_1$ and $p_2$ are the endpoints of the edge, and $u \in [0, l]$ is the parameter in the parametric
+expression of the line segment forming the edge $p_1 + u\mathbf{\hat{l}}$.
 
 For the initial conditions use the same formula but set the $\omega t$ term to zero.
 

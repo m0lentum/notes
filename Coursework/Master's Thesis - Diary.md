@@ -211,3 +211,35 @@ now just need to do the measuring part.
 ## 2023-01-19 (3h)
 
 Added mesh refinement and error measurement to the accuracy test.
+
+## 2023-01-20 (3h)
+
+Reading a paper that has an example of a boundary condition involving the normal
+direction. Didn't quite understand it yet, but the basic idea is to use fluxes across
+edges instead of along edges.
+
+## 2023-01-22 (6h)
+
+Read more about the flux idea, sent some emails, found out I need to do
+an assignment for the seminar by tomorrow, frantically started doing that.
+
+## 2023-01-25 (3h)
+
+Reading some more about fluxes, flat operators and such.
+
+## 2023-01-26 (2h)
+
+Reading the [SIGGRAPH 2013 course notes on DEC](https://doi.org/10.1145/2504435.2504442).
+Extremely good stuff, probably worth reading through the whole thing.
+
+## 2023-01-28 (2.5h)
+
+Watched the first couple hours of the lectures from the aforementioned
+SIGGRAPH course and read some more of the notes.
+
+## 2023-01-29 (6h)
+
+Finished the SIGGRAPH course lectures and started working
+on formulating the wave equations using fluxes.
+Some confusion regarding the relationship between
+boundary conditions and the dual mesh.
