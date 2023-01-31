@@ -243,3 +243,14 @@ Finished the SIGGRAPH course lectures and started working
 on formulating the wave equations using fluxes.
 Some confusion regarding the relationship between
 boundary conditions and the dual mesh.
+
+## 2023-01-30 (5h)
+
+Refactoring code to support visualizing values other than 0-forms,
+trying to implement the accuracy test case using fluxes,
+having trouble getting it right.
+
+## 2023-01-31 (2h)
+
+Trying to narrow down where the problem is with the flux implementation,
+found some errors in my math but it's still not working.

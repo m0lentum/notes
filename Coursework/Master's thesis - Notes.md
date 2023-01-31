@@ -28,10 +28,9 @@ $\Omega$ is the spatial domain and $T$ is the time period.
 The vector-valued $\mathbf{w}$ can be represented with a 1-form $w = \mathbf{w}^{\flat}$
 and the scalar-valued $v$ can be represented with a 0-form $v$.
 The gradient of a scalar field is the exterior derivative of a 0-form $d_0$.
-The divergence of a 1-form in 2D is the exterior derivative of its
-clockwise perpendicular form, obtained with a Hodge star and a negation
-(negation because Hodge star rotates counterclockwise),
-thus $\nabla \cdot = - d_1 \star$.
+The divergence of a 1-form in 2D is the exterior derivative 
+of its clockwise perpendicular form, $\nabla \cdot = -d_1 \star$
+(minus because the Hodge star rotates counterclockwise).
 This is divergence expressed as a 2-form. To make the dimension of
 forms match in the first equation, we need to add some more Hodge stars.
 The first equation ends up as
@@ -48,7 +47,8 @@ $$
 
 Instead of velocity, we solve for the _flux_ $q = \star w$
 because this allows us to easily represent flux-based boundary conditions.
-Substituting $q$ into the equations and applying one more Hodge star to both yields
+Applying one more Hodge star to both equations
+and substituting $q$ yields
 
 $$
 \begin{cases}
@@ -90,9 +90,13 @@ and spatial operators with discrete equivalents:
 $$
 \begin{cases}
 \partial_t V + c^2 \star_2 d_1 Q = F \\
-\partial_t Q - \star_1^{-1} d_1^T V = 0 \\
+\partial_t Q + \star_1^{-1} d_1^T V = 0 \\
 \end{cases}
 $$
+
+Note that the star in the second equation is replaced with
+$\star_1^{K'} = -(\star_1^K)^{-1}$, since we want to express the equations using only
+the star operators for $K$ and their inverses.
 
 (not sure what happens when time derivative and star combine.
 What is the time derivative of a differential form in the first place?
@@ -127,7 +131,7 @@ $$
 \begin{aligned}
 \frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_2 d_1 Q^{n+\frac{1}{2}} &= F \\
 \frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\Delta t}
-	- \star_1^{-1} d_1^T V^{n+1} &= 0 \\
+	+ \star_1^{-1} d_1^T V^{n+1} &= 0 \\
 \end{aligned}
 $$
 
@@ -136,9 +140,9 @@ Multiplying by $\Delta t$ and moving terms around gives the time stepping formul
 $$
 \begin{aligned}
 V^{n+1} &= V^n - \Delta t c^2 \star_2 d_1
-	Q^{n+\frac{1}{2}} - \Delta t F \\
+	Q^{n+\frac{1}{2}} + \Delta t F \\
 Q^{n+\frac{3}{2}}
-	&= Q^{\frac{1}{2}} + \Delta t \star_1^{-1} d_0^T V^{n+1} \\
+	&= Q^{\frac{1}{2}} - \Delta t \star_1^{-1} d_1^T V^{n+1} \\
 \end{aligned}
 $$
 
@@ -156,7 +160,7 @@ This is needed to get a full solution at a single time instance
 at the end of the simulated time window.
 
 TODO: is setting initial conditions at $V^0$ and $Q^{\frac{1}{2}}$ accurate, or 
-should $W$ be set at time 0 and take a half step forward?
+should $Q$ be set at time 0 and take a half step forward?
 (also TODO: work out the formula for a half step from the above approximations)
 
 TODO: stability (CFL condition), no need for a thorough analysis yet
@@ -258,7 +262,7 @@ Initial conditions for the time-dependent case can be set to e.g.
 $$
 \begin{aligned}
 v^0 &= \omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
-w^0 &= \star(-\vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}))^{\flat} \\
+q^0 &= \star(-\vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}))^{\flat} \\
 \end{aligned}
 $$
 
@@ -279,21 +283,21 @@ of the normal,
 
 $$
 \begin{aligned}
-q &= \int_0^l \vec{\kappa} \sin(\omega t 
+q &= \int_0^l -\vec{\kappa} \sin(\omega t 
 	- \vec{\kappa} \cdot (p_1 + u\mathbf{\hat{l}}))
 	 \cdot \hat{\mathbf{n}} \,du \\
-&= \int_0^l (\vec{\kappa} \cdot \mathbf{\hat{n}})
+&= -\int_0^l (\vec{\kappa} \cdot \mathbf{\hat{n}})
 	\sin(\omega t - (\vec{\kappa} \cdot p_1)
 	 - (\vec{\kappa} \cdot \mathbf{\hat{l}})u) \,du \\
 &\text{if $\vec{\kappa} \cdot \mathbf{\hat{l}} \neq 0$:} \\
-&= \frac{\vec{\kappa} \cdot \mathbf{\hat{n}}}{\vec{\kappa} \cdot \mathbf{\hat{l}}}
+&= -\frac{\vec{\kappa} \cdot \mathbf{\hat{n}}}{\vec{\kappa} \cdot \mathbf{\hat{l}}}
 	\Big[\cos(\omega t - (\vec{\kappa} \cdot p_1)
 	- (\vec{\kappa} \cdot \mathbf{\hat{l}})u) \Big]_{u=0}^{u=l} \\
 &= \frac{\vec{\kappa} \cdot \mathbf{\hat{n}}}{\vec{\kappa} \cdot \mathbf{\hat{l}}}
-	\Big(\cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l}))
-	- \cos(\omega t - (\vec{\kappa} \cdot p_1))\Big) \\
+	\Big(\cos(\omega t - (\vec{\kappa} \cdot p_1))
+	 - \cos(\omega t - (\vec{\kappa} \cdot p_1) - (\vec{\kappa} \cdot \mathbf{l}))\Big) \\
 &\text{otherwise:} \\
-&= l(\vec{\kappa} \cdot \mathbf{\hat{n}})
+&= -l(\vec{\kappa} \cdot \mathbf{\hat{n}})
 	\sin(\omega t - (\vec{\kappa} \cdot p_1))
 \end{aligned}
 $$
@@ -304,13 +308,6 @@ $p_1$ and $p_2$ are the endpoints of the edge, and $u \in [0, l]$ is the paramet
 expression of the line segment forming the edge $p_1 + u\mathbf{\hat{l}}$.
 
 For the initial conditions use the same formula but set the $\omega t$ term to zero.
-
-#### DEC representation of the boundary condition
-
-The absorbing boundary condition has the dot product $\mathbf{w} \cdot \mathbf{n}$
-which isn't obvious how to represent in DEC.
-I think if we compute $\mathbf{w}$ on the dual mesh we get this "automatically"?
-TODO: Need to chat about this with advisors.
 
 ### Square with known solution
 
