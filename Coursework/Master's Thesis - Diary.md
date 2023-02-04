@@ -254,3 +254,20 @@ having trouble getting it right.
 
 Trying to narrow down where the problem is with the flux implementation,
 found some errors in my math but it's still not working.
+
+## 2023-02-01 (2h)
+
+Reading about Whitney forms for interpolating 1-forms,
+being confused a lot, but I think I kind of get it now.
+
+## 2023-02-02 (6.5h)
+
+Trying to wrap my head around [[Whitney form]] still, mostly
+figured them out now but still haven't entirely grokked
+what the gradient of a [[Barycentric coordinates]] is.
+
+## 2023-02-03 (5h)
+
+Finished my notes on Whitney forms, then realized PyDEC
+implements them so I didn't even need those. Oh well.
+Made a velocity visualizer and got back to debugging.
