@@ -29,14 +29,13 @@ The vector-valued $\mathbf{w}$ can be represented with a 1-form $w = \mathbf{w}^
 and the scalar-valued $v$ can be represented with a 0-form $v$.
 The gradient of a scalar field is the exterior derivative of a 0-form $d_0$.
 The divergence of a 1-form in 2D is the exterior derivative 
-of its clockwise perpendicular form, $\nabla \cdot = -d_1 \star$
-(minus because the Hodge star rotates counterclockwise).
+of its counterclockwise perpendicular form, $\nabla \cdot = d_1 \star$.
 This is divergence expressed as a 2-form. To make the dimension of
 forms match in the first equation, we need to add some more Hodge stars.
 The first equation ends up as
 
 $$
-\star \partial_t v + c^2 d_1 (\star w) = \star f
+\star \partial_t v - c^2 d_1 (\star w) = \star f
 $$
 
 and the second equation
@@ -52,7 +51,7 @@ and substituting $q$ yields
 
 $$
 \begin{cases}
-\partial_t v + c^2 \star d_1 q = f \\
+\partial_t v - c^2 \star d_1 q = f \\
 \partial_t q - \star d_0 v = 0 \\
 \end{cases}
 $$
@@ -89,22 +88,18 @@ and spatial operators with discrete equivalents:
 
 $$
 \begin{cases}
-\partial_t V + c^2 \star_2 d_1 Q = F \\
-\partial_t Q + \star_1^{-1} d_1^T V = 0 \\
+\partial_t V - c^2 \star_2 d_1 Q = F \\
+\partial_t Q - \star_1^{-1} d_1^T V = 0 \\
 \end{cases}
 $$
 
-Note that the star in the second equation is replaced with
-$\star_1^{K'} = -(\star_1^K)^{-1}$, since we want to express the equations using only
-the star operators for $K$ and their inverses.
+Here $\star_1^{-1}$ denotes the Hodge star taking values from the dual mesh
+to the primal one.
 
 (not sure what happens when time derivative and star combine.
 What is the time derivative of a differential form in the first place?
 I think I don't need to know how the continuous case works for time
 discretization so skipping this consideration for now)
-
-TODO: some of this is general info
-that should go in [[Discrete exterior calculus]]
 
 ### Time
 
@@ -129,9 +124,9 @@ This gives the equations
 
 $$
 \begin{aligned}
-\frac{V^{n+1} - V^n}{\Delta t} + c^2 \star_2 d_1 Q^{n+\frac{1}{2}} &= F \\
+\frac{V^{n+1} - V^n}{\Delta t} - c^2 \star_2 d_1 Q^{n+\frac{1}{2}} &= F \\
 \frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\Delta t}
-	+ \star_1^{-1} d_1^T V^{n+1} &= 0 \\
+	- \star_1^{-1} d_1^T V^{n+1} &= 0 \\
 \end{aligned}
 $$
 
@@ -139,10 +134,10 @@ Multiplying by $\Delta t$ and moving terms around gives the time stepping formul
 
 $$
 \begin{aligned}
-V^{n+1} &= V^n - \Delta t c^2 \star_2 d_1
+V^{n+1} &= V^n + \Delta t c^2 \star_2 d_1
 	Q^{n+\frac{1}{2}} + \Delta t F \\
 Q^{n+\frac{3}{2}}
-	&= Q^{\frac{1}{2}} - \Delta t \star_1^{-1} d_1^T V^{n+1} \\
+	&= Q^{\frac{1}{2}} + \Delta t \star_1^{-1} d_1^T V^{n+1} \\
 \end{aligned}
 $$
 

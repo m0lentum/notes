@@ -271,3 +271,16 @@ what the gradient of a [[Barycentric coordinates]] is.
 Finished my notes on Whitney forms, then realized PyDEC
 implements them so I didn't even need those. Oh well.
 Made a velocity visualizer and got back to debugging.
+
+## 2023-02-07 (4.5h)
+
+Intense debugging, found problems with my integration
+as well as time stepping and got the accuracy test to work!
+TODO: the signs on the matrices don't match my math, why?
+
+## 2023-02-08 (2h)
+
+Worked out why the signs on my math didn't match the signs
+in the code. Two different mistakes, one on each equation -
+had divergence backwards and an extra minus on the inverse Hodge star
+(which already includes a minus sign inside of it).
