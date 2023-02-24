@@ -284,3 +284,25 @@ Worked out why the signs on my math didn't match the signs
 in the code. Two different mistakes, one on each equation -
 had divergence backwards and an extra minus on the inverse Hodge star
 (which already includes a minus sign inside of it).
+
+## 2023-02-11 (5h)
+
+Implemented the circle scatterer case with the flux representation
+and added the absorbing boundary condition.
+
+## 2023-02-18 (6h)
+
+Writing a research plan for the seminar and gathering references.
+(actually done in many small sessions throughout the week)
+
+## 2023-02-19 (3h)
+
+Looking through sources and talking about them in the research plan.
+
+## 2023-02-23 (4h)
+
+Some emailing, reading method sources, writing more research plan.
+
+## 2023-02-04 (4h)
+
+Finished the research plan.

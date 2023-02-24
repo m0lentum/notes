@@ -231,7 +231,7 @@ $$
 
 where $\mathbf{n}$ is the outward-facing unit normal of the boundary.
 The dot product with the boundary normal is equivalent to the flux,
-thus the expression reduces to just $\mathbf{q}$.
+thus the expression reduces to just $\mathbf{q}$ on the boundary curve.
 
 The boundary conditions in terms of acoustic pressure and velocity are thus
 
@@ -239,7 +239,7 @@ $$
 \begin{aligned}
 v &= \frac{\partial}{\partial t}\phi_{inc} & \text{on } \gamma_{sca} \\
 \mathbf{q} &= \star(\nabla\phi_{inc})^{\flat} & \text{on } \gamma_{sca} \\
-v + c\mathbf{q} &= 0 & \text{on } \gamma_{ext} \\
+\frac{1}{c}v + \mathbf{q} &= 0 & \text{on } \gamma_{ext} \\
 \end{aligned}
 $$
 
@@ -251,6 +251,21 @@ $$
 \nabla \phi_{inc} &= -\vec{\kappa} \sin(\omega t - \vec{\kappa} \cdot \mathbf{x})
 \end{aligned}
 $$
+
+Because $v$ is defined on dual mesh vertices and not on any boundary elements directly,
+we need to approximate it on the boundary to apply the absorbing boundary condition.
+A simple approximation is obtained by assuming $v$ to be constant
+within each primal mesh triangle, and therefore constant
+everywhere on the nearest boundary edge.
+The boundary condition can then be applied for edge $\mathcal{E}_i$ as
+
+$$
+\mathbf{q}_i = -\frac{1}{c} \int_{\mathcal{E}_i} v_{\mathcal{E}_i} \,dl
+= -\frac{1}{c} |\mathcal{E}_i|v_{\mathcal{E}_i}
+$$
+
+where $|\mathcal{E}_i|$ is the length of the edge and $v_{\mathcal{E}_i}$ is the value of $v$
+on the nearest dual vertex to the edge.
 
 Initial conditions for the time-dependent case can be set to e.g.
 

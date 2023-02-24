@@ -68,10 +68,12 @@ Writing down release dates of upcoming albums so I remember to check them out.
 
 ## 2023
 
-- [ ] 02-10 Delain
+- [x] 02-10 Delain
 - [ ] 02-22 Lovebites
 - [ ] 02-24 Insomnium
 - [ ] 03-10 Periphery
 - [ ] 03-10 Frozen Crown
 - [ ] 03-24 Ne Obliviscaris
 - [ ] 04-21 Atavistia
+- [ ] 04-28 Ignea
+- [ ] 05-05 Countless Skies
