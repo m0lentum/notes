@@ -28,7 +28,7 @@ $\Omega$ is the spatial domain and $T$ is the time period.
 The vector-valued $\mathbf{w}$ can be represented with a 1-form $w = \mathbf{w}^{\flat}$
 and the scalar-valued $v$ can be represented with a 0-form $v$.
 The gradient of a scalar field is the exterior derivative of a 0-form $d_0$.
-The divergence of a 1-form in 2D is the exterior derivative 
+The divergence of a 1-form in 2D is the exterior derivative
 of its counterclockwise perpendicular form, $\nabla \cdot = d_1 \star$.
 This is divergence expressed as a 2-form. To make the dimension of
 forms match in the first equation, we need to add some more Hodge stars.
@@ -81,7 +81,7 @@ the boundary $k$-cells of each $(k+1)$-cell and their orientation.
 The same relationships on the dual mesh are represented by
 the transpose $d_k^T$.
 
-Our unknowns in the continuous equations are the 1-form $q$ and 0-form $v$. 
+Our unknowns in the continuous equations are the 1-form $q$ and 0-form $v$.
 We can approximate these with a primal 1-cochain $Q$ and dual 0-cochain $V$.
 Spatial discretization is done simply by replacing all the unknowns
 and spatial operators with discrete equivalents:
@@ -137,7 +137,7 @@ $$
 V^{n+1} &= V^n + \Delta t c^2 \star_2 d_1
 	Q^{n+\frac{1}{2}} + \Delta t F \\
 Q^{n+\frac{3}{2}}
-	&= Q^{\frac{1}{2}} + \Delta t \star_1^{-1} d_1^T V^{n+1} \\
+	&= Q^{n+\frac{1}{2}} + \Delta t \star_1^{-1} d_1^T V^{n+1} \\
 \end{aligned}
 $$
 
@@ -154,19 +154,136 @@ $$
 This is needed to get a full solution at a single time instance
 at the end of the simulated time window.
 
-TODO: is setting initial conditions at $V^0$ and $Q^{\frac{1}{2}}$ accurate, or 
+TODO: is setting initial conditions at $V^0$ and $Q^{\frac{1}{2}}$ accurate, or
 should $Q$ be set at time 0 and take a half step forward?
 (also TODO: work out the formula for a half step from the above approximations)
 
 TODO: stability (CFL condition), no need for a thorough analysis yet
 but I should at least understand what it's about
 
-## Adjoint state method
+## Exact controllability
 
-See [[Adjoint state method]] for theory.
-TODO: construct the state and adjoint state matrices for the wave equation
+The purpose of the exact controllability method is
+to guide the system into a time-periodic state.
+This is done by solving an optimization problem,
+but to define it we need some more information first.
+
+### State equation
+
+We start by formulating the time-stepping process until time $T$
+(the state equation) as a matrix equation.
+From this we'll be able to obtain the adjoint equation by inspection.
+For a single timestep we have
+
+$$
+\begin{bmatrix}
+I  & \Delta t c^2 \star_2 d_1 & -I \\
+& I & \Delta t \star_1^{-1} d_1^T & -I
+\end{bmatrix}
+\begin{bmatrix}
+V^n \\ Q^{n+\frac{1}{2}} \\ V^{n+1} \\ Q^{n+\frac{3}{2}}
+\end{bmatrix}
++
+\begin{bmatrix}
+F^n \\ 0 \\ F^{n+1} \\ 0
+\end{bmatrix}
+= 0
+$$
+
+(TODO: should there be a source term for $Q$ too?)
+
+Denoting $U^n = (V^n, Q^{n+\frac{1}{2}})^T$, $\mathcal{F}^n = (F^n, 0)^T$
+and including the initial conditions $U^0 = \mathbf{e}$ we get
+
+$$
+S(\mathbf{e}, U(\mathbf{e})) =
+\begin{bmatrix}
+I \\
+\mathcal{C} & \mathcal{D} \\
+& \mathcal{C} & \mathcal{D} \\
+& & \ddots & \ddots \\
+& & & \mathcal{C} & \mathcal{D} \\
+& & & & \mathcal{C} & \mathcal{D} \\
+\end{bmatrix}
+\begin{bmatrix}
+U^0 \\ U^1 \\ \vdots \\ U^{N-1} \\ U^N
+\end{bmatrix}
+- \begin{bmatrix}
+\mathbf{e} \\ 0 \\ \vdots \\ 0 \\ 0
+\end{bmatrix}
++ \begin{bmatrix}
+0 \\ \mathcal{F}^0 \\ \vdots \\ \mathcal{F}^{N-2} \\ \mathcal{F}^{N-1}
+\end{bmatrix}
+= 0
+$$
+
+where
+
+$$
+\begin{aligned}
+\mathcal{C} &= \begin{bmatrix}
+I & \Delta t c^2 \star_2 d_1 \\
+0 & I
+\end{bmatrix} \\
+\mathcal{D} &= \begin{bmatrix}
+-I & 0 \\
+\Delta t \star_1^{-1} d_1^T & -I \\
+\end{bmatrix}
+\end{aligned}
+$$
+
+### Cost function
+
+The objective is to find initial conditions $\mathbf{e}$
+where the solution at time $T$ is equal to $\mathbf{e}$.
+We can accomplish this by formulating a least-squares optimization problem
+that measures the difference between $U^N$ and $e$.
+Specifically, we measure the _energy_
+
+$$
+J(\mathbf{e}, \mathbf{u}(\mathbf{e}))
+= \frac{1}{2}||U^N - \mathbf{e}||^2
+$$
+
+(TODO: should there be a multiplier matrix in this norm?
+the electromagnetic case has one, but I'm not sure how to define
+a physically sensible energy for acoustics)
+
+The derivative of the cost function with respect to $\mathbf{e}$
+is needed for the optimization algorithm.
+This can be obtained using the [[adjoint state method]]
+which states that
+
+$$
+\frac{dJ}{d\mathbf{e}}
+= \frac{\partial J}{\partial \mathbf{e}}
+- \mathbf{z}^T \frac{\partial S}{\partial \mathbf{e}}
+$$
+
+where $\mathbf{z}$ is the solution of the adjoint equation
+
+$$
+\Big(\frac{\partial S}{\partial \mathbf{u}}\Big)^T
+\mathbf{z} =
+\Big(\frac{\partial J}{\partial \mathbf{u}}\Big)^T
+$$
+
+Since $U^n$ is the only value of $\mathbf{u}$ that exists in $J$,
+
+$$
+\frac{\partial J}{\partial \mathbf{u}} = \begin{bmatrix}
+  0 \\ 0 \\ \vdots \\ 0 \\ U^N - \mathbf{e}
+\end{bmatrix}
+$$
+
+we also know that
+
+$$
+\frac{\partial J}{\partial \mathbf{e}} = -(U^n - \mathbf{e})
+$$
 
 ## Conjugate gradient optimization
+
 related words:
 
 Conjugate: two vectors $x$ and $y$ are $A$-conjugate w.r.t a positive definite
@@ -195,7 +312,7 @@ Moved to [[Differential form]]
 Extremely simple case to test basic parts of the implementation.
 
 - Dirichlet boundary condition $\phi = 0$
-	- models a membrane solidly attached to a frame from all sides
+  - models a membrane solidly attached to a frame from all sides
 - no source terms, $f = 0$
 - square domain $\Omega = [0, \pi]^2$
 - initial conditions e.g. $\phi_0 = \sin(ax)\sin(by)$ where $a$ and $b$ are any integer
@@ -222,7 +339,7 @@ $$
 
 which we place at the boundary of the scatterer using the boundary
 condition $\phi = \phi_{inc}$ on $\gamma_{sca} = \Gamma_{sca} \times [0, T]$.
-On the external boundary $\gamma_{ext} = \Gamma_{ext} \times [0,T]$ 
+On the external boundary $\gamma_{ext} = \Gamma_{ext} \times [0,T]$
 we use the first order Engquist-Majda boundary condition
 
 $$
@@ -293,7 +410,7 @@ of the normal,
 
 $$
 \begin{aligned}
-q &= \int_0^l -\vec{\kappa} \sin(\omega t 
+q &= \int_0^l -\vec{\kappa} \sin(\omega t
 	- \vec{\kappa} \cdot (p_1 + u\mathbf{\hat{l}}))
 	 \cdot \hat{\mathbf{n}} \,du \\
 &= -\int_0^l (\vec{\kappa} \cdot \mathbf{\hat{n}})
@@ -342,6 +459,7 @@ $$
 	&= \kappa^2 \cos(\omega t - \vec{\kappa} \cdot \mathbf{x})
 \end{aligned}
 $$
+
 Substituting these into the state equation gives
 
 $$

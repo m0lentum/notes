@@ -62,18 +62,19 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-09 Fallujah
 - [x] 09-16 Wolfheart
 - [x] 09-23 Stratovarius
-- [ ] 10-07 Heavy Metal Perse
 - [x] 10-14 Lorna Shore
 - [x] 10-21 A Wake in Providence
 
 ## 2023
 
 - [x] 02-10 Delain
-- [ ] 02-22 Lovebites
-- [ ] 02-24 Insomnium
+- [x] 02-22 Lovebites
+- [x] 02-24 Insomnium
 - [ ] 03-10 Periphery
 - [ ] 03-10 Frozen Crown
 - [ ] 03-24 Ne Obliviscaris
 - [ ] 04-21 Atavistia
+- [ ] 04-21 Vorna
 - [ ] 04-28 Ignea
+- [ ] 04-28 Elvenking
 - [ ] 05-05 Countless Skies

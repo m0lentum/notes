@@ -303,6 +303,15 @@ Looking through sources and talking about them in the research plan.
 
 Some emailing, reading method sources, writing more research plan.
 
-## 2023-02-04 (4h)
+## 2023-02-24 (4h)
 
 Finished the research plan.
+
+## 2023-03-06 (3h)
+
+Starting to work out the adjoint state equation for exact controllability.
+
+## 2023-03-07 (3h)
+
+Got a bit carried away messing with vim and tex snippets,
+but got some more work done on the adjoint state equation.
