@@ -10,23 +10,23 @@ by constructing an optimization problem that enforces some property.
 In this case we want to enforce time-periodicity, i.e.
 $u$ and $\frac{\partial{u}}{\partial{t}}$ are equal at time 0 and after a period T at all points in space.
 
-## Differential form representation
+## [[Differential form]] representation
 
 Starting with the wave equation transformed to the
 first order system
 
 $$
 \begin{cases}
-\partial_t v - c^2\nabla \cdot \mathbf{w} = f \\
-\partial_t \mathbf{w} - \nabla v = 0 \\
+\partial_t p - c^2\nabla \cdot \mathbf{v} = f \\
+\partial_t \mathbf{v} - \nabla p = 0 \\
 \end{cases} \quad \text{in } \Omega \times [0, T]
 $$
 
-where $v = \frac{\partial \phi}{\partial t}$ is acoustic pressure and $\mathbf{w} = \nabla \phi$ is particle velocity
+where $p = \frac{\partial \phi}{\partial t}$ is acoustic pressure and $\mathbf{v} = \nabla \phi$ is particle velocity
 $\Omega$ is the spatial domain and $T$ is the time period.
 
-The vector-valued $\mathbf{w}$ can be represented with a 1-form $w = \mathbf{w}^{\flat}$
-and the scalar-valued $v$ can be represented with a 0-form $v$.
+The vector-valued $\mathbf{v}$ can be represented with a 1-form $v = \mathbf{v}^{\flat}$
+and the scalar-valued $p$ can be represented with a 0-form $p$.
 The gradient of a scalar field is the exterior derivative of a 0-form $d_0$.
 The divergence of a 1-form in 2D is the exterior derivative
 of its counterclockwise perpendicular form, $\nabla \cdot = d_1 \star$.
@@ -35,24 +35,24 @@ forms match in the first equation, we need to add some more Hodge stars.
 The first equation ends up as
 
 $$
-\star \partial_t v - c^2 d_1 (\star w) = \star f
+\star \partial_t p - c^2 d_1 (\star v) = \star f
 $$
 
 and the second equation
 
 $$
-\partial_t w - d_0 v = 0.
+\partial_t v - d_0 p = 0.
 $$
 
-Instead of velocity, we solve for the _flux_ $q = \star w$
+Instead of velocity, we solve for the _flux_ $q = \star v$
 because this allows us to easily represent flux-based boundary conditions.
 Applying one more Hodge star to both equations
 and substituting $q$ yields
 
 $$
 \begin{cases}
-\partial_t v - c^2 \star d_1 q = f \\
-\partial_t q - \star d_0 v = 0 \\
+\partial_t p - c^2 \star d_1 q = f \\
+\partial_t q - \star d_0 p = 0 \\
 \end{cases}
 $$
 
@@ -81,35 +81,56 @@ the boundary $k$-cells of each $(k+1)$-cell and their orientation.
 The same relationships on the dual mesh are represented by
 the transpose $d_k^T$.
 
-Our unknowns in the continuous equations are the 1-form $q$ and 0-form $v$.
-We can approximate these with a primal 1-cochain $Q$ and dual 0-cochain $V$.
+Our unknowns in the continuous equations are the 1-form $q$ and 0-form $p$.
+We can approximate these with a primal 1-cochain $Q$ and dual 0-cochain $P$.
 Spatial discretization is done simply by replacing all the unknowns
 and spatial operators with discrete equivalents:
 
 $$
 \begin{cases}
-\partial_t V - c^2 \star_2 d_1 Q = F \\
-\partial_t Q - \star_1^{-1} d_1^T V = 0 \\
+\partial_t P - c^2 \star_2 d_1 Q = F \\
+\partial_t Q - \star_1^{-1} d_1^T P = 0 \\
 \end{cases}
 $$
 
 Here $\star_1^{-1}$ denotes the Hodge star taking values from the dual mesh
 to the primal one.
 
-(not sure what happens when time derivative and star combine.
-What is the time derivative of a differential form in the first place?
-I think I don't need to know how the continuous case works for time
-discretization so skipping this consideration for now)
+This can also be represented as the matrix equation
+
+$$
+(\Lambda \partial_t + M) \begin{bmatrix}
+  P \\ Q
+\end{bmatrix}
+= \begin{bmatrix}
+  F \\ 0
+\end{bmatrix}
+$$
+
+where
+
+$$
+\begin{align*}
+  \Lambda &= I \\
+  M &= \begin{bmatrix}
+    0 & -c^2 \star_2 d_1 \\
+    -\star_1^{-1} d_1^T & 0 \\
+  \end{bmatrix}
+\end{align*}
+$$
+
+This factorization will be relevant later
+when computing energy.
 
 ### Time
 
-Using a staggered finite difference time step with values of $V$ computed
+Using a staggered finite difference time step with values of $P$ computed
 at integer times and values of $W$ offset by half a timestep,
 we use the approximations
 
 $$
 \begin{aligned}
-\partial_t V &= \frac{V^{n+1} - V^n}{\Delta t} \\
+\partial_t P &= \frac{P^{n+1} - P^n}{\Delta t} \\
 \partial_t Q &= \frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\Delta t} \\
 \end{aligned}
 $$
@@ -124,9 +145,9 @@ This gives the equations
 
 $$
 \begin{aligned}
-\frac{V^{n+1} - V^n}{\Delta t} - c^2 \star_2 d_1 Q^{n+\frac{1}{2}} &= F \\
+\frac{P^{n+1} - P^n}{\Delta t} - c^2 \star_2 d_1 Q^{n+\frac{1}{2}} &= F \\
 \frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\Delta t}
-	- \star_1^{-1} d_1^T V^{n+1} &= 0 \\
+	- \star_1^{-1} d_1^T P^{n+1} &= 0 \\
 \end{aligned}
 $$
 
@@ -134,29 +155,12 @@ Multiplying by $\Delta t$ and moving terms around gives the time stepping formul
 
 $$
 \begin{aligned}
-V^{n+1} &= V^n + \Delta t c^2 \star_2 d_1
+P^{n+1} &= P^n + \Delta t c^2 \star_2 d_1
 	Q^{n+\frac{1}{2}} + \Delta t F \\
 Q^{n+\frac{3}{2}}
-	&= Q^{n+\frac{1}{2}} + \Delta t \star_1^{-1} d_1^T V^{n+1} \\
+	&= Q^{n+\frac{1}{2}} + \Delta t \star_1^{-1} d_1^T P^{n+1} \\
 \end{aligned}
 $$
-
-To get $V^{n+\frac{1}{2}}$ and $W^n$ we can use the linear approximations
-
-$$
-\begin{aligned}
-V^{n+\frac{1}{2}} &= \frac{V^n + V^{n+1}}{2} \\
-Q^{n} &= \frac{Q^{n-\frac{1}{2}} + Q^{n+\frac{1}{2}}}{2} \\
-\end{aligned}
-$$
-
-(see chapter 5.4 of Räbinä's thesis).
-This is needed to get a full solution at a single time instance
-at the end of the simulated time window.
-
-TODO: is setting initial conditions at $V^0$ and $Q^{\frac{1}{2}}$ accurate, or
-should $Q$ be set at time 0 and take a half step forward?
-(also TODO: work out the formula for a half step from the above approximations)
 
 TODO: stability (CFL condition), no need for a thorough analysis yet
 but I should at least understand what it's about
@@ -181,7 +185,7 @@ I  & \Delta t c^2 \star_2 d_1 & -I \\
 & I & \Delta t \star_1^{-1} d_1^T & -I
 \end{bmatrix}
 \begin{bmatrix}
-V^n \\ Q^{n+\frac{1}{2}} \\ V^{n+1} \\ Q^{n+\frac{3}{2}}
+P^n \\ Q^{n+\frac{1}{2}} \\ P^{n+1} \\ Q^{n+\frac{3}{2}}
 \end{bmatrix}
 +
 \begin{bmatrix}
@@ -192,7 +196,7 @@ $$
 
 (TODO: should there be a source term for $Q$ too?)
 
-Denoting $U^n = (V^n, Q^{n+\frac{1}{2}})^T$, $\mathcal{F}^n = (F^n, 0)^T$
+Denoting $U^n = (P^n, Q^{n+\frac{1}{2}})^T$, $\mathcal{F}^n = (F^n, 0)^T$
 and including the initial conditions $U^0 = \mathbf{e}$ we get
 
 $$
@@ -242,14 +246,10 @@ Specifically, we measure the _energy_
 
 $$
 J(\mathbf{e}, \mathbf{u}(\mathbf{e}))
-= \frac{1}{2}||U^N - \mathbf{e}||^2
+= \frac{1}{2} (U^N - \mathbf{e})^T \Lambda (U^N - \mathbf{e})
 $$
 
-(TODO: should there be a multiplier matrix in this norm?
-the electromagnetic case has one, but I'm not sure how to define
-a physically sensible energy for acoustics)
-
-The derivative of the cost function with respect to $\mathbf{e}$
+The gradient of the cost function with respect to $\mathbf{e}$
 is needed for the optimization algorithm.
 This can be obtained using the [[adjoint state method]]
 which states that
@@ -271,39 +271,70 @@ $$
 Since $U^n$ is the only value of $\mathbf{u}$ that exists in $J$,
 
 $$
-\frac{\partial J}{\partial \mathbf{u}} = \begin{bmatrix}
-  0 \\ 0 \\ \vdots \\ 0 \\ U^N - \mathbf{e}
-\end{bmatrix}
+\Big(\frac{\partial J}{\partial \mathbf{u}}\Big)^T = \begin{bmatrix}
+  0 \\ 0 \\ \vdots \\ 0 \\ \Lambda(U^N - \mathbf{e})
+\end{bmatrix}.
 $$
+
+Similarly, since $\mathbf{e}$ is only present in the first row
+of the state equation, $\frac{\partial S}{\partial \mathbf{e}} = (-I, 0, 0, \dots, 0)^T$
+and thus $\mathbf{z}^T \frac{\partial S}{\partial \mathbf{e}} = -Z^0$.
 
 we also know that
 
 $$
-\frac{\partial J}{\partial \mathbf{e}} = -(U^n - \mathbf{e})
+\frac{\partial J}{\partial \mathbf{e}} = -\Lambda(U^N - \mathbf{e}).
+$$
+
+It follows that the gradient we're looking for is
+
+$$
+\frac{dJ}{d\mathbf{e}} = -\Lambda(U^N - \mathbf{e}) + Z^0.
+$$
+
+For this we need to compute $Z^0$ using the adjoint state equation.
+
+The value of $\frac{\partial S}{\partial \mathbf{u}}$
+is the multiplier matrix of $\mathbf{U}$ in $S$.
+Thus, the adjoint state equation in matrix form is
+
+$$
+\begin{bmatrix}
+  I & \mathcal{C}^T \\
+  & \mathcal{D}^T & \mathcal{C}^T \\
+  & & \mathcal{D}^T & \mathcal{C}^T \\
+  & & & \ddots & \ddots \\
+  & & & & \mathcal{D}^T & \mathcal{C}^T \\
+  & & & & & \mathcal{D}^T \\
+\end{bmatrix}
+\begin{bmatrix}
+  Z^0 \\ Z^1 \\ \vdots \\ Z^{N-1} \\ Z^N
+\end{bmatrix}
+= \begin{bmatrix}
+  0 \\ 0 \\ \vdots \\ 0 \\ \Lambda (U^N - \mathbf{e})
+\end{bmatrix}
+$$
+
+This can be solved with a backward procedure starting with
+
+$$
+Z^N = (\mathcal{D}^T)^{-1} \Lambda (U^N - \mathbf{e})
+$$
+
+followed by repeating
+
+$$
+Z^k = -(\mathcal{D}^T)^{-1} \mathcal{C}^T Z^{k+1}
+$$
+
+for $k = N-1, \dots, 1$ and finally
+
+$$
+Z^0 = -\mathcal{C}^T Z^1
 $$
 
 ## Conjugate gradient optimization
 
-related words:
-
-Conjugate: two vectors $x$ and $y$ are $A$-conjugate w.r.t a positive definite
-square matrix $A$ when $y^TAx = 0$. As with orthogonal vectors (which could also
-be described as $I$-conjugate), this relationship is invariant w.r.t. scaling.
-[source](https://math.stackexchange.com/questions/523810/conjugate-vectors)
-
-Relatedly, the $A$-inner product $\langle x, y \rangle_A$ is defined as $\langle Ax, y \rangle = (Ax)^Ty$.
-This only works if $A$ is symmetric positive definite because both those properties
-are required for the definition of an inner product.
-Positive definite means $\langle x, x \rangle > 0$ for all $||x|| \neq 0$
-and (conjugate) symmetry means $\langle x, y \rangle$ = $\overline{\langle y, x \rangle}$.
-
-TODO: refactor linear algebra section to have a note per numerical
-method, move this stuff to a page about conjugate gradient.
-Maybe also a separate algebra page to define these words
-
-## Differential forms
-
-Moved to [[Differential form]]
 
 ## Test problems
 

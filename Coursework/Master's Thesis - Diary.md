@@ -315,3 +315,17 @@ Starting to work out the adjoint state equation for exact controllability.
 
 Got a bit carried away messing with vim and tex snippets,
 but got some more work done on the adjoint state equation.
+
+## 2023-03-08 (2.5h)
+
+Got the adjoint state equation figured out,
+now just need the optimization algorithm.
+
+## 2023-03-09 (2h)
+
+Reading about conjugate gradient optimization.
+
+## 2023-03-11 (4h)
+
+Organizing my linear algebra notes
+and working through conjugate gradient step by step.

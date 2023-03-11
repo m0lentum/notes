@@ -99,7 +99,7 @@ does with the orthonormal basis it generates. Too tired to figure it out now.
 ## 2022-05-12 (1.5h)
 
 Reading some more about Krylov subspaces, trying to get some intuition.
-I now understand the connection to polynomials ([[System of equations#Krylov subspace methods|notes]])
+I now understand the connection to polynomials ([[Linear system#Krylov subspace methods|notes]])
 which feels like it will be important to analyzing the performance of these methods.
 
 For the project work, I should probably implement and compare the different variants
