@@ -249,9 +249,51 @@ J(\mathbf{e}, \mathbf{u}(\mathbf{e}))
 = \frac{1}{2} (U^N - \mathbf{e})^T \Lambda (U^N - \mathbf{e})
 $$
 
-The gradient of the cost function with respect to $\mathbf{e}$
-is needed for the optimization algorithm.
-This can be obtained using the [[adjoint state method]]
+Here $U^N$ is a function of $\mathbf{e}$, specifically
+
+$$
+U^N = Q^N \mathbf{e}
+- \sum_{i=0}^{N-1} Q^i \mathcal{D}^{-1} \mathcal{F}^{(N-1)-i}
+$$
+
+where $Q = -\mathcal{D}^{-1} \mathcal{C}$,
+which follows from applying the recursive time-stepping formula
+$U^{k+1} = -\mathcal{D}^{-1} (\mathcal{C} U^k + \mathcal{F}^k)$ $N$ times.
+
+Using this information to manipulate $J$ to find
+its quadratic structure and its gradient.
+Defining $\mathbf{g} = \sum_{i=0}^{N-1} Q^i \mathcal{D}^{-1} \mathcal{F}^{(N-1)-i}$
+which is a vector of the same dimension as $\mathbf{e}$,
+
+$$
+\begin{aligned}
+J(\mathbf{e})
+&= \frac{1}{2} (U^N - \mathbf{e})^T \Lambda (U^N - \mathbf{e}) \\
+&= \frac{1}{2} ((Q^N - I) \mathbf{e} - \mathbf{g})^T \Lambda ((Q^N - I) \mathbf{e} - \mathbf{g}) \\
+&= \frac{1}{2} \mathbf{e}^T (Q^N - I)^T \Lambda (Q^N - I) \mathbf{e} \\
+&\qquad -\, \frac{1}{2} (\mathbf{e}^T (Q^N - I)^T \Lambda \mathbf{g}
+  - \mathbf{g}^T \Lambda (Q^N - I)\mathbf{e}) \\
+&\qquad +\, \frac{1}{2} \mathbf{g}^T \Lambda \mathbf{g} \\
+&= \frac{1}{2} \mathbf{e}^T (Q^N - I)^T \Lambda (Q^N - I) \mathbf{e}
+- \mathbf{g}^T \Lambda (Q^N - I)\mathbf{e}
++ \frac{1}{2} \mathbf{g}^T \Lambda \mathbf{g} \\
+&=: \frac{1}{2}\mathbf{e}^T A \mathbf{e} - b^T \mathbf{e} + c \\
+\end{aligned}
+$$
+
+The last simplification step is due to the symmetry
+of the $\Lambda$-inner product.
+
+From this we get an expression for the gradient of $J$,
+
+$$
+\nabla J(\mathbf{e}) = A\mathbf{e} - b
+$$
+
+#### Computing the gradient
+
+We don't need to explicitly build the matrix $A$ to obtain the gradient.
+We can get it using the [[adjoint state method]]
 which states that
 
 $$
@@ -260,7 +302,8 @@ $$
 - \mathbf{z}^T \frac{\partial S}{\partial \mathbf{e}}
 $$
 
-where $\mathbf{z}$ is the solution of the adjoint equation
+where $S$ is the state equation
+and $\mathbf{z}$ is the solution of the adjoint equation
 
 $$
 \Big(\frac{\partial S}{\partial \mathbf{u}}\Big)^T
@@ -333,8 +376,66 @@ $$
 Z^0 = -\mathcal{C}^T Z^1
 $$
 
-## Conjugate gradient optimization
+Writing out what $Z^k = -(\mathcal{D}^T)^{-1} \mathcal{C}^T Z^{k+1}$
+means on a row by row basis:
 
+$$
+\begin{aligned}
+Z^k &= -(\mathcal{D}^T)^{-1} \mathcal{C}^T Z^{k+1} \\
+&= -\begin{bmatrix}
+  -I & (\Delta t \star_1^{-1} d_1^T)^T \\
+  0 & -I \\
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+  I & 0 \\
+  (\Delta t c^2 \star_2 d_1)^T & I \\
+\end{bmatrix}
+\begin{bmatrix}
+  z_0^{k+1} \\ z_1^{k+1}
+\end{bmatrix} \\
+\end{aligned}
+$$
+
+which is equivalent to solving the equation
+
+$$
+\begin{bmatrix}
+  -I & (\Delta t \star_1^{-1} d_1^T)^T \\
+  0 & -I \\
+\end{bmatrix}
+\begin{bmatrix}
+  z_0^k \\ z_1^k
+\end{bmatrix}
+= -\begin{bmatrix}
+  I & 0 \\
+  (\Delta t c^2 \star_2 d_1)^T & I \\
+\end{bmatrix}
+\begin{bmatrix}
+  z_0^{k+1} \\ z_1^{k+1}
+\end{bmatrix}
+$$
+
+leading to the update formulas
+
+$$
+\begin{aligned}
+z_1^k &= z_1^{k+1} + (\Delta t c^2 \star_2 d_1)^T z_0^{k+1} \\
+z_0^k &= z_0^{k+1} + (\Delta t \star_1^{-1} d_1^T)^T z_1^k \\
+\end{aligned}
+$$
+
+### Optimization algorithm
+
+We use the [[Conjugate Gradient algorithm]] to find the minimum
+of the cost function $J$ defined earlier.
+This algorithm involves the term $Ap_i$
+for updating the search direction,
+but we don't have access to the matrix $A$.
+
+This is where the adjoint state equation comes in.
+It provides a value for $\nabla J(p_i) = Ap_i - b$,
+and we can compute $b$ during the forward solve.
+From these we get $Ap_i = \nabla J(p_i) + b$.
 
 ## Test problems
 

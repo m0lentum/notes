@@ -329,3 +329,9 @@ Reading about conjugate gradient optimization.
 
 Organizing my linear algebra notes
 and working through conjugate gradient step by step.
+
+## 2023-03-12 (5h)
+
+Finished working through conjugate gradient
+and the adjoint state equation,
+should have everything I need to implement this now.
