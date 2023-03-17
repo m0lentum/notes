@@ -424,6 +424,136 @@ z_0^k &= z_0^{k+1} + (\Delta t \star_1^{-1} d_1^T)^T z_1^k \\
 \end{aligned}
 $$
 
+#### Including the boundary conditions
+
+TODO: ALL OF THIS SUBSECTION IS NONSENSE,
+FIGURE OUT HOW TO MAKE THIS WORK
+
+Boundary conditions can also be incorporated
+into the matrix expression of the state equation.
+This is useful to determine how they should be applied
+in the adjoint state equation.
+
+In the case of the scatterer example (defined later),
+we have two boundaries with different conditions.
+Because the dual vertices $P$ is computed on
+do not exist on the boundary, we only apply
+boundary conditions to $Q$.
+
+On the inner boundary we have Dirichlet condition $\mathbf{q} = f$
+and on the outer boundary we have
+the absorbing condition $\frac{1}{c}p + \mathbf{q} = 0$.
+
+The Dirichlet condition in matrix form
+is a single (block) row:
+
+$$
+I Q_{int}^{n+\frac{1}{2}}
+- F
+= 0
+$$
+
+where $I$ is its own transpose, hence the Dirichlet condition
+will be applied the exact same way in the adjoint state solver.
+
+For the absorbing condition we have
+
+$$
+\begin{bmatrix}
+\frac{1}{c} \mathcal{E} & I
+\end{bmatrix}
+\begin{bmatrix}
+P^n \\ Q_{ext}^{n+\frac{1}{2}}
+\end{bmatrix}
+= 0
+$$
+
+where $\mathcal{E}$ is a matrix associating the nearest dual vertex
+to each boundary edge and scaling by the length of the edge
+(see the scatterer test case later in this note).
+
+If we separate $Q$ and $P$ into three vectors each,
+one for the domain interior, one for the inner boundary
+and one for the outer boundary,
+we can express the boundary conditions in the state matrix.
+
+$$
+\begin{bmatrix}
+  0 & 0 & -I & 0 \\
+  0 & 0 & 0 & -I \\
+\end{bmatrix}
+\begin{bmatrix}
+  P_{int}^n \\ Q_{int}^{n+\frac{1}{2}} \\ P_{int}^{n+1} \\ Q_{int}^{n+\frac{3}{2}} \\
+\end{bmatrix}
++
+\begin{bmatrix}
+  0 \\ 0 \\ F_{p}^{n+1} \\ F_{q}^{n+1}
+\end{bmatrix}
+= 0
+$$
+
+and
+
+$$
+\begin{bmatrix}
+  0 & -c\mathcal{E}^T & -I & 0 \\
+  0 & 0 & -\frac{1}{c}\mathcal{E} & -I \\
+\end{bmatrix}
+\begin{bmatrix}
+  P_{ext}^n \\ Q_{ext}^{n+\frac{1}{2}} \\ P_{ext}^{n+1} \\ Q_{ext}^{n+\frac{3}{2}} \\
+\end{bmatrix}
+= 0
+$$
+
+Putting all these together and taking the adjoint we get
+
+$$
+\begin{bmatrix}
+  -I & & & (\Delta t \star_1^{-1} d_1^T)^T  \\
+  & -I \\
+  & & -I & & & -\frac{1}{c}\mathcal{E}^T \\
+  & & & -I \\
+  & & & & -I \\
+  & & & & & -I \\
+\end{bmatrix}
+\begin{bmatrix}
+  z_{0,dom}^k \\ z_{0,int}^k \\ z_{0,ext}^k \\
+  z_{1,dom}^k \\ z_{1,int}^k \\ z_{1,ext}^k \\
+\end{bmatrix}
+= - \begin{bmatrix}
+  I & \\
+  & 0 \\
+  & & 0 \\
+  (\Delta t c^2 \star_2 d_1)^T & & & I \\
+  & & & & 0 \\
+  & & -c\mathcal{E} & & & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+  z_{0,dom}^{k+1} \\ z_{0,int}^{k+1} \\ z_{0,ext}^{k+1} \\
+  z_{1,dom}^{k+1} \\ z_{1,int}^{k+1} \\ z_{1,ext}^{k+1} \\
+\end{bmatrix}
+$$
+
+which gives the equations already computed earlier in the domain
+plus the adjoint boundary conditions:
+
+$$
+\begin{aligned}
+z_{1,dom}^k &= z_{1,dom}^{k+1} + (\Delta t c^2 \star_2 d_1)^T z_{0,dom}^{k+1} \\
+z_{0,dom}^k &= z_{0,dom}^{k+1} + (\Delta t \star_1^{-1} d_1^T)^T z_{1,dom}^k \\
+z_{1,int}^k &= 0 \\
+z_{0,int}^k &= 0 \\
+z_{1,ext}^k &= -c\mathcal{E} z_{0,ext}^{k+1} \\
+z_{0,ext}^k &= -\frac{1}{c}\mathcal{E}^T z_{1,ext}^k \\
+\end{aligned}
+$$
+
+Nope, that doesn't look right at all on the absorbing boundary..
+I don't think applying the condition to both P and Q makes sense
+since that way they'll just stay at the same values forever,
+but only applying it to Q (which I tried at first)
+made the equations even weirder
+
 ### Optimization algorithm
 
 We use the [[Conjugate Gradient algorithm]] to find the minimum
@@ -486,9 +616,9 @@ The boundary conditions in terms of acoustic pressure and velocity are thus
 
 $$
 \begin{aligned}
-v &= \frac{\partial}{\partial t}\phi_{inc} & \text{on } \gamma_{sca} \\
+p &= \frac{\partial}{\partial t}\phi_{inc} & \text{on } \gamma_{sca} \\
 \mathbf{q} &= \star(\nabla\phi_{inc})^{\flat} & \text{on } \gamma_{sca} \\
-\frac{1}{c}v + \mathbf{q} &= 0 & \text{on } \gamma_{ext} \\
+\frac{1}{c}p + \mathbf{q} &= 0 & \text{on } \gamma_{ext} \\
 \end{aligned}
 $$
 
@@ -501,26 +631,26 @@ $$
 \end{aligned}
 $$
 
-Because $v$ is defined on dual mesh vertices and not on any boundary elements directly,
+Because $p$ is defined on dual mesh vertices and not on any boundary elements directly,
 we need to approximate it on the boundary to apply the absorbing boundary condition.
-A simple approximation is obtained by assuming $v$ to be constant
+A simple approximation is obtained by assuming $p$ to be constant
 within each primal mesh triangle, and therefore constant
 everywhere on the nearest boundary edge.
 The boundary condition can then be applied for edge $\mathcal{E}_i$ as
 
 $$
-\mathbf{q}_i = -\frac{1}{c} \int_{\mathcal{E}_i} v_{\mathcal{E}_i} \,dl
-= -\frac{1}{c} |\mathcal{E}_i|v_{\mathcal{E}_i}
+\mathbf{q}_i = -\frac{1}{c} \int_{\mathcal{E}_i} p_{\mathcal{E}_i} \,dl
+= -\frac{1}{c} |\mathcal{E}_i|p_{\mathcal{E}_i}
 $$
 
-where $|\mathcal{E}_i|$ is the length of the edge and $v_{\mathcal{E}_i}$ is the value of $v$
+where $|\mathcal{E}_i|$ is the length of the edge and $p_{\mathcal{E}_i}$ is the value of $p$
 on the nearest dual vertex to the edge.
 
 Initial conditions for the time-dependent case can be set to e.g.
 
 $$
 \begin{aligned}
-v^0 &= \omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
+p^0 &= \omega \sin(\vec{\kappa} \cdot \mathbf{x}) \\
 q^0 &= \star(-\vec{\kappa} \sin(\vec{\kappa} \cdot \mathbf{x}))^{\flat} \\
 \end{aligned}
 $$
@@ -602,6 +732,6 @@ $$
 
 which equals zero assuming $\omega = c\kappa$.
 
-We set initial conditions to $v = \frac{\partial \phi}{\partial t}|_{t=0}$ and $w = \nabla \phi |_{t=0}$ and boundary conditions
-in $\gamma_{ext} \times [0, T]$ to $v = \frac{\partial \phi}{\partial t}$ and $w = \nabla \phi$, solve the state equation using DEC,
+We set initial conditions to $p = \frac{\partial \phi}{\partial t}|_{t=0}$ and $w = \nabla \phi |_{t=0}$ and boundary conditions
+in $\gamma_{ext} \times [0, T]$ to $p = \frac{\partial \phi}{\partial t}$ and $w = \nabla \phi$, solve the state equation using DEC,
 and examine the error in the interior of the computation mesh.

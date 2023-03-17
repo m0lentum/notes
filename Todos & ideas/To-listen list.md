@@ -71,10 +71,11 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-22 Lovebites
 - [x] 02-24 Insomnium
 - [x] 03-10 Periphery
-- [ ] 03-10 Frozen Crown
+- [x] 03-10 Frozen Crown
 - [ ] 03-24 Ne Obliviscaris
 - [ ] 04-21 Atavistia
 - [ ] 04-21 Vorna
 - [ ] 04-28 Ignea
 - [ ] 04-28 Elvenking
+- [ ] 04-28 Fires in the Distance
 - [ ] 05-05 Countless Skies

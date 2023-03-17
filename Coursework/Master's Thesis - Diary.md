@@ -335,3 +335,29 @@ and working through conjugate gradient step by step.
 Finished working through conjugate gradient
 and the adjoint state equation,
 should have everything I need to implement this now.
+
+## 2023-03-13 (2h)
+
+Started implementing the adjoint state solver.
+
+## 2023-03-14 (2h)
+
+Working through boundary conditions for the adjoint state solver.
+
+## 2023-03-15 (1.5h)
+
+Trying to figure out the transpose of boundary conditions,
+not much luck yet.
+
+## 2023-03-16 (2.5h)
+
+Continuing to struggle with yesterday's topic.
+
+## 2023-03-17 (4h)
+
+Still struggling with adjoint boundary conditions,
+I just can't figure out how to get the right result
+by transposing the time-stepping matrix.
+I understand the sign is supposed to change because of
+time being reversed, but I don't see any way
+to make the matrix expression reflect that.
