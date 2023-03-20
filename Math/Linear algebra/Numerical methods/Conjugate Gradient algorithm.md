@@ -11,18 +11,18 @@ Given the system $Ax = b$ and an initial guess $x_0$,
 1. Compute initial residual and search direction
    $r_0 = b - Ax_0$, $p_0 = r_0$
 2. For $j = 0,1,\dots,$,until convergence:
-3. Compute the parameter that will make
-   the next residual orthogonal to the previous,
-   $\alpha_j := \frac{\langle r_j, r_j \rangle}{\langle Ap_j, p_j\rangle}$
-4. Compute the next approximate solution
-   $x_{j+1} := x_j + \alpha_j p_j$
-5. Compute the next residual
-   $r_{j+1} := r_j - \alpha_j A p_j$
-6. Compute the parameter that will make
-   the next search direction A-conjugate to the previous,
-   $\beta_j := \frac{\langle r_{j+1}, r_{j+1} \rangle}{\langle r_j, r_j \rangle}$
-7. Compute the next search direction
-   $p_{j+1} := r_{j+1} + \beta_j p_j$
+	3. Compute the parameter that will make
+	   the next residual orthogonal to the previous,
+	   $\alpha_j := \frac{\langle r_j, r_j \rangle}{\langle Ap_j, p_j\rangle}$
+	4. Compute the next approximate solution
+	   $x_{j+1} := x_j + \alpha_j p_j$
+	5. Compute the next residual
+	   $r_{j+1} := r_j - \alpha_j A p_j$
+	6. Compute the parameter that will make
+	   the next search direction A-conjugate to the previous,
+	   $\beta_j := \frac{\langle r_{j+1}, r_{j+1} \rangle}{\langle r_j, r_j \rangle}$
+	7. Compute the next search direction
+	   $p_{j+1} := r_{j+1} + \beta_j p_j$
 
 The name Conjugate _Gradient_ comes from the fact that
 the method was first developed for minimizing a quadratic function

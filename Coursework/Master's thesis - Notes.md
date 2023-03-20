@@ -565,7 +565,18 @@ but we don't have access to the matrix $A$.
 This is where the adjoint state equation comes in.
 It provides a value for $\nabla J(p_i) = Ap_i - b$,
 and we can compute $b$ during the forward solve.
-From these we get $Ap_i = \nabla J(p_i) + b$.
+From these we get $Ap_i = \nabla J(p_i) + b$,
+where $b = (Q^n - I)^T \Lambda (\sum_{i=0}^{N-1} Q^i \mathcal{D}^{-1} \mathcal{F}^{(N-1)-i})$.
+
+The sum on the right side of the expression of $b$
+is equivalent to summing the contributions
+of source terms to $U$ on each time step.
+Because source terms are only present in $b$ and not $A$,
+we can eliminate $b$ by running the forward solve
+with zero source terms.
+(TODO: is this actually true?
+didn't seem to work in my implementation,
+but I may have made a mistake somewhere)
 
 ## Test problems
 

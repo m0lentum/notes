@@ -361,3 +361,15 @@ by transposing the time-stepping matrix.
 I understand the sign is supposed to change because of
 time being reversed, but I don't see any way
 to make the matrix expression reflect that.
+
+## 2023-03-18 (4h)
+
+Gave up on the matrix thing for now
+and started implementing the controllability method,
+got the adjoint state equation part done.
+
+## 2023-03-20 (3.5h)
+
+Implemented the conjugate gradient algorithm.
+It didn't work, but I confirmed the algorithm itself was correct.
+Next up, debug the gradient computation.
