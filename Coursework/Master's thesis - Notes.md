@@ -424,159 +424,58 @@ z_0^k &= z_0^{k+1} + (\Delta t \star_1^{-1} d_1^T)^T z_1^k \\
 \end{aligned}
 $$
 
-#### Including the boundary conditions
-
-TODO: ALL OF THIS SUBSECTION IS NONSENSE,
-FIGURE OUT HOW TO MAKE THIS WORK
-
-Boundary conditions can also be incorporated
-into the matrix expression of the state equation.
-This is useful to determine how they should be applied
-in the adjoint state equation.
-
-In the case of the scatterer example (defined later),
-we have two boundaries with different conditions.
-Because the dual vertices $P$ is computed on
-do not exist on the boundary, we only apply
-boundary conditions to $Q$.
-
-On the inner boundary we have Dirichlet condition $\mathbf{q} = f$
-and on the outer boundary we have
-the absorbing condition $\frac{1}{c}p + \mathbf{q} = 0$.
-
-The Dirichlet condition in matrix form
-is a single (block) row:
-
-$$
-I Q_{int}^{n+\frac{1}{2}}
-- F
-= 0
-$$
-
-where $I$ is its own transpose, hence the Dirichlet condition
-will be applied the exact same way in the adjoint state solver.
-
-For the absorbing condition we have
-
-$$
-\begin{bmatrix}
-\frac{1}{c} \mathcal{E} & I
-\end{bmatrix}
-\begin{bmatrix}
-P^n \\ Q_{ext}^{n+\frac{1}{2}}
-\end{bmatrix}
-= 0
-$$
-
-where $\mathcal{E}$ is a matrix associating the nearest dual vertex
-to each boundary edge and scaling by the length of the edge
-(see the scatterer test case later in this note).
-
-If we separate $Q$ and $P$ into three vectors each,
-one for the domain interior, one for the inner boundary
-and one for the outer boundary,
-we can express the boundary conditions in the state matrix.
-
-$$
-\begin{bmatrix}
-  0 & 0 & -I & 0 \\
-  0 & 0 & 0 & -I \\
-\end{bmatrix}
-\begin{bmatrix}
-  P_{int}^n \\ Q_{int}^{n+\frac{1}{2}} \\ P_{int}^{n+1} \\ Q_{int}^{n+\frac{3}{2}} \\
-\end{bmatrix}
-+
-\begin{bmatrix}
-  0 \\ 0 \\ F_{p}^{n+1} \\ F_{q}^{n+1}
-\end{bmatrix}
-= 0
-$$
-
-and
-
-$$
-\begin{bmatrix}
-  0 & -c\mathcal{E}^T & -I & 0 \\
-  0 & 0 & -\frac{1}{c}\mathcal{E} & -I \\
-\end{bmatrix}
-\begin{bmatrix}
-  P_{ext}^n \\ Q_{ext}^{n+\frac{1}{2}} \\ P_{ext}^{n+1} \\ Q_{ext}^{n+\frac{3}{2}} \\
-\end{bmatrix}
-= 0
-$$
-
-Putting all these together and taking the adjoint we get
-
-$$
-\begin{bmatrix}
-  -I & & & (\Delta t \star_1^{-1} d_1^T)^T  \\
-  & -I \\
-  & & -I & & & -\frac{1}{c}\mathcal{E}^T \\
-  & & & -I \\
-  & & & & -I \\
-  & & & & & -I \\
-\end{bmatrix}
-\begin{bmatrix}
-  z_{0,dom}^k \\ z_{0,int}^k \\ z_{0,ext}^k \\
-  z_{1,dom}^k \\ z_{1,int}^k \\ z_{1,ext}^k \\
-\end{bmatrix}
-= - \begin{bmatrix}
-  I & \\
-  & 0 \\
-  & & 0 \\
-  (\Delta t c^2 \star_2 d_1)^T & & & I \\
-  & & & & 0 \\
-  & & -c\mathcal{E} & & & 0 \\
-\end{bmatrix}
-\begin{bmatrix}
-  z_{0,dom}^{k+1} \\ z_{0,int}^{k+1} \\ z_{0,ext}^{k+1} \\
-  z_{1,dom}^{k+1} \\ z_{1,int}^{k+1} \\ z_{1,ext}^{k+1} \\
-\end{bmatrix}
-$$
-
-which gives the equations already computed earlier in the domain
-plus the adjoint boundary conditions:
-
-$$
-\begin{aligned}
-z_{1,dom}^k &= z_{1,dom}^{k+1} + (\Delta t c^2 \star_2 d_1)^T z_{0,dom}^{k+1} \\
-z_{0,dom}^k &= z_{0,dom}^{k+1} + (\Delta t \star_1^{-1} d_1^T)^T z_{1,dom}^k \\
-z_{1,int}^k &= 0 \\
-z_{0,int}^k &= 0 \\
-z_{1,ext}^k &= -c\mathcal{E} z_{0,ext}^{k+1} \\
-z_{0,ext}^k &= -\frac{1}{c}\mathcal{E}^T z_{1,ext}^k \\
-\end{aligned}
-$$
-
-Nope, that doesn't look right at all on the absorbing boundary..
-I don't think applying the condition to both P and Q makes sense
-since that way they'll just stay at the same values forever,
-but only applying it to Q (which I tried at first)
-made the equations even weirder
-
 ### Optimization algorithm
 
 We use the [[Conjugate Gradient algorithm]] to find the minimum
 of the cost function $J$ defined earlier.
-This algorithm involves the term $Ap_i$
-for updating the search direction,
+This algorithm involves the residual $r = b - Ax$
+and the direction update term $Ap_i$,
 but we don't have access to the matrix $A$.
 
 This is where the adjoint state equation comes in.
-It provides a value for $\nabla J(p_i) = Ap_i - b$,
+It provides a value for $\nabla J(x) = Ax - b = -r$,
 and we can compute $b$ during the forward solve.
 From these we get $Ap_i = \nabla J(p_i) + b$,
 where $b = (Q^n - I)^T \Lambda (\sum_{i=0}^{N-1} Q^i \mathcal{D}^{-1} \mathcal{F}^{(N-1)-i})$.
 
-The sum on the right side of the expression of $b$
+The sum $\mathbf{g} = \sum_{i=0}^{N-1} Q^i \mathcal{D}^{-1} \mathcal{F}^{(N-1)-i}$
 is equivalent to summing the contributions
-of source terms to $U$ on each time step.
-Because source terms are only present in $b$ and not $A$,
-we can eliminate $b$ by running the forward solve
-with zero source terms.
-(TODO: is this actually true?
-didn't seem to work in my implementation,
-but I may have made a mistake somewhere)
+of source terms to $U$ on each time step
+and then time-stepping this vector just like the state vector.
+However, in practice we don't need to compute $b$ at all.
+Because source terms are present in $b$ and not in $A$,
+we can obtain $Ap_i$ by setting source terms to zero
+and then computing the gradient as usual.
+
+Note: turns out this doesn't work right
+if the computation mesh is bad.
+It's possible to get reasonable results
+from the forward-in-time state solver for a sufficiently smooth state
+while the same solver for the search directions
+gets stuck in oscillations or becomes unstable.
+This took me nearly a week to figure out :^)
+
+#### Initial values
+
+To ensure stability, initial values for the CG algorithm
+should fulfill all boundary conditions to avoid discontinuities.
+This can be achieved using the _Mur transition_:
+the application of a smooth easing function to source terms
+from time 0 to $t_{tr}$.
+
+The easing function used by Mur is
+
+$$
+f_{tr}(t) = (2 - \sin(\frac{\pi}{2} \frac{t}{t_{tr}}))\sin(\frac{\pi}{2} \frac{t}{t_{tr}})
+$$
+
+To apply this, we set the transition time $t_{tr}$ to a multiple
+of the source terms' time period $T$,
+set the initial state to zero,
+and run the forward-in-time simulation until time $t_{tr}$
+with the source terms multiplied by $f_{tr}(t)$.
+We then take the state of the simulation at time $t_{tr}$
+and use it as the initial state for the CG algorithm.
 
 ## Test problems
 

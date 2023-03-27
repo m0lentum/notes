@@ -373,3 +373,31 @@ got the adjoint state equation part done.
 Implemented the conjugate gradient algorithm.
 It didn't work, but I confirmed the algorithm itself was correct.
 Next up, debug the gradient computation.
+
+## 2023-03-23 (3h)
+
+Implemented Mur transition and found one bug with CG
+that made it less unstable but still incorrect.
+
+## 2023-03-24 (3h)
+
+Debuggin
+
+## 2023-03-25 (3h)
+
+The code debugger has logged on once again;
+managed to isolate the error to the gradient update direction
+in the CG algorithm (not the gradient computation itself).
+
+## 2023-03-26 (6h)
+
+More debugging. Turned out there actually was still a bug
+with the CG algorithm itself (pointer aliasing, yay Python)
+but it wasn't the only problem.
+
+## 2023-03-27 (5h)
+
+Yet more debugging, finally figured it out.
+The problem wasn't any of my computations, it was the mesh.
+Got a good result with a different mesh,
+now I need to figure out how to optimize an unstructured mesh for this.

@@ -72,7 +72,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-24 Insomnium
 - [x] 03-10 Periphery
 - [x] 03-10 Frozen Crown
-- [ ] 03-24 Ne Obliviscaris
+- [x] 03-24 Ne Obliviscaris
 - [ ] 04-21 Atavistia
 - [ ] 04-21 Vorna
 - [ ] 04-28 Ignea
