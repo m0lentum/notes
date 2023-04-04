@@ -645,3 +645,12 @@ which equals zero assuming $\omega = c\kappa$.
 We set initial conditions to $p = \frac{\partial \phi}{\partial t}|_{t=0}$ and $w = \nabla \phi |_{t=0}$ and boundary conditions
 in $\gamma_{ext} \times [0, T]$ to $p = \frac{\partial \phi}{\partial t}$ and $w = \nabla \phi$, solve the state equation using DEC,
 and examine the error in the interior of the computation mesh.
+
+## Possible TODOs
+
+- Hodge-optimize the mesh
+- harmonic Hodge star
+- examine stability and pick timestep size accordingly
+  (currently I'm just experimentally picking one that works)
+- figure out how to measure mesh quality
+  and how control method convergence is affected by this

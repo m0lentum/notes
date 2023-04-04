@@ -401,3 +401,26 @@ Yet more debugging, finally figured it out.
 The problem wasn't any of my computations, it was the mesh.
 Got a good result with a different mesh,
 now I need to figure out how to optimize an unstructured mesh for this.
+
+## 2023-03-28 (4h)
+
+Working on tagging edges in the mesh
+so that we can reliably have more complex shapes in the middle.
+
+## 2023-03-29 (3h)
+
+Got edge tagging working and added the incident plane wave
+to the animated visualization.
+
+## 2023-03-30 (2h)
+
+Added a star-shaped scatterer mesh.
+
+## 2023-04-02 (2h)
+
+Started sketching out my presentation.
+
+## 2023-04-04 (2h)
+
+Working on the presentation some more.
+Have a pretty good sketch, now I need to cut it down to 10 minutes.

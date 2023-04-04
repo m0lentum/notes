@@ -79,3 +79,4 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 04-28 Elvenking
 - [ ] 04-28 Fires in the Distance
 - [ ] 05-05 Countless Skies
+- [ ] 06-09 Scar Symmetry
