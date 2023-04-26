@@ -424,3 +424,43 @@ Started sketching out my presentation.
 
 Working on the presentation some more.
 Have a pretty good sketch, now I need to cut it down to 10 minutes.
+
+## 2023-04-05 (1h)
+
+Rehearsed the presentation a bit and removed some poorly thought out content.
+
+## 2023-04-07 (3h)
+
+More work on the presentation, pretty happy with the content now. 
+
+## 2023-04-09 (5h)
+
+Made some illustrations of the DEC mesh for the presentation;
+added another mesh shape and some visualization stuff to the simulations.
+
+## 2023-04-11 (2h)
+
+Added some measurements to the simulation,
+most importantly comparison against
+reference forward simulation's energy.
+
+## 2023-04-21 (3h)
+
+After a little post-presentation break,
+started setting up the actual thesis text.
+Sketched an outline and got a little bit of writing done.
+
+## 2023-04-22 (3h)
+
+Writing some more, trying to work out how I want to present
+the topic of differential forms.
+
+## 2023-04-23 (3h)
+
+More writing on differential forms
+and sketching the rest of the structure.
+
+## 2023-04-26 (2h)
+
+Messing with my neovim setup to get pdf view forward search working.
+Didn't get any writing done tonight but this will make things easier tomorrow.
