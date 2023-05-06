@@ -76,8 +76,8 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 04-21 Atavistia
 - [x] 04-21 Vorna
 - [ ] 04-28 Ignea
-- [ ] 04-28 Elvenking
-- [ ] 04-28 Fires in the Distance
-- [ ] 05-05 Countless Skies
+- [x] 04-28 Elvenking
+- [x] 04-28 Fires in the Distance
+- [x] 05-05 Countless Skies
 - [ ] 05-05 Vintersea
 - [ ] 06-09 Scar Symmetry

@@ -137,10 +137,6 @@ $$
 
 where the superscript denotes the index of the time step.
 
-(TODO: does it matter which value is at half offset?
-probably not since the only time that changes anything
-is at the first and last time step?)
-
 This gives the equations
 
 $$
@@ -162,8 +158,41 @@ Q^{n+\frac{3}{2}}
 \end{aligned}
 $$
 
-TODO: stability (CFL condition), no need for a thorough analysis yet
-but I should at least understand what it's about
+#### Exact time stepping
+
+In a time-harmonic case, the solution at timestep $k$
+can be expressed in terms of complex exponentiation as
+
+$$
+\begin{aligned}
+P^{k} &= \text{real}(\hat{P} \exp(-i\omega t^k)) \\
+Q^{k} &= \text{real}(\hat{Q} \exp(-i\omega (t^k + \frac{\Delta t}{2}))
+\end{aligned}
+$$
+
+Substituting this formula for $P^k$ into $P^{k+1} - P^k$, we get
+
+$$
+\begin{aligned}
+&P^{k+1} - P^k \\
+&= \text{real} \Big[ \hat{P} \exp(-i\omega (t^{k} + \Delta t)) \Big]
+- \text{real} \Big[ \hat{P} \exp(-i\omega t^k) \Big] \\
+&= \text{real} \Big[ \hat{P} (\exp(-i\omega (t^k + \Delta t)) - \exp(-i\omega t^k)) \Big] \\
+&= \text{real} \Big[ \hat{P} \exp(-i\omega t^k) (\exp(-i\omega \Delta t) - 1) \Big] \\
+&= \text{real} \Big[ -i\omega \hat{P} \exp(-i\omega t^k)
+\Big(\frac{\exp(-i\omega \Delta t) - 1}{-i\omega}\Big) \Big] \\
+&= \text{real} \Big[ \partial_t P(t^k)
+\Big(\frac{\exp(-i\omega \Delta t) - 1}{-i\omega}\Big) \Big] \\
+\end{aligned}
+$$
+
+TODO: the difference to Räbinä here is the time instance,
+I'm supposed to compute this approximation at half offset
+from the time $P$ exists at
+(which I also didn't do in the previous section).
+Redo computations using $P(t^k + \frac{\Delta t}{2}) = \frac{P^k + P^{k+1}}{2}$
+(and same for $Q$)
+
 
 ## Exact controllability
 

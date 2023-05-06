@@ -464,3 +464,42 @@ and sketching the rest of the structure.
 
 Messing with my neovim setup to get pdf view forward search working.
 Didn't get any writing done tonight but this will make things easier tomorrow.
+
+## 2023-04-27 (2h)
+
+Writing about simplices.
+
+## 2023-04-28 (3h)
+
+Writing about simplicial complexes and a bit more about differential forms.
+
+## 2023-04-29 (3h)
+
+Writin
+
+## 2023-04-30 (3h)
+
+Writing, getting into drawing diagrams with TikZ
+
+## 2023-05-01 (4h)
+
+Writing about chains and cochains and stuff
+
+## 2023-05-02 (2h)
+
+Writing about discrete forms
+
+## 2023-05-03 (1.5h)
+
+Trying to write about the discrete exterior derivative,
+too tired to make it coherent right now
+
+## 2023-05-05 (2h)
+
+Researching the harmonic Hodge operator and time-stepping scheme
+
+## 2023-05-06 (2h)
+
+Began deriving exact harmonic time-stepping.
+The constants should end up being the same as for Maxwell equations
+but I want to understand what I'm doing
