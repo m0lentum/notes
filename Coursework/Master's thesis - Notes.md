@@ -170,29 +170,160 @@ Q^{k} &= \text{real}(\hat{Q} \exp(-i\omega (t^k + \frac{\Delta t}{2}))
 \end{aligned}
 $$
 
-Substituting this formula for $P^k$ into $P^{k+1} - P^k$, we get
+Substituting this formula into the numerator of the approximation
+for $\partial_t P(t^k)$ where $t^k = t + \frac{\Delta t}{2}$, we get
 
 $$
 \begin{aligned}
-&P^{k+1} - P^k \\
-&= \text{real} \Big[ \hat{P} \exp(-i\omega (t^{k} + \Delta t)) \Big]
-- \text{real} \Big[ \hat{P} \exp(-i\omega t^k) \Big] \\
-&= \text{real} \Big[ \hat{P} (\exp(-i\omega (t^k + \Delta t)) - \exp(-i\omega t^k)) \Big] \\
-&= \text{real} \Big[ \hat{P} \exp(-i\omega t^k) (\exp(-i\omega \Delta t) - 1) \Big] \\
+& P(t^k + \frac{\Delta t}{2}) - P(t^k - \frac{\Delta t}{2}) \\
+&= \text{real} \Big[ \hat{P} \exp(-i\omega (t^k + \frac{\Delta t}{2})) \Big]
+- \text{real} \Big[ \hat{P} \exp(-i\omega (t^k - \frac{\Delta t}{2}) \Big] \\
+&= \text{real} \Big[ \hat{P} (\exp(-i\omega (t^k + \frac{\Delta t}{2}))
+- \exp(-i\omega (t^k - \frac{\Delta t}{2})) \Big] \\
+&= \text{real} \Big[ \hat{P} \exp(-i\omega t^k)
+\Big( \exp(-i\omega \frac{\Delta t}{2}) - \exp(i\omega \frac{\Delta t}{2}) \Big) \Big] \\
 &= \text{real} \Big[ -i\omega \hat{P} \exp(-i\omega t^k)
-\Big(\frac{\exp(-i\omega \Delta t) - 1}{-i\omega}\Big) \Big] \\
+\Big(\frac{\exp(-i\omega \frac{\Delta t}{2}) - \exp(i\omega \frac{\Delta t}{2})}{-i\omega}\Big) \Big] \\
 &= \text{real} \Big[ \partial_t P(t^k)
-\Big(\frac{\exp(-i\omega \Delta t) - 1}{-i\omega}\Big) \Big] \\
+\Big(\frac{\exp(-i\omega \frac{\Delta t}{2}) - \exp(i\omega \frac{\Delta t}{2})}{-i\omega}\Big) \Big] \\
+&= - \frac{1}{\omega} \partial_t P(t^k)
+\cdot \text{Im} \Big[\exp(-i\omega \frac{\Delta t}{2}) - \exp(i\omega \frac{\Delta t}{2}) \Big] \\
+&= \partial_t P(t^k) \Big(\frac{2}{\omega} \sin(\frac{\omega \Delta t}{2}) \Big) \\
 \end{aligned}
 $$
 
-TODO: the difference to Räbinä here is the time instance,
-I'm supposed to compute this approximation at half offset
-from the time $P$ exists at
-(which I also didn't do in the previous section).
-Redo computations using $P(t^k + \frac{\Delta t}{2}) = \frac{P^k + P^{k+1}}{2}$
-(and same for $Q$)
+The exact same formula arises from $\partial_t Q(t^k)$ where $t^k = t$.
 
+With this, denoting $\phi = \frac{\omega \Delta t}{2}$,
+the approximation for the time derivatives becomes
+
+$$
+\begin{aligned}
+\partial_t P &= \frac{P^{n+1} - P^n}{\frac{2}{\omega}\sin\phi} \\
+\partial_t Q &= \frac{Q^{n+\frac{3}{2}} - Q^{n+\frac{1}{2}}}{\frac{2}{\omega}\sin\phi} \\
+\end{aligned}
+$$
+
+and the update equations
+
+$$
+\begin{aligned}
+P^{n+1} &= P^n + \frac{2}{\omega}\sin\phi (c^2 \star_2 d_1
+	Q^{n+\frac{1}{2}} + F) \\
+Q^{n+\frac{3}{2}} &= Q^{n+\frac{1}{2}}
++ \frac{2}{\omega}\sin\phi (\star_1^{-1} d_1^T P^{n+1}) \\
+\end{aligned}
+$$
+
+### Harmonic Hodge
+
+The standard (Yee's) discrete diagonal Hodge operator is based on
+assuming locally constant fields (i.e. value of the continous field
+is constant everywhere on a mesh element).
+If we assume instead that the solution is spatially harmonic,
+we can get an operator that reproduces harmonic waves more accurately.
+
+The shape of a harmonic wave depends on its propagating direction,
+which is not constant in practical applications.
+Thus, we would like to minimize the error in a least-squares sense
+for waves propagating in all directions.
+In other words, given the wave $\hat{u} = \exp(i \vec{\kappa} \cdot \mathbf{x})$
+propagating in direction $\mathbf{d}$,
+and the primal and dual edge elements $\mathcal{E}$ and $\mathcal{E}^*$
+related by the Hodge star with $\star_1 \int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l} = \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}$,
+we'd like to minimize the error norm
+
+$$
+||\int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l} - \star_1^{-1} \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}\,||^2
+$$
+
+integrated over all directions $\mathbf{d}$.
+Denoting $\hat{u}_{\mathcal{E}} = \int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l}$
+and $\hat{u}_{\mathcal{E}^*} = \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}$,
+this gives the quadratic equation
+
+$$
+\hat{u}_{\mathcal{E}}^2
+- 2 \star_1^{-1} \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*}
++ (\star_1^{-1})^2 \hat{u}_{\mathcal{E}^*}^2
+$$
+
+the derivative of which with respect to $\star_1$ is
+
+$$
+2 \star_1^{-1} \hat{u}_{\mathcal{E}^*}^2 - 2 \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*}
+$$
+
+which is zero and thus the error is minimized when
+
+$$
+\star_1^{-1} = \frac{\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*}}{\hat{u}_{\mathcal{E}^*}^2}
+\iff \star_1 = \frac{\hat{u}_{\mathcal{E}^*}^2}{\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*}}.
+$$
+
+(this is for a single element of $\star_1$ so these are all real numbers)
+
+Integrating over the unit circle gives the minimized result across all directions:
+
+$$
+\star_1 = \frac{\int_{0}^{2\pi} \hat{u}_{\mathcal{E}^*}^2 \,d\theta}
+{\int_{0}^{2\pi} \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} \,d\theta}
+$$
+
+Here $\hat{u}_{\mathcal{E}}$ is the wave $\hat{u} = \exp(i\vec{\kappa} \cdot \mathbf{x})$
+integrated over $\mathcal{E}$ and the wave vector $\vec{\kappa}$
+is dependent on the integration direction by $\vec{\kappa} = \frac{\omega}{c} \mathbf{d}$,
+$\mathbf{d} = (\cos\theta, \sin\theta)$.
+
+Because we integrate over the entire unit circle,
+the solution will be the same regardless of the orientation of the edges
+(as long as they're orthogonal),
+so we can simplify computations by assuming
+$\mathcal{E}$ is oriented along the x-axis and $\mathcal{E}^*$ along the y-axis,
+each centered at the origin. With these assumptions,
+the Taylor series $\exp(ax) = \sum_{n=0}^{\infty} \frac{a^nx^n}{n!}$,
+and the auxiliary variable $\alpha = i \frac{\omega}{c} \cos\theta$ we get
+
+$$
+\begin{aligned}
+\hat{u}_{\mathcal{E}} &= \int_{\mathcal{E}} \hat{u} \\
+&= \int_{-\frac{l}{2}}^{\frac{l}{2}} \exp(i \frac{\omega}{c} x \cos\theta) \,dx \\
+&= \int_{-\frac{l}{2}}^{\frac{l}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n x^n}{n!} \,dx \\
+&= \Big[ \sum_{n=0}^{\infty} \frac{1}{n}\frac{\alpha^n x^{n+1}}{n!} \Big]_{x = -\frac{l}{2}}^{x = \frac{l}{2}} \\
+&= \sum_{n=0}^{\infty} \frac{\alpha^n \Big( (\frac{l}{2})^{n+1} - (-\frac{l}{2})^{n+1} \Big)}{(n + 1)!} \\
+&\text{terms where $n$ is odd are eliminated} \\
+&= \sum_{n=0}^{\infty} \frac{\alpha^{2n} 2(\frac{l}{2})^{2n+1}}{(2n + 1)!} \\
+&= \sum_{n=0}^{\infty} \frac{\alpha^{2n} l^{2n+1}}{2^{2n}(2n + 1)!} \\
+&= l \sum_{n=0}^{\infty} \frac{(\alpha l)^{2n}}{2^{2n}(2n + 1)!} \\
+\end{aligned}
+$$
+
+Similarly, the exponential term for $\hat{u}_{\mathcal{E}^*}$
+is $\beta = i \frac{\omega}{c} \sin\theta$
+and the same integration (denoting length of the dual edge with $l^*$) produces
+
+$$
+\hat{u}_{\mathcal{E}^*} = l^* \sum_{n=0}^{\infty} \frac{(\beta l^*)^{2n}}{2^{2n}(2n + 1)!}.
+$$
+
+The first few terms of this series are
+
+$$
+\hat{u}_{\mathcal{E}} = l \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\alpha l)^4}{1920} \Big).
+$$
+
+With these series expressions we can build the products
+in the optimized Hodge star as series
+whose first few terms are
+
+$$
+\begin{aligned}
+\hat{u}_{\mathcal{E}^*}^2 &\approx (l^*)^2
+\Big( 1 + \frac{(\beta l^*)^2}{12} + \frac{(\beta l^*)^4}{360} \Big) \\
+\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} &\approx ll^*
+\Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\beta l^*)^2}{24} + \frac{\alpha l \beta l^*}{576} \Big) \\
+\end{aligned}
+$$
 
 ## Exact controllability
 

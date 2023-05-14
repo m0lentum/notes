@@ -503,3 +503,21 @@ Researching the harmonic Hodge operator and time-stepping scheme
 Began deriving exact harmonic time-stepping.
 The constants should end up being the same as for Maxwell equations
 but I want to understand what I'm doing
+
+## 2023-05-09 (2h)
+
+Worked out the formulas for exact time-stepping.
+
+## 2023-05-10 (2h)
+
+Looking into the harmonic Hodge operator.
+Got some questions about how to generalize it from the 3D case of Räbinä.
+
+## 2023-05-13 (2.5h)
+
+Continuing with harmonic Hodge.
+Got the idea, now I just need to chew through some integrals.
+
+## 2023-05-14 (3h)
+
+Harmonic Hodge integration in progress. This is a lot of work
