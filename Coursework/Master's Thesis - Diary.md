@@ -521,3 +521,21 @@ Got the idea, now I just need to chew through some integrals.
 ## 2023-05-14 (3h)
 
 Harmonic Hodge integration in progress. This is a lot of work
+
+## 2023-05-16 (2h)
+
+Finished deriving harmonic Hodge for the edge-edge case.
+Next up, same thing for the face-vertex Hodge.
+
+## 2023-05-18 (2h)
+
+Deriving harmonic Hodge for the face-vertex case, most of the way done.
+
+## 2023-05-19 (1.5h)
+
+Finished deriving harmonic Hodge for the face-vertex case.
+
+## 2023-05-21 (2.5h)
+
+Took quick notes on the polygon generalization of the face harmonic Hodge
+and started implementing all of this harmonic stuff in code.

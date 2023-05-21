@@ -321,8 +321,156 @@ $$
 \hat{u}_{\mathcal{E}^*}^2 &\approx (l^*)^2
 \Big( 1 + \frac{(\beta l^*)^2}{12} + \frac{(\beta l^*)^4}{360} \Big) \\
 \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} &\approx ll^*
-\Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\beta l^*)^2}{24} + \frac{\alpha l \beta l^*}{576} \Big) \\
+\Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\beta l^*)^2}{24} + \frac{(\alpha l \beta l^*)^2}{576} \Big) \\
 \end{aligned}
+$$
+
+Now we need to integrate these expressions around the unit circle.
+First, we can get rid of the imaginary terms in $\alpha$ and $\beta$
+by evaluating the even powers.
+Defining
+
+$$
+\hat{\kappa}_{\mathcal{E}} := \frac{\omega^2}{c^2} l^2,
+\qquad \hat{\kappa}_{\mathcal{E}^*} := \frac{\omega^2}{c^2} (l^*)^2
+$$
+
+for which $(\alpha l)^2 = -\hat{\kappa}_{\mathcal{E}} \cos^2 \theta$
+and $(\beta l^*)^2 = -\hat{\kappa}_{\mathcal{E}^*} \sin^2 \theta$
+and renaming $l = |\mathcal{E}|$, $l^* = |\mathcal{E}^*|$
+we get
+
+$$
+\begin{aligned}
+\int_{0}^{2\pi} \hat{u}_{\mathcal{E}^*}^2 \,d\theta
+&\approx |\mathcal{E}^*|^2 \int_{0}^{2\pi}
+\Big( 1 - \frac{\hat{\kappa}_{\mathcal{E}^*} \sin^2\theta}{12}
++ \frac{\kappa_{\mathcal{E}^*}^2 sin^4\theta}{360} \Big) \,d\theta \\
+&= 2|\mathcal{E}^*|^2 \pi \Big(
+1 - \frac{\hat{\kappa}_{\mathcal{E}^*}}{6} + \frac{\hat{\kappa}_{\mathcal{E}^*}^2}{240}
+\Big) \\
+\\
+\int_{0}^{2\pi} \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} \,d\theta
+&\approx |\mathcal{E}| |\mathcal{E}^*| \int_{0}^{2\pi}
+\Big( 1 - \frac{\hat{\kappa}_{\mathcal{E}} \cos^2\theta}{24}
+- \frac{\hat{\kappa}_{\mathcal{E}^*} \sin^2\theta}{24}
++ \frac{\hat{\kappa}_{\mathcal{E}} \cos^2\theta \hat{\kappa}_{\mathcal{E}^*} \sin^2\theta}{576} \Big) \,d\theta \\
+&= 2 |\mathcal{E}| |\mathcal{E}^*| \pi \Big(
+1 - \frac{\hat{\kappa}_{\mathcal{E}}}{12} - \frac{\hat{\kappa}_{\mathcal{E}^*}}{12}
++ \frac{\hat{\kappa}_{\mathcal{E}} \hat{\kappa}_{\mathcal{E}^*}}{1152} \Big) \\
+\end{aligned}
+$$
+
+Leaving out the final terms which are too small to have an effect in our scenario,
+and dividing these according to the formula for $\star_1$ yields
+
+$$
+\star_1 \approx \frac{|\mathcal{E}^*|}{|\mathcal{E}|}
+\Big( \frac{1 - \frac{\hat{\kappa}_{\mathcal{E}^*}}{6}}
+{ 1 - \frac{\hat{\kappa}_{\mathcal{E}}}{12} - \frac{\hat{\kappa}_{\mathcal{E}^*}}{12} } \Big).
+$$
+
+#### Face to vertex
+
+The same consideration for $\star_2$ going from a primal face $\mathcal{F}$
+to a dual vertex $v^*$ at the origin yields
+
+$$
+\star_2 = \frac{\int_0^{2\pi} \hat{u}(v^*)^2 \,d\theta}{\int_0^{2\pi} \hat{u}_{\mathcal{F}} \hat{u}(v^*) \,d\theta}
+$$
+
+where $\hat{u}_{\mathcal{F}}$ is the wave $\hat{u}$ integrated over the face
+and $\hat{u}(v^*)$ is the wave evaluated at the vertex.
+We can assume for now that the face is a circle with radius $r$ and area $\pi r^2$.
+A generalization for polygons will be performed later.
+
+The vertex being at the origin means $\hat{u}(v^*) = \hat{u}(0) = \exp(0) = 1$.
+
+The integral of $\hat{u}$ over the circular face $\mathcal{F}$ is
+symmetric for all angles $\theta$, so we may assume $\theta = \frac{\pi}{2}$,
+i.e. that the wave is propagating along the y-axis.
+Let $\gamma = \frac{i\omega}{c}$, and we have
+
+$$
+\begin{aligned}
+\hat{u}_{\mathcal{F}} &= \int_{\mathcal{F}} \hat{u} \\
+&= \int_{-r}^{r} \int_{-\sqrt{r^2 - x^2}}^{\sqrt{r^2 - x^2}}
+  \exp(i\frac{\omega}{c} y) \,dydx \\
+&= \int_{-r}^{r} \int_{-\sqrt{r^2 - x^2}}^{\sqrt{r^2 - x^2}}
+  \sum_{n=0}^{\infty} \frac{\gamma^n y^n}{n!} \,dydx \\
+&= \int_{-r}^{r} \sum_{n=0}^{\infty}
+  \frac{\gamma^n \Big((\sqrt{r^2 - x^2})^{n+1} - (-\sqrt{r^2 - x^2})^{n+1} \Big)}{(n + 1)!} \,dydx \\
+&\text{terms where $n$ is odd are eliminated} \\
+&= \int_{-r}^{r} \sum_{n=0}^{\infty} \frac{2 \gamma^{2n} (\sqrt{r^2 - x^2})^{2n+1}}{(2n + 1)!} \,dx \\
+\end{aligned}
+$$
+
+Here we change variable to $t$ such that $x = r\sin t$,
+for which $dx = r\cos t dt$ and $\sqrt{r^2 - x^2} = r\cos t$,
+and continue to integrate the first few terms of the series:
+
+$$
+\begin{aligned}
+\hat{u}_{\mathcal{F}}
+&= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}
+  \sum_{n=0}^{\infty} \frac{2\gamma^{2n} (r\cos t)^{2n+1}}{(2n + 1)!} r\cos t \,dt \\
+&= \sum_{n=0}^{\infty} \frac{2\gamma^{2n} r^{2n+2}}{(2n + 1)!}
+  \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} (\cos t)^{2n+2} \,dt \\
+&= \pi r^2 \Big( 1 + \frac{(\gamma r)^2}{8} + \frac{(\gamma r)^4}{192} + \dots \Big) \\
+\end{aligned}
+$$
+
+Let $\hat{\kappa}_{\mathcal{F}} = \frac{\omega^2}{c^2} r^2$, for which
+$(\gamma r)^2 = -\hat{\kappa}_{\mathcal{F}}$
+and $|\mathcal{F}| = \pi r^2$.
+Integrating $\hat{u}_{\mathcal{F}} \hat{u}(v^*)$ over the unit circle then gives
+
+$$
+\begin{aligned}
+\int_{0}^{2\pi} \hat{u}_{\mathcal{F}} \hat{u}(v^*) \,d\theta
+&\approx |\mathcal{F}| \int_{0}^{2\pi}
+  \Big( 1 - \frac{\hat{\kappa}}{8} + \frac{\hat{\kappa}^2}{192} \Big) \,d\theta \\
+&= 2\pi |\mathcal{F}| \Big( 1 - \frac{\hat{\kappa}_{\mathcal{F}}}{8}
++ \frac{\hat{\kappa}_{\mathcal{F}}^2}{192} \Big) \\
+\end{aligned}
+$$
+
+Because $\hat{u}(v^*)^2$ is the constant 1, its integral over the unit circle is $2\pi$.
+It follows that
+
+$$
+\star_2 \approx \frac{1}{|\mathcal{F}|}
+\Big( \frac{1}{1 - \frac{\hat{\kappa}_{\mathcal{F}}}{8} + \frac{\hat{\kappa}_{\mathcal{F}}^2}{192}} \Big).
+$$
+
+#### Polygon faces
+
+The preceding derivation was based on circular faces,
+but the faces in practical applications are polygons.
+We can make use of results obtained from the circle case
+by approximating polygons with circles.
+
+Given a regular polygon with maximum internal sphere radius $r$
+and minimum external sphere radius $R$,
+integrating over a triangle or square using the approximation $r^2_{\mathcal{F}} = \frac{1}{3} (2r^2 + R^2)$
+matches the first three terms of the Taylor polynomial obtained from the circle case.
+(TODO: work through the integration to verify this)
+
+With irregular convex polygons, each edge defines a different value for $r$
+and each vertex a different value for $R$.
+$r_k$ is the perpendicular distance from the origin to the edge $k$
+and $R_k$ is the distance to the vertex $k$.
+The approximation we use for irregular polygons with $n$ edges is the average
+of the regular polygon approximations corresponding to each edge
+
+$$
+r_{\mathcal{F}}^2 \approx \frac{1}{3n} \sum_{k=1}^n (2r_k^2 + R_k^2).
+$$
+
+Applying this to $\hat{\kappa}_{\mathcal{F}}$ yields
+
+$$
+\hat{\kappa}_{\mathcal{F}} = \frac{\omega^2}{3nc^2} \sum_{k=1}^n (2r_k^2 + R_k^2).
 $$
 
 ## Exact controllability
@@ -814,3 +962,5 @@ and examine the error in the interior of the computation mesh.
   (currently I'm just experimentally picking one that works)
 - figure out how to measure mesh quality
   and how control method convergence is affected by this
+- **update comments in the code files**
+	- and add .md note with some theory?
