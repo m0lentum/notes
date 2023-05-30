@@ -227,19 +227,22 @@ The shape of a harmonic wave depends on its propagating direction,
 which is not constant in practical applications.
 Thus, we would like to minimize the error in a least-squares sense
 for waves propagating in all directions.
-In other words, given the wave $\hat{u} = \exp(i \vec{\kappa} \cdot \mathbf{x})$
+In other words, given the wave $\hat{u} = u_0 \exp(i \vec{\kappa} \cdot \mathbf{x})$
 propagating in direction $\mathbf{d}$,
 and the primal and dual edge elements $\mathcal{E}$ and $\mathcal{E}^*$
 related by the Hodge star with $\star_1 \int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l} = \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}$,
 we'd like to minimize the error norm
 
 $$
-||\int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l} - \star_1^{-1} \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}\,||^2
+||\int_{\mathcal{E}} \hat{u} \cdot t \,ds
+- \star_1^{-1} \int_{\mathcal{E}^*} \hat{u} \cdot n \,ds\,||^2,
 $$
 
+where $t$ is the tangent vector to $\mathcal{E}$
+and $n$ is the normal vector to $\mathcal{E}^*$
 integrated over all directions $\mathbf{d}$.
-Denoting $\hat{u}_{\mathcal{E}} = \int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l}$
-and $\hat{u}_{\mathcal{E}^*} = \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}$,
+Denoting $\hat{u}_{\mathcal{E}} = \int_{\mathcal{E}} \hat{u} \cdot t\,ds$
+and $\hat{u}_{\mathcal{E}^*} = \int_{\mathcal{E}^*} \hat{u} \cdot n\,ds$,
 this gives the quadratic equation
 
 $$
@@ -270,7 +273,7 @@ $$
 {\int_{0}^{2\pi} \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} \,d\theta}
 $$
 
-Here $\hat{u}_{\mathcal{E}}$ is the wave $\hat{u} = \exp(i\vec{\kappa} \cdot \mathbf{x})$
+Here $\hat{u}_{\mathcal{E}}$ is the wave $\hat{u} = u_0 \exp(i\vec{\kappa} \cdot \mathbf{x})$
 integrated over $\mathcal{E}$ and the wave vector $\vec{\kappa}$
 is dependent on the integration direction by $\vec{\kappa} = \frac{\omega}{c} \mathbf{d}$,
 $\mathbf{d} = (\cos\theta, \sin\theta)$.
@@ -282,35 +285,37 @@ so we can simplify computations by assuming
 $\mathcal{E}$ is oriented along the x-axis and $\mathcal{E}^*$ along the y-axis,
 each centered at the origin. With these assumptions,
 the Taylor series $\exp(ax) = \sum_{n=0}^{\infty} \frac{a^nx^n}{n!}$,
-and the auxiliary variable $\alpha = i \frac{\omega}{c} \cos\theta$ we get
+and the auxiliary variable $\alpha = i \kappa \cos\theta$ we get
 
 $$
 \begin{aligned}
 \hat{u}_{\mathcal{E}} &= \int_{\mathcal{E}} \hat{u} \\
-&= \int_{-\frac{l}{2}}^{\frac{l}{2}} \exp(i \frac{\omega}{c} x \cos\theta) \,dx \\
-&= \int_{-\frac{l}{2}}^{\frac{l}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n x^n}{n!} \,dx \\
-&= \Big[ \sum_{n=0}^{\infty} \frac{1}{n}\frac{\alpha^n x^{n+1}}{n!} \Big]_{x = -\frac{l}{2}}^{x = \frac{l}{2}} \\
-&= \sum_{n=0}^{\infty} \frac{\alpha^n \Big( (\frac{l}{2})^{n+1} - (-\frac{l}{2})^{n+1} \Big)}{(n + 1)!} \\
+&= (u_0)_x \int_{-\frac{l}{2}}^{\frac{l}{2}} \exp(i \kappa x \cos\theta) \,dx \\
+&= (u_0)_x \int_{-\frac{l}{2}}^{\frac{l}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n x^n}{n!} \,dx \\
+&= (u_0)_x \Big[ \sum_{n=0}^{\infty} \frac{1}{n}\frac{\alpha^n x^{n+1}}{n!} \Big]_{x = -\frac{l}{2}}^{x = \frac{l}{2}} \\
+&= (u_0)_x \sum_{n=0}^{\infty} \frac{\alpha^n \Big( (\frac{l}{2})^{n+1} - (-\frac{l}{2})^{n+1} \Big)}{(n + 1)!} \\
 &\text{terms where $n$ is odd are eliminated} \\
-&= \sum_{n=0}^{\infty} \frac{\alpha^{2n} 2(\frac{l}{2})^{2n+1}}{(2n + 1)!} \\
-&= \sum_{n=0}^{\infty} \frac{\alpha^{2n} l^{2n+1}}{2^{2n}(2n + 1)!} \\
-&= l \sum_{n=0}^{\infty} \frac{(\alpha l)^{2n}}{2^{2n}(2n + 1)!} \\
+&= (u_0)_x \sum_{n=0}^{\infty} \frac{\alpha^{2n} 2(\frac{l}{2})^{2n+1}}{(2n + 1)!} \\
+&= (u_0)_x \sum_{n=0}^{\infty} \frac{\alpha^{2n} l^{2n+1}}{2^{2n}(2n + 1)!} \\
+&= (u_0)_x l \sum_{n=0}^{\infty} \frac{(\alpha l)^{2n}}{2^{2n}(2n + 1)!} \\
 \end{aligned}
 $$
 
 Similarly, the exponential term for $\hat{u}_{\mathcal{E}^*}$
-is $\beta = i \frac{\omega}{c} \sin\theta$
+is $\beta = i \kappa \sin\theta$
 and the same integration (denoting length of the dual edge with $l^*$) produces
 
 $$
-\hat{u}_{\mathcal{E}^*} = l^* \sum_{n=0}^{\infty} \frac{(\beta l^*)^{2n}}{2^{2n}(2n + 1)!}.
+\hat{u}_{\mathcal{E}^*} = (u_0)_x l^* \sum_{n=0}^{\infty} \frac{(\beta l^*)^{2n}}{2^{2n}(2n + 1)!}.
 $$
 
 The first few terms of this series are
 
 $$
-\hat{u}_{\mathcal{E}} = l \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\alpha l)^4}{1920} \Big).
+\hat{u}_{\mathcal{E}} = (u_0)_x l \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\alpha l)^4}{1920} \Big).
 $$
+
+and the x component of $u_0$ is $(u_0)_x = u_0\cos\theta$.
 
 With these series expressions we can build the products
 in the optimized Hodge star as series
@@ -318,9 +323,9 @@ whose first few terms are
 
 $$
 \begin{aligned}
-\hat{u}_{\mathcal{E}^*}^2 &\approx (l^*)^2
+\hat{u}_{\mathcal{E}^*}^2 &\approx u_0^2\cos^2\theta (l^*)^2
 \Big( 1 + \frac{(\beta l^*)^2}{12} + \frac{(\beta l^*)^4}{360} \Big) \\
-\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} &\approx ll^*
+\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} &\approx u_0^2\cos^2\theta ll^*
 \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\beta l^*)^2}{24} + \frac{(\alpha l \beta l^*)^2}{576} \Big) \\
 \end{aligned}
 $$
@@ -328,47 +333,46 @@ $$
 Now we need to integrate these expressions around the unit circle.
 First, we can get rid of the imaginary terms in $\alpha$ and $\beta$
 by evaluating the even powers.
-Defining
 
-$$
-\hat{\kappa}_{\mathcal{E}} := \frac{\omega^2}{c^2} l^2,
-\qquad \hat{\kappa}_{\mathcal{E}^*} := \frac{\omega^2}{c^2} (l^*)^2
-$$
-
-for which $(\alpha l)^2 = -\hat{\kappa}_{\mathcal{E}} \cos^2 \theta$
-and $(\beta l^*)^2 = -\hat{\kappa}_{\mathcal{E}^*} \sin^2 \theta$
-and renaming $l = |\mathcal{E}|$, $l^* = |\mathcal{E}^*|$
-we get
+$(\alpha l)^2 = -\kappa^2 |\mathcal{E}|^2 \cos^2 \theta$
+and $(\beta l^*)^2 = -\kappa^2 |\mathcal{E}^*|^2 \sin^2 \theta$,
+where $\kappa = \frac{\omega}{c}$ is the wavenumber
+and $|\mathcal{E}| = l$, $|\mathcal{E}^*| = l^*$ are the lengths of the edges.
 
 $$
 \begin{aligned}
 \int_{0}^{2\pi} \hat{u}_{\mathcal{E}^*}^2 \,d\theta
-&\approx |\mathcal{E}^*|^2 \int_{0}^{2\pi}
-\Big( 1 - \frac{\hat{\kappa}_{\mathcal{E}^*} \sin^2\theta}{12}
-+ \frac{\kappa_{\mathcal{E}^*}^2 sin^4\theta}{360} \Big) \,d\theta \\
-&= 2|\mathcal{E}^*|^2 \pi \Big(
-1 - \frac{\hat{\kappa}_{\mathcal{E}^*}}{6} + \frac{\hat{\kappa}_{\mathcal{E}^*}^2}{240}
-\Big) \\
+&= u_0^2 |\mathcal{E}^*|^2 \int_{0}^{2\pi}
+\Big( cos^2\theta - \frac{\kappa^2 |\mathcal{E}^*|^2 \cos^2\sin^2\theta}{12}
++ \frac{\kappa^4 |\mathcal{E}^*|^4 \cos^2\sin^4\theta}{360} + \dots \Big) \,d\theta \\
+&= u_0^2 |\mathcal{E}^*|^2 \pi \Big(
+1 - \frac{\kappa^2 |\mathcal{E}^*|^2}{48}) \Big)
++ \mathcal{O}(\kappa^4 |\mathcal{E}^*|^4)\\
 \\
 \int_{0}^{2\pi} \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} \,d\theta
-&\approx |\mathcal{E}| |\mathcal{E}^*| \int_{0}^{2\pi}
-\Big( 1 - \frac{\hat{\kappa}_{\mathcal{E}} \cos^2\theta}{24}
-- \frac{\hat{\kappa}_{\mathcal{E}^*} \sin^2\theta}{24}
-+ \frac{\hat{\kappa}_{\mathcal{E}} \cos^2\theta \hat{\kappa}_{\mathcal{E}^*} \sin^2\theta}{576} \Big) \,d\theta \\
-&= 2 |\mathcal{E}| |\mathcal{E}^*| \pi \Big(
-1 - \frac{\hat{\kappa}_{\mathcal{E}}}{12} - \frac{\hat{\kappa}_{\mathcal{E}^*}}{12}
-+ \frac{\hat{\kappa}_{\mathcal{E}} \hat{\kappa}_{\mathcal{E}^*}}{1152} \Big) \\
+&= u_0^2 |\mathcal{E}| |\mathcal{E}^*| \int_{0}^{2\pi}
+\Big( \cos^2\theta - \frac{\kappa^2 |\mathcal{E}|^2 \cos^4\theta}{24}
+- \frac{\kappa^2 |\mathcal{E}^*|^2 \cos^2\sin^2\theta}{24}
++ \frac{\kappa^4 |\mathcal{E}|^2 |\mathcal{E}^*|^2 \cos^4\sin^2\theta}{576} + \dots \Big) \,d\theta \\
+&= u_0^2 |\mathcal{E}| |\mathcal{E}^*| \pi \Big(
+1 - \frac{\kappa^2 |\mathcal{E}|^2}{32} - \frac{\kappa^2 |\mathcal{E}^*|^2}{96} \Big)
++ \mathcal{O}(\kappa^4 |\mathcal{E}|^2 |\mathcal{E}^*|^2)
 \end{aligned}
 $$
 
-Leaving out the final terms which are too small to have an effect in our scenario,
-and dividing these according to the formula for $\star_1$ yields
+Dividing these according to the formula for $\star_1$ yields
 
 $$
 \star_1 \approx \frac{|\mathcal{E}^*|}{|\mathcal{E}|}
-\Big( \frac{1 - \frac{\hat{\kappa}_{\mathcal{E}^*}}{6}}
-{ 1 - \frac{\hat{\kappa}_{\mathcal{E}}}{12} - \frac{\hat{\kappa}_{\mathcal{E}^*}}{12} } \Big).
+\Big( \frac{1 - \frac{\kappa^2 |\mathcal{E}^*|^2}{16}}
+{ 1 - \frac{\kappa^2 |\mathcal{E}|^2}{96} - \frac{\kappa^2 |\mathcal{E}^*|^2}{32} } \Big)
 $$
+
+TODO: the above solution seems correct based on testing,
+but it's not what the previous calculations lead to.
+It seems to come from flipping the order of the edges.
+Maybe I have the least-squares part backwards?
+Work through this
 
 #### Face to vertex
 
@@ -963,4 +967,4 @@ and examine the error in the interior of the computation mesh.
 - figure out how to measure mesh quality
   and how control method convergence is affected by this
 - **update comments in the code files**
-	- and add .md note with some theory?
+  - and add .md note with some theory?

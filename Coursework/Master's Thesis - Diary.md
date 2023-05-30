@@ -539,3 +539,36 @@ Finished deriving harmonic Hodge for the face-vertex case.
 
 Took quick notes on the polygon generalization of the face harmonic Hodge
 and started implementing all of this harmonic stuff in code.
+
+## 2023-05-25 (1h)
+
+Finished implementing harmonic Hodge and time-stepping.
+Only one of the Hodge stars works correctly,
+need to debug the other one next time.
+
+## 2023-05-26 (2.5h)
+
+Managed to get harmonic Hodge working by following the
+Generalized Wave Propagation Problems paper,
+but didn't understand where the values in that come from.
+
+## 2023-05-27 (3h)
+
+Spent more time looking over the harmonic Hodge math, no dice.
+Then wrote a bit for a change.
+
+## 2023-05-28 (4h)
+
+Writing about wedge products.
+Took a lot of time to come up with a concise explanation
+but I came up with an alright one.
+
+## 2023-05-29 (2h)
+
+Writing more about wedge products.
+
+## 2023-05-30 (3h)
+
+Working on harmonic Hodge again,
+still can't quite arrive at the correct result
+but I think I see what I need to change to get there.

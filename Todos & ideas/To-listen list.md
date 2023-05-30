@@ -82,3 +82,4 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 05-05 Vintersea
 - [ ] 06-02 Atlases
 - [ ] 06-09 Scar Symmetry
+- [ ] 06-23 Mental Cruelty
