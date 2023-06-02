@@ -230,19 +230,25 @@ for waves propagating in all directions.
 In other words, given the wave $\hat{u} = u_0 \exp(i \vec{\kappa} \cdot \mathbf{x})$
 propagating in direction $\mathbf{d}$,
 and the primal and dual edge elements $\mathcal{E}$ and $\mathcal{E}^*$
-related by the Hodge star with $\star_1 \int_{\mathcal{E}} \hat{u} \cdot d\mathbf{l} = \int_{\mathcal{E}^*} \hat{u} \cdot d\mathbf{l}$,
+related by the Hodge star with $\star_1 \int_{\mathcal{E}} \hat{u} = \int_{\mathcal{E}^*} \hat{u}$,
 we'd like to minimize the error norm
 
 $$
-||\int_{\mathcal{E}} \hat{u} \cdot t \,ds
-- \star_1^{-1} \int_{\mathcal{E}^*} \hat{u} \cdot n \,ds\,||^2,
+||\int_{\mathcal{E}} \hat{u} \cdot n \,ds
+- \star_1^{-1} \int_{\mathcal{E}^*} \hat{u} \cdot t \,ds\,||^2,
 $$
 
-where $t$ is the tangent vector to $\mathcal{E}$
-and $n$ is the normal vector to $\mathcal{E}^*$
+where $t$ is the tangent vector to $\mathcal{E}^*$
+and $n$ is the normal vector to $\mathcal{E}$,
 integrated over all directions $\mathbf{d}$.
-Denoting $\hat{u}_{\mathcal{E}} = \int_{\mathcal{E}} \hat{u} \cdot t\,ds$
-and $\hat{u}_{\mathcal{E}^*} = \int_{\mathcal{E}^*} \hat{u} \cdot n\,ds$,
+
+(Note: it's very important that the primal edge is integrated
+in the normal direction and the dual edge in the tangent direction,
+not the other way around, because we store flux on primal edges.
+The other way around yields a different result which won't work as desired.)
+
+Denoting $\hat{u}_{\mathcal{E}} = \int_{\mathcal{E}} \hat{u} \cdot n\,ds$
+and $\hat{u}_{\mathcal{E}^*} = \int_{\mathcal{E}^*} \hat{u} \cdot t\,ds$,
 this gives the quadratic equation
 
 $$
@@ -289,15 +295,15 @@ and the auxiliary variable $\alpha = i \kappa \cos\theta$ we get
 
 $$
 \begin{aligned}
-\hat{u}_{\mathcal{E}} &= \int_{\mathcal{E}} \hat{u} \\
-&= (u_0)_x \int_{-\frac{l}{2}}^{\frac{l}{2}} \exp(i \kappa x \cos\theta) \,dx \\
-&= (u_0)_x \int_{-\frac{l}{2}}^{\frac{l}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n x^n}{n!} \,dx \\
-&= (u_0)_x \Big[ \sum_{n=0}^{\infty} \frac{1}{n}\frac{\alpha^n x^{n+1}}{n!} \Big]_{x = -\frac{l}{2}}^{x = \frac{l}{2}} \\
-&= (u_0)_x \sum_{n=0}^{\infty} \frac{\alpha^n \Big( (\frac{l}{2})^{n+1} - (-\frac{l}{2})^{n+1} \Big)}{(n + 1)!} \\
+\hat{u}_{\mathcal{E}} &= \int_{\mathcal{E}} \hat{u} \cdot n \,ds \\
+&= (u_0)_y \int_{-\frac{l}{2}}^{\frac{l}{2}} \exp(i \kappa x \cos\theta) \,dx \\
+&= (u_0)_y \int_{-\frac{l}{2}}^{\frac{l}{2}} \sum_{n=0}^{\infty} \frac{\alpha^n x^n}{n!} \,dx \\
+&= (u_0)_y \Big[ \sum_{n=0}^{\infty} \frac{1}{n}\frac{\alpha^n x^{n+1}}{n!} \Big]_{x = -\frac{l}{2}}^{x = \frac{l}{2}} \\
+&= (u_0)_y \sum_{n=0}^{\infty} \frac{\alpha^n \Big( (\frac{l}{2})^{n+1} - (-\frac{l}{2})^{n+1} \Big)}{(n + 1)!} \\
 &\text{terms where $n$ is odd are eliminated} \\
-&= (u_0)_x \sum_{n=0}^{\infty} \frac{\alpha^{2n} 2(\frac{l}{2})^{2n+1}}{(2n + 1)!} \\
-&= (u_0)_x \sum_{n=0}^{\infty} \frac{\alpha^{2n} l^{2n+1}}{2^{2n}(2n + 1)!} \\
-&= (u_0)_x l \sum_{n=0}^{\infty} \frac{(\alpha l)^{2n}}{2^{2n}(2n + 1)!} \\
+&= (u_0)_y \sum_{n=0}^{\infty} \frac{\alpha^{2n} 2(\frac{l}{2})^{2n+1}}{(2n + 1)!} \\
+&= (u_0)_y \sum_{n=0}^{\infty} \frac{\alpha^{2n} l^{2n+1}}{2^{2n}(2n + 1)!} \\
+&= (u_0)_y l \sum_{n=0}^{\infty} \frac{(\alpha l)^{2n}}{2^{2n}(2n + 1)!} \\
 \end{aligned}
 $$
 
@@ -306,16 +312,18 @@ is $\beta = i \kappa \sin\theta$
 and the same integration (denoting length of the dual edge with $l^*$) produces
 
 $$
-\hat{u}_{\mathcal{E}^*} = (u_0)_x l^* \sum_{n=0}^{\infty} \frac{(\beta l^*)^{2n}}{2^{2n}(2n + 1)!}.
+\hat{u}_{\mathcal{E}^*} = (u_0)_y l^* \sum_{n=0}^{\infty} \frac{(\beta l^*)^{2n}}{2^{2n}(2n + 1)!}.
 $$
 
 The first few terms of this series are
 
 $$
-\hat{u}_{\mathcal{E}} = (u_0)_x l \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\alpha l)^4}{1920} \Big).
+\hat{u}_{\mathcal{E}} = (u_0)_y l \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\alpha l)^4}{1920} \Big).
 $$
 
-and the x component of $u_0$ is $(u_0)_x = u_0\cos\theta$.
+and the y component of $u_0$
+(which arises from the dot product with $n$ and $t$)
+is $(u_0)_y = u_0\sin\theta$.
 
 With these series expressions we can build the products
 in the optimized Hodge star as series
@@ -323,9 +331,9 @@ whose first few terms are
 
 $$
 \begin{aligned}
-\hat{u}_{\mathcal{E}^*}^2 &\approx u_0^2\cos^2\theta (l^*)^2
+\hat{u}_{\mathcal{E}^*}^2 &\approx u_0^2 (\sin^2\theta) (l^*)^2
 \Big( 1 + \frac{(\beta l^*)^2}{12} + \frac{(\beta l^*)^4}{360} \Big) \\
-\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} &\approx u_0^2\cos^2\theta ll^*
+\hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} &\approx u_0^2 (\sin^2\theta) ll^*
 \Big( 1 + \frac{(\alpha l)^2}{24} + \frac{(\beta l^*)^2}{24} + \frac{(\alpha l \beta l^*)^2}{576} \Big) \\
 \end{aligned}
 $$
@@ -343,19 +351,19 @@ $$
 \begin{aligned}
 \int_{0}^{2\pi} \hat{u}_{\mathcal{E}^*}^2 \,d\theta
 &= u_0^2 |\mathcal{E}^*|^2 \int_{0}^{2\pi}
-\Big( cos^2\theta - \frac{\kappa^2 |\mathcal{E}^*|^2 \cos^2\sin^2\theta}{12}
-+ \frac{\kappa^4 |\mathcal{E}^*|^4 \cos^2\sin^4\theta}{360} + \dots \Big) \,d\theta \\
+\Big( sin^2\theta - \frac{\kappa^2 |\mathcal{E}^*|^2 \sin^4\theta}{12}
++ \frac{\kappa^4 |\mathcal{E}^*|^4 \sin^6\theta}{360} + \dots \Big) \,d\theta \\
 &= u_0^2 |\mathcal{E}^*|^2 \pi \Big(
-1 - \frac{\kappa^2 |\mathcal{E}^*|^2}{48}) \Big)
+1 - \frac{\kappa^2 |\mathcal{E}^*|^2}{16}) \Big)
 + \mathcal{O}(\kappa^4 |\mathcal{E}^*|^4)\\
 \\
 \int_{0}^{2\pi} \hat{u}_{\mathcal{E}} \hat{u}_{\mathcal{E}^*} \,d\theta
 &= u_0^2 |\mathcal{E}| |\mathcal{E}^*| \int_{0}^{2\pi}
-\Big( \cos^2\theta - \frac{\kappa^2 |\mathcal{E}|^2 \cos^4\theta}{24}
-- \frac{\kappa^2 |\mathcal{E}^*|^2 \cos^2\sin^2\theta}{24}
-+ \frac{\kappa^4 |\mathcal{E}|^2 |\mathcal{E}^*|^2 \cos^4\sin^2\theta}{576} + \dots \Big) \,d\theta \\
+\Big( \sin^2\theta - \frac{\kappa^2 |\mathcal{E}|^2 \sin^2\cos^2\theta}{24}
+- \frac{\kappa^2 |\mathcal{E}^*|^2 \sin^4\theta}{24}
++ \frac{\kappa^4 |\mathcal{E}|^2 |\mathcal{E}^*|^2 \sin^4\cos^2\theta}{576} + \dots \Big) \,d\theta \\
 &= u_0^2 |\mathcal{E}| |\mathcal{E}^*| \pi \Big(
-1 - \frac{\kappa^2 |\mathcal{E}|^2}{32} - \frac{\kappa^2 |\mathcal{E}^*|^2}{96} \Big)
+1 - \frac{\kappa^2 |\mathcal{E}|^2}{96} - \frac{\kappa^2 |\mathcal{E}^*|^2}{32} \Big)
 + \mathcal{O}(\kappa^4 |\mathcal{E}|^2 |\mathcal{E}^*|^2)
 \end{aligned}
 $$

@@ -572,3 +572,16 @@ Writing more about wedge products.
 Working on harmonic Hodge again,
 still can't quite arrive at the correct result
 but I think I see what I need to change to get there.
+
+## 2023-05-31 (4h)
+
+Finally figured out my harmonic Hodge math.
+Made a cool wedge product diagram.
+
+## 2023-06-01 (1h)
+
+Wrote about proxy vectors.
+
+## 2023-06-02 (2.5h)
+
+Wrote about wedge product and basis forms.
