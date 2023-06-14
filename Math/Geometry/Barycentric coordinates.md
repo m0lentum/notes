@@ -1,11 +1,11 @@
 Barycentric coordinates are a coordinate system
 based on a reference simplex. For a $k$-simplex
-$[x_0, \dots, x_{k+1}]$ and barycentric coordinates $[\lambda_0, \dots, \lambda_{k+1}]$,
+$[x_0, \dots, x_k]$ and barycentric coordinates $[\lambda_0, \dots, \lambda_k]$,
 the corresponding point in Euclidean coordinates is
 the weighted sum
 
 $$
-\sum_{i=0}^{k+1} \lambda_i x_i.
+\sum_{i=0}^k \lambda_i x_i.
 $$
 
 In general, any given point has an infinite number of
@@ -14,7 +14,7 @@ produces the same point. We can pick a unique scaling and produce
 _normalized_ barycentric coordinates by requiring
 
 $$
-\sum_{i=0}^{k+1} \lambda_i = 1.
+\sum_{i=0}^k \lambda_i = 1.
 $$
 
 Equivalently, the _barycentric function_ for a point $x_i$ of a simplex

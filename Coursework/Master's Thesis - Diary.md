@@ -585,3 +585,44 @@ Wrote about proxy vectors.
 ## 2023-06-02 (2.5h)
 
 Wrote about wedge product and basis forms.
+
+## 2023-06-03 (3h)
+
+Wrote about Hodge star.
+
+## 2023-06-04 (5h)
+
+Implemented harmonic timestepping in the controllability simulation,
+wrote about exterior derivative.
+
+## 2023-06-05 (1h)
+
+Wrote a bit about Stokes' theorem and discrete exterior derivative.
+
+## 2023-06-06 (1h)
+
+Wrote more about discrete exterior derivative.
+
+## 2023-06-07 (2h)
+
+Finished writing the discrete exterior derivative section.
+
+## 2023-06-08 (2h)
+
+Made a diagram about discrete exterior derivative.
+
+## 2023-06-11 (1h)
+
+Trying to write about the dual mesh, struggling to focus.
+
+## 2023-06-12 (1h)
+
+Wrote a bit about the dual mesh and made a diagram.
+
+## 2023-06-13 (3h)
+
+Finished the dual mesh section.
+
+## 2023-06-14 (5h)
+
+Wrote about discrete Hodge star and Whitney interpolation.

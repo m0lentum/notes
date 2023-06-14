@@ -75,7 +75,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 03-24 Ne Obliviscaris
 - [x] 04-21 Atavistia
 - [x] 04-21 Vorna
-- [ ] 04-28 Ignea
+- [x] 04-28 Ignea
 - [x] 04-28 Elvenking
 - [x] 04-28 Fires in the Distance
 - [x] 05-05 Countless Skies
