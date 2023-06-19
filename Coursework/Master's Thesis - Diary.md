@@ -626,3 +626,27 @@ Finished the dual mesh section.
 ## 2023-06-14 (5h)
 
 Wrote about discrete Hodge star and Whitney interpolation.
+
+## 2023-06-15 (8h)
+
+Wrote about the model equations and discretization.
+
+## 2023-06-16 (6h)
+
+Made some edits based on feedback and wrote about boundary conditions.
+
+## 2023-06-17 (5h)
+
+Wrote about harmonic operators.
+
+## 2023-06-18 (7h)
+
+Wrote about exact controllability.
+
+## 2023-06-19 (7h)
+
+Wrote about conjugate gradient optimization,
+struggled to explain some differences between my explanation
+and the algorithm of Saad.
+Eventually figured them out but decided to just mimic
+the derivation of Saad anyway because it was way clearer.

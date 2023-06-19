@@ -376,12 +376,6 @@ $$
 { 1 - \frac{\kappa^2 |\mathcal{E}|^2}{96} - \frac{\kappa^2 |\mathcal{E}^*|^2}{32} } \Big)
 $$
 
-TODO: the above solution seems correct based on testing,
-but it's not what the previous calculations lead to.
-It seems to come from flipping the order of the edges.
-Maybe I have the least-squares part backwards?
-Work through this
-
 #### Face to vertex
 
 The same consideration for $\star_2$ going from a primal face $\mathcal{F}$
