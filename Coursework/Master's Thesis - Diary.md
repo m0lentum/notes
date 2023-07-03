@@ -650,3 +650,65 @@ struggled to explain some differences between my explanation
 and the algorithm of Saad.
 Eventually figured them out but decided to just mimic
 the derivation of Saad anyway because it was way clearer.
+
+## 2023-06-20 (6h)
+
+Worked through some TODOs scattered throughout the text.
+
+## 2023-06-21 (4h)
+
+Wrote about the plane wave experiment.
+
+## 2023-06-22 (4h)
+
+Wrote about the scatterer experiment.
+
+## 2023-06-23 (4h)
+
+Wrote a conclusion, abstract, and most of an introduction.
+
+## 2023-06-24 (3h)
+
+Finished off the introduction and sent to advisors for comments.
+
+## 2023-06-25 (1h)
+
+Planning what I need to do for the remaining experiments.
+
+## 2023-06-26 (1h)
+
+Making some Hodge star measurements. Found negative values in the expected place.
+
+## 2023-06-27 (1h)
+
+Made a visualizer for bad edges in a mesh.
+
+## 2023-06-28 (2h)
+
+Some editing environment fixes and cleaning the code.
+
+## 2023-06-29 (1h)
+
+Messed with meshes a bit,
+added average error measurement to the accuracy test.
+
+## 2023-06-30 (1h)
+
+Began to prep some code for the stability test.
+
+## 2023-07-01 (3h)
+
+Finished implementing the stability test
+and tried applying the result to the other cases
+with limited success.
+
+## 2023-07-02 (3h)
+
+Adapted the accuracy test to use refined meshes,
+added its results to the text,
+and investigated the exact timestep operator.
+
+## 2023-07-03 (4h)
+
+Messed around with the visual outputs of the scatterer simulation,
+added the still images to the text and gifs to the repo readme.

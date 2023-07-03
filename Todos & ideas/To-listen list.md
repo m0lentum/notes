@@ -80,6 +80,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 04-28 Fires in the Distance
 - [x] 05-05 Countless Skies
 - [x] 05-05 Vintersea
-- [ ] 06-02 Atlases
-- [ ] 06-09 Scar Symmetry
-- [ ] 06-23 Mental Cruelty
+- [x] 06-02 Atlases
+- [x] 06-09 Scar Symmetry
+- [x] 06-23 Mental Cruelty
+- [ ] 06-30 Before the Dawn
