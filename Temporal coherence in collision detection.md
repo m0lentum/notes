@@ -1,0 +1,17 @@
+Collision detection could be speeded up significantly
+if we were to cache the colliding/closest features
+of each collider pair checked
+and only check that pair on subsequent substeps.
+This may have poor effects on stacking stability,
+but it could be a big performance gain
+and shouldn't be super hard to implement.
+Try it.
+
+Edit: Tried it by storing reference and incident edge from polygons,
+it made things way too stuttery when close to corners.
+Could _maybe_ be made to work by storing reference edge
+and incident corner instead, but I suspect
+that will have the same issue in edge-to-edge contacts.
+Performance boost was pretty good
+(30%-ish for substeps past the first one)
+but I don't think I can make it work well enough to be worth it.

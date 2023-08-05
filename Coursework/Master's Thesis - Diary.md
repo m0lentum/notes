@@ -712,3 +712,17 @@ and investigated the exact timestep operator.
 
 Messed around with the visual outputs of the scatterer simulation,
 added the still images to the text and gifs to the repo readme.
+
+## 2023-07-04 (1.5h)
+
+Trying to figure out what sound-soft means, still don't really get it.
+
+## 2023-07-05 (1h)
+
+Started working on the article, just copy-pasting sections from the thesis for now.
+
+## 2023-07-06 (8h)
+
+Had a meeting with advisors, decided not to do the article yet,
+implemented feedback and sent a final version to them.
+Done!
