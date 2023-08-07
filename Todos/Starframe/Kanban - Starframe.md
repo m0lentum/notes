@@ -57,6 +57,6 @@ kanban-plugin: basic
 
 %% kanban:settings
 ```
-{"kanban-plugin":"basic","new-note-folder":"Gamedev/Starframe/Cards","show-checkboxes":true,"lane-width":350}
+{"kanban-plugin":"basic","show-checkboxes":true,"lane-width":350,"new-note-folder":"Todos/Starframe/Cards"}
 ```
 %%
