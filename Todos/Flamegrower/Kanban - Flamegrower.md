@@ -11,6 +11,8 @@ kanban-plugin: basic
 - [ ] [[Windmills]], elevators, other mechanical/motorized things
 - [ ] [[Dashing]]
 - [ ] [[Walljumps]]
+- [ ] Ziplines
+- [ ] Vines only on specific surfaces
 
 
 ## Graphics
@@ -20,7 +22,6 @@ kanban-plugin: basic
 - [ ] [[Paper texture]]
 - [ ] [[Normal maps & lighting]]
 - [ ] [[Parallax backgrounds]]
-- [ ] [[Antialiasing]]
 - [ ] Better meshes for capsule chains and vines
 
 

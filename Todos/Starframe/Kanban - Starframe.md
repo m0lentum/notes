@@ -15,10 +15,11 @@ kanban-plugin: basic
 - [x] ~~[[Temporal coherence in collision detection]]~~
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
-- [ ] Physics::query_point_body is extremely ugly, refactor it somehow
 - [ ] Explore SIMD for collision detection
 - [ ] General multibody constraints instead of specialized ropes
 - [ ] Abstract specific constraint implementation out of solver.rs
+- [ ] Rope construction with a generic "samplable curve" type
+- [ ] Split as many methods as possible to fields of `PhysicsWorld` for better split borrows
 
 
 ## Graphics
@@ -33,17 +34,6 @@ kanban-plugin: basic
 - [ ] GPU skinning?
 
 
-## Entitygraph
-
-- [ ] Stripped down Debug impl for NodeRefs
-- [ ] [[Try using a min heap instead of deque for vacant slots]]
-- [ ] [[Pooling]]
-- [ ] Benchmark
-- [ ] [[Directional edges]]
-- [ ] [[Thoughts on multi-edges]]
-- [ ] [[Give up and switch to hecs]]
-
-
 ## Misc
 
 - [x] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
@@ -51,9 +41,20 @@ kanban-plugin: basic
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]
+- [ ] Simplify re-exports: only do them at the lib top level
 
 
+***
 
+## Archive
+
+- [x] 2023-08-19 19:46 [[Give up and switch to hecs]]
+- [ ] 2023-08-19 19:46 Stripped down Debug impl for NodeRefs
+- [ ] 2023-08-19 19:46 [[Try using a min heap instead of deque for vacant slots]]
+- [ ] 2023-08-19 19:46 [[Pooling]]
+- [ ] 2023-08-19 19:46 Benchmark
+- [ ] 2023-08-19 19:46 [[Directional edges]]
+- [ ] 2023-08-19 19:46 [[Thoughts on multi-edges]]
 
 %% kanban:settings
 ```

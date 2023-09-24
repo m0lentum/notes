@@ -1,6 +1,6 @@
 ## Character design
 
-Player character is a gardening android that manipulates plants
+Player character is an android gardener that manipulates plants
 (vines specifically). Their task in the past has been tending to farms and gardens,
 but now they must turn to their pest control capabilities as the weeds
 threaten to consume the world.
@@ -53,30 +53,35 @@ are sent after them to use their fire to exterminate the weeds.
 
 ## Areas
 
-Research facility where flamevines were developed.
-Possible name: Garden of Fire
+Research facility where flamevines were developed
 
 Town on top of a big bridge. Built as quick emergency shelter
 from the floods, before which people lived on the ground below.
 Gameplay could involve going up and down the bridge pillars,
 swinging around below the bridge, etc. Perhaps there are some trains
-Possible name: Foothold
 
 Town dug into a mountain, with buildings both on the floor
 and hanging from the ceiling. Built there for protection from heat in the past,
 and extended to the ceiling during the floods. One side of the bridge town
 ends at this mountain, and a tunnel goes from there to the mine town.
-Possible name: Summit
 
 Floating islands, perhaps used for energy production
 with wind/solar, farming, just living, or all of the above.
 Developed during the floods when ground space was sparse.
 Maybe the gardening androids were developed to move around floating farms
 quickly with their vines.
-Possible name: Suncatcher(s)
 
 Newly built village on the ground. Maybe some treehouses or other fun
 tall structures. Windmills?
+
+Old cathedral with gothic stained glass windows and large open rooms
+
+Abandoned skyscrapers overrun with vegetation.
+Jumping from one building to another
+
+Tops of very tall trees. Ziplines to move around
+
+Underground river, caves
 
 ## History
 
@@ -94,29 +99,10 @@ Some people have returned to live on the ground,
 while others choose to remain up on the bridges
 and floating islands where they grew up.
 
-## Nameing
-
-Would be cute to name all areas after metal songs / albums / bands.
-Some bands with song names that could work:
-- Wilderun: Garden of Fire, Suncatcher
-- Countless Skies: Summit, Zephyr, Tempest
-- Eluveitie: The Raven Hill, Black Water Dawn
-- Be'lakor: Foothold, Hidden Window, Locus
-- Dynazty: Paradise of the Architect, Apex, Ascension
-- Mechina: anything from the early albums could work lol,
-  lots of funky scifi words
-- Kardashev: Cellar of Ghosts, anything from Peripety :P
-- Rivers of Nihil: Hollow, A Home
-- Aeternam: Sun Shield, Celestial Plains
-- Bloodred Hourglass: Waves of Black, White Feather
-- Dreamtale: Firebird
-- Amaranthe: Skyline
-- Sunless Rise
-- Wintersun: The Forest That Weeps
-
-Maybe other stuff in the game could be named after songs too.
-Weeds could be The Grey (Dynazty), flamevines could be flamewalls (Camellia).
-The flood could be called The Deluge (Sojourner). Gardening androids
-could be biomechs or formshifters (Allegaeon).
-
-(yes I'm putting way too much effort into this lol)
+Note:
+I don't know if I like this natural disaster idea.
+A more optimistic history would be nicer,
+one where climate change was dealt with successfully.
+Perhaps there was still flooding, but not to a cataclysmic level.
+Maybe one of the areas (the cathedral?) could be
+partially sunken by a flood.

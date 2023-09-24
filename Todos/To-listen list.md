@@ -83,6 +83,9 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 06-02 Atlases
 - [x] 06-09 Scar Symmetry
 - [x] 06-23 Mental Cruelty
-- [ ] 06-30 Before the Dawn
-- [ ] 08-04 Crypta
+- [x] 06-30 Before the Dawn
+- [x] 08-04 Crypta
+- [ ] 10-20 Within Temptation
+- [ ] 10-27 IKINÄ
 - [ ] 11-03 Carnation
+- [ ] 11-10 Shylmagoghnar
