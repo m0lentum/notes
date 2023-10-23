@@ -47,4 +47,33 @@ but it seems to work now.
 Added compile-time range checks on operator and cochain dimensions.
 This took some fancy generics magic
 including a pivot to a different style of generics overall,
-but ended up working really nicely.
+but ended up working pretty nicely.
+Error messages could be better but there's not much I can do about that.
+
+## 2023-10-07 (4h)
+
+Wrote some documentation.
+
+## 2023-10-12 (3h)
+
+Finished writing the documentation from last session;
+the Cochain & Operator APIs are now pretty thoroughly documented.
+
+## 2023-10-15 (3h)
+
+Created an example acoustics simulation
+to figure out what I still need to build.
+Made some improvements to the cochain API.
+
+## 2023-10-19 (2h)
+
+Looking into how to compute circumcenters of simplices,
+found a good reference in the PyDEC paper.
+
+## 2023-10-21 (2h)
+
+Working on the circumcenter algorithm.
+
+## 2023-10-23 (3h)
+
+Got circumcenter computation working and tested.
