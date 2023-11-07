@@ -77,3 +77,44 @@ Working on the circumcenter algorithm.
 ## 2023-10-23 (3h)
 
 Got circumcenter computation working and tested.
+
+## 2023-10-25 (4h)
+
+Implemented computing of primal volumes
+and did some research on dual volumes.
+
+## 2023-10-29 (4h)
+
+Started implementing computation of dual volumes.
+
+## 2023-11-01 (2h)
+
+Continuing the implementation of dual volumes.
+It's a somewhat tricky recursive algorithm,
+but most of the way done now.
+
+## 2023-11-02 (2h)
+
+A bit of refactoring and unit test writing for dual volumes.
+
+## 2023-11-04 (3h)
+
+Finished the unit test to check dual volumes.
+A lot of math to do by hand, but worth the effort
+to ensure correctness.
+
+## 2023-11-05 (1h)
+
+Research on whether dual volumes need anything special
+on the boundary of the mesh. Answer: no.
+
+## 2023-11-06 (3h)
+
+Working on the sign rule for non-well-centered simplices' dual volumes.
+Not quite working correctly yet.
+
+## 2023-11-07 (2h)
+
+More work on dual volume signs.
+Fixed a couple of bugs and it seems correct now,
+but my unit test for this is still missing a bit of work.
