@@ -86,10 +86,11 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 06-30 Before the Dawn
 - [x] 08-04 Crypta
 - [x] 10-20 Within Temptation
-- [ ] 10-27 IKINÄ
-- [ ] 11-03 Carnation
-- [ ] 11-10 Shylmagoghnar
+- [x] 10-27 IKINÄ
+- [x] 11-03 Carnation
+- [x] 11-10 Shylmagoghnar
 
 ## 2024
 
 - [ ] 02-02 Enterprise Earth
+- [ ] 02-16 Ihsahn

@@ -118,3 +118,51 @@ Not quite working correctly yet.
 More work on dual volume signs.
 Fixed a couple of bugs and it seems correct now,
 but my unit test for this is still missing a bit of work.
+
+## 2023-11-08 (3h)
+
+Finished implementing and testing dual volume computation,
+implemented Hodge star using it,
+did a bit of refactoring.
+
+## 2023-11-09 (2h)
+
+Started refactoring how boundary data is stored,
+with the aim of making it more efficient
+to navigate from boundary simplices back up to coboundary simplices
+(currently getting to boundary simplices is trivial,
+but coboundaries require a full linear search).
+
+## 2023-11-12 (4h)
+
+Finished the aforementioned refactoring and started sketching
+how the set of boundary simplices should be expressed
+and how to apply it to operators to implement boundary conditions.
+
+## 2023-11-14 (1h)
+
+Implemented and tested the identification of boundary simplices.
+
+## 2023-11-15 (2h)
+
+Started sketching APIs for adding boundary conditions to operators
+by excluding some cochain elements from the output.
+Had to write some code manipulate CSR matrix structure by hand
+since `nalgebra-sparse` isn't very far developed in this regard,
+which took pretty much all of this session to get right.
+
+## 2023-11-18 (4h)
+
+Got the API for removing rows from operators working,
+added scalar multiplication for operators,
+and integrated those features into the example membrane simulation.
+
+## 2023-11-19 (5h)
+
+Implemented construction of cochains with initial values
+by integrating a function over mesh elements.
+Rudimentary for now (function gets the vertices of a cell
+and integration must be implemented manually by the user),
+but should work as a nice framework
+to add automatic numerical integration schemes to later.
+Also some refactoring and work on iterator APIs.
