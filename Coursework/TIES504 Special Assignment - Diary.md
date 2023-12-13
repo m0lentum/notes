@@ -166,3 +166,63 @@ and integration must be implemented manually by the user),
 but should work as a nice framework
 to add automatic numerical integration schemes to later.
 Also some refactoring and work on iterator APIs.
+
+## 2023-11-24 (1h)
+
+Some work on integration over general cells.
+Decided I won't finish this now
+as I don't need the feature at the moment.
+
+## 2023-11-25 (3h)
+
+Some research and experimentation on generating meshes with `gmsh`
+and loading them from `.msh` files.
+
+## 2023-11-26 (4h)
+
+Got gmsh mesh loading working and fixed a couple of bugs.
+My membrane simulation's operators match those produced by PyDEC now!
+
+## 2023-11-28 (3h)
+
+Researched possible ways to do plots of scalar data.
+Started to sketch windowing and rendering architecture
+for real-time visualizations.
+
+## 2023-11-30 (2h)
+
+More graphics programming, managed to open a window
+and started thinking about render pipelines.
+
+## 2023-12-04 (3h)
+
+Working on render pipelines for a wireframe view of the mesh.
+
+## 2023-12-05 (3h)
+
+More work on the wireframe renderer,
+branching off into ideas about how to color the mesh
+based on cochain values.
+
+## 2023-12-06 (7h)
+
+Working on an animation system.
+Some difficulties reconciling the style of API I'm thinking about
+with the event loop architecture of `winit`,
+but managed to come up with something I mostly like
+and render my first wireframe.
+
+## 2023-12-07 (3h)
+
+Added a camera system.
+Implemented a 2D orthographic projection camera
+(without interactive controls for now)
+and sketched a perspective variant for 3D.
+
+## 2023-12-13 (2h)
+
+Refactoring the rendering APIs to be easier to use
+and internal structures to be able to share resources
+between different pipelines
+in preparation for a system to draw the mesh
+colored based on cochain values.

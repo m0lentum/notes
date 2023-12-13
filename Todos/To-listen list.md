@@ -93,4 +93,5 @@ Writing down release dates of upcoming albums so I remember to check them out.
 ## 2024
 
 - [ ] 02-02 Enterprise Earth
+- [ ] 02-02 Persefone
 - [ ] 02-16 Ihsahn
