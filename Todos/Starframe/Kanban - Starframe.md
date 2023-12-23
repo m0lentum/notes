@@ -18,7 +18,7 @@ kanban-plugin: basic
 - [ ] Explore SIMD for collision detection
 - [ ] General multibody constraints instead of specialized ropes
 - [ ] Abstract specific constraint implementation out of solver.rs
-- [ ] Rope construction with a generic "samplable curve" type
+- [ ] [[Rope construction with a generic  samplable curve  type]]
 - [ ] Split as many methods as possible to fields of `PhysicsWorld` for better split borrows
 
 

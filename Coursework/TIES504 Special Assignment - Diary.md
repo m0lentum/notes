@@ -226,3 +226,38 @@ and internal structures to be able to share resources
 between different pipelines
 in preparation for a system to draw the mesh
 colored based on cochain values.
+
+## 2023-12-15 (5h)
+
+Iterating on various parts of the rendering system.
+Going back and forth on whether vertex pulling is beneficial to me;
+trying and failing to optimize everything into one render pass;
+ultimately got a visualization of a 0-cochain with vertex colors working.
+
+## 2023-12-16 (8h)
+
+Researched how Matplotlib does color mapping for its plots
+and implemented my own version of it.
+
+## 2023-12-18 (4h)
+
+Did a bit of refactoring, documented the visualization APIs I have so far
+and decided they were good enough to merge to the main branch.
+
+## 2023-12-21 (1h)
+
+Noticed compile times have gotten quite long with the addition
+of all the graphics dependencies, having a particularly big effect on doctests,
+and decided to factor the visuals into their own crate.
+This turned out to be a bit difficult.
+
+## 2023-12-22 (1h)
+
+Thought some more about potential ways to split off the visuals,
+ended up following through on yesterday's original design.
+
+## 2023-12-23 (3h)
+
+Set up a Kanban board to keep track of ideas,
+reworked the `ComposedOperator` type to be much nicer to use,
+and updated the crate documentation.
