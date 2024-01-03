@@ -261,3 +261,32 @@ ended up following through on yesterday's original design.
 Set up a Kanban board to keep track of ideas,
 reworked the `ComposedOperator` type to be much nicer to use,
 and updated the crate documentation.
+
+## 2023-12-27 (5h)
+
+Working on a more efficient algorithm
+for generating boundary maps and lower-dimensional simplices,
+as described in the PyDEC paper (section 7).
+My initial naive algorithm does not scale well enough when mesh size increases.
+This turned out to require some pretty finicky changes.
+
+## 2023-12-28 (3h)
+
+Finished the overhaul of the boundary generating algorithm.
+
+## 2023-12-30 (4h)
+
+Started working on a line renderer based on [this blogpost](https://wwwtyro.net/2019/11/18/instanced-lines.html),
+intended for a variety of purposes
+such as nicer wireframes of the mesh, arrows for visualizing vectors,
+and possibly real-time plots of general data in the more distant future.
+
+## 2024-01-02 (4h)
+
+Continuing to work on the line renderer.
+
+## 2024-01-03 (3h)
+
+More work on lines. Fixed an issue where multiple calls in a frame
+would overwrite each other's data
+and added math to orient them correctly in 3D.

@@ -7,7 +7,7 @@ kanban-plugin: basic
 ## Core
 
 - [x] Replace `ComposedOperator` type parameters with input and output type
-- [ ] Sorting to optimize subsimplex generation
+- [x] Sorting to optimize subsimplex generation
 - [ ] Proper mesh element iterators
 - [ ] Custom element groups
 
@@ -17,8 +17,10 @@ kanban-plugin: basic
 - [ ] Keep aspect ratio constant
 - [ ] Frame timing control
 - [ ] 2-cochains as flat triangles
-- [ ] Line rendering
+- [ ] [[Line rendering]]
+- [ ] 1-cochains as arrows
 - [ ] Coordinate axes
+- [ ] Camera controls
 
 
 
