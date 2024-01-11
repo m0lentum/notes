@@ -20,6 +20,7 @@ kanban-plugin: basic
 - [ ] Abstract specific constraint implementation out of solver.rs
 - [ ] [[Rope construction with a generic  samplable curve  type]]
 - [ ] Split as many methods as possible to fields of `PhysicsWorld` for better split borrows
+- [ ] [[See if any bounds checks can be optimized out]]
 
 
 ## Graphics

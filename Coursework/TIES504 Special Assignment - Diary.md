@@ -290,3 +290,34 @@ Continuing to work on the line renderer.
 More work on lines. Fixed an issue where multiple calls in a frame
 would overwrite each other's data
 and added math to orient them correctly in 3D.
+
+## 2024-01-04 (3h)
+
+Sketched a coordinate axes display using the line renderer.
+
+## 2024-01-05 (1h)
+
+Added a scaling factor to keep the view aspect ratio constant
+to the camera transform and did a couple of minor refactorings.
+
+## 2024-01-06 (8h)
+
+Added some parameter controls to the line renderer (width, color)
+and made it possible to define the width in screen space pixels
+instead of world space units.
+
+## 2024-01-10 (4h)
+
+Added configurable caps and joins for the line renderer,
+plus arrow heads as a new cap type.
+Requires a bit more work to make arrows properly pointy.
+
+## 2024-01-11 (4h)
+
+Solved the arrow pointiness problem
+by simply moving the cap far enough past the line segment's end.
+At first tried to do it by adjusting the line segment length instead
+but that turned out more trouble than it's worth.
+Fleshed out the coordinate axis renderer using the new arrow caps.
+Added barycenter computation to the mesh constructor
+to prepare for visualizing 1-cochains as arrows interpolated at barycenters.

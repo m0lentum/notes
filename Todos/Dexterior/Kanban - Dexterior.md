@@ -10,17 +10,20 @@ kanban-plugin: basic
 - [x] Sorting to optimize subsimplex generation
 - [ ] Proper mesh element iterators
 - [ ] Custom element groups
+- [ ] Write a README
 
 
 ## Visuals
 
-- [ ] Keep aspect ratio constant
+- [ ] Camera controls
+- [x] Keep aspect ratio constant
 - [ ] Frame timing control
 - [ ] 2-cochains as flat triangles
-- [ ] [[Line rendering]]
+- [ ] [[Line rendering]]<br>- mostly done, some advanced TODOs left
+- [x] Coordinate axes<br>- done for 2D (minus text), no 3D yet
+- [ ] Wireframe using line renderer
 - [ ] 1-cochains as arrows
-- [ ] Coordinate axes
-- [ ] Camera controls
+- [ ] [[Sharing of render passes]]
 
 
 
