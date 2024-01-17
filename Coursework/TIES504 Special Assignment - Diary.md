@@ -321,3 +321,20 @@ but that turned out more trouble than it's worth.
 Fleshed out the coordinate axis renderer using the new arrow caps.
 Added barycenter computation to the mesh constructor
 to prepare for visualizing 1-cochains as arrows interpolated at barycenters.
+
+## 2024-01-14 (5h)
+
+Added computation of barycentric differentials,
+needed to construct Whitney interpolants for vector visualization.
+
+## 2024-01-15 (3h)
+
+Added barycentric Whitney interpolation
+and arrow visualization using it.
+
+## 2024-01-17 (4h)
+
+Added frame timing control and interpolated rendering
+to make simulations with various deltatime values animate smoothly
+(in the case of higher dt than framerate)
+and not too fast (in the case of lower dt than framerate).
