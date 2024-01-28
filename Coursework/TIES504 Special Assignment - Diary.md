@@ -338,3 +338,37 @@ Added frame timing control and interpolated rendering
 to make simulations with various deltatime values animate smoothly
 (in the case of higher dt than framerate)
 and not too fast (in the case of lower dt than framerate).
+
+## 2024-01-24 (3h)
+
+Added a license and wrote a README.
+
+## 2024-01-25 (2h)
+
+Sketched a plane wave example simulation
+(corresponding to accuracy_test from master's thesis).
+Some gaps left needing new features.
+
+## 2024-01-26 (3h)
+
+Debugging a stability issue with the plane wave example.
+Figured out the problem is that I don't handle
+the orientation of top-level simplices correctly.
+Didn't quite manage to complete the fix yet.
+
+## 2024-01-27 (6h)
+
+Various small tasks:
+finished yesterday's orientation fix,
+found and fixed another bug in Hodge star
+and one more bug in mesh iterators,
+added rendering of flux arrows (as opposed to velocity arrows),
+updated wireframe to use my custom line renderer.
+
+## 2024-01-28 (5h)
+
+More various small tasks:
+optimized a simplex lookup method
+to improve arrow visualizations' performance,
+wrote a bunch of documentation
+and did some minor refactoring.

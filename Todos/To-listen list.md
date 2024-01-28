@@ -96,3 +96,4 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 02-02 Persefone
 - [ ] 02-16 Ihsahn
 - [ ] 02-23 Borknagar
+- [ ] 02-23 Hand of Kalliach
