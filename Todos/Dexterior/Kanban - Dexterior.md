@@ -28,7 +28,7 @@ kanban-plugin: basic
 - [x] Frame timing control #mvp
 - [x] Interpolated rendering
 - [x] Wireframe using line renderer
-- [ ] 2-cochains as flat triangles
+- [x] 2-cochains as flat triangles
 - [ ] [[Sharing of render passes]] #optimization
 - [ ] Cacheable lines #optimization
 - [ ] 3D camera
@@ -36,6 +36,7 @@ kanban-plugin: basic
 - [ ] Text rendering
 - [ ] 3D animation for membrane<br>- this could be an easy starting point for 3D camera development
 - [ ] More color maps
+- [ ] Use `naga_oil` to share shader code
 
 
 

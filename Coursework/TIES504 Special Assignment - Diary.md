@@ -372,3 +372,15 @@ optimized a simplex lookup method
 to improve arrow visualizations' performance,
 wrote a bunch of documentation
 and did some minor refactoring.
+
+## 2024-01-29 (5h)
+
+Added visualization of dual 0- or primal 2-cochains
+as flat-colored triangles,
+did some refactoring,
+started to prepare for publishing the library on crates.io.
+
+## 2024-01-30 (4h)
+
+Made a crates.io release of the library
+and turned in the project. 🎉
