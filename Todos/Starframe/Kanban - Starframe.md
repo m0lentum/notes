@@ -33,6 +33,7 @@ kanban-plugin: basic
 - [ ] Non-panicking error handling for glTF import
 - [ ] Optimize joint matrices by removing the fourth row
 - [ ] GPU skinning?
+- [ ] [[Asset manager]]
 
 
 ## Misc
@@ -43,6 +44,8 @@ kanban-plugin: basic
 - [ ] Gamepad support
 - [ ] [[Tweening]]
 - [ ] Simplify re-exports: only do them at the lib top level
+- [ ] [[Blender as a level editor]]
+- [ ] [[Bundle standard structures together]]
 
 
 ***
