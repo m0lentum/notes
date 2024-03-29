@@ -25,21 +25,21 @@ kanban-plugin: basic
 
 ## Graphics
 
+- [x] Non-panicking error handling for glTF import
 - [ ] [[Camera]]
 - [ ] [[Colors]]
 - [ ] GUI
 - [ ] Immediate mode debug drawing of arbitrary shapes
 - [ ] Replace ad-hoc gpu types with [encase](https://docs.rs/encase)
-- [ ] Non-panicking error handling for glTF import
 - [ ] Optimize joint matrices by removing the fourth row
 - [ ] GPU skinning?
 - [ ] [[Asset manager]]
+- [ ] Load samplers from glTF
 
 
 ## Misc
 
 - [x] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
-- [ ] Tiled integration for sandbox
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]

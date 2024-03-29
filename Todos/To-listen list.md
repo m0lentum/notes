@@ -95,6 +95,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-02 Enterprise Earth
 - [x] 02-02 Persefone
 - [ ] 02-16 Ihsahn
-- [ ] 02-23 Borknagar
+- [x] 02-23 Borknagar
 - [ ] 02-23 Hand of Kalliach
 - [ ] 05-10 Unleash the Archers
+- [ ] 06-21 Seven Spires
