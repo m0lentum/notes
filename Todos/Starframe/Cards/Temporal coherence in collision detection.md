@@ -15,3 +15,8 @@ that will have the same issue in edge-to-edge contacts.
 Performance boost was pretty good
 (30%-ish for substeps past the first one)
 but I don't think I can make it work well enough to be worth it.
+
+Edit 2: maybe if we stored contact points and normals in local space
+instead of worrying about edges at all?
+Would that make a difference?
+It would certainly be easier to implement

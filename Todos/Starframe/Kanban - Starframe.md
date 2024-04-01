@@ -12,7 +12,7 @@ kanban-plugin: basic
 - [x] Spherecasts
 - [x] [[Collision detection broad phase]]
 - [x] [[Time speed control]]
-- [x] ~~[[Temporal coherence in collision detection]]~~
+- [ ] [[Temporal coherence in collision detection]]
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
 - [ ] Explore SIMD for collision detection
@@ -26,6 +26,7 @@ kanban-plugin: basic
 ## Graphics
 
 - [x] Non-panicking error handling for glTF import
+- [x] Deferred shading
 - [ ] [[Camera]]
 - [ ] [[Colors]]
 - [ ] GUI
@@ -35,6 +36,11 @@ kanban-plugin: basic
 - [ ] GPU skinning?
 - [ ] [[Asset manager]]
 - [ ] Load samplers from glTF
+- [ ] [[Moonwitch artwork]]
+- [ ] Share render passes (i.e. add pass to RenderContext)
+- [ ] Point lights
+- [ ] [[More efficient deferred lighting]]
+- [ ] [[Consider removing or restricting MSAA]]
 
 
 ## Misc
