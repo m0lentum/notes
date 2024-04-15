@@ -27,6 +27,9 @@ kanban-plugin: basic
 
 - [x] Non-panicking error handling for glTF import
 - [x] Deferred shading
+- [x] Point lights
+- [x] Share render passes (i.e. add pass to RenderContext)
+- [ ] [[Asset manager]] (mostly done, some thoughts left)
 - [ ] [[Camera]]
 - [ ] [[Colors]]
 - [ ] GUI
@@ -34,24 +37,22 @@ kanban-plugin: basic
 - [ ] Replace ad-hoc gpu types with [encase](https://docs.rs/encase)
 - [ ] Optimize joint matrices by removing the fourth row
 - [ ] GPU skinning?
-- [ ] [[Asset manager]]
 - [ ] Load samplers from glTF
 - [ ] [[Moonwitch artwork]]
-- [ ] Share render passes (i.e. add pass to RenderContext)
-- [ ] Point lights
 - [ ] [[More efficient deferred lighting]]
 - [ ] [[Consider removing or restricting MSAA]]
+- [ ] Mesh.offset probably shouldn't exist; how to express that on a per-entity basis?
 
 
 ## Misc
 
 - [x] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
+- [x] [[Bundle standard structures together]]
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]
 - [ ] Simplify re-exports: only do them at the lib top level
 - [ ] [[Blender as a level editor]]
-- [ ] [[Bundle standard structures together]]
 
 
 ***
