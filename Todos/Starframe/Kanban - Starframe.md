@@ -42,6 +42,7 @@ kanban-plugin: basic
 - [ ] [[More efficient deferred lighting]]
 - [ ] [[Consider removing or restricting MSAA]]
 - [ ] Mesh.offset probably shouldn't exist; how to express that on a per-entity basis?
+- [ ] Having to manually upload camera uniforms is a footgun
 
 
 ## Misc

@@ -38,8 +38,6 @@ which evaluates all possible frequencies and sums their contributions
 at the given point $t$.
 TODO: where does that $2\pi$ come from?
 
-TODO: compare notations with 3b1b
-
 ## Fourier series
 
 The Fourier series transforms a periodic continous function
@@ -82,7 +80,6 @@ X[n] = \sum_{k=0}^{N-1} x[k]w_N^{-kn}
 $$
 where $w_N$ is the _Nth root of unity_
 $w_N = e^{2\pi i / N}$ characterized by $w_N^N = 1$.
-TODO: rewatch the 3b1b video about these for their geometric significance
 
 The inverse of this is
 $$
@@ -106,3 +103,14 @@ $$
 
 The inverse has a similar matrix expression
 with a sign flip on the exponents and the constant factor $N^{-1}$.
+
+The geometric interpretation of this matrix is
+that each row corresponds to $N$ samples of a frequency
+that is an integer multiple of the fundamental frequency (length of the signal).
+When moving left to right, we rotate clockwise around the unit circle
+in steps of $i_{row}/N$ full rotations per step.
+The first row is the constant frequency,
+the second rotates around the unit circle once over the entire signal,
+the third rotates twice, the fourth three times etc.
+This is analogous to the DTFT,
+restricting the inputs to a discrete set of evenly spaced frequencies.
