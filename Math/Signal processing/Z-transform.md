@@ -18,7 +18,7 @@ When a z-tranform has the form
 $$
 X(z) = \frac{N(z)}{D(z)} = \frac{\sum_{m=0}^{M} a_mz^{-m}}{\sum_{k=0}^{K} b_kz^{-k}}
 $$
-(typically the case when dealing with a [[transfer function]],
+(typically the case when dealing with a [[transfer function]]),
 the points $N(z) = 0$ are called the _zeros_
 and the points $D(z) = 0$ are called the _poles_ of $X(z)$.
 

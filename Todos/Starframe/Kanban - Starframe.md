@@ -29,6 +29,7 @@ kanban-plugin: basic
 - [x] Deferred shading
 - [x] Point lights
 - [x] Share render passes (i.e. add pass to RenderContext)
+- [x] [[Moonwitch artwork]]
 - [ ] [[Asset manager]] (mostly done, some thoughts left)
 - [ ] [[Camera]]
 - [ ] [[Colors]]
@@ -38,9 +39,8 @@ kanban-plugin: basic
 - [ ] Optimize joint matrices by removing the fourth row
 - [ ] GPU skinning?
 - [ ] Load samplers from glTF
-- [ ] [[Moonwitch artwork]]
 - [ ] [[More efficient deferred lighting]]
-- [ ] [[Consider removing or restricting MSAA]]
+- [ ] [[Antialiasing]]
 - [ ] Mesh.offset probably shouldn't exist; how to express that on a per-entity basis?
 - [ ] Having to manually upload camera uniforms is a footgun
 

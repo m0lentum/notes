@@ -99,3 +99,5 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 02-23 Hand of Kalliach
 - [ ] 05-10 Unleash the Archers
 - [ ] 06-21 Seven Spires
+- [ ] 07-19 Atavistia
+- [ ] 07-26 A Wake in Providence
