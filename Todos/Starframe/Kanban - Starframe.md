@@ -28,8 +28,11 @@ kanban-plugin: basic
 - [x] Non-panicking error handling for glTF import
 - [x] Deferred shading
 - [x] Point lights
-- [x] Share render passes (i.e. add pass to RenderContext)
 - [x] [[Moonwitch artwork]]
+- [x] [[Forward+ renderer]]
+- [x] Re-enable MSAA
+- [ ] PBR lighting
+- [ ] HDR
 - [ ] [[Asset manager]] (mostly done, some thoughts left)
 - [ ] [[Camera]]
 - [ ] [[Colors]]
@@ -37,12 +40,12 @@ kanban-plugin: basic
 - [ ] Immediate mode debug drawing of arbitrary shapes
 - [ ] Replace ad-hoc gpu types with [encase](https://docs.rs/encase)
 - [ ] Optimize joint matrices by removing the fourth row
-- [ ] GPU skinning?
 - [ ] Load samplers from glTF
-- [ ] [[More efficient deferred lighting]]
-- [ ] [[Antialiasing]]
 - [ ] Mesh.offset probably shouldn't exist; how to express that on a per-entity basis?
 - [ ] Having to manually upload camera uniforms is a footgun
+- [ ] Vector path rendering with lyon?
+- [ ] Consider grouping all bind groups and layouts into one place
+- [ ] Read normals and tangents from gltf if available
 
 
 ## Misc
@@ -52,7 +55,6 @@ kanban-plugin: basic
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]
-- [ ] Simplify re-exports: only do them at the lib top level
 - [ ] [[Blender as a level editor]]
 
 

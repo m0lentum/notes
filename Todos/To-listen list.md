@@ -98,6 +98,9 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-23 Borknagar
 - [ ] 02-23 Hand of Kalliach
 - [ ] 05-10 Unleash the Archers
-- [ ] 06-21 Seven Spires
+- [ ] 06-07 Evergrey
+- [x] 06-21 Seven Spires
 - [ ] 07-19 Atavistia
 - [ ] 07-26 A Wake in Providence
+- [ ] 08-23 Within the Ruins
+- [ ] 11-01 Brothers of Metal

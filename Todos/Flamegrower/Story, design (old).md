@@ -1,3 +1,5 @@
+These are partially outdated ideas I'm leaving here for future reference.
+Newer ideas in [[Worldbuilding]]
 ## Character design
 
 Player character is an android gardener that manipulates plants
