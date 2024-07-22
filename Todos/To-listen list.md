@@ -94,13 +94,16 @@ Writing down release dates of upcoming albums so I remember to check them out.
 
 - [x] 02-02 Enterprise Earth
 - [x] 02-02 Persefone
-- [ ] 02-16 Ihsahn
+- [x] 02-16 Ihsahn
 - [x] 02-23 Borknagar
 - [ ] 02-23 Hand of Kalliach
 - [ ] 05-10 Unleash the Archers
 - [ ] 06-07 Evergrey
+- [x] 06-12 HIZAKI
 - [x] 06-21 Seven Spires
 - [ ] 07-19 Atavistia
 - [ ] 07-26 A Wake in Providence
 - [ ] 08-23 Within the Ruins
+- [ ] 08-23 Fleshgod Apocalypse
+- [ ] 09-20 Blighted Eye
 - [ ] 11-01 Brothers of Metal

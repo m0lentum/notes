@@ -33,6 +33,7 @@ kanban-plugin: basic
 - [x] Re-enable MSAA
 - [ ] PBR lighting
 - [ ] HDR
+- [ ] Fog
 - [ ] [[Asset manager]] (mostly done, some thoughts left)
 - [ ] [[Camera]]
 - [ ] [[Colors]]
@@ -46,6 +47,7 @@ kanban-plugin: basic
 - [ ] Vector path rendering with lyon?
 - [ ] Consider grouping all bind groups and layouts into one place
 - [ ] Read normals and tangents from gltf if available
+- [ ] [[Radiance cascades]]
 
 
 ## Misc
