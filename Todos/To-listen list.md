@@ -102,8 +102,12 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 06-12 HIZAKI
 - [x] 06-21 Seven Spires
 - [ ] 07-19 Atavistia
-- [ ] 07-26 A Wake in Providence
+- [x] 07-26 A Wake in Providence
 - [ ] 08-23 Within the Ruins
 - [ ] 08-23 Fleshgod Apocalypse
 - [ ] 09-20 Blighted Eye
+- [ ] 10-04 Allt
+- [ ] 10-11 Ad Infinitum
+- [ ] 10-11 Opeth
+- [ ] 10-25 Fit for an Autopsy
 - [ ] 11-01 Brothers of Metal
