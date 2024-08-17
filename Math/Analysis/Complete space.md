@@ -1,4 +1,4 @@
-A metric space is _complete_ if all Cauchy sequences within it
+A metric space is _complete_ if all [[Cauchy sequence]]s within it
 converge to a limit within that space.
 Complete spaces are nice because Cauchy sequences allow
 proofs of convergence using only sequence elements,

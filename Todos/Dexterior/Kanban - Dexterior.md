@@ -17,6 +17,9 @@ kanban-plugin: basic
 - [ ] Custom element groups<br>- needed for scattering (and anything else with multiple boundary conditions or local source terms)
 - [ ] Quadratures for numerical integration
 - [ ] Consider making `SimplexCollection` generic on simplex dimension and using `Any` to store them
+- [ ] Hodge-optimized triangulations
+- [ ] Time-harmonic operators from master's thesis?
+- [ ] wasm build
 
 
 ## Visuals

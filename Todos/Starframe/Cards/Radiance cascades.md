@@ -12,12 +12,12 @@ TODO:
 - [x] try generating SDF to accelerate raymarching
    (could this speed up enough to not need the mip chain?
      OTOH, do we want the mip chain to smooth things out?)
-- [ ] environment map
+- [x] environment map
 - [x] user-configurable parameter scaling
   - maybe also an alternative renderer with lower hardware requirements
 - [x] ~~shadow casters should receive light themselves~~
   - this turned out really hard and can be alleviated by translucent materials
-- [ ] way to express directional lights and constant ambient light
+- [x] way to express directional lights and constant ambient light
   - directional lights could be baked into an environment map,
      ambient as a uniform to the mesh renderer
 - [x] set up a profiler
@@ -53,6 +53,7 @@ TODO:
      but maybe that would also enable raymarching at higher mips only?
 	 (since that way we could use transparency in the mips
 	 like with volumetric occluders)
+  - would potentially enable the previous bullet point (indirect light)
 - [x] option to skip cascade 0 raymarching
   - this might be more effective at improving perf vs. quality
      after a point than increasing grid spacing

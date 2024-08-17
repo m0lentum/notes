@@ -35,3 +35,16 @@ Some facts I can't be bothered to write down proofs for:
 - The union of any number of closed sets is closed
 - The intersection of a finite number of closed sets is closed
 - All boundary sets are closed
+
+[[Closure]]
+
+## Sequential compactness
+
+If (and only if) a set $K$ is closed and _bounded_ (fi: rajoitettu)
+(i.e. there is some $M > 0$ for which $||x|| \leq M$ for all $x \in K$),
+every sequence $x_m \in K$ has a subsequence that converges
+to a point in $K$.
+This property of a set is called _sequential compactness_
+(fi: jonokompaktius).
+Sequential compactness is preserved by continuous maps
+(see [[Continuity]]).
