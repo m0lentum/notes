@@ -96,7 +96,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-02 Persefone
 - [x] 02-16 Ihsahn
 - [x] 02-23 Borknagar
-- [ ] 02-23 Hand of Kalliach
+- [x] 02-23 Hand of Kalliach
 - [ ] 05-10 Unleash the Archers
 - [ ] 06-07 Evergrey
 - [x] 06-12 HIZAKI
@@ -104,7 +104,8 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 07-19 Atavistia
 - [x] 07-26 A Wake in Providence
 - [ ] 08-23 Within the Ruins
-- [ ] 08-23 Fleshgod Apocalypse
+- [x] 08-23 Fleshgod Apocalypse
+- [x] 08-30 Scarlet Meridian
 - [ ] 09-20 Blighted Eye
 - [ ] 10-04 Allt
 - [ ] 10-11 Ad Infinitum

@@ -4,7 +4,7 @@
   "attachmentFolderPath": "./",
   "newFileLocation": "current",
   "promptDelete": false,
-  "trashOption": "local",
+  "trashOption": "none",
   "legacyEditor": false,
   "pdfExportSettings": {
     "includeName": true,
@@ -18,5 +18,7 @@
   "autoPairMarkdown": false,
   "alwaysUpdateLinks": true,
   "autoPairBrackets": false,
-  "smartIndentList": false
+  "smartIndentList": false,
+  "showRibbon": false,
+  "userIgnoreFilters": null
 }

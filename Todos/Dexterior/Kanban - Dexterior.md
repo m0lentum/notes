@@ -12,14 +12,13 @@ kanban-plugin: basic
 - [x] Swap inverse star's sign depending on dimension
 - [x] Wave propagation example
 - [x] Cite references in README
+- [x] wasm build
+- [x] [[Custom element groups]]
+- [ ] Named physical groups from gmsh<br>- this requires upstream changes to mshio
 - [ ] Integrate only a subset of a cochain
-- [ ] Proper simplex/cell iterators
-- [ ] Custom element groups<br>- needed for scattering (and anything else with multiple boundary conditions or local source terms)
 - [ ] Quadratures for numerical integration
-- [ ] Consider making `SimplexCollection` generic on simplex dimension and using `Any` to store them
 - [ ] Hodge-optimized triangulations
 - [ ] Time-harmonic operators from master's thesis?
-- [ ] wasm build
 
 
 ## Visuals
@@ -28,10 +27,11 @@ kanban-plugin: basic
 - [x] [[Line rendering]]
 - [x] Coordinate axes<br>- done for 2D (minus text), no 3D yet
 - [x] 1-cochains as arrows
-- [x] Frame timing control #mvp
+- [x] Frame timing control
 - [x] Interpolated rendering
 - [x] Wireframe using line renderer
 - [x] 2-cochains as flat triangles
+- [x] Migrate away from storage buffers for webgl compatibility
 - [ ] [[Sharing of render passes]] #optimization
 - [ ] Cacheable lines #optimization
 - [ ] 3D camera

@@ -15,14 +15,14 @@
       }
     },
     {
-      "query": "path:Diaries",
+      "query": "path:Coursework  ",
       "color": {
         "a": 1,
-        "rgb": 5415904
+        "rgb": 1859474
       }
     },
     {
-      "query": "path:Gamedev",
+      "query": "path:Physics  ",
       "color": {
         "a": 1,
         "rgb": 15111951
@@ -41,18 +41,32 @@
         "a": 1,
         "rgb": 2479258
       }
+    },
+    {
+      "query": "path:Todos  ",
+      "color": {
+        "a": 1,
+        "rgb": 1132900
+      }
+    },
+    {
+      "query": "path:/",
+      "color": {
+        "a": 1,
+        "rgb": 3217175
+      }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "textFadeMultiplier": -0.5,
+  "nodeSizeMultiplier": 1.04427083333333,
+  "lineSizeMultiplier": 1.68229166666667,
   "collapse-forces": false,
   "centerStrength": 0.595505617977528,
-  "repelStrength": 12.0224719101124,
-  "linkStrength": 0.842696629213483,
-  "linkDistance": 91,
+  "repelStrength": 10.625,
+  "linkStrength": 0.755208333333333,
+  "linkDistance": 64,
   "scale": 0.5843581180567528,
-  "close": true
+  "close": false
 }

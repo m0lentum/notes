@@ -37,6 +37,8 @@ TODO:
      reducing probe spacing without a major loss in quality
 - [ ] change light response depending on z coordinate
 - [ ] far-field shader using only directional lights
+  - maybe add parallax and fog at the same time
+    with the previous two points
 - [x] try converting to a pixel shader
   - pretty big gains it turns out, especially since this enables hardware interpolation
 - [ ] try computing only some of the cascades per frame

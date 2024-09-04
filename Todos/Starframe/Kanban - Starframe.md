@@ -31,15 +31,15 @@ kanban-plugin: basic
 - [x] [[Moonwitch artwork]]
 - [x] [[Forward+ renderer]]
 - [x] Re-enable MSAA
-- [ ] PBR lighting
-- [ ] HDR
-- [ ] Fog
 - [ ] [[Asset manager]] (mostly done, some thoughts left)
+- [ ] [[Radiance cascades]]
+- [ ] Parallax scrolling
+- [ ] Fog
+- [ ] HDR
 - [ ] [[Camera]]
 - [ ] [[Colors]]
 - [ ] GUI
 - [ ] Immediate mode debug drawing of arbitrary shapes
-- [ ] Replace ad-hoc gpu types with [encase](https://docs.rs/encase)
 - [ ] Optimize joint matrices by removing the fourth row
 - [ ] Load samplers from glTF
 - [ ] Mesh.offset probably shouldn't exist; how to express that on a per-entity basis?
@@ -47,7 +47,6 @@ kanban-plugin: basic
 - [ ] Vector path rendering with lyon?
 - [ ] Consider grouping all bind groups and layouts into one place
 - [ ] Read normals and tangents from gltf if available
-- [ ] [[Radiance cascades]]
 
 
 ## Misc
@@ -58,6 +57,7 @@ kanban-plugin: basic
 - [ ] Gamepad support
 - [ ] [[Tweening]]
 - [ ] [[Blender as a level editor]]
+- [ ] Don't drop inputs shorter than one tick
 
 
 ***
