@@ -107,8 +107,11 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 08-23 Fleshgod Apocalypse
 - [x] 08-30 Scarlet Meridian
 - [ ] 09-20 Blighted Eye
+- [ ] 09-20 Nightwish
 - [ ] 10-04 Allt
 - [ ] 10-11 Ad Infinitum
 - [ ] 10-11 Opeth
+- [ ] 10-11 Andy Gillion
 - [ ] 10-25 Fit for an Autopsy
+- [ ] 10-25 Entheos
 - [ ] 11-01 Brothers of Metal

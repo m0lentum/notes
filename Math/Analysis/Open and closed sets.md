@@ -1,20 +1,20 @@
-Given a set $A \subset \mathbb{R}^n$, any point $\mathbf{x} \in \mathbf{R}^n$
+Given a metric space $(X, d)$ and a set $A \subset X$, any point $\mathbf{x} \in X$
 can be placed in one of three categories:
 
-**Interior points**:
+**Interior points** (fi: sisäpiste):
 There exists $r > 0$ for which $B(\mathbf{x}, r)$
 (i.e. the ball with radius $r$ centered at $\mathbf{x}$)
 is a subset of $A$.
 The set of these is denoted $\text{int }A$.
 
-**Boundary points**:
+**Boundary points** (fi: reunapiste):
 For all $r > 0$,
 $B(\mathbf{x}, r) \cup A \neq \emptyset$
 and $B(\mathbf{x}, r) \setminus A \neq \emptyset$,
 i.e. any ball contains both points in $A$ and out of $A$.
 Denoted $\partial A$.
 
-**Exterior points**:
+**Exterior points** (fi: ulkopiste):
 There exists $r > 0$ for which
 and $B(\mathbf{x}, r) \cap A \neq \emptyset$.
 Denoted $\text{ext }A$.
@@ -23,6 +23,9 @@ A set $A$ is _open_ if $\partial A \cap A = \emptyset$,
 i.e. contains none of its boundary,
 and _closed_ if $\partial A \subset A$,
 i.e. contains all of its boundary.
+More generally, a set is _open_
+if for any $x \in A$ there is $r > 0$ for which $B(x, r) \subset A$
+and _closed_ if its complement $X \setminus A$ is open.
 
 Notably, $\emptyset$ and $\mathbb{R}^n$ are simultaneously both closed and open
 because their boundaries are empty sets.
@@ -36,8 +39,16 @@ Some facts I can't be bothered to write down proofs for:
 - The intersection of a finite number of closed sets is closed
 - All boundary sets are closed
 
-[[Closure]]
+The [[closure]] $\bar{A}$ of a set $A$ is the smallest closed set containing it.
+A set $E \subset (X, d)$ is called _dense_ if $\bar{E} = X$.
+The containing space $X$ is called _separable_
+if it has a _numerable_ dense subset
+(i.e. each element can be assigned an integer index).
+Example: $\mathbb{R}$ is separable because $\mathbb{Q}$ is numerable,
+$\mathbb{Q} \subset \mathbb{R}$ and $\bar{\mathbb{Q}} = \mathbb{R}$.
 
+The collection of all open sets in a metric space $(X, d)$
+is called its [[topology]].
 ## Sequential compactness
 
 If (and only if) a set $K$ is closed and _bounded_ (fi: rajoitettu)
