@@ -21,11 +21,14 @@ TODO:
   - directional lights could be baked into an environment map,
      ambient as a uniform to the mesh renderer
 - [x] set up a profiler
-- [x] try 2x ray count scaling instead of 4x
-  - didn't work, although I might have done it wrong
+- [ ] try 2x ray count scaling instead of 4x
+  - tried and failed but I almost certainly did it wrong,
+		worth trying again with a ringing fix implemented
+		because the potential perf gains are big
 - [ ] extend light texture a bit offscreen to make pop-in less abrupt
   - this should be configurable because need for it varies by scene
-- [ ] anything clever we could do with the rgb values of the light texture mip chain?
+- [x] anything clever we could do with the rgb values of the light texture mip chain?
+	- nah, using the alpha for volumetrics instead
 - [x] raymarching only at mip level `cascade/2` seems to have very high quality, investigate
 - [ ] bilinear / parallax fix (how do those work?) to alleviate haloing
 - [x] dithering and/or tonemapping (?) to get rid of banding
@@ -49,7 +52,7 @@ TODO:
      definitely requiring some kind of translucent lights
 	  (otherwise everything lit would become an opaque light source the next frame),
 	 but would be really really cool
-- [ ] volumetric lights?
+- [x] volumetric lights?
   - this might be required to give fire a realistic range of color
   - would need two separate textures, one for lights one for occluders,
      but maybe that would also enable raymarching at higher mips only?

@@ -114,4 +114,5 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 10-11 Andy Gillion
 - [ ] 10-25 Fit for an Autopsy
 - [ ] 10-25 Entheos
+- [ ] 10-25 IOTUNN
 - [ ] 11-01 Brothers of Metal

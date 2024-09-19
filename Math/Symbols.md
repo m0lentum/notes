@@ -1,4 +1,5 @@
 [comprehensive list on wikipedia](https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols)
+[another list for LaTeX](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
 
 Greek alphabet:
 
@@ -31,7 +32,7 @@ Greek alphabet:
 
 Other symbols:
 - nabla $\nabla$, means gradient
-- partial $\partial$, means partial derivative, often pronounced "doe" or "die"
+- partial $\partial$, means partial derivative, pronounced "del" or "doe" or "die"
 	- can also mean the boundary of a region, such as in Stokes' theorem
 
 	  $$

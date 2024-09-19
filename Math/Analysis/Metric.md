@@ -41,3 +41,13 @@ $$
 This is analogous to the $l^p$ norm.
 Example: the $d_2$ metric for $\mathbb{R} \times \dots \times \mathbb{R}$ ($n$ times), 
 is the Euclidean metric for $\mathbb{R}^n$.
+
+## Equivalent metrics
+
+Two metrics $d$ and $\tilde{d}$ are said to be _equivalent_
+if they induce the same [[topology]],
+$\tau(X, d) = \tau(X, \tilde{d})$.
+They are _[[Lipschitz continuity|bi-Lipschitz]] equivalent_ if
+$$
+\exists\, K \geq 0 :  \frac{1}{K} d(x,y) \leq \tilde{d}(f(x), f(y)) \leq Kd(x,y).
+$$

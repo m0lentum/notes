@@ -15,10 +15,11 @@ kanban-plugin: basic
 - [x] wasm build
 - [x] [[Custom element groups]]
 - [x] Integrate only a subset of a cochain
+- [x] [[Numerical integration]] (1d and 0d)
 - [ ] Named physical groups from gmsh<br>- this requires upstream changes to mshio
-- [ ] [[Numerical integration]]
 - [ ] Hodge-optimized triangulations
 - [ ] Time-harmonic operators from master's thesis?
+- [ ] Numerical integration for higher dimensions
 
 
 ## Visuals
