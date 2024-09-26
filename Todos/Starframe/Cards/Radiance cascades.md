@@ -52,13 +52,11 @@ TODO:
      definitely requiring some kind of translucent lights
 	  (otherwise everything lit would become an opaque light source the next frame),
 	 but would be really really cool
-- [x] volumetric lights?
-  - this might be required to give fire a realistic range of color
-  - would need two separate textures, one for lights one for occluders,
-     but maybe that would also enable raymarching at higher mips only?
-	 (since that way we could use transparency in the mips
-	 like with volumetric occluders)
-  - would potentially enable the previous bullet point (indirect light)
+- [ ] more realistic volumetrics + emissive translucent materials
+  - required (for instance) to give fire a realistic range of color
+  - [ ] move cascade 0 back to cascade compute step
+  - [ ] allow user to modify the attenuation/emission distance scale
+- [ ] texture sources for emission and absorption in materials
 - [x] option to skip cascade 0 raymarching
   - this might be more effective at improving perf vs. quality
      after a point than increasing grid spacing

@@ -29,7 +29,11 @@ from place to place,
 where $\frac{dr}{dt} = v = \frac{p}{m}$.
 
 $\frac{dp}{dt}$ is the _force_ acting on particles.
-Assuming the force is the [[Lorentz force]] $F = q(E + v \times B)$
+
+## Vlasov-Maxwell equations
+
+Assuming the aforementioned force is the [[Lorentz force]]
+$F = q(E + v \times B)$
 where $q$ is the charge of a particle,we get
 $$
 \frac{\partial f}{\partial t}
@@ -51,6 +55,38 @@ $$
 
 We can then combine these with the [[Maxwell equations]]
 for propagating the electric and magnetic fields forward in time
-to arrive at a system describing electromagnetically interacting plasma
-(see the Wikipedia article linked at the start).
+to arrive at a system describing electromagnetically interacting plasma:
 
+Say we have a plasma consisting of
+negatively charged electrons with charge $e$,
+mass $m_e$ and distribution $f_e(r, p, t)$
+and positively charged ions with charge $Z_i e$,
+mass $m_i$ and distribution $f_i(r, p, t)$.
+Then we have a Vlasov equation for each type of particle
+as defined earlier plus the [[Maxwell equations]]
+
+$$
+\begin{aligned}
+\frac{\partial f_e}{\partial t} + v_e \cdot \frac{\partial f_e}{\partial r}
+&+ e(E + v_e \times B) \cdot \frac{\partial f_e}{\partial p} = 0 \\
+\frac{\partial f_i}{\partial t} + v_i \cdot \frac{\partial f_i}{\partial r}
+&+ Z_i e(E + v_i \times B) \cdot \frac{\partial f_i}{\partial p} = 0 \\
+\nabla \times E &= -\frac{\partial B}{\partial t} \\
+\nabla \times B &= \mu_0 (J + \varepsilon_0 \frac{\partial E}{\partial t}) \\
+\nabla \cdot E &= \frac{\rho}{\varepsilon_0} \\
+\nabla \cdot B &= 0 \\
+\end{aligned}
+$$
+where $\rho$ and $J$ are defined above
+and $v_{\alpha} = \frac{p_{\alpha}}{m_{\alpha}}$.
+
+(This is ignoring the relativistic lightspeed terms in the Wikipedia formulation.)
+
+Note: this form of the equations isn't directly translatable
+to differential forms because it involves both $\nabla \times E$ and $\nabla \cdot E$,
+which we can't express at the same time with the exterior derivative
+(it's $\nabla \times$ if E is a 1-form and $\nabla \cdot$ if E is a 2-form).
+TODO: figure out how to convert between this and the form seen in
+[[Maxwell equations#Differential form representation]]
+(where does the magnetic flux density come from?)
+However, let's think about 2D first.

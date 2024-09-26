@@ -1,4 +1,4 @@
-A Cauchy sequence is an ordered set of points $x_m,\,m = 1,2,\dots$
+A Cauchy [[sequence]] is an ordered set of points $x_m,\,m = 1,2,\dots$
 for which the distance between successive points
 converges towards zero.
 

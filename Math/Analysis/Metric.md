@@ -38,16 +38,63 @@ a $p$-product metric for $p \geq 1$,
 $$
 d_p((x_1, y_1), (x_2, y_2)) = \sqrt[p]{d_X(x_1, x_2)^p + d_Y(y_1, y_2)^p}.
 $$
-This is analogous to the $l^p$ norm.
+This is analogous to the $l^p$ [[norm]].
 Example: the $d_2$ metric for $\mathbb{R} \times \dots \times \mathbb{R}$ ($n$ times), 
 is the Euclidean metric for $\mathbb{R}^n$.
+
+All $p$-product metrics are [[Lipschitz continuity|bi-Lipschitz]] equivalent.
+
+##### Theorem: continuous maps in product spaces
+
+Let $(X, d_X)$, $(Y, d_Y)$, $(Z, d_Z)$ be metric spaces.
+1. The projection maps $P_X : X \times Y \rightarrow X, \,P_X(x, y) = x$
+	and $P_Y : X \times Y \rightarrow Y, \,P_Y(x, y) = y$
+	are continuous.
+2. $F : Z \rightarrow X \times Y$ is continuous $\iff$ the component maps
+	$P_X \circ F : Z \rightarrow X$ and $P_Y \circ F : Z \rightarrow Y$
+	are continuous.
+
+It follows from this that the product of open sets is open
+and the product of closed sets is closed.
+
+###### Proof
+
+Let $A \subset X$, $B \subset Y$ be open/closed sets.
+Then $A \times B = P_X^{-1}(A) \cap P_Y^{-1}(B)$.
+$P_X$ and $P_Y$ are continuous, and therefore ([[Continuity#Theorem Characterizing continuity via open and closed sets|theorem]])
+the preimages of open/closed sets are open/closed
+and thus this intersection is also open/closed.
 
 ## Equivalent metrics
 
 Two metrics $d$ and $\tilde{d}$ are said to be _equivalent_
 if they induce the same [[topology]],
 $\tau(X, d) = \tau(X, \tilde{d})$.
+Equivalence is denoted $d \sim \tilde{d}$.
 They are _[[Lipschitz continuity|bi-Lipschitz]] equivalent_ if
 $$
 \exists\, K \geq 0 :  \frac{1}{K} d(x,y) \leq \tilde{d}(f(x), f(y)) \leq Kd(x,y).
 $$
+
+##### Theorem: Continuous maps with equivalent metrics
+
+Let $f : (X, d_X) \rightarrow (Y, d_Y)$, $d_X \sim \tilde{d}_X$, $d_Y \sim \tilde{d}_Y$.
+Then $f$ is [[Continuity|continuous]] $\iff$ $f : (X, \tilde{d}_X) \rightarrow (Y, \tilde{d}_Y)$
+is continuous.
+
+###### Proof
+
+Denote $\tilde{f} : (X, \tilde{d}_X) \rightarrow (Y, \tilde{d}_Y)$.
+Because $d_X \sim \tilde{d}_X$, the identity map
+$\text{id}_X : (X, d_X) \rightarrow (X, \tilde{d}_X)$ is a [[homeomorphism]],
+as is $\text{id}_Y : (Y, d_Y \rightarrow (Y, \tilde{d}_Y)$.
+$$
+\begin{CD}
+(X, d_X) @>f>> (Y, d_Y) \\
+@VV\text{id}_XV		@VV\text{id}_YV \\
+(X, \tilde{d}_X) @>\tilde{f}>> (Y, \tilde{d}_Y) \\
+\end{CD}
+$$
+This diagram illustrates that $\tilde{f} = \text{id}_Y \circ f \circ \text{id}_X^{-1}$
+which is a composition of continuous maps and thus continuous.
+The same goes for $f = \text{id}_Y^{-1} \circ \tilde{f} \circ \text{id}_X$. $\square$

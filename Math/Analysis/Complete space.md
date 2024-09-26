@@ -6,7 +6,7 @@ without needing to know the actual limit being converged to
 ([wikipedia](https://en.wikipedia.org/wiki/Cauchy_sequence)).
 
 $R^n$ is complete.
-Proof:
+###### Proof
 Let $\mathbf{x}_m$ be a Cauchy sequence in $\mathbb{R}^n$.
 Then all coordinate sequences $x_m^{(k)}$ are Cauchy sequences in $\mathbb{R}$
 because
@@ -31,6 +31,7 @@ $$
 $$
 where $\mathbf{x}$ is the limit)
 
+###### 
 The rational numbers $\mathbb{Q}$ are an example of an incomplete space.
 Intuitively speaking, it has gaps where irrational numbers go,
 and Cauchy sequences in $\mathbb{Q}$ that would converge on these gaps in $\mathbb{R}$

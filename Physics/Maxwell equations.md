@@ -32,6 +32,8 @@ $$
 \nabla \cdot D &= \rho \\
 \end{aligned}
 $$
+(TODO: why is this equivalent?)
+
 where $E$ and $H$ are the electric and magnetic fields,
 $\rho$ and $\rho^*$ are electric and magnetic charge densities,
 and the additional fields $D = \varepsilon E$ and $B = \mu H$
@@ -42,12 +44,13 @@ in an absorbing material.
 
 We can replace $E$ and $H$ with 1-forms $\tilde{E}$ and $\tilde{H}$ (for which $d = \nabla \times$),
 $D$ and $B$ with 2-forms $\tilde{D}$ and $\tilde{B}$ (for which $d = \nabla \cdot$),
-$J$ and $J^*$ with 2-forms, and $\rho$ and $\rho^*$ with 1-forms,
+$J$ and $J^*$ with 2-forms, and $\rho$ and $\rho^*$ with 3-forms
+(note that this is specifically in 3D),
 and we get
 $$
 \begin{aligned}
-d\tilde{E} &= -\frac{\partial \tilde{B}}{\partial t} - \tilde{J}^* \\
-d\tilde{H} &= \frac{\partial \tilde{D}}{\partial t} + \tilde{J} \\
+d\tilde{E} &= -\partial_t \tilde{B} - \tilde{J}^* \\
+d\tilde{H} &= \partial_t \tilde{D} + \tilde{J} \\
 d\tilde{B} &= \tilde{\rho}^* \\
 d\tilde{D} &= \tilde{\rho} \\
 \end{aligned}
@@ -59,9 +62,41 @@ $$
 \tilde{D} &= \star \varepsilon \tilde{E} \\
 \tilde{B} &= \star \mu \tilde{H} \\
 \tilde{J} &= \star \sigma \tilde{E} \\
-\tilde{J}^* &= \star \sigma^* \tilde{H}. \\
+\tilde{J}^* &= \star \sigma^* \tilde{H} \\
 \end{aligned}
 $$
-
-TODO: work through the last part of this section
-where the system is unified into two equations
+The [[continuity equation]] gives the following additional relation
+for $\tilde{J}$ and $\tilde{\rho}$ (and the same for the magnetic equivalents):
+$$
+\partial_t \tilde{\rho} + d\tilde{J} = 0
+$$
+This applied to the exterior derivative of the first equation yields
+$$
+\begin{aligned}
+dd\tilde{E} &= -\partial_t d\tilde{B} - dJ^* \\
+0 &= -\partial_t d\tilde{B} + \partial_t \tilde{\rho^*} \\
+\partial_t d\tilde{B} &= \partial_t \tilde{\rho^*} \\
+\end{aligned}
+$$
+and
+$$
+\partial_t d\tilde{D} = \partial_t \tilde{\rho}.
+$$
+This implies that the last two of the four equations
+are automatically preserved over time
+and we don't need to consider them in time integration
+as long as they are satisfied at one point in time.
+Thus we have an initial value problem for the first two equations,
+which can be expressed by applying all the relations derived here as
+$$
+\begin{aligned}
+d\tilde{E} &= -\partial_t \tilde{B} - \tilde{J}^* \\
+&= -\partial_t (\star \mu \tilde{H}) - \star\sigma^*\tilde{H} \\
+&= -\star \mu \partial_t \tilde{H} - \star\sigma^*\tilde{H} \\
+d\tilde{H} &= \partial_t \tilde{D} + \tilde{J} \\
+&= \star \varepsilon \partial_t \tilde{E} + \star \sigma \tilde{E} \\
+\tilde{E}(0) &= \tilde{E}_0 \\
+\tilde{H}(0) &= \tilde{H}_0 \\
+\end{aligned}
+$$
+This can be discretized using DEC.
