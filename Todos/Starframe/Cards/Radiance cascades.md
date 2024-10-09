@@ -1,4 +1,4 @@
-TODO:
+Done by 2024-09-28:
 
 - [x] clear cascade texture between frames (no need actually, that was a sync bug)
 - [x] volumetrics
@@ -21,16 +21,9 @@ TODO:
   - directional lights could be baked into an environment map,
      ambient as a uniform to the mesh renderer
 - [x] set up a profiler
-- [ ] try 2x ray count scaling instead of 4x
-  - tried and failed but I almost certainly did it wrong,
-		worth trying again with a ringing fix implemented
-		because the potential perf gains are big
-- [ ] extend light texture a bit offscreen to make pop-in less abrupt
-  - this should be configurable because need for it varies by scene
 - [x] anything clever we could do with the rgb values of the light texture mip chain?
 	- nah, using the alpha for volumetrics instead
 - [x] raymarching only at mip level `cascade/2` seems to have very high quality, investigate
-- [ ] bilinear / parallax fix (how do those work?) to alleviate haloing
 - [x] dithering and/or tonemapping (?) to get rid of banding
   - turns out just a higher precision float texture does the trick
 - [x] investigate removing cascade 0 and instead raymarching in the mesh shader
@@ -38,25 +31,33 @@ TODO:
      but would save a good amount of memory and improve quality somewhat
   - turns out this actually saves time because it allows
      reducing probe spacing without a major loss in quality
-- [ ] change light response depending on z coordinate
-- [ ] far-field shader using only directional lights
-  - maybe add parallax and fog at the same time
-    with the previous two points
 - [x] try converting to a pixel shader
   - pretty big gains it turns out, especially since this enables hardware interpolation
-- [ ] try computing only some of the cascades per frame
-  for perf on low end hardware at the cost of lights only updating once every n frames
-  - this would require storing all cascades separately
-- [ ] indirect diffuse lighting by rendering lighting results as light sources?
-  - this is probably difficult with my particular setup,
-     definitely requiring some kind of translucent lights
-	  (otherwise everything lit would become an opaque light source the next frame),
-	 but would be really really cool
-- [ ] more realistic volumetrics + emissive translucent materials
+- [x] more realistic volumetrics + emissive translucent materials
   - required (for instance) to give fire a realistic range of color
-  - [ ] move cascade 0 back to cascade compute step
-  - [ ] allow user to modify the attenuation/emission distance scale
-- [ ] texture sources for emission and absorption in materials
 - [x] option to skip cascade 0 raymarching
   - this might be more effective at improving perf vs. quality
      after a point than increasing grid spacing
+
+Features still needed:
+
+- [ ] texture sources for emission and absorption in materials
+- [ ] change light response depending on z coordinate
+- [ ] far-field shader using only directional lights
+  - maybe also add parallax and fog at the same time with these
+	to complete the depth effect
+
+Nice to have / optimization ideas:
+
+- [ ] try 2x ray count scaling instead of 4x
+  - tried and failed but I almost certainly did it wrong,
+		worth trying again with a ringing fix implemented
+		because the potential perf gains are big
+- [ ] extend light texture a bit offscreen to make pop-in less abrupt
+  - this should be configurable because need for it varies by scene
+- [ ] bilinear / parallax fix (how do those work?) to alleviate haloing
+- [ ] try computing only some of the cascades per frame
+  - this would require storing all cascades separately
+- [ ] indirect diffuse lighting by rendering lighting results as light sources?
+- [ ] allow user to modify the attenuation/emission distance scale
+- [ ] share shader code with `naga_oil` to reduce duplication between mesh and cascade shaders

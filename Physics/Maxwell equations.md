@@ -5,11 +5,11 @@ describing electromagnetic fields.
 They can be written as follows:
 
 - $\nabla \cdot E = \frac{\rho}{\varepsilon_0}$ (Gauss's law)
-- $\nabla \cdot B = 0$ (Gauss's law for magnetism)
-- $\nabla \times E = -\frac{\partial B}{\partial t}$ (Faraday's law of induction)
-- $\nabla \times B = \mu_0 (J + \varepsilon_0 \frac{\partial E}{\partial t})$ (Ampère-Maxwell law)
+- $\nabla \cdot H = 0$ (Gauss's law for magnetism)
+- $\nabla \times E = -\frac{\partial H}{\partial t}$ (Faraday's law of induction)
+- $\nabla \times H = \mu_0 (J + \varepsilon_0 \frac{\partial E}{\partial t})$ (Ampère-Maxwell law)
 
-Here $E$ and $B$ are the electric and magnetic fields,
+Here $E$ and $H$ are the electric and magnetic fields,
 $\rho$ is the electric charge density,
 $J$ is the current density
 $\varepsilon_0$ is the vacuum permittivity
@@ -19,6 +19,67 @@ Permittivity is a measure of how strong of an electric field
 is produced by a given charge
 (i.e. how much force it exerts on other charged particles).
 Permeability is an analogous quantity for the magnetic field.
+
+Modifying the equations slightly by moving the permittivity and permeability
+behind the electric and magnetic fluxes $D$ and $B$
+given by the constitutive equations
+$$
+\begin{aligned}
+D &= \varepsilon E \\
+B &= \mu H \\
+\end{aligned}
+$$
+we get the form used by Davidson, D. (2010).
+Computational Electromagnetics for RF and Microwave Engineering.
+$$
+\begin{aligned}
+\nabla \times E &= -\frac{\partial}{\partial t} B \\
+\nabla \times H &= J + \frac{\partial}{\partial t} D \\
+\nabla \cdot D &= \rho \\
+\nabla \cdot B &= 0 \\
+\end{aligned}
+$$
+
+## 2D
+
+Source: Davidson 2010 (citation above)
+
+A 2D Euclidean form of the equations can be deduced
+by setting either $E$ or $H$ orthogonal to the xy plane,
+resulting in _transverse magnetic_ (TM)
+or _transverse electric_ (TE) wave modes, respectively.
+In the TE mode, the nonzero components of the fields are then
+$E_x$, $E_y$, and $H_z$
+and the curls simplify to $\nabla \times E = \partial_y E_x - \partial_x E_y$
+(a scalar / vector in the z-axis),
+and $\nabla \times H = (\partial_y H_z, -\partial_x H_z)$
+(a vector in the xy plane).
+This leads to the first two Maxwell equations from the above formulation
+$$
+\begin{aligned}
+\frac{\partial E_x}{\partial y} - \frac{\partial E_y}{\partial x}
+&= -\frac{\partial B}{\partial t}
+= -\frac{\partial}{\partial t} \mu H_z \\
+\implies \frac{\partial H_z}{\partial t}
+&= \frac{1}{\mu} (\frac{\partial E_x}{\partial y}  - \frac{\partial E_y}{\partial t})
+\end{aligned}
+$$
+and
+$$
+\begin{aligned}
+(\frac{\partial H_z}{\partial y}, -\frac{\partial H_z}{\partial x}) &= J + \frac{\partial D}{\partial t}
+= J + \frac{\partial}{\partial t} \varepsilon E \\
+\implies \frac{\partial E_x}{\partial t} &= \frac{1}{\varepsilon} (\frac{\partial H_z}{\partial y} - J_x) \\
+\frac{\partial E_y}{\partial t} &= -\frac{1}{\varepsilon} (\frac{\partial H_z}{\partial x} + J_y) \\
+\end{aligned}
+$$
+Divergence is the same in 2D so the other two equations don't change.
+
+TODO: in what situations are TE modes vs. TM modes applicable?
+
+An expression of this using differential forms in an arbitrary metric space
+is given in Radozycki, T. (2019). Reduction of the classical electromagnetism to a two-dimensional curved surface.
+TODO: study this
 
 ## [[Differential form]] representation
 ([Räbinä 2014](http://urn.fi/URN:ISBN:978-951-39-5951-7))

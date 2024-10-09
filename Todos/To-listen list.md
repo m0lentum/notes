@@ -97,8 +97,8 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-16 Ihsahn
 - [x] 02-23 Borknagar
 - [x] 02-23 Hand of Kalliach
-- [ ] 05-10 Unleash the Archers
-- [ ] 06-07 Evergrey
+- [x] 05-10 Unleash the Archers
+- [x] 06-07 Evergrey
 - [x] 06-12 HIZAKI
 - [x] 06-21 Seven Spires
 - [ ] 07-19 Atavistia
@@ -108,6 +108,12 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 08-30 Scarlet Meridian
 - [ ] 09-20 Blighted Eye
 - [ ] 09-20 Nightwish
+- [ ] 09-20 Decimals
+- [ ] 09-27 Cyborg Octopus
+- [ ] 09-27 Solstice Rider
+- [ ] 09-27 The Black Dahlia Murder
+- [ ] 09-27 Ophidian Memory
+- [ ] 10-04 Blood Incantation
 - [ ] 10-04 Allt
 - [ ] 10-11 Ad Infinitum
 - [ ] 10-11 Opeth

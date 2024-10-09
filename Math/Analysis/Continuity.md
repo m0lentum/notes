@@ -39,6 +39,24 @@ $$
 \lim_{\substack{x \rightarrow x_0 \\ x \in A}} f(x) = f(x_0).
 $$
 
+## Uniform continuity
+
+A map is _uniformly continuous_ (fi: tasaisesti jatkuva)
+if for every $\varepsilon > 0$ there is $\delta > 0$ such that
+$$
+d(f(x), f(x_0)) < \varepsilon
+\text{ when } 0 < d(x, x_0) < \delta.
+$$
+for all $x_0$.
+This differs from regular continuity
+in that $\delta$ cannot vary in space;
+one $\delta$ must work for all points.
+This is a stronger form of continuity
+which also preserves [[Cauchy sequence]]s,
+not just convergent sequences.
+
+All globally [[Lipschitz continuity|Lipschitz]] maps are uniformly continuous.
+
 ## Theorem: Characterizing continuity via open and closed sets
 
 Let $X$ and $Y$ be metric spaces and $f : X \rightarrow Y$.
@@ -46,29 +64,29 @@ Let $X$ and $Y$ be metric spaces and $f : X \rightarrow Y$.
 2. $f$ is continuous $\iff$ $f^{-1}(F) \subset X$ is closed for all closed $F \subset Y$
 3. $f$ is continuous $\iff$ $f(\bar{A}) \subset \overline{f(A)}$ for all $A \subset X$
 
-Proof of 1.:
-	"$\implies$":
-	Let $x \in f^{-1}(U)$, $y = f(x) \in U$.
-	Because $U$ is open, there is some $\varepsilon > 0$ for which
-	$B(y, \varepsilon) \subset U \implies f^{-1}(B(y, \varepsilon)) \subset f^{-1}(U)$.
-	Because $f$ is continuous, there is $\delta > 0$ for which
-	$$
-	f(B(x, \delta)) \subset B(y, \varepsilon) \implies B(x, \delta) \subset f^{-1}(B(y, \varepsilon)) \subset f^{-1}(U).
-	$$
-	Therefore, $f^{-1}(U)$ is open.
-	"$\impliedby$":
-	If $U \subset Y$ is open,
-	then for any point $x \in f^{-1}(U)$ there is $\varepsilon > 0$
-	such that $B(f(x), \varepsilon) \subset U$.
-	The preimage of $B(f(x), \varepsilon)$ is also open due to the starting assumption.
-	Therefore there is $\delta > 0$ such that 
-	$$
-	B(x, \delta) \subset f^{-1}(B(f(x), \varepsilon))
-	\implies f(B(x, \delta)) \subset B(f(x), \varepsilon)
-	$$
-	and thus $f$ is continuous.
+###### Proof of 1.
+"$\implies$":
+Let $x \in f^{-1}(U)$, $y = f(x) \in U$.
+Because $U$ is open, there is some $\varepsilon > 0$ for which
+$B(y, \varepsilon) \subset U \implies f^{-1}(B(y, \varepsilon)) \subset f^{-1}(U)$.
+Because $f$ is continuous, there is $\delta > 0$ for which
+$$
+f(B(x, \delta)) \subset B(y, \varepsilon) \implies B(x, \delta) \subset f^{-1}(B(y, \varepsilon)) \subset f^{-1}(U).
+$$
+Therefore, $f^{-1}(U)$ is open.
+"$\impliedby$":
+If $U \subset Y$ is open,
+then for any point $x \in f^{-1}(U)$ there is $\varepsilon > 0$
+such that $B(f(x), \varepsilon) \subset U$.
+The preimage of $B(f(x), \varepsilon)$ is also open due to the starting assumption.
+Therefore there is $\delta > 0$ such that 
+$$
+B(x, \delta) \subset f^{-1}(B(f(x), \varepsilon))
+\implies f(B(x, \delta)) \subset B(f(x), \varepsilon)
+$$
+and thus $f$ is continuous.
 
-### Example
+###### Example
 
 Let $(X, \delta)$ be a metric space with the discrete metric (see [[metric]]).
 Then all $A \subset X$ are open because $\{x\}$ is open for all $x \in X$
@@ -85,6 +103,19 @@ such that $B_Y(y, r) \subset f^{-1}(\{x\})$
 which implies that the restricted metric $d_Y|_{B(x,r)}$ is constant.
 Thus only _locally constant_ maps are continuous.
 
+## Theorem: Characterizing continuity via convergent sequences
+
+If $f : X \rightarrow Y$ is continuous and the [[sequence]] $(x_j) \subset X$ converges to $x$,
+i.e. $x_j \overset{j \rightarrow \infty}{\longrightarrow} x$, 
+then $f(x_j) \overset{j \rightarrow \infty}{\longrightarrow} f(x)$.
+If for all convergent sequences $(x_j) \subset X$
+$f(x_j)$ converges to $f(\lim_{j \rightarrow \infty} x_j)$,
+then $f$ is continuous.
+
+Note: [[Cauchy sequence]]s are not necessarily preserved under continuous functions.
+For example, let $f : ]0, 1] \rightarrow \mathbb{R}$, $f(t) = \frac{1}{t}$.
+The sequence $x_j = \frac{1}{j}$ is Cauchy but $f(x_j) = j$ is not.
+
 ## Theorem: existence of minima and maxima
 
 If a set $K \subset \mathbb{R}^n$ is closed and bounded (see [[Open and closed sets#Sequential compactness]])
@@ -93,20 +124,20 @@ then $f$ reaches its minimum and maximum values in $K$,
 i.e. there are points $x_0, z_0 \in K$ for which
 $f(x_0) = \max_{x \in K} f(x)$ and $f(z_0) = \min_{x \in K} f(x)$.
 
-Proof:
-	If $K$ is sequentially compact and $f$ is continuous,
-	then $f$ is bounded (proof for this not written here).
-	Therefore max and min exist.
-	Then we can select a sequence $x_m \in K$
-	for which $f(x_m) \rightarrow \sup_{x \in K} f(x)$.
-	Because $K$ is sequentially compact,
-	this sequence has a subsequence $x_{m_j}$
-	which converges to a point $x \in K$.
-	Because $x_m$ converges to a point, all its subsequences also converge to this point.
-	And finally, because $f$ is continuous
-	and thus the limit of a sequence's image
-	equals the image of that sequence's limit,
-	$$
-	f(x) = \lim_{j \rightarrow \infty} f(x_{m_j}) = \max_{x \in K} f(x).
-	$$
-	Same procedure for proving the minimum's existence.
+###### Proof
+If $K$ is sequentially compact and $f$ is continuous,
+then $f$ is bounded (proof for this not written here).
+Therefore max and min exist.
+Then we can select a sequence $x_m \in K$
+for which $f(x_m) \rightarrow \sup_{x \in K} f(x)$.
+Because $K$ is sequentially compact,
+this sequence has a subsequence $x_{m_j}$
+which converges to a point $x \in K$.
+Because $x_m$ converges to a point, all its subsequences also converge to this point.
+And finally, because $f$ is continuous
+and thus the limit of a sequence's image
+equals the image of that sequence's limit,
+$$
+f(x) = \lim_{j \rightarrow \infty} f(x_{m_j}) = \max_{x \in K} f(x).
+$$
+Same procedure for proving the minimum's existence.

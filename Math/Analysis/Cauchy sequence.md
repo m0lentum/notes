@@ -1,5 +1,5 @@
 A Cauchy [[sequence]] is an ordered set of points $x_m,\,m = 1,2,\dots$
-for which the distance between successive points
+for which the radius of the tail end
 converges towards zero.
 
 More precisely, a sequence $x_m$ is a Cauchy sequence if
