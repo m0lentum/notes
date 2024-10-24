@@ -35,8 +35,8 @@ Some facts I can't be bothered to write down proofs for:
   its complement $\complement F = \mathbb{R}^n \setminus F$ is open
 - The union of any number of open sets is open
 - The intersection of a finite number of open sets is open
-- The union of any number of closed sets is closed
-- The intersection of a finite number of closed sets is closed
+- The union of a finite number of closed sets is closed
+- The intersection of any number of closed sets is closed
 - All boundary sets are closed
 
 The [[closure]] $\bar{A}$ of a set $A$ is the smallest closed set containing it.

@@ -20,6 +20,7 @@ kanban-plugin: basic
 - [ ] Hodge-optimized triangulations
 - [ ] Time-harmonic operators from master's thesis?
 - [ ] Numerical integration for higher dimensions
+- [ ] Parallelism (rayon? simd? gpu?)
 
 
 ## Visuals

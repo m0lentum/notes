@@ -142,29 +142,37 @@ we can use the following variables (overhead number denoting form dimension):
 - $\overset{1}{J} = J_xdx + J_ydy$
 - $\overset{0}{H} = H_z$
 - $\overset{2}{B} = B_z dx \wedge dy = \star \mu H$
-- $\overset{?}{f_i} = ?$
+- $\overset{0}{f_i} = f$ (for which $\star f = f dp_1 \wedge dp_2$)
 TODO: some sources have the flux as $D = D_xdy - D_ydx$, why?
 I guess that expresses the same thing as the star?
 
-How does $f$ interact with the other variables?
-It's a 4-dimensional function that gets integrated over velocity space.
-The result of the integral is a density which should be a 2-form.
-Integrating over velocity space suggests that this should be a 2-form in velocity as well.
-I guess that makes the value of $f$ a 4-form in 4D phase space?
+The differentials in the Vlasov equation are gradients,
+which suggests 0-forms.
+However, we also have need to take a surface integral of it 
+over the velocity space, which suggests 2-forms.
+We can convert between the two with $\star$,
+but care must be taken to get place things on meshes
+such that we get matching primal/dual cochains in all formulas (working on it..)
+Let's try with 0-forms first.
 
 The equations expressed with these variables and exterior calculus operators are
 $$
 \begin{aligned}
 \frac{\partial E}{\partial t} &= -\varepsilon^{-1} (\star d H + J) \\
+J &= e \int_{p} \star (Z_i f_i - f_e) v \\
 \frac{\partial H}{\partial t} &= \mu^{-1} d \star E \\
-d \star D &= \rho = e \int_{-\infty}^{\infty} Z_i f_i(r, p, t) - f_e(r, p, t) \,d^2p \\
+d \star D &= \rho = e \int_{p} \star (Z_i f_i - f_e) \\
 dB &= 0 \text{ trivial because $d$ of a volume form doesn't exist} \\
 D &= \star \varepsilon E \\
 B &= \star \mu H \\ 
-0 &= \frac{\partial f_e}{\partial t} + v_e \cdot \frac{\partial f_e}{\partial r}
-+ e(E + H_z \star v_e) \cdot \frac{\partial f_e}{\partial p} \\
-0 &= \frac{\partial f_i}{\partial t} + v_i \cdot \frac{\partial f_i}{\partial r}
-+ Z_i e(E + H_z \star v_i) \cdot \frac{\partial f_i}{\partial p} \\
+\frac{\partial f_e}{\partial t} &= -v_e \cdot d_r f
+- e(E + H \star v_e) \cdot d_p f \\
+\frac{\partial f_i}{\partial t} &= -v_i \cdot d_r f
+- Z_i e(E + H \star v_i) \cdot d_p f \\
 \end{aligned}
 $$
+Where $d_r f$ denotes the positional part of $d f$,
+$d_p f$ the velocity part, and $\int_p$ the integral over the entire velocity space.
+TODO: what to do with the dot products in the Vlasov equation?
+Look at the Navier-Stokes work by Hirani et al, see how they handle advection.
 

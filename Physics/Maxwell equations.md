@@ -40,6 +40,26 @@ $$
 \end{aligned}
 $$
 
+## Interpretation
+
+Gauss's law says that sources and sinks of electric fields
+(i.e. points with nonzero divergence)
+are created by charges.
+
+Gauss's law for magnetism means that magnetic monopoles don't exist -
+field lines always loop back to the source,
+summing up into zero.
+
+Faraday's law of induction says that a change in the magnetic field
+will induce a current circulating around the direction of change.
+
+The Ampère-Maxwell law says that either a current or a change in the electric field
+will induce a magnetic field circulating around the direction of current/change.
+
+These properties are perhaps more intuitive in the integral form of the equations
+relating surface fluxes to work along the surface boundary.
+Here's a good [video from Up and Atom](https://www.youtube.com/watch?v=F3QHUvr8d8I) explaining them.
+
 ## 2D
 
 Source: Davidson 2010 (citation above)

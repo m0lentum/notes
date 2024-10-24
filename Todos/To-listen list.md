@@ -101,23 +101,24 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 06-07 Evergrey
 - [x] 06-12 HIZAKI
 - [x] 06-21 Seven Spires
-- [ ] 07-19 Atavistia
+- [x] 07-19 Atavistia
 - [x] 07-26 A Wake in Providence
-- [ ] 08-23 Within the Ruins
+- [x] 08-23 Within the Ruins
 - [x] 08-23 Fleshgod Apocalypse
 - [x] 08-30 Scarlet Meridian
-- [ ] 09-20 Blighted Eye
-- [ ] 09-20 Nightwish
-- [ ] 09-20 Decimals
-- [ ] 09-27 Cyborg Octopus
-- [ ] 09-27 Solstice Rider
+- [x] 09-20 Blighted Eye
+- [x] 09-20 Nightwish
+- [x] 09-20 Decimals
+- [x] 09-27 Cyborg Octopus
+- [x] 09-27 Solstice Rider
 - [ ] 09-27 The Black Dahlia Murder
 - [ ] 09-27 Ophidian Memory
 - [ ] 10-04 Blood Incantation
-- [ ] 10-04 Allt
+- [x] 10-04 Allt
 - [ ] 10-11 Ad Infinitum
 - [ ] 10-11 Opeth
-- [ ] 10-11 Andy Gillion
+- [x] 10-11 Andy Gillion
+- [ ] 10-18 Frozen Crown
 - [ ] 10-25 Fit for an Autopsy
 - [ ] 10-25 Entheos
 - [ ] 10-25 IOTUNN
