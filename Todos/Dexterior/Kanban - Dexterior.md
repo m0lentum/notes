@@ -21,6 +21,7 @@ kanban-plugin: basic
 - [ ] Time-harmonic operators from master's thesis?
 - [ ] Numerical integration for higher dimensions
 - [ ] Parallelism (rayon? simd? gpu?)
+- [ ] Store and playback a non-realtime simulation
 
 
 ## Visuals

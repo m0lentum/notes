@@ -155,24 +155,52 @@ but care must be taken to get place things on meshes
 such that we get matching primal/dual cochains in all formulas (working on it..)
 Let's try with 0-forms first.
 
-The equations expressed with these variables and exterior calculus operators are
+The dot products with velocities and gradients of $f$ in the Vlasov equation
+are equivalent to the Lie derivative of a 0-form $\mathcal{L}_v f \equiv v \cdot \nabla_r f$.
+Discretizing this is a tricky matter,
+but let's just express the equations in terms of this first.
+Denoting by $V_{\alpha}$ the velocity field consisting of all $v_{\alpha}$
+and by $F_{\alpha}$ the Lorentz force field $q_{\alpha}(E + H \star v_{\alpha})$
+(where $q_e = e$, $q_i = Z_i e$),
+combining into a total 4D field $(V_{\alpha}, F_{\alpha})$,
+we get the system
 $$
 \begin{aligned}
-\frac{\partial E}{\partial t} &= -\varepsilon^{-1} (\star d H + J) \\
-J &= e \int_{p} \star (Z_i f_i - f_e) v \\
-\frac{\partial H}{\partial t} &= \mu^{-1} d \star E \\
-d \star D &= \rho = e \int_{p} \star (Z_i f_i - f_e) \\
-dB &= 0 \text{ trivial because $d$ of a volume form doesn't exist} \\
-D &= \star \varepsilon E \\
-B &= \star \mu H \\ 
-\frac{\partial f_e}{\partial t} &= -v_e \cdot d_r f
-- e(E + H \star v_e) \cdot d_p f \\
-\frac{\partial f_i}{\partial t} &= -v_i \cdot d_r f
-- Z_i e(E + H \star v_i) \cdot d_p f \\
+\frac{\partial \overset{1}{E}}{\partial t} &= -(\star \varepsilon)^{-1} (\star d \overset{0}{H} + \overset{1}{J}) 
+= -\varepsilon^{-1} (d\overset{0}{H} + \overset{1}{J}) \\
+
+\overset{1}{J}(r) &= \int_{p} \star (q_i \overset{0}{f_i}(r, p) - q_e \overset{0}{f_e}(r, p)) v \\
+
+\frac{\partial \overset{0}{H}}{\partial t} &= (\star \mu)^{-1} d \star \overset{1}{E} 
+= \mu^{-1} \star d \star \overset{1}{E} \\
+
+d \star \overset{1}{D} &= \overset{2}{\rho} = \int_{p} \star (q_i \overset{0}{f_i} - q_e \overset{0}{f_e}) \\
+
+d\overset{2}{B} &= 0 \text{ trivial because $d$ of a volume form doesn't exist} \\
+
+\overset{1}{D} &= \star \varepsilon \overset{1}{E}
+\text{ (used to derive eq. 1 from the $\partial_t D$ form)} \\
+
+\overset{2}{B} &= \star \mu \overset{0}{H} \\ 
+
+\frac{\partial \overset{0}{f_e}}{\partial t} &= -\mathcal{L}_{(V_e, F_e)} \overset{0}{f_e} \\
+
+\frac{\partial \overset{0}{f_i}}{\partial t} &= -\mathcal{L}_{(V_i, F_i)} \overset{0}{f_i} \\
 \end{aligned}
 $$
-Where $d_r f$ denotes the positional part of $d f$,
-$d_p f$ the velocity part, and $\int_p$ the integral over the entire velocity space.
-TODO: what to do with the dot products in the Vlasov equation?
-Look at the Navier-Stokes work by Hirani et al, see how they handle advection.
 
+TODO: ~~the Lorentz force results in something that isn't actually a 1-form
+but we should be advecting things along a 1-form field~~?
+Never mind, it's a 1-form, just currently unclear if dual or primal.
+(or actually, does it need to be a vector field?
+in Euclidean space it's not really an important distinction
+but makes a difference in arbitrary metric spaces)
+Also, be more consistent about whether the Vlasov equation
+is in momentum or velocity space
+
+The electromagnetic field equations
+match the pressure-velocity acoustics equations as they should,
+and the form dimensions seem to match in all the equations 👍
+However, as learned in that case,
+boundary conditions may involve fluxes across the boundary,
+so be prepared to express these equations in terms of electric flux instead.

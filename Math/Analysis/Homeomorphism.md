@@ -13,7 +13,7 @@ As a consequence of this applied both ways,
 $U \subset X_1$ is open $\iff$ $f(U) \subset X_2$ is open.
 
 ######
-Consequently, [[topology]] is preserved under homeomorphisms.
+Consequently, [[Topology]] is preserved under homeomorphisms.
 
 Spaces where a homeomorphism exists between them
 are called _homeomorphic_.

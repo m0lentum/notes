@@ -1,3 +1,5 @@
+(see also the analogous more abstract definition in [[Topology]])
+
 Given a metric space $(X, d)$ and a set $A \subset X$, any point $\mathbf{x} \in X$
 can be placed in one of three categories:
 
@@ -48,7 +50,8 @@ Example: $\mathbb{R}$ is separable because $\mathbb{Q}$ is numerable,
 $\mathbb{Q} \subset \mathbb{R}$ and $\bar{\mathbb{Q}} = \mathbb{R}$.
 
 The collection of all open sets in a metric space $(X, d)$
-is called its [[topology]].
+is called its [[Topology]].
+
 ## Sequential compactness
 
 If (and only if) a set $K$ is closed and _bounded_ (fi: rajoitettu)

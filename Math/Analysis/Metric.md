@@ -68,7 +68,7 @@ and thus this intersection is also open/closed.
 ## Equivalent metrics
 
 Two metrics $d$ and $\tilde{d}$ are said to be _equivalent_
-if they induce the same [[topology]],
+if they induce the same [[Topology]],
 $\tau(X, d) = \tau(X, \tilde{d})$.
 Equivalence is denoted $d \sim \tilde{d}$.
 They are _[[Lipschitz continuity|bi-Lipschitz]] equivalent_ if
