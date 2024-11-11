@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "-path:Todos  ",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -32,7 +32,7 @@
       "query": "path:Tools",
       "color": {
         "a": 1,
-        "rgb": 12210912
+        "rgb": 7023235
       }
     },
     {
@@ -63,10 +63,10 @@
   "nodeSizeMultiplier": 1.04427083333333,
   "lineSizeMultiplier": 1.68229166666667,
   "collapse-forces": false,
-  "centerStrength": 0.5625,
-  "repelStrength": 11.4583333333333,
-  "linkStrength": 0.864583333333333,
-  "linkDistance": 42,
+  "centerStrength": 0.682291666666667,
+  "repelStrength": 11.9791666666667,
+  "linkStrength": 1,
+  "linkDistance": 192,
   "scale": 0.5843581180567528,
-  "close": true
+  "close": false
 }

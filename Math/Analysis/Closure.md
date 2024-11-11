@@ -1,15 +1,20 @@
 The _closure_ (fi: sulkeuma) $\bar{A}$ of a set $A$
-is the set of all _adherent points_ (fi: kosketuspiste)
-of that set, i.e. points for which
+is the smallest closed set containing $A$,
+$$
+\bigcap_{F \supset A, F \text{ closed}} F
+$$
+(see [[Open and closed sets]])
+This definition applies in both [[metric]] and [[Topology|topological]] spaces.
+In metric context it can also be interpreted
+as the set of all _adherent points_ (fi: kosketuspiste)
+of $A$, i.e. points for which
 $B(\mathbf{x}, r) \cap A \neq \emptyset$ for all $r > 0$.
 It is a closed set equal to
 $$
 \bar{A} = A \cup \partial A
 = \text{int }A \cup \partial A
-= \mathbb{R}^n \setminus \text{ext }A.
+= (\text{ext }A)^C.
 $$
-It can also be interpreted as the smallest closed set containing $A$.
-(see [[Open and closed sets]])
 
 Any adherent point is either an _accumulation point_ (fi: kasautumispiste)
 (a.k.a. _limit point_, _cluster point_)

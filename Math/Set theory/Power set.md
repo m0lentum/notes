@@ -1,3 +1,5 @@
+[wikipedia](https://en.wikipedia.org/wiki/Power_set)
+
 The _power set_ of a set $X$ is the collection of all its subsets,
 $\mathcal{P}(X) = \{ U : U \subset X \}$.
 

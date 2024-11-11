@@ -61,7 +61,7 @@ and the product of closed sets is closed.
 
 Let $A \subset X$, $B \subset Y$ be open/closed sets.
 Then $A \times B = P_X^{-1}(A) \cap P_Y^{-1}(B)$.
-$P_X$ and $P_Y$ are continuous, and therefore ([[Continuity#Theorem Characterizing continuity via open and closed sets|theorem]])
+$P_X$ and $P_Y$ are continuous, and therefore ([[Continuity (metric)#Theorem Characterizing continuity via open and closed sets|theorem]])
 the preimages of open/closed sets are open/closed
 and thus this intersection is also open/closed.
 
@@ -79,14 +79,14 @@ $$
 ##### Theorem: Continuous maps with equivalent metrics
 
 Let $f : (X, d_X) \rightarrow (Y, d_Y)$, $d_X \sim \tilde{d}_X$, $d_Y \sim \tilde{d}_Y$.
-Then $f$ is [[Continuity|continuous]] $\iff$ $f : (X, \tilde{d}_X) \rightarrow (Y, \tilde{d}_Y)$
+Then $f$ is [[Continuity (metric)|continuous]] $\iff$ $f : (X, \tilde{d}_X) \rightarrow (Y, \tilde{d}_Y)$
 is continuous.
 
 ###### Proof
 
 Denote $\tilde{f} : (X, \tilde{d}_X) \rightarrow (Y, \tilde{d}_Y)$.
 Because $d_X \sim \tilde{d}_X$, the identity map
-$\text{id}_X : (X, d_X) \rightarrow (X, \tilde{d}_X)$ is a [[homeomorphism]],
+$\text{id}_X : (X, d_X) \rightarrow (X, \tilde{d}_X)$ is a [[Homeomorphism]],
 as is $\text{id}_Y : (Y, d_Y \rightarrow (Y, \tilde{d}_Y)$.
 $$
 \begin{CD}

@@ -20,7 +20,7 @@ kanban-plugin: basic
 - [ ] Hodge-optimized triangulations
 - [ ] Time-harmonic operators from master's thesis?
 - [ ] Numerical integration for higher dimensions
-- [ ] Parallelism (rayon? simd? gpu?)
+- [ ] Parallelism (rayon? simd? cubecl? wgsl compute?)
 - [ ] Store and playback a non-realtime simulation
 
 
@@ -43,6 +43,10 @@ kanban-plugin: basic
 - [ ] 3D animation for membrane<br>- this could be an easy starting point for 3D camera development
 - [ ] More color maps
 - [ ] Use `naga_oil` to share shader code
+- [ ] Plots
+- [ ] Split views (e.g. mesh on one side, plot on the other)
+- [ ] Draw still image instead of animation
+- [ ] Draw to image (/video?)
 
 
 

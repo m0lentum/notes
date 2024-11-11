@@ -111,11 +111,11 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-20 Decimals
 - [x] 09-27 Cyborg Octopus
 - [x] 09-27 Solstice Rider
-- [ ] 09-27 The Black Dahlia Murder
+- [x] 09-27 The Black Dahlia Murder
 - [ ] 09-27 Ophidian Memory
 - [ ] 10-04 Blood Incantation
 - [x] 10-04 Allt
-- [ ] 10-11 Ad Infinitum
+- [x] 10-11 Ad Infinitum
 - [ ] 10-11 Opeth
 - [x] 10-11 Andy Gillion
 - [ ] 10-18 Frozen Crown

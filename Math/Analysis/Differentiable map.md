@@ -1,4 +1,4 @@
-Let $\Omega \subset \mathbb{R}^n$ be an open set and $x_0 \in \Omega$.
+Let $\Omega \subset \mathbb{R}^n$ be an [[Open and closed sets|open]] set and $x_0 \in \Omega$.
 The map $f : \Omega \rightarrow \mathbb{R}$ is _differentiable_ (fi: derivoituva/differentioituva)
 at $x_0$ if there is a vector $a \in \mathbb{R}^n$ such that
 $$

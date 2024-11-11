@@ -13,6 +13,6 @@ $$
 If $f$ fulfills this condition without being a bijection,
 it is a _bi-Lipschitz embedding_ (fi: bi-Lipschitz upotus).
 
-All Lipschitz maps are [[Continuity|continuous]].
+All Lipschitz maps are [[Continuity (metric)|continuous]].
 Every [[isometry]] is 1-bi-Lipschitz.
 Every bi-Lipschitz map is a [[Homeomorphism]].

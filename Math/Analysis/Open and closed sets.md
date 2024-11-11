@@ -61,4 +61,4 @@ to a point in $K$.
 This property of a set is called _sequential compactness_
 (fi: jonokompaktius).
 Sequential compactness is preserved by continuous maps
-(see [[Continuity]]).
+(see [[Continuity (metric)]]).

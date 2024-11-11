@@ -85,11 +85,11 @@ If $X$ and $Y$ are compact, then $X \times Y$ is compact.
 Let $X, Y$ be [[Homeomorphism|homeomorphic]] metric spaces.
 Then $X$ is compact $\iff$ $Ỳ$ is compact.
 
-If $f : X \rightarrow Y$ is [[Continuity|continuous]] and $K \subset X$ is compact,
+If $f : X \rightarrow Y$ is [[Continuity (metric)|continuous]] and $K \subset X$ is compact,
 then $f(K)$ is compact.
 
 If $X$ is compact and $f : X \rightarrow Y$ is continuous,
-then $f$ is [[Continuity#Uniform continuity|uniformly continuous]].
+then $f$ is [[Continuity (metric)#Uniform continuity|uniformly continuous]].
 
 Let $X$ be compact and $f : X \rightarrow Y$ continuous.
-If $f$ is a bijection, then $f$ is a [[homeomorphism]].
+If $f$ is a bijection, then $f$ is a [[Homeomorphism]].

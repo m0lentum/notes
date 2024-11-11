@@ -43,7 +43,7 @@ then either $A \subset U$ or $A \subset V$.
 If $A \subset X$ is a set with the previously described property,
 then $A$ is connected.
 
-$X$ is disconnected $\iff$ there exists a [[Continuity|continuous]] surjection
+$X$ is disconnected $\iff$ there exists a [[Continuity (metric)|continuous]] surjection
 $f : X \rightarrow \{0, 1\}$ (or equivalently $f : X \rightarrow \mathbb{N}$).
 
 Consequently, $X$ is connected
