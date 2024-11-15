@@ -1,4 +1,4 @@
-Let $f : (X_1, \tau_1) \rightarrow (X_2, \tau_2)$ be a bijection between topological spaces.
+Let $f : (X_1, \tau_1) \rightarrow (X_2, \tau_2)$ be a [[Bijection]] between topological spaces.
 $f$ is a _homeomorphism_ if $f$ and $f^{-1}$ are [[Continuity (topology)|continuous]].
 
 A homeomorphism maps open sets to open sets and closed sets to closed sets.

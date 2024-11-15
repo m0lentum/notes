@@ -112,7 +112,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-27 Cyborg Octopus
 - [x] 09-27 Solstice Rider
 - [x] 09-27 The Black Dahlia Murder
-- [ ] 09-27 Ophidian Memory
+- [x] 09-27 Ophidian Memory
 - [ ] 10-04 Blood Incantation
 - [x] 10-04 Allt
 - [x] 10-11 Ad Infinitum

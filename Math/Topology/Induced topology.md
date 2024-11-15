@@ -7,6 +7,9 @@ $$
 is a topology on $X$ called the topology induced by $f$.
 Also called _initial_ topology (fi: lähtötopologia).
 
+The "opposite" of this, where $X$ has a topology and $f$ induces one on $Y$,
+is the [[co-induced topology]].
+
 This topology makes $f$ continuous due to the characterization of continuity
 (see [[Continuity (topology)#Alternative characterizations]])
 which states that a map is continuous iff preimages of open sets are open.
@@ -70,11 +73,84 @@ i.e. all products containing one subset from each of the sets in the product
 such that there are not infinitely many ones consisting of the entire set.
 The last restriction is because the topology only needs to contain
 finite intersections of the basis sets.
-We could remove this restriction and still have a basis,
-but it would contain redundant elements.
 
 Example: if $(X, \tau_X), (Y, \tau_Y)$ are topological spaces, then
 $$
 \{U \times V : U \in \tau_X, V \in \tau_Y\}
 $$
 is a basis of the product topology on $X \times Y$.
+
+### Lemma: Finitely many projections are proper subsets
+
+$(X_i, \tau_i)$ topological spaces, $U \in \prod_{i \in I} X_i$ open
+(wrt. product topology $\tau$).
+Then $P_j(U) \neq X_j$ for finitely many $j \in I$.
+###### Proof
+$\tau$ has a basis $\mathcal{B}$ as defined previously.
+For all $U \in \tau$ there is $B \in \mathcal{B}$ s.t. $B \subset U$ (by definition of basis).
+$\implies P_j(B) \subset P_j(U)$ for all $j \in I$.
+By definition of the product basis,
+$P_j(B) \neq X_j$ for finitely many $j$ (in other words $j \in J$, $J$ finite).
+Now if $j \in I \setminus J$, then $X_j = P_j(B) \subset P_j(U) \subset X_j \implies P_j(U) = X_j$.
+######
+As a result, in infinite-dimensional product spaces,
+all open sets must have an infinite number
+of coordinates where they project to the whole corresponding space.
+
+### Lemma: Product of Hausdorff spaces
+
+If $(X_i, \tau_i)$, $i \in I$ are Hausdorff, then $\prod_{i \in I} X_i$ is Hausdorff.
+
+### Proposition: Countable product of metrizable spaces
+
+If $(X_n, \tau_n)$, $n \in \mathbb{N}$ are metrizable,
+then $\prod_{n=1}^{\infty} X_n$ is metrizable.
+
+This does _not_ apply if the index set is infinite!
+E.g. $[0, 1]^{[0, 1]}$ with product topology is not metrizable.
+
+Example: Hilbert cube $[0, 1]^{\mathbb{N}}$
+with the topology being the product of the relative topology from $\mathbb{R}$ on $[0, 1]$.
+$[0, 1]^{\mathbb{N}}$ is [[Hausdorff space|Hausdorff]] and metrizable.
+$]0, 1[^{\mathbb{N}}$ is _not_ open.
+
+Example: $[0, 1]^{[0, 1]}$.
+This is an infinite-dimensional space where a metric $d_{\infty}$ exists.
+This metric induces a topology that is necessarily different from the product topology
+because the product topology is not metrizable.
+
+## [[Continuity (topology)|Continuity]] and [[Convergence (topology)|convergence]]
+
+Let $(X_i, \tau_i)$, $i \in I$ and $(X, \tau)$ be topological spaces.
+Consider $f : X \rightarrow \prod_{i \in I} X_i$.
+$f$ is continuous $\iff$ $P_j \circ f : X \rightarrow X_j$ is continuous for all $j \in I$.
+In other words $f$ is continuous iff all its coordinates are continuous.
+
+Let $X$ be a set with topology induced by maps $\{f_i : X -> X_i\}$
+and $(x_n)_{n=1}^{\infty} \subset X$ a [[sequence]].
+$(x_n)$ converges to $x \in X$
+$\iff$ $f_i(x_n) \longrightarrow f_i(x)$ for all $i \in I$.
+In product topology this means $x$ is a limit of $(x_n)$
+iff all its coordinates are limits of the coordinate sequences.
+
+###### Proof
+Let $X$ be a topological space with topology induced by $\{f_i : i \in I\}$.
+
+"$\implies$": Let $(x_n) \subset X$ s.t. $x_n \longrightarrow x \in X$.
+Now all $f_i$ are continuous and therefore sequentially continuous,
+implying $f_i(x_n) \longrightarrow f_i(x)$ for all $i \in I$.
+
+"$\impliedby$": Let $(x_n) \subset X$ s.t. $f_i(x_n) \longrightarrow f_i(x)$ for all $i \in I$.
+Want: $x_n \longrightarrow x$ meaning for all neighborhoods $U$ of $x$
+exists $N \in \mathbb{N}$ s.t. $n \geq N \implies x_n \in U$.
+Instead of all neighborhoods it suffices to consider basis elements $B \in \mathcal{B}$
+because by definition of basis $\exists\, B \in \mathcal{B}$ s.t. $x \in B \subset U$.
+$\mathcal{B}$ consists of finite intersections of preimages of $f_i$s so we can write
+$B = \bigcap_{j=1}^{m} f_{i_j}^{-1}[U_{i_j}]$, $i_j \in I$. Also recall that $x \in B$.
+Now $x \in f_{i_j}^{-1}[U_{i_j}]$ for all $j = 1, \dots, m$ $\implies f_{i_j}(x) \in U_{i_j}$
+$\implies \exists\, N_j \in \mathbb{N}$ s.t. $n \geq N_j \implies f_{i_j}(x_n) \in U_{i_j}$.
+Now let $N = \max\{N_1, \dots, N_m\}$.
+Then $n \geq N \implies f_{i_j} \in U_{i_j}$ for all $j = 1, \dots, m$
+$\implies x_n \in f_{i_j}^{-1}[U_{i_j}]$ for all $j$
+$\implies x_n \in \bigcap_{j=1}^{m} f_{i_j}^{-1}[U_{i_j}] = B$
+meaning $x_n$ converges to $x$ in the product topology, which is what we wanted.

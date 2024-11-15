@@ -14,6 +14,8 @@ which contains 0 and hence contains all the elements of this sequence.
 
 On the other hand, in [[Hausdorff space]]s limits are unique.
 
+[[Induced topology#Continuity (topology) Continuity and Convergence (topology) convergence|Results in induced topologies]] 
+
 ## Example: $\mathbb{R}$ with co-countable topology
 
 Consider $(\mathbb{R}, \tau_{co})$ where $\tau_{co}$ is the co-countable topology

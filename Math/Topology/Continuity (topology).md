@@ -6,6 +6,8 @@ $f$ is _continuous_ if it is continuous at all $x \in X$.
 
 (cf. [[Continuity (metric)]], a special case of this in metric context)
 
+[[Induced topology#Continuity (topology) Continuity and Convergence (topology) convergence|Results in induced topologies]] 
+
 ## Alternative characterizations
 
 The following are all equivalent:
