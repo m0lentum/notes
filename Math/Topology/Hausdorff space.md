@@ -6,3 +6,5 @@ $x \in U, y \in V$ such that $U \cap V = \emptyset$.
 Hausdorff spaces are also called $T_2$ spaces.
 
 All _metrizable_ (see [[Topology#Examples]]) spaces are Hausdorff.
+
+See also [[Separation axioms]] for more similar categorizations.

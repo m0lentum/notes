@@ -30,7 +30,7 @@ Particular point topology for point $x \in X$
 $\tau = \{U \in \mathcal{P}(X) : x \in U\}$
 (set of all subsets of $X$ containing $x$)
 
-Cofinite topology $\tau = \{U \subset X : U^C \text{ finite}\}$
+Co-finite topology $\tau = \{U \subset X : U^C \text{ finite}\}$
 
 Co-countable topology $\tau = \{U \subset X : U^C \text{ countable}\}$
 

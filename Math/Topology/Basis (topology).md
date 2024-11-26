@@ -90,3 +90,10 @@ $\mathcal{S} = \{(a, b) \times \mathbb{R} : a < b\} \cup \{\mathbb{R} \times (c,
 Let $X \neq \emptyset$, $A \in \mathcal{P}(X)$.
 If $A$ is a cover of $X$, then it is a subbasis for some topology $\tau$ on $X$.
 Moreover, $\tau$ is the coarsest topology that contains $A$.
+
+## Neighborhood basis
+
+Let $(X, \tau)$ be a topological space and $x \in X$.
+$\mathcal{B}(x) \subset \tau$ where $x \in B$ for all $B \in \mathcal{B}(x)$ 
+is a neighborhood basis of $x$ if every open neighborhood of $x$
+contains a member of $\mathcal{B}(x)$.

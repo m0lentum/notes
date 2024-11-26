@@ -121,13 +121,13 @@ because the product topology is not metrizable.
 
 ## [[Continuity (topology)|Continuity]] and [[Convergence (topology)|convergence]]
 
-Let $(X_i, \tau_i)$, $i \in I$ and $(X, \tau)$ be topological spaces.
-Consider $f : X \rightarrow \prod_{i \in I} X_i$.
-$f$ is continuous $\iff$ $P_j \circ f : X \rightarrow X_j$ is continuous for all $j \in I$.
-In other words $f$ is continuous iff all its coordinates are continuous.
+Let $X$ be a set with topology induced by maps $\{f_i : X \rightarrow X_i\}$.
+$f : Y \rightarrow X$ is continuous
+$\iff$ $f_j \circ f : Y \rightarrow X_j$ is continuous for all $j \in I$.
+In product topology this means $f : Y \rightarrow \prod_{i \in I} X_i$ is continuous
+iff all its coordinates are continuous.
 
-Let $X$ be a set with topology induced by maps $\{f_i : X -> X_i\}$
-and $(x_n)_{n=1}^{\infty} \subset X$ a [[sequence]].
+Let $(x_n)_{n=1}^{\infty} \subset X$ be a [[sequence]] (with $X$ the previously defined space).
 $(x_n)$ converges to $x \in X$
 $\iff$ $f_i(x_n) \longrightarrow f_i(x)$ for all $i \in I$.
 In product topology this means $x$ is a limit of $(x_n)$

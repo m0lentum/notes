@@ -1,5 +1,5 @@
 Let $X$ be a set and $\sim$ an [[equivalence relation]].
-The _quotient set_ of $X$ by $\sim$
+The _quotient set_ (fi: tekijäjoukko) of $X$ by $\sim$
 is $X/{\sim} := \{[x] : x \in X\}$.
 
 The quotient set can be equipped with [[Co-induced topology#Quotient topology|quotient topology]],

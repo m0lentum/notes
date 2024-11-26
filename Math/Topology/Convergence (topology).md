@@ -38,3 +38,9 @@ $\text{id} : (\mathbb{R}, \tau_{co}) \rightarrow (\mathbb{R}, \tau_E)$ where $\t
 is sequentially continuous but not continuous ([[Continuity (topology)]]).
 The standard topology has convergent sequences that aren't constant past an index,
 and therefore their preimages do not converge in the co-countable topology.
+
+## Lemma: convergence in terms of neighborhood basis
+
+Let $X$ be a topological space, $x \in X$, $\{B_i : i \in I\}$ a [[Basis (topology)#Neighborhood basis|neighborhood basis]] of $x$.
+Suppose $(x_n)_{n=1}^{\infty} \subset X$.
+Then $x_n \longrightarrow x$ $\iff \forall\, B_i \,\exists\, N$ s.t. $n \geq N \implies x_n \in B_i$.

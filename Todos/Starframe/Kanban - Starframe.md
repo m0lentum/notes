@@ -35,6 +35,7 @@ kanban-plugin: basic
 - [ ] [[Radiance cascades]]
 - [ ] Parallax scrolling
 - [ ] Fog
+- [ ] [[Morph target animations]]
 - [ ] HDR
 - [ ] [[Camera]]
 - [ ] [[Colors]]
@@ -47,6 +48,7 @@ kanban-plugin: basic
 - [ ] Vector path rendering with lyon?
 - [ ] Consider grouping all bind groups and layouts into one place
 - [ ] Read normals and tangents from gltf if available
+- [ ] Text rendering with glyphon
 
 
 ## Misc

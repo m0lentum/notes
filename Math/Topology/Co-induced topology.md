@@ -14,7 +14,8 @@ up to and including the minitopology which isn't very interesting).
 ### Quotient topology
 
 Let $X$ be a set, $\sim$ an [[equivalence relation]] on $X$.
-The _quotient topology_ on the [[quotient set]] $X/{\sim} := \{[x] : x \in X\}$
+The _quotient topology_ (fi: tekijätopologia)
+on the [[quotient set]] $X/{\sim} := \{[x] : x \in X\}$
 is the topology coinduced by the canonical projection
 $\tau' = \{U \subset X/{\sim} : p^{-1}[U] \in \tau\}$.
 
@@ -35,5 +36,5 @@ $$
 (i.e. points of all sets tagged with a set identifier).
 $\varphi_j : X_j \rightarrow \bigsqcup X_i$, $\varphi_j(x) = (x, j)$
 is called the _canonical injection_
-and the distjoint union topology on $\bigsqcup X_i$
+and the disjoint union topology on $\bigsqcup X_i$
 is the topology co-induced by the canonical injections $\{\varphi_j : j \in I\}$.

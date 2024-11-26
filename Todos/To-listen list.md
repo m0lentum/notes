@@ -123,3 +123,4 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 10-25 Entheos
 - [x] 10-25 IOTUNN
 - [ ] 11-01 Brothers of Metal
+- [x] 11-?? Ankor
