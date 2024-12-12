@@ -46,6 +46,8 @@ Features still needed:
 - [ ] far-field shader using only directional lights
   - maybe also add parallax and fog at the same time with these
 	to complete the depth effect
+- [ ] better handling of opaque emitters
+- [ ] handle materials with black shadows
 
 Nice to have / optimization ideas:
 
@@ -61,3 +63,4 @@ Nice to have / optimization ideas:
 - [ ] indirect diffuse lighting by rendering lighting results as light sources?
 - [ ] allow user to modify the attenuation/emission distance scale
 - [ ] share shader code with `naga_oil` to reduce duplication between mesh and cascade shaders
+- [ ] maybe a spherical harmonic representation of the final cascade could encode direction info better?

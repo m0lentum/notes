@@ -204,3 +204,33 @@ and the form dimensions seem to match in all the equations 👍
 However, as learned in that case,
 boundary conditions may involve fluxes across the boundary,
 so be prepared to express these equations in terms of electric flux instead.
+
+#### Lie derivative discretization
+
+Algebraic derivation from Hirani (2003): Discrete Exterior Calculus:
+$\mathcal{L}_X(\omega) = \mathbf{i}_Xd\omega + d\mathbf{i}_X\omega$
+where
+$\mathbf{i}_X\omega = (-1)^{k(n-k)} \star(\star\omega \wedge X^{\flat})$
+for the 0-form $f$ the second term disappears and we get
+$\mathcal{L}_X(f) = \mathbf{i}_X df = \star(\star d f \wedge X^{\flat})$.
+
+Basic finite difference time discretization for $\frac{\partial f}{\partial t} = -\mathcal{L}_X(f)$:
+$$
+\frac{f^{n+1} - f^n}{\Delta t} = -\star(\star d f^{?} \wedge X^{\flat})
+$$
+gives the explicit timestep
+$$
+f^{n+1} = f^n - \star(\star d f^n \wedge X^{\flat})
+$$
+however, this seems to be unconditionally unstable,
+at least in my test example where $X$ is constant.
+An implicit version would be to solve
+$$
+(I + \Delta t L_X) f^{n+1} = f^n
+$$
+where $L_X$ is the matrix that computes $\star(\star d f^{n+1} \wedge X^{\flat})$
+when multiplied with $f^{n+1}$
+(this exists because the discrete wedge product
+is defined a linear combination of cochain elements)
+
+TODO: look into more sophisticated time discretizations

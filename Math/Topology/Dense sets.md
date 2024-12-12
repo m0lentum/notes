@@ -1,5 +1,6 @@
 A subset $A$ of a [[Topology|topological space]] $X$ is called _dense_ (in $X$)
 if $\overline{A} = X$ ([[Closure]]).
+Another equivalent characterization is $\text{ext }A = \emptyset$.
 
 ### Examples
 
@@ -16,6 +17,9 @@ are a dense subset of $X$.
 
 A topological space is called _separable_
 if it has a **countable** dense subset.
+
+All [[Countability axioms|second countable]] spaces are separable.
+The converse is not always true.
 
 ### Examples
 
@@ -39,3 +43,29 @@ $\implies$ the closure of a countable set can't be the uncountable $X$
 
 Let $X$ be a nonempty set, $\tau_1, \tau_2$ topologies on $X$, $\tau_1 \subset \tau_2$.
 Now $(X, \tau_2)$ separable $\implies$ $(X, \tau_1)$ separable.
+
+### Proposition: separability of product space
+
+Let $(X_n, \tau_n), n \in \mathbb{N}$ be separable topological spaces.
+Then the [[Induced topology#Product topology|product space]] $\prod_{n=1}^{\infty} X_n$ is separable.
+###### Proof
+For each $n \in \mathbb{N}$, take $Q_n \subset X_n$ countable and dense.
+Problem: $\prod_{n=1}^{\infty} Q_n$ is not countable.
+Fix some $c = (c_1, c_2, \dots)$ such that $c_n \in Q_n \forall n$
+and define $\tilde{Q}_n = \prod_{k=1}^{n} Q_k \times \prod_{k=n+1}^{\infty} \{c_n\}$ which is countable.
+
+Now show that $Q = \bigcup_{n=1}^{\infty} \tilde{Q}_n$ is countable and dense in $\prod_{n=1}^{\infty} X_n$
+by showing that $U \cap Q \neq \emptyset$ for all open $U \subset \prod_{n=1}^{\infty} X_n$:
+We can assume $U$ is a basis element of the product topology,
+i.e. $U = \prod_{n=1}^{\infty} U_n$ such that $U_n \in \tau_n \forall n$
+and $U_n \neq X_n$ for finitely many $n$.
+Then $M := \max\{n : U_n \neq X_n\}$ exists
+and $U = \prod_{n=1}^{M} U_n \times \prod_{n=M+1}^{\infty} X_n$.
+$Q_n$ is dense in $X_n \implies \exists\, q_n \in U_n \cap Q_n$.
+Now $q = (q_1, \dots, q_M, c_{M+1}, \dots) \in Q \cap U$.
+Because $U$ is an arbitrary open set, this shows that $Q$ is dense.
+
+### Proposition: separability in metrizable space
+
+If $(X, \tau)$ is metrizable (i.e. exists a metric $d$ such that $\tau = \tau_d$)
+then second countability and separability are equivalent.

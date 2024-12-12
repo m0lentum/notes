@@ -113,14 +113,14 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 09-27 Solstice Rider
 - [x] 09-27 The Black Dahlia Murder
 - [x] 09-27 Ophidian Memory
-- [ ] 10-04 Blood Incantation
+- [x] 10-04 Blood Incantation
 - [x] 10-04 Allt
 - [x] 10-11 Ad Infinitum
-- [ ] 10-11 Opeth
+- [x] 10-11 Opeth
 - [x] 10-11 Andy Gillion
 - [ ] 10-18 Frozen Crown
 - [x] 10-25 Fit for an Autopsy
 - [x] 10-25 Entheos
 - [x] 10-25 IOTUNN
-- [ ] 11-01 Brothers of Metal
+- [x] 11-01 Brothers of Metal
 - [x] 11-?? Ankor

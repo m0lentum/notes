@@ -2,7 +2,8 @@ A [[Topology|topological space]] $(X, \tau)$ is
 - _first countable_ ($N_1$) if every $x \in X$ has a countable [[Basis (topology)#Neighborhood basis|neighborhood basis]]
 - _second countable_ ($N_2$) is $X$ has a countable [[Basis (topology)|basis]]
 
-All second countable spaces are first countable.
+All second countable spaces are first countable
+and [[Dense sets#Separable spaces|separable]].
 
 ## Examples
 

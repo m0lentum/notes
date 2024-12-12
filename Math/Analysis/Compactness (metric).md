@@ -1,3 +1,5 @@
+See also [[Compactness (topology)]]
+
 Let $(X, d)$ be a metric space and $A \subset X$.
 
 The collection $\{V_j\}_{j \in J}$ of subsets of $A$
@@ -83,7 +85,7 @@ then $\cap_{\alpha \in J} K_{\alpha}$ is compact.
 If $X$ and $Y$ are compact, then $X \times Y$ is compact.
 
 Let $X, Y$ be [[Homeomorphism|homeomorphic]] metric spaces.
-Then $X$ is compact $\iff$ $Ỳ$ is compact.
+Then $X$ is compact $\iff$ $Y$ is compact.
 
 If $f : X \rightarrow Y$ is [[Continuity (metric)|continuous]] and $K \subset X$ is compact,
 then $f(K)$ is compact.
