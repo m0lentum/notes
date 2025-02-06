@@ -32,7 +32,7 @@ kanban-plugin: basic
 - [x] [[Forward+ renderer]]
 - [x] Re-enable MSAA
 - [ ] [[Asset manager]] (mostly done, some thoughts left)
-- [ ] [[Radiance cascades]]
+- [ ] [[Radiance cascades]] (also mostly done with some points left)
 - [ ] Parallax scrolling
 - [ ] Fog
 - [ ] [[Morph target animations]]

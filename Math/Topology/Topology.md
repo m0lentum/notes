@@ -5,6 +5,7 @@ A _topology_ $\tau$ on $X$ is a collection of subsets of $X$ such that
   if $U_i \in \tau$ for all $i \in I$ then $\cup_{i \in I} U_i \in \tau$
 - finite intersections stay in $\tau$:
   if $U_1, \dots, U_n \in \tau$ then $\cap_{j=1}^{n} \in \tau$
+  (this can be shown by induction if $U_1 \cap U_2 \in \tau$)
 
 The pair $(X, \tau)$ is a _topological space_.
 
@@ -18,7 +19,7 @@ Minitopology $\tau = \{ \emptyset, X \}$
 
 Discrete topology $\tau = \mathcal{P}(x)$ ([[power set]] of X)
 
-[[Metric]] topology $\tau_d = \{ U \subset X : \forall x \in U \exists r > 0 \text{ s.t. } B(x, r) \subset U$
+[[Metric]] topology $\tau_d = \{ U \subset X : \,\forall\, x \in U \,\exists\, r > 0 \text{ s.t. } B(x, r) \subset U$
 (in metric space $(X, d)$)
 - relatedly, a topological space $(X, \tau)$
   is called _metrizable_ (fi: metristyvä)

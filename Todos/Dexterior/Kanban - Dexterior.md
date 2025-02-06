@@ -35,11 +35,11 @@ kanban-plugin: basic
 - [x] Wireframe using line renderer
 - [x] 2-cochains as flat triangles
 - [x] Migrate away from storage buffers for webgl compatibility
+- [x] Text rendering
 - [ ] [[Sharing of render passes]] #optimization
 - [ ] Cacheable lines #optimization
 - [ ] 3D camera
 - [ ] Camera controls
-- [ ] Text rendering
 - [ ] 3D animation for membrane<br>- this could be an easy starting point for 3D camera development
 - [ ] More color maps
 - [ ] Use `naga_oil` to share shader code

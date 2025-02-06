@@ -20,12 +20,12 @@ Greek alphabet:
 | nu      | $\nu$                      | `N`        | nyy              | viscosity                                                  |
 | xi      | $\xi$                      | $\Xi$      | ksii             |                                                            |
 | omicron | $\omicron$                 | `O`        | omikron          |                                                            |
-| pi      | $\pi$ / $\varpi$           | $\Pi$      | pii              |                                                            |
-| rho     | $\rho$ / $\varrho$         | `P`        | rhoo             | pressure                                                   |
+| pi      | $\pi$ / $\varpi$           | $\Pi$      | pii              | product (u)                                                |
+| rho     | $\rho$ / $\varrho$         | `P`        | rhoo             | density                                                    |
 | sigma   | $\sigma$ / $\varsigma$     | $\Sigma$   |                  | singular value (l), sum (u)                                |
-| tau     | $\tau$                     | `T`        |                  |                                                            |
+| tau     | $\tau$                     | `T`        |                  | topology                                                   |
 | upsilon | $\upsilon$                 | $\Upsilon$ | ypsilon          |                                                            |
-| phi     | $\phi$ / $\varphi$         | $\Phi$     | fii              |                                                            |
+| phi     | $\phi$ / $\varphi$         | $\Phi$     | fii              | potential                                                  |
 | chi     | $\chi$                     | `X`        | khii             |                                                            |
 | psi     | $\psi$                     | $\Psi$     | psii             |                                                            |
 | omega   | $\omega$                   | $\Omega$   | oomega           | angular velocity (l), region of space (u)                  |

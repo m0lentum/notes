@@ -124,3 +124,13 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 10-25 IOTUNN
 - [x] 11-01 Brothers of Metal
 - [x] 11-?? Ankor
+
+## 2025
+
+- [ ] 02-14 Vermilia
+- [ ] 03-14 Dessiderium
+- [ ] 03-14 Embrium
+- [ ] 04-04 Buried Realm
+- [ ] 04-25 Eluveitie
+- [ ] 05-16 Novelists
+- [ ] 05-30 Rivers of Nihil

@@ -231,6 +231,6 @@ $$
 where $L_X$ is the matrix that computes $\star(\star d f^{n+1} \wedge X^{\flat})$
 when multiplied with $f^{n+1}$
 (this exists because the discrete wedge product
-is defined a linear combination of cochain elements)
+is defined as a linear combination of cochain elements)
 
 TODO: look into more sophisticated time discretizations
