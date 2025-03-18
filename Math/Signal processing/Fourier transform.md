@@ -20,7 +20,7 @@ $$
 X(\omega) = \int_{-\infty}^{\infty} x(t)e^{-i\omega t} dt
 $$
 where $\omega$ is the angular velocity of a sinusoid wave
-(see [[Complex number#Euler's formula]]).
+(see [[Complex exponential]]).
 There are several ways to interpret
 what the multiplication with $e^{-i\omega t}$ does in this integral
 (many requiring some geometric visualization;

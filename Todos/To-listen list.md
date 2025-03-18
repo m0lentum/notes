@@ -118,7 +118,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 10-11 Ad Infinitum
 - [x] 10-11 Opeth
 - [x] 10-11 Andy Gillion
-- [ ] 10-18 Frozen Crown
+- [x] 10-18 Frozen Crown
 - [x] 10-25 Fit for an Autopsy
 - [x] 10-25 Entheos
 - [x] 10-25 IOTUNN
@@ -127,10 +127,24 @@ Writing down release dates of upcoming albums so I remember to check them out.
 
 ## 2025
 
-- [ ] 02-14 Vermilia
-- [ ] 03-14 Dessiderium
+- [x] 02-14 Vermilia
+- [x] 02-28 Arion
+- [x] 02-28 Fayence Dream
+- [ ] 02-28 Havukruunu
+- [ ] 02-28 Enbound
+- [x] 03-07 Whitechapel
+- [x] 03-07 Dawn of Ouroboros
+- [x] 03-07 Spiritbox
+- [ ] 03-07 Voidfallen
+- [ ] 03-07 Hypermass
+- [x] 03-14 Dessiderium
 - [ ] 03-14 Embrium
+- [ ] 04-04 Allegaeon
 - [ ] 04-04 Buried Realm
+- [ ] 04-11 Elvenking
 - [ ] 04-25 Eluveitie
+- [ ] 04-25 Kardashev
+- [ ] 04-25 Ancient Bards
 - [ ] 05-16 Novelists
 - [ ] 05-30 Rivers of Nihil
+- [ ] 06-13 Fallujah

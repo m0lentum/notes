@@ -27,8 +27,9 @@ magick $infile -brightness-contrast 15x10 -modulate 100,150,100 $outfile
 - modulate takes a comma-separated list of percentage values h,s,v,
   100 means "do not change this value"
 
-Make a 3x3 grid of square images (useful for e.g. the annual art vs. artist meme):
+Make a 3x3 grid of square images with 5px padding between
+(useful for e.g. the annual art vs. artist meme):
 ```bash
-magick montage -tile 3x3 -geometry x300 $file1 $file2 ...
+magick montage -tile 3x3 -geometry x300+5+5 $file1 $file2 ... $outfile
 ```
 (the images must already be cropped to square aspect ratio)
