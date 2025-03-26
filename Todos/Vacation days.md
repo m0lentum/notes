@@ -10,5 +10,5 @@ Weekdays jan-jul 2025: 29 * 5 + 4 + 3 = 152
 Total weekdays: 261
 Vacation days: 39
 
-Days spent: 7
-Days left: 32
+Days spent: 7 + 2 = 9
+Days left: 32 - 2 = 30
