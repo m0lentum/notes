@@ -378,10 +378,38 @@ as tangential velocity instead of flux.
 So then we'd have four different variables, $P, Q, W, V$
 where $P, Q$ are completely decoupled from $W, V$.
 
+Then $W$ would be a primal 2-cochain instead of a dual one,
+thus stored on triangles.
+Then we could take its $\star$ to get the average value on the dual vertex
+and relate this value to $V$ the same way we did with pressure,
+$$
+V_i + \frac{1}{c_s} |e_i| \frac{W_{f_i^*}}{|f_i^*|} = 0
+$$
 (Note: all of this has ignored the fact that our actual variables are
 scaled by density, $P = \rho p$, $W = \rho w$,
 so actual implementation needs also a division by $\rho$)
 
+Now the timestep equations are
+$$
+\begin{cases}
+  W^{n+1} = W^n + \Delta t \mu \star_2 \mathbf{d}_1 V^{n+\frac{1}{2}} \\
+  V^{n+\frac{1}{2}} = V^{n-\frac{1}{2}} + \frac{\Delta t}{\rho}(\star_1^{-1} \mathbf{d}_1^T W^n) \\
+  P^{n+1} = P^n + \Delta t (\lambda + 2\mu) \star_2 \mathbf{d}_1 Q^{n+\frac{1}{2}} \\
+  Q^{n+\frac{1}{2}} = Q^{n-\frac{1}{2}} + \frac{\Delta t}{\rho}(\star_1^{-1} \mathbf{d}_1^T P^n) \\
+\end{cases}
+$$
+where $W$ was chosen to be a dual 0-cochain
+(had some trouble doing it with $W$ as a primal 2-cochain;
+copied an earlier velocity-based implementation that was known to work.
+Not sure what went wrong there, probably my mistake).
+
+This way there's no possible way for a pressure wave to turn into a shear wave
+because the variables for each are completely decoupled.
+This might be a problem? Landau et al. (1986)
+says (p. 103) that a reflected or refracted wave
+can change from pressure to shear and vice versa.
+TODO: look into this.
+Probably $V$ and $Q$ should be summed somehow in the update equations for $P$ and $W$.
 
 ## Sources
 
