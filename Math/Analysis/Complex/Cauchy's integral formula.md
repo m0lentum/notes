@@ -8,7 +8,7 @@ and a point $z \in U \setminus \gamma^*$ (not in the image of $\gamma$),
 $$
 \int_{\gamma} \frac{f(w)}{z - w}dw = 2\pi i n_{\gamma}(z) f(z)
 $$
-where $n_{\gamma}(z)$ is the _winding number_ of the path $\gamma$ around $z$,
+where $n_{\gamma}(z)$ is the [[winding number]] of the path $\gamma$ around $z$,
 which is 1 for a circle path $z_0 + re^{it}$ containing $z$,
 and in general computed as
 $$

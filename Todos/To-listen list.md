@@ -146,5 +146,6 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 04-25 Kardashev
 - [ ] 04-25 Ancient Bards
 - [ ] 05-16 Novelists
+- [ ] 05-23 Moonlight Haze
 - [ ] 05-30 Rivers of Nihil
 - [ ] 06-13 Fallujah

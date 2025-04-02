@@ -408,8 +408,38 @@ because the variables for each are completely decoupled.
 This might be a problem? Landau et al. (1986)
 says (p. 103) that a reflected or refracted wave
 can change from pressure to shear and vice versa.
-TODO: look into this.
 Probably $V$ and $Q$ should be summed somehow in the update equations for $P$ and $W$.
+
+Let's see. What if we just sum both update equations for $P$ and $W$?
+$$
+\begin{cases}
+  W^{n+1} = W^n + \Delta t \mu (\star_2 \mathbf{d}_1 V^{n+\frac{1}{2}}
+    + \mathbf{d} \star Q^{n+\frac{1}{2}}) \\
+  P^{n+1} = P^n + \Delta t (\lambda + 2\mu) (\star_2 \mathbf{d}_1 Q^{n+\frac{1}{2}}
+    + \star \mathbf{d} \star V^{n+\frac{1}{2}}) \\
+\end{cases}
+$$
+There's a primal-dual mismatch here; unclear how to work around this..
+How about the other two update equations?
+$$
+\begin{cases}
+  V^{n+\frac{1}{2}} = V^{n-\frac{1}{2}} + \frac{\Delta t}{\rho}(\star_1^{-1} \mathbf{d}_1^T W^n + \mathbf{d}P^n) \\
+  Q^{n+\frac{1}{2}} = Q^{n-\frac{1}{2}} + \frac{\Delta t}{\rho}(\star_1^{-1} \mathbf{d}_1^T P^n + \mathbf{d}W^n) \\
+\end{cases}
+$$
+again the same issue: here we would need the value of $P^n$ and $Q^n$ on primal vertices
+but they're dual 0-cochains.
+This could be accomplished by averaging,
+but let's analyze the situation a little bit.
+
+The longitudinal and transverse waves are fully decoupled everywhere
+except at boundaries where reflections/refractions occur
+(material parameters change).
+Generally the P-wave component of velocity has zero curl
+and the S-wave one has zero divergence
+which implies that the update equations for $P$ and $W$ are fine without the terms added here
+as they should be.
+If there's a gradient in material parameters, though, what happens?
 
 ## Sources
 

@@ -1,15 +1,16 @@
 Books that have been recommended to me and/or I intend to read:
-- Robert Jackson Bennett - The Tainted Cup
-- Django Wexler - The Shadow Campaigns
-- Fonda Lee - The Greenbone Saga
-- Adrian Tchaikovsky - Dogs of War
-- ? - The First Law
-- ? - Piranesi
-- ? - The Locked Tomb
-- ? - Murderbot Diaries
-- ? - The Spear Cuts Through Water
-- ? - The Lies of Locke Lamora
-- ? - Foundryside
-- Susanna Clarke - (anything)
-- ? - Master of D'jiin
-- ? - Ancillary Justice
+- [ ] Robert Jackson Bennett - The Tainted Cup
+- [ ] Django Wexler - The Shadow Campaigns
+- [ ] Fonda Lee - The Greenbone Saga
+- [ ] Adrian Tchaikovsky - Dogs of War
+- [ ] ? - The First Law
+- [ ] ? - Piranesi
+- [ ] ? - The Locked Tomb
+- [ ] ? - Murderbot Diaries
+- [ ] ? - The Spear Cuts Through Water
+- [ ] ? - The Lies of Locke Lamora
+- [ ] ? - Foundryside
+- [ ] Susanna Clarke - (anything)
+- [ ] ? - Master of D'jiin
+- [ ] ? - Ancillary Justice
+- [ ] Max Gladstone - Dead Hand Rule (coming 28.10.2025)
