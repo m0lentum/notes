@@ -153,15 +153,12 @@ $$
 (I think this one implies constant material parameters) or
 $$
 \rho \frac{\partial^2 \mathbf{u}}{\partial t^2}
-    - \nabla (\lambda + 2\mu) (\nabla \cdot \mathbf{u})
-    + (\nabla \times \mu) (\nabla \times \mathbf{u}) = 0 \quad \text{(2)}
+    - \nabla  (\lambda + 2\mu) (\nabla \cdot \mathbf{u})
+    + \nabla \times (\mu \nabla \times \mathbf{u}) = 0 \quad \text{(2)}
 $$
 The transformation between these two looks like
 Landau et al. (1986) page 18;
-it's based on the identity $\nabla (\nabla \cdot \mathbf{u}) = \nabla^2 \mathbf{u} + \nabla \times (\nabla \times \mathbf{u})$,
-but here we have an extra wrinkle from spatially varying material parameters
-(not entirely sure I follow there but I've been staring
-at these equations for like 3 days, let's try to get to the point).
+it's based on the identity $\nabla (\nabla \cdot \mathbf{u}) = \nabla^2 \mathbf{u} + \nabla \times (\nabla \times \mathbf{u})$.
 
 To transform this into a first-order system of equations we can more easily solve,
 we can decompose $\mathbf{u}$ into two parts $\mathbf{u} = \mathbf{u}_p + \mathbf{u}_s$ such that
@@ -440,6 +437,25 @@ and the S-wave one has zero divergence
 which implies that the update equations for $P$ and $W$ are fine without the terms added here
 as they should be.
 If there's a gradient in material parameters, though, what happens?
+
+I guess it's really a discontinuity in material parameters in our case,
+in which case we need boundary conditions there.
+We want continuity of displacement (and consequently stress):
+$\mathbf{u}_- = \mathbf{u}_+$ at a boundary between regions $+$ and $-$.
+If this is the case at time 0, it is maintained as long as $\mathbf{v}_- = \mathbf{v}_+$,
+which seems like it's trivially true in our simulation
+since there's only one velocity value for each boundary edge.
+
+Got something working by using interpolated values for $\mathbf{d}P^n$ and $\mathbf{d}W^n$
+in the latter two modified update equations!
+Still should probably work through the math for a plane wave reflection/refraction
+to make sure this is a sensible model.
+
+### Computing energy
+
+[wikipedia: sound energy](https://en.wikipedia.org/wiki/Sound_energy)
+[wikipedia: sound energy density](https://en.wikipedia.org/wiki/Sound_energy_density)
+These formulas look somewhat different; how are they related?
 
 ## Sources
 

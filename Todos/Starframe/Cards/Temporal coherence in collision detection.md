@@ -20,3 +20,6 @@ Edit 2: maybe if we stored contact points and normals in local space
 instead of worrying about edges at all?
 Would that make a difference?
 It would certainly be easier to implement
+
+Edit 2025: yes, the above idea turned out to work pretty nicely
+as long as we invalidate contacts that have rotated too much.

@@ -81,6 +81,13 @@ $$
 \sum_{n=0}^{\infty} a_n (z - z_0)^n
 $$
 where $a_n \in \mathbb{C}$.
+The power series representation of a function
+is called its _Taylor series_
+and its coefficients can be computed as
+$$
+a_n = \frac{f^{(n)}}{n!}
+$$
+where $f^{(n)}$ denotes the $n$th derivative of $f$.
 
 The _radius of convergence_ of this series is
 $$

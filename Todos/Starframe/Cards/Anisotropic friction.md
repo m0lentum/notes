@@ -7,3 +7,7 @@ it doesn't completely stop movement.
 I suspect this is because of contact processing order
 and *might* be resolved by adding a
 [[Block solver for two-point contacts]].
+
+2025 edit: this was mostly resolved by the removal of static friction,
+but should still be investigated in the context of pushing blocks in Flamegrower
+since the above comment suggests it might still be an issue there.
