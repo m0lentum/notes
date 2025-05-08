@@ -17,3 +17,5 @@ Books that have been recommended to me and/or I intend to read:
 - [ ] Ursula Le Guin - The Word For World Is Forest
 - [ ] Ursula Le Guin - Five Ways to Forgiveness
 - [ ] Ursula Le Guin - (so many more, just go browse)
+- [ ] Alex Pheby - Cities of the Weft
+- [ ] Pat Murphy - The Adventures of Mary Darling

@@ -457,6 +457,32 @@ to make sure this is a sensible model.
 [wikipedia: sound energy density](https://en.wikipedia.org/wiki/Sound_energy_density)
 These formulas look somewhat different; how are they related?
 
+Thorne & Blandford (2017) (p. 640) gives a formula for wave energy
+$$
+U = \frac{1}{2} \rho v^2 + \frac{1}{2}K\Theta^2 + \mu \Sigma_{ij}\Sigma_{ij}
+$$
+The first term here is the kinetic energy,
+$\Theta$ is the expansion and $\Sigma$ the shear tensor.
+The latter two relate to the pressure and shear potentials,
+but I think we can get away with just measuring time-averaged kinetic energy
+because (also from the same source)
+time-averaged kinetic energy is equal to time-averaged potential energy.
+
+The kinetic energy for each wave type is then
+$$
+U_p + U_s = \frac{1}{2}\rho q^2 + \frac{1}{2}\rho v^2
+$$
+($q^2 + v^2 = |\mathbf{v}|^2$) since $q$ and $v$ are orthogonal components
+of the full vector-valued velocity).
+
+Since $q$ and $v$ are already integrated over edges,
+we can simply multiply these values by the local density $\rho$
+and sum over a measurement set of edges to get the integral of energy over it.
+Then take the energies over the past wave period
+(the period may be different for pressure and shear waves though!
+If we allow it to be that is - maybe we don't have to)
+and compute the average.
+
 ## Sources
 
 - Landau et al. (1986). Theory of Elasticity
@@ -464,3 +490,4 @@ These formulas look somewhat different; how are they related?
 - Randall, C. J. (1989). Absorbing boundary condition for the elastic wave equation: Velocity-stress formulation
 - Räbinä et al. (2018). Generalized wave propagation problems and discrete exterior calculus
 - Engquist, B. & Majda, A. (1979). Radiation boundary conditions for acoustic and elastic wave calculations
+- Thorne, K. & Blandford, R. (2017). Modern classical physics: optics, fluids, plasmas, elasticity, relativity, and statistical physics

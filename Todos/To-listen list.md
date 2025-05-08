@@ -131,12 +131,12 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 02-28 Arion
 - [x] 02-28 Fayence Dream
 - [x] 02-28 Havukruunu
-- [ ] 02-28 Enbound
+- [x] 02-28 Enbound
 - [x] 03-07 Whitechapel
 - [x] 03-07 Dawn of Ouroboros
 - [x] 03-07 Spiritbox
 - [ ] 03-07 Voidfallen
-- [ ] 03-07 Hypermass
+- [x] 03-07 Hypermass
 - [x] 03-14 Dessiderium
 - [ ] 03-14 Embrium
 - [x] 04-04 Allegaeon
@@ -144,9 +144,9 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [ ] 04-04 Fractal Universe
 - [x] 04-04 Bleed From Within
 - [ ] 04-06 Valtari
-- [ ] 04-11 Elvenking
+- [x] 04-11 Elvenking
 - [ ] 04-11 Destinity
-- [ ] 04-25 Eluveitie
+- [x] 04-25 Eluveitie
 - [x] 04-25 Kardashev
 - [ ] 04-25 Ancient Bards
 - [ ] 05-16 Novelists
