@@ -426,8 +426,11 @@ $$
 $$
 again the same issue: here we would need the value of $P^n$ and $Q^n$ on primal vertices
 but they're dual 0-cochains.
-This could be accomplished by averaging,
-but let's analyze the situation a little bit.
+We can solve this using interpolation,
+which is a little tricky going from dual to primal
+since dual cells are not triangles,
+but a formula for this on general convex polytopes
+is provided by Warren et al. (2007).
 
 The longitudinal and transverse waves are fully decoupled everywhere
 except at boundaries where reflections/refractions occur
@@ -491,3 +494,4 @@ and compute the average.
 - Räbinä et al. (2018). Generalized wave propagation problems and discrete exterior calculus
 - Engquist, B. & Majda, A. (1979). Radiation boundary conditions for acoustic and elastic wave calculations
 - Thorne, K. & Blandford, R. (2017). Modern classical physics: optics, fluids, plasmas, elasticity, relativity, and statistical physics
+- Warren, J., Schaefer, S., Hirani, A. & Desbrun, M. (2007). Barycentric coordinates for convex sets.
