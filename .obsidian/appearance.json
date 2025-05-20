@@ -10,5 +10,6 @@
     "green-hilights"
   ],
   "accentColor": "#869c35",
-  "cssTheme": "Things"
+  "cssTheme": "Things",
+  "showRibbon": false
 }
