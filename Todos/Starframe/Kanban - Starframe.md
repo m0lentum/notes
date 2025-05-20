@@ -41,7 +41,6 @@ kanban-plugin: basic
 - [ ] [[Colors]]
 - [ ] GUI
 - [ ] Immediate mode debug drawing of arbitrary shapes
-- [ ] Optimize joint matrices by removing the fourth row
 - [ ] Load samplers from glTF
 - [ ] Mesh.offset probably shouldn't exist; how to express that on a per-entity basis?
 - [ ] Having to manually upload camera uniforms is a footgun
@@ -55,11 +54,11 @@ kanban-plugin: basic
 
 - [x] Consider re-exporting most or all types from the top level for qualified usage like `sf::Arst`
 - [x] [[Bundle standard structures together]]
+- [x] Don't drop inputs shorter than one tick
 - [ ] [[Game loop lag resilience]]
 - [ ] Gamepad support
 - [ ] [[Tweening]]
 - [ ] [[Blender as a level editor]]
-- [ ] Don't drop inputs shorter than one tick
 
 
 ***

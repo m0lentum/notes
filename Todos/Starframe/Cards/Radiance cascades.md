@@ -60,7 +60,7 @@ Nice to have / optimization ideas:
 - [ ] bilinear / parallax fix (how do those work?) to alleviate haloing
 - [ ] try computing only some of the cascades per frame
   - this would require storing all cascades separately
-- [ ] indirect diffuse lighting by rendering lighting results as light sources?
+- [x] indirect diffuse lighting by rendering lighting results as light sources?
 - [ ] allow user to modify the attenuation/emission distance scale
 - [ ] share shader code with `naga_oil` to reduce duplication between mesh and cascade shaders
 - [ ] maybe a spherical harmonic representation of the final cascade could encode direction info better?

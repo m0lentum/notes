@@ -483,6 +483,12 @@ Then take the energies over the past wave period
 If we allow it to be that is - maybe we don't have to)
 and compute the average.
 
+Turns out this doesn't actually work well enough,
+at least if we only measure along the top edge,
+because some directional information is lost,
+but maybe we can actually get by only measuring amplitude
+without worrying about physical energy measurements at all.
+
 ## Sources
 
 - Landau et al. (1986). Theory of Elasticity

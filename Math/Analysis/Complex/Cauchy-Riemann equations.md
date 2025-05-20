@@ -17,6 +17,10 @@ If $f$ is real differentiable and satisfies the CR equations,
 it is complex differentiable.
 A complex differentiable function is always real differentiable.
 
+Important consequence:
+the component functions $u$ and $v$ of a complex analytic function
+are _always_ [[harmonic map]]s (their Laplacian is zero).
+
 ## Derivation
 
 Recall that $f : U \subset \mathbb{R}^2 \rightarrow \mathbb{R}^2$, $f(z) = (u(z), v(z))$ is _real differentiable_ at $z \in U$

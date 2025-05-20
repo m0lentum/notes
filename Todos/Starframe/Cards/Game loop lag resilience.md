@@ -7,4 +7,5 @@ For testing this you could add buttons that do some amount of thread::sleep,
 e.g. set amount per frame, random amount per frame,
 set really big amount in one shot.
 
-The `pacy` crate from cwfitzgerald might also be useful here once it's done.
+The `pacy` crate (is that done yet? haven't heard anything in a while)
+might also be useful here.

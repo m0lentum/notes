@@ -135,7 +135,7 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 03-07 Whitechapel
 - [x] 03-07 Dawn of Ouroboros
 - [x] 03-07 Spiritbox
-- [ ] 03-07 Voidfallen
+- [x] 03-07 Voidfallen
 - [x] 03-07 Hypermass
 - [x] 03-14 Dessiderium
 - [ ] 03-14 Embrium
@@ -149,8 +149,9 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 04-25 Eluveitie
 - [x] 04-25 Kardashev
 - [ ] 04-25 Ancient Bards
-- [ ] 05-16 Novelists
+- [x] 05-16 Novelists
 - [ ] 05-16 Slow Fall
 - [ ] 05-23 Moonlight Haze
 - [ ] 05-30 Rivers of Nihil
 - [ ] 06-13 Fallujah
+- [ ] 06-27 Shadow of Intent
