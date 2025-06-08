@@ -12,7 +12,7 @@ kanban-plugin: basic
 - [x] Spherecasts
 - [x] [[Collision detection broad phase]]
 - [x] [[Time speed control]]
-- [x] [[Temporal coherence in collision detection]]
+- [x] [[Temporal coherence in collision detection]] (done but have an idea for improvement)
 - [ ] [[Block solver for two-point contacts]]
 - [ ] [[Anisotropic friction]] #bug
 - [ ] Explore SIMD for collision detection

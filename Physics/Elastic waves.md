@@ -411,11 +411,14 @@ Let's see. What if we just sum both update equations for $P$ and $W$?
 $$
 \begin{cases}
   W^{n+1} = W^n + \Delta t \mu (\star_2 \mathbf{d}_1 V^{n+\frac{1}{2}}
-    + \mathbf{d} \star Q^{n+\frac{1}{2}}) \\
+    - \star \mathbf{d} \star Q^{n+\frac{1}{2}}) \\
   P^{n+1} = P^n + \Delta t (\lambda + 2\mu) (\star_2 \mathbf{d}_1 Q^{n+\frac{1}{2}}
     + \star \mathbf{d} \star V^{n+\frac{1}{2}}) \\
 \end{cases}
 $$
+(extra star for $W$ because it was a 2-cochain in the previous equations,
+but a 0-cochain here)
+
 There's a primal-dual mismatch here; unclear how to work around this..
 How about the other two update equations?
 $$
@@ -491,6 +494,10 @@ at least if we only measure along the top edge,
 because some directional information is lost,
 but maybe we can actually get by only measuring amplitude
 without worrying about physical energy measurements at all.
+..Not really, because due to boundary interactions
+the solution becomes a superposition of several plane waves
+that don't necessarily interfere constructively,
+hence not all the information is captured in the amplitude measurement.
 
 ## Sources
 

@@ -138,10 +138,10 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 03-07 Voidfallen
 - [x] 03-07 Hypermass
 - [x] 03-14 Dessiderium
-- [ ] 03-14 Embrium
+- [x] 03-14 Embrium
 - [x] 04-04 Allegaeon
-- [ ] 04-04 Buried Realm
-- [ ] 04-04 Fractal Universe
+- [x] 04-04 Buried Realm
+- [x] 04-04 Fractal Universe
 - [x] 04-04 Bleed From Within
 - [ ] 04-06 Valtari
 - [x] 04-11 Elvenking
@@ -150,8 +150,11 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 04-25 Kardashev
 - [ ] 04-25 Ancient Bards
 - [x] 05-16 Novelists
-- [ ] 05-16 Slow Fall
+- [x] 05-16 Slow Fall
+- [ ] 05-16 Pelican
 - [ ] 05-23 Moonlight Haze
-- [ ] 05-30 Rivers of Nihil
+- [x] 05-30 Rivers of Nihil
+- [ ] 06-06 Sin Deliverance
 - [ ] 06-13 Fallujah
+- [ ] 06-20 Malevolence
 - [ ] 06-27 Shadow of Intent

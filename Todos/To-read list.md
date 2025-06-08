@@ -4,18 +4,23 @@ Books that have been recommended to me and/or I intend to read:
 - [ ] Fonda Lee - The Greenbone Saga
 - [ ] Adrian Tchaikovsky - Dogs of War
 - [ ] ? - The First Law
-- [ ] ? - Piranesi
+- [x] Susanna Clarke - Piranesi
+- [ ] Susanna Clarke - Jonathan Strange & Mr Norrell
 - [ ] ? - The Locked Tomb
 - [ ] ? - Murderbot Diaries
 - [ ] ? - The Spear Cuts Through Water
 - [ ] ? - The Lies of Locke Lamora
 - [ ] ? - Foundryside
-- [ ] Susanna Clarke - (anything)
 - [ ] ? - Master of D'jiin
 - [ ] ? - Ancillary Justice
 - [ ] Max Gladstone - Dead Hand Rule (coming 28.10.2025)
 - [ ] Ursula Le Guin - The Word For World Is Forest
 - [ ] Ursula Le Guin - Five Ways to Forgiveness
 - [ ] Ursula Le Guin - (so many more, just go browse)
-- [ ] Alex Pheby - Cities of the Weft
+- [x] Alex Pheby - Cities of the Weft
 - [ ] Pat Murphy - The Adventures of Mary Darling
+- [ ] Aliette De Bodard - The Red Scholar's Wake
+- [ ] Kim Stanley Robinson - The Ministry for the Future
+- [ ] Max Gladstone - Empress of Forever
+- [ ] Erik Olin Wright - How to Be an Anticapitalist in the Twenty-First Century
+- [ ] Amar El-Mohtar - The River Has Roots

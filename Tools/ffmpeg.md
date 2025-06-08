@@ -42,6 +42,14 @@ Generate e.g. with the nushell script
 Add `-c copy` if saving to the same format to avoid re-encoding
 and `-safe 0` if the filenames contain symbols ffmpeg doesn't like for some reason
 
+Simpler concatenate command
+which can also do some rudimentary cutting at the same time
+(I don't entirely understand where the `-ss`/`-to` arguments'
+effects go depending on order given, needs more work to figure out)
+```bash
+ffmpeg -i $infile1 -i $infile2 -filter_complex "concat=n=2:v=1:a=1" $outfile
+```
+
 ## Useful flags
 
 `-c copy` to skip re-encoding, e.g. if you want to cut a video you already edited

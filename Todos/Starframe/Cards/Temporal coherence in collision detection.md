@@ -23,3 +23,10 @@ It would certainly be easier to implement
 
 Edit 2025: yes, the above idea turned out to work pretty nicely
 as long as we invalidate contacts that have rotated too much.
+
+Edit again: had to reduce the angle limit a lot
+because otherwise things would sometimes get stuck oscillating
+between point contacts at opposing ends of an edge.
+This could probably be improved
+by adding a dynamic angle limit that takes into account 
+the nearest possible edge-edge contact.
