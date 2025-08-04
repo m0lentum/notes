@@ -20,6 +20,6 @@ $$
 with $n$ unknowns and $m$ equations.
 
 There are many ways to solve such a system.
-They can be solved exactly with [[direct methods]]
-or approximately with iterative [[relaxation methods]] and [[projection methods]].
+They can be solved exactly with [[Direct methods]]
+or approximately with iterative [[Relaxation methods]] and [[Projection methods]].
 (some projection methods are also exact after some number of steps)

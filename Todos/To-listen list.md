@@ -143,18 +143,20 @@ Writing down release dates of upcoming albums so I remember to check them out.
 - [x] 04-04 Buried Realm
 - [x] 04-04 Fractal Universe
 - [x] 04-04 Bleed From Within
-- [ ] 04-06 Valtari
+- [x] 04-06 Valtari
 - [x] 04-11 Elvenking
-- [ ] 04-11 Destinity
+- [x] 04-11 Destinity
 - [x] 04-25 Eluveitie
 - [x] 04-25 Kardashev
-- [ ] 04-25 Ancient Bards
+- [x] 04-25 Ancient Bards
 - [x] 05-16 Novelists
 - [x] 05-16 Slow Fall
-- [ ] 05-16 Pelican
+- [x] 05-16 Pelican
 - [ ] 05-23 Moonlight Haze
 - [x] 05-30 Rivers of Nihil
-- [ ] 06-06 Sin Deliverance
-- [ ] 06-13 Fallujah
+- [x] 06-06 Sin Deliverance
+- [x] 06-13 Fallujah
+- [ ] 06-13 Dark Matter Secret
 - [ ] 06-20 Malevolence
-- [ ] 06-27 Shadow of Intent
+- [x] 06-27 Shadow of Intent
+- [ ] 10-17 An Abstract Illusion

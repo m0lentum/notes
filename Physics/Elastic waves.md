@@ -205,6 +205,7 @@ from Räbinä et al. (2018)
 but with opposite signs for some reason?
 Actual equations that were found to work in code suggest
 that the signs are actually wrong in the paper and I have them right here
+(or there's a difference between 3D and 2D)
 
 Now how do we get the third equation in the system?
 That one pops out when we differentiate $\mathbf{v}$ with respect to time:

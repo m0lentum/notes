@@ -38,7 +38,7 @@ a $p$-product metric for $p \geq 1$,
 $$
 d_p((x_1, y_1), (x_2, y_2)) = \sqrt[p]{d_X(x_1, x_2)^p + d_Y(y_1, y_2)^p}.
 $$
-This is analogous to the $l^p$ [[norm]].
+This is analogous to the $l^p$ [[Norm]].
 Example: the $d_2$ metric for $\mathbb{R} \times \dots \times \mathbb{R}$ ($n$ times), 
 is the Euclidean metric for $\mathbb{R}^n$.
 

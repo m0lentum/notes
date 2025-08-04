@@ -8,7 +8,7 @@ An _inner product_ is a map $(\cdot, \cdot) : V \times V \rightarrow \mathbb{R}$
 The Euclidean _dot product_ $v \cdot v$ is an inner product.
 It's also sometimes denoted with angle brackets $\langle \cdot, \cdot \rangle$.
 
-An inner product induces a [[norm]]:
+An inner product induces a [[Norm]]:
 If $(V, (\cdot, \cdot))$ is an inner product space,
 $||x|| = \sqrt{(x, x)}$ is a norm in $V$.
 This norm in turn induces a [[metric]].

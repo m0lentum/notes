@@ -1,10 +1,10 @@
 [wikipedia](https://en.wikipedia.org/wiki/Hilbert_space)
 
-A Hilbert space is an [[inner product]] space
+A Hilbert space is an [[Inner product]] space
 for which the induced [[metric]] space is [[Complete space|complete]].
 This includes infinite-dimensional spaces.
 All Hilbert spaces are [[Banach space]]s (complete normed spaces)
-as the inner product induces a [[norm]].
+as the inner product induces a [[Norm]].
 
 Examples of infinite-dimensional spaces
 include spaces of [[sequence]]s

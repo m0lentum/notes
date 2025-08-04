@@ -19,8 +19,16 @@ Books that have been recommended to me and/or I intend to read:
 - [ ] Ursula Le Guin - (so many more, just go browse)
 - [x] Alex Pheby - Cities of the Weft
 - [ ] Pat Murphy - The Adventures of Mary Darling
-- [ ] Aliette De Bodard - The Red Scholar's Wake
+- [x] Aliette De Bodard - The Red Scholar's Wake
 - [ ] Kim Stanley Robinson - The Ministry for the Future
 - [ ] Max Gladstone - Empress of Forever
 - [ ] Erik Olin Wright - How to Be an Anticapitalist in the Twenty-First Century
-- [ ] Amar El-Mohtar - The River Has Roots
+- [x] Amar El-Mohtar - The River Has Roots
+- [ ] Margaret Killjoy - The Sapling Cage
+- [ ] Margaret Killjoy - The Immortal Choir Holds Every Voice
+- [ ] ? - Project Hail Mary
+- [ ] ? - Gormenghast
+- [ ] Rebecca F. Kuang - Babel
+- [ ] Rebecca F. Kuang - Katabasis
+- [ ] Brian Eno & Bette A. - What Art Does
+- [ ] Cory Doctorow - Enshittification

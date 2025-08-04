@@ -20,8 +20,8 @@ $$
 which is exactly a linear combination of the basis vectors
 defined above for $\mathcal{K}_m(A,v)$.
 
-Krylov subspaces are the basis for a class of [[projection methods]]
-particularly well suited for sparse [[linear system]]s.
+Krylov subspaces are the basis for a class of [[Projection methods]]
+particularly well suited for sparse [[Linear system]]s.
 
 ## Arnoldi method
 

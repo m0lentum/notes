@@ -1,4 +1,4 @@
-A Banach space is a [[Complete space|complete]] [[norm]]ed space
+A Banach space is a [[Complete space|complete]] [[Norm]]ed space
 which may be infinite-dimensional.
 
 Note the difference from a [[Hilbert space]]
